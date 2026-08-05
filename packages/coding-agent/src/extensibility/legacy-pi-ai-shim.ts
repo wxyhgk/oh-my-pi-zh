@@ -1,6 +1,6 @@
 /**
  * Compatibility shim for legacy extensions importing the package root of
- * `@oh-my-pi/pi-ai` (or one of its aliased scopes like `@earendil-works/pi-ai`
+ * `@wxyhgk/pi-ai` (or one of its aliased scopes like `@earendil-works/pi-ai`
  * or `@mariozechner/pi-ai`).
  *
  * pi-ai 15.1.0 removed the historical TypeBox root exports (`Type`, plus the
@@ -8,7 +8,7 @@
  * entrypoint. Legacy extensions still author parameter schemas as
  * `Type.Object({ ... })`, so this file is served by `legacy-pi-compat.ts` in
  * place of the real pi-ai entrypoint whenever a legacy extension imports the
- * bare package root. Subpath imports (`@oh-my-pi/pi-ai/oauth`, etc.)
+ * bare package root. Subpath imports (`@wxyhgk/pi-ai/oauth`, etc.)
  * continue to resolve directly against the bundled pi-ai package.
  *
  * The `Type` runtime and legacy `StringEnum()` helper are borrowed from the
@@ -27,16 +27,16 @@ import {
 	type Model,
 	type SimpleStreamOptions,
 	streamSimple,
-} from "@oh-my-pi/pi-ai";
-import type { Effort } from "@oh-my-pi/pi-catalog/effort";
-import { clampThinkingLevelForModel } from "@oh-my-pi/pi-catalog/model-thinking";
+} from "@wxyhgk/pi-ai";
+import type { Effort } from "@wxyhgk/pi-catalog/effort";
+import { clampThinkingLevelForModel } from "@wxyhgk/pi-catalog/model-thinking";
 import {
 	calculateCost,
 	getBundledModel,
 	getBundledModels,
 	getBundledProviders,
 	modelsAreEqual,
-} from "@oh-my-pi/pi-catalog/models";
+} from "@wxyhgk/pi-catalog/models";
 import { type TSchema, Type } from "./legacy-typebox";
 
 export interface StringEnumOptions<T extends string> {
@@ -115,13 +115,13 @@ export function isRetryableAssistantError(message: AssistantMessage): boolean {
 	return RETRYABLE_PROVIDER_ERROR_PATTERN.test(errorMessage);
 }
 
-export * from "@oh-my-pi/pi-ai";
+export * from "@wxyhgk/pi-ai";
 /**
  * Compatibility re-exports for catalog symbols that pi-ai historically exposed
  * from its own barrel prior to the `refactor(catalog)!: split model catalog
  * from pi-ai` change. Legacy extensions still import these from the pi-ai
  * root, so the shim bridges them through to their new home in
- * `@oh-my-pi/pi-catalog/models`. `getModel`/`getModels` are the historical
+ * `@wxyhgk/pi-catalog/models`. `getModel`/`getModels` are the historical
  * pi-ai names for `getBundledModel`/`getBundledModels`; the remaining symbols
  * kept their names across the move.
  */
@@ -145,17 +145,17 @@ export function streamSimpleOpenAIResponses(
 /**
  * Compatibility re-exports for runtime helpers that upstream
  * `@earendil-works/pi-ai` exposed from its package root but omp's
- * `@oh-my-pi/pi-ai` barrel no longer forwards. Each symbol still exists in the
+ * `@wxyhgk/pi-ai` barrel no longer forwards. Each symbol still exists in the
  * host graph — only its root re-export was dropped — so bridging it here keeps
  * legacy extensions importing it from the pi-ai root resolving through Bun's
  * static named-export check (e.g. `omp plugin install pi-blackhole`).
  *
  * This is the full set derived from an audit of the upstream root surface: the
  * error-classification predicate `isContextOverflow` (now under
- * `@oh-my-pi/pi-ai/error`) and the JSON-repair helpers that omp relocated to
- * `@oh-my-pi/pi-utils`. Upstream root symbols with no omp equivalent are
+ * `@wxyhgk/pi-ai/error`) and the JSON-repair helpers that omp relocated to
+ * `@wxyhgk/pi-utils`. Upstream root symbols with no omp equivalent are
  * intentionally not shimmed — the package has diverged and there is nothing to
  * forward.
  */
-export { isContextOverflow } from "@oh-my-pi/pi-ai/error";
-export { parseJsonWithRepair, parseStreamingJson, repairJson } from "@oh-my-pi/pi-utils";
+export { isContextOverflow } from "@wxyhgk/pi-ai/error";
+export { parseJsonWithRepair, parseStreamingJson, repairJson } from "@wxyhgk/pi-utils";

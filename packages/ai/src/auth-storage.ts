@@ -11,8 +11,8 @@ import { Database, type Statement } from "bun:sqlite";
 import { createHash } from "node:crypto";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
-import { parseAlibabaTokenPlanCredential } from "@oh-my-pi/pi-catalog/wire/alibaba-token-plan";
-import { $env, $envExact, getAgentDbPath, getDbBusyTimeoutMs, logger } from "@oh-my-pi/pi-utils";
+import { parseAlibabaTokenPlanCredential } from "@wxyhgk/pi-catalog/wire/alibaba-token-plan";
+import { $env, $envExact, getAgentDbPath, getDbBusyTimeoutMs, logger } from "@wxyhgk/pi-utils";
 import type { ApiKeyResolver } from "./auth-retry";
 import * as AIError from "./error";
 import { isUsageLimitOutcome } from "./error/rate-limit";
@@ -740,7 +740,7 @@ const OAUTH_REFRESH_OPERATION_TIMEOUT_MS = 10_000;
 const MAX_PENDING_DISABLED_EVENTS = 32;
 
 // Re-exported from the error module (its new home) to preserve the public
-// `@oh-my-pi/pi-ai` entrypoint and the in-module call sites below.
+// `@wxyhgk/pi-ai` entrypoint and the in-module call sites below.
 export { isDefinitiveOAuthFailure } from "./error/auth-classify";
 
 /**

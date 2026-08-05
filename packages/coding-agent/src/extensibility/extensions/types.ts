@@ -8,9 +8,9 @@
  * - Interact with the user via UI primitives
  */
 
-import type { Type as arktype } from "@oh-my-pi/omptype";
-import type * as TypeBox from "@oh-my-pi/omptype/typebox";
-import type * as zod from "@oh-my-pi/omptype/zod";
+import type { Type as arktype } from "@wxyhgk/omptype";
+import type * as TypeBox from "@wxyhgk/omptype/typebox";
+import type * as zod from "@wxyhgk/omptype/zod";
 import type {
 	AgentMessage,
 	AgentToolResult,
@@ -18,8 +18,8 @@ import type {
 	ThinkingLevel,
 	ToolApproval,
 	ToolLoadMode,
-} from "@oh-my-pi/pi-agent-core";
-import type { CompactionResult } from "@oh-my-pi/pi-agent-core/compaction";
+} from "@wxyhgk/pi-agent-core";
+import type { CompactionResult } from "@wxyhgk/pi-agent-core/compaction";
 import type {
 	Api,
 	AssistantMessageEvent,
@@ -36,10 +36,10 @@ import type {
 	Static,
 	TextContent,
 	TSchema,
-} from "@oh-my-pi/pi-ai";
-import type { OAuthCredentials, OAuthLoginCallbacks } from "@oh-my-pi/pi-ai/oauth/types";
-import type { AutocompleteItem, AutocompleteProvider, Component, EditorTheme, KeyId, TUI } from "@oh-my-pi/pi-tui";
-import type { logger as PiLogger } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-ai";
+import type { OAuthCredentials, OAuthLoginCallbacks } from "@wxyhgk/pi-ai/oauth/types";
+import type { AutocompleteItem, AutocompleteProvider, Component, EditorTheme, KeyId, TUI } from "@wxyhgk/pi-tui";
+import type { logger as PiLogger } from "@wxyhgk/pi-utils";
 import type { KeybindingsManager } from "../../config/keybindings";
 import type { ModelRegistry } from "../../config/model-registry";
 import type { EditToolDetails } from "../../edit";

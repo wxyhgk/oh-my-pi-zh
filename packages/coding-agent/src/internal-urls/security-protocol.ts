@@ -1,5 +1,5 @@
 import * as path from "node:path";
-import { sanitizeText } from "@oh-my-pi/pi-utils";
+import { sanitizeText } from "@wxyhgk/pi-utils";
 import { isSettingsInitialized, settings } from "../config/settings";
 import { getDefault } from "../config/settings-schema";
 import type { SecurityFinding } from "../security/contracts";

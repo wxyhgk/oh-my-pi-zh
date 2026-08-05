@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@oh-my-pi/collab-web",
+  "name": "@wxyhgk/collab-web",
   "version": "16.3.6",
   "private": true,
   "description": "Browser guest client and local relay tools for omp collab live sessions",
@@ -37,7 +37,7 @@
     "fmt": "biome format --write ."
   },
   "dependencies": {
-    "@oh-my-pi/pi-wire": "catalog:",
+    "@wxyhgk/pi-wire": "catalog:",
     "lucide-react": "catalog:",
     "marked": "catalog:",
     "react": "catalog:",

@@ -4,7 +4,7 @@
  * intentional user-facing output.
  */
 import * as path from "node:path";
-import { getBrowserRelayDir } from "@oh-my-pi/pi-utils";
+import { getBrowserRelayDir } from "@wxyhgk/pi-utils";
 import { probeRelayServer } from "../tools/browser/relay/daemon";
 import backgroundJs from "../tools/browser/relay/extension-assets/background.js.txt" with { type: "text" };
 import manifestJson from "../tools/browser/relay/extension-assets/manifest.json.txt" with { type: "text" };

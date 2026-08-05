@@ -1,6 +1,6 @@
 /**
  * Compatibility shim for legacy extensions importing the package root of
- * `@oh-my-pi/pi-coding-agent` (or one of its aliased scopes like
+ * `@wxyhgk/pi-coding-agent` (or one of its aliased scopes like
  * `@earendil-works/pi-coding-agent` or `@mariozechner/pi-coding-agent`).
  *
  * The coding-agent package's own barrel (`./src/index.ts`) cannot be listed
@@ -9,23 +9,23 @@
  * Routing legacy plugin imports through this sibling shim sidesteps that
  * conflict: bun bundles a distinct entry whose path differs from the CLI
  * entry, while still re-exporting the canonical surface so plugins observe
- * the same module identity as a direct `@oh-my-pi/pi-coding-agent` import.
+ * the same module identity as a direct `@wxyhgk/pi-coding-agent` import.
  */
 
 import { Database } from "bun:sqlite";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import type { AgentToolResult, AgentToolUpdateCallback } from "@oh-my-pi/pi-agent-core";
-import { type AuthCredential, SqliteAuthCredentialStore, type TSchema } from "@oh-my-pi/pi-ai";
-import { piEscapeRegexLiteral, piJoinPath } from "@oh-my-pi/pi-ai/providers/cursor-pi-args";
-import { getKeybindings, type Keybinding, Text } from "@oh-my-pi/pi-tui";
+import type { AgentToolResult, AgentToolUpdateCallback } from "@wxyhgk/pi-agent-core";
+import { type AuthCredential, SqliteAuthCredentialStore, type TSchema } from "@wxyhgk/pi-ai";
+import { piEscapeRegexLiteral, piJoinPath } from "@wxyhgk/pi-ai/providers/cursor-pi-args";
+import { getKeybindings, type Keybinding, Text } from "@wxyhgk/pi-tui";
 import {
 	getAgentDbPath,
 	getAgentDir,
 	getProjectDir,
 	isCompiledBinary,
 	parseFrontmatter as parseOmpFrontmatter,
-} from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-utils";
 import { getPackageDir as getOmpPackageDir } from "../config";
 import { formatKeyHints } from "../config/keybindings";
 import type { PromptTemplate } from "../config/prompt-templates";
@@ -1385,10 +1385,10 @@ export function readStoredCredential(provider: string): AuthCredential | undefin
 }
 
 // Pi SDK path helpers. `export * from "../index"` above only forwards
-// `getAgentDir`; `getProjectDir` (a `@oh-my-pi/pi-utils` helper) and
+// `getAgentDir`; `getProjectDir` (a `@wxyhgk/pi-utils` helper) and
 // `getPackageDir` are absent from that barrel, so legacy extensions importing
 // either fail Bun's static export check during validation (issue #5968).
-export { getProjectDir } from "@oh-my-pi/pi-utils";
+export { getProjectDir } from "@wxyhgk/pi-utils";
 
 /**
  * Coding-agent package install directory, matching pi's string-valued
@@ -1411,17 +1411,17 @@ export function getPackageDir(): string {
 // Legacy pi's `@earendil-works/pi-coding-agent` re-exported `estimateTokens`,
 // `compact`, and `serializeConversation` from its package root (via
 // `./core/compaction/index.ts`). In omp they live in
-// `@oh-my-pi/pi-agent-core/compaction`, and the coding-agent barrel below does
+// `@wxyhgk/pi-agent-core/compaction`, and the coding-agent barrel below does
 // not forward them, so legacy extensions importing them fail Bun's static
 // export check during validation (issues #6583, #7174, #7403).
-export { compact, estimateTokens, serializeConversation } from "@oh-my-pi/pi-agent-core/compaction";
+export { compact, estimateTokens, serializeConversation } from "@wxyhgk/pi-agent-core/compaction";
 
 // Same barrel gap for two more legacy package-root exports: pi re-exported the
 // `CONFIG_DIR_NAME` constant and the CLI parser `parseArgs`. In omp
-// `CONFIG_DIR_NAME` lives in `@oh-my-pi/pi-utils` and `parseArgs` in
+// `CONFIG_DIR_NAME` lives in `@wxyhgk/pi-utils` and `parseArgs` in
 // `../cli/args`, neither of which the barrel below forwards, so legacy
 // extensions importing either fail Bun's static export check during validation.
-export { CONFIG_DIR_NAME } from "@oh-my-pi/pi-utils";
+export { CONFIG_DIR_NAME } from "@wxyhgk/pi-utils";
 export { parseArgs } from "../cli/args";
 
 export * from "../index";

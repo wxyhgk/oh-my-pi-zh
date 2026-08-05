@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 
 /**
- * Syncs ALL @oh-my-pi/* package dependency versions to match their current versions.
+ * Syncs ALL @wxyhgk/* package dependency versions to match their current versions.
  * This ensures lockstep versioning across the monorepo.
  */
 

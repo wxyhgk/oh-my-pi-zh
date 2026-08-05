@@ -15,7 +15,7 @@
  * route every LLM call through a credential-holding sidecar so the slot
  * itself stays credential-free.
  */
-import { readSseJson } from "@oh-my-pi/pi-utils";
+import { readSseJson } from "@wxyhgk/pi-utils";
 import * as AIError from "../error";
 import type {
 	Api,

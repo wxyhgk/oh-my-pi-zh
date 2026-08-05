@@ -1,5 +1,5 @@
-import type { AssistantMessage } from "@oh-my-pi/pi-ai";
-import { type as t, validateToolCall } from "@oh-my-pi/pi-ai";
+import type { AssistantMessage } from "@wxyhgk/pi-ai";
+import { type as t, validateToolCall } from "@wxyhgk/pi-ai";
 import type { ChangelogCategory, ConventionalAnalysis } from "./types";
 import { extractTextContent, extractToolCall, normalizeAnalysis, parseJsonPayload } from "./utils";
 

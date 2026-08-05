@@ -1,7 +1,7 @@
-export * from "@oh-my-pi/pi-catalog/effort";
-export * from "@oh-my-pi/pi-catalog/types";
+export * from "@wxyhgk/pi-catalog/effort";
+export * from "@wxyhgk/pi-catalog/types";
 
-import type { Type } from "@oh-my-pi/omptype";
+import type { Type } from "@wxyhgk/omptype";
 import type {
 	DeleteArgs,
 	DeleteResult,
@@ -32,10 +32,10 @@ import type {
 	ShellResult,
 	WriteArgs,
 	WriteResult,
-} from "@oh-my-pi/pi-catalog/discovery/cursor-gen/agent_pb";
-import type { Effort } from "@oh-my-pi/pi-catalog/effort";
-import { isOpenAIModelId } from "@oh-my-pi/pi-catalog/identity/family";
-import type { Api, FetchImpl, KnownApi, Model, Provider, ThinkingBudgets, Usage } from "@oh-my-pi/pi-catalog/types";
+} from "@wxyhgk/pi-catalog/discovery/cursor-gen/agent_pb";
+import type { Effort } from "@wxyhgk/pi-catalog/effort";
+import { isOpenAIModelId } from "@wxyhgk/pi-catalog/identity/family";
+import type { Api, FetchImpl, KnownApi, Model, Provider, ThinkingBudgets, Usage } from "@wxyhgk/pi-catalog/types";
 import type { ZodType, z } from "zod/v4";
 import type { ApiKey } from "./auth-retry";
 import type { BedrockOptions } from "./providers/amazon-bedrock";

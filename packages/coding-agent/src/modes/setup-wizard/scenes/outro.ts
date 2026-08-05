@@ -1,4 +1,4 @@
-import { padding, truncateToWidth, visibleWidth } from "@oh-my-pi/pi-tui";
+import { padding, truncateToWidth, visibleWidth } from "@wxyhgk/pi-tui";
 import { gradientLogo, PI_LOGO } from "../../components/welcome";
 import { theme } from "../../theme/theme";
 import { renderStarfield, SETUP_TICK_MS } from "./splash";

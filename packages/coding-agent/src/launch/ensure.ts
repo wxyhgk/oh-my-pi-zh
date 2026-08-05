@@ -4,7 +4,7 @@
  * as "absent" so ensure loops can retry or adopt a cross-process race winner
  * instead of failing the caller.
  */
-import { logger } from "@oh-my-pi/pi-utils";
+import { logger } from "@wxyhgk/pi-utils";
 import { throwIfAborted } from "../tools/tool-errors";
 import type { DaemonBrokerClient } from "./client";
 import type { DaemonSnapshot } from "./protocol";

@@ -1,6 +1,6 @@
 // biome-ignore-all lint/suspicious/noTemplateCurlyInString: sample source-code strings (read fixtures) intentionally contain literal ${...}.
 // Gallery fixtures for the filesystem tools (read, write, glob).
-import type { Usage } from "@oh-my-pi/pi-ai";
+import type { Usage } from "@wxyhgk/pi-ai";
 import { ReadToolGroupComponent } from "../../modes/components/read-tool-group";
 import type { GalleryFixture, GalleryFixtureState, GalleryResult } from "./types";
 

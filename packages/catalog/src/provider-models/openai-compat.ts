@@ -1,5 +1,5 @@
-import { VERSION } from "@oh-my-pi/pi-utils";
-import * as logger from "@oh-my-pi/pi-utils/logger";
+import { VERSION } from "@wxyhgk/pi-utils";
+import * as logger from "@wxyhgk/pi-utils/logger";
 import {
 	fetchOpenAICompatibleModels,
 	type OpenAICompatibleModelMapperContext,

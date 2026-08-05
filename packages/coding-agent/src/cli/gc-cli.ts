@@ -2,7 +2,7 @@ import { Database } from "bun:sqlite";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import { gunzipSync, gzipSync } from "node:zlib";
-import { withStatsSyncLock } from "@oh-my-pi/omp-stats/aggregator";
+import { withStatsSyncLock } from "@wxyhgk/omp-stats/aggregator";
 import {
 	getAgentDir,
 	getBlobsDir,
@@ -11,7 +11,7 @@ import {
 	getSessionsDir,
 	getStatsDbPath,
 	readLines,
-} from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-utils";
 import { Settings } from "../config/settings";
 import { getDefault } from "../config/settings-schema";
 import { BLOB_HASH_RE } from "../session/blob-store";

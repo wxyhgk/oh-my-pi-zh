@@ -9,8 +9,8 @@
  * model into the worker's cache.
  */
 
-import { getProjectDir } from "@oh-my-pi/pi-utils";
-import { Args, Command, Flags } from "@oh-my-pi/pi-utils/cli";
+import { getProjectDir } from "@wxyhgk/pi-utils";
+import { Args, Command, Flags } from "@wxyhgk/pi-utils/cli";
 import chalk from "chalk";
 import { sayHelp as commandHelp } from "../cli/command-help";
 import { Settings, settings } from "../config/settings";

@@ -5,8 +5,8 @@
  * cell with status icon, optional output, and expand/collapse handling. `open`
  * and `close` actions render as compact status lines.
  */
-import type { Component } from "@oh-my-pi/pi-tui";
-import { Text } from "@oh-my-pi/pi-tui";
+import type { Component } from "@wxyhgk/pi-tui";
+import { Text } from "@wxyhgk/pi-tui";
 import type { RenderResultOptions } from "../../extensibility/custom-tools/types";
 import type { Theme } from "../../modes/theme/theme";
 import { Hasher, isFramedBlockComponent, markFramedBlockComponent, renderCodeCell, renderStatusLine } from "../../tui";

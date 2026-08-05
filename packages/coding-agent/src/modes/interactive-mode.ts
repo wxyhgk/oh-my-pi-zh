@@ -10,10 +10,10 @@ import {
 	type AgentMessage,
 	EventLoopKeepalive,
 	ThinkingLevel,
-} from "@oh-my-pi/pi-agent-core";
-import type { CompactionOutcome } from "@oh-my-pi/pi-agent-core/compaction";
-import type { AssistantMessage, ImageContent, Message, Model, Usage, UsageReport } from "@oh-my-pi/pi-ai";
-import { modelsAreEqual } from "@oh-my-pi/pi-catalog/models";
+} from "@wxyhgk/pi-agent-core";
+import type { CompactionOutcome } from "@wxyhgk/pi-agent-core/compaction";
+import type { AssistantMessage, ImageContent, Message, Model, Usage, UsageReport } from "@wxyhgk/pi-ai";
+import { modelsAreEqual } from "@wxyhgk/pi-catalog/models";
 import type {
 	AutocompleteProvider,
 	Component,
@@ -22,7 +22,7 @@ import type {
 	NativeScrollbackLiveRegion,
 	OverlayHandle,
 	SlashCommand,
-} from "@oh-my-pi/pi-tui";
+} from "@wxyhgk/pi-tui";
 import {
 	Container,
 	clearRenderCache,
@@ -36,9 +36,9 @@ import {
 	Text,
 	TUI,
 	visibleWidth,
-} from "@oh-my-pi/pi-tui";
-import type { TerminalAppearanceRequestToken } from "@oh-my-pi/pi-tui/terminal";
-import { isInsideTerminalMultiplexer } from "@oh-my-pi/pi-tui/terminal-capabilities";
+} from "@wxyhgk/pi-tui";
+import type { TerminalAppearanceRequestToken } from "@wxyhgk/pi-tui/terminal";
+import { isInsideTerminalMultiplexer } from "@wxyhgk/pi-tui/terminal-capabilities";
 import {
 	$env,
 	APP_NAME,
@@ -51,7 +51,7 @@ import {
 	postmortem,
 	prompt,
 	setProjectDir,
-} from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-utils";
 import chalk from "chalk";
 import { reset as resetCapabilities } from "../capability";
 import type { CollabGuestLink } from "../collab/guest";

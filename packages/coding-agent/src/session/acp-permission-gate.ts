@@ -1,5 +1,5 @@
-import { Patch } from "@oh-my-pi/hashline";
-import { isRecord, stringProperty } from "@oh-my-pi/pi-utils";
+import { Patch } from "@wxyhgk/hashline";
+import { isRecord, stringProperty } from "@wxyhgk/pi-utils";
 import { expandApplyPatchToEntries } from "../edit";
 import { resolveToCwd } from "../tools/path-utils";
 import type { ClientBridgePermissionOption } from "./client-bridge";

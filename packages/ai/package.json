@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@oh-my-pi/pi-ai",
+  "name": "@wxyhgk/pi-ai",
   "version": "17.2.8",
   "description": "Unified LLM API with automatic model discovery and provider configuration",
   "homepage": "https://omp.sh",
@@ -38,10 +38,10 @@
   },
   "dependencies": {
     "@bufbuild/protobuf": "catalog:",
-    "@oh-my-pi/omptype": "catalog:",
-    "@oh-my-pi/pi-catalog": "catalog:",
-    "@oh-my-pi/pi-utils": "catalog:",
-    "@oh-my-pi/pi-wire": "catalog:",
+    "@wxyhgk/omptype": "catalog:",
+    "@wxyhgk/pi-catalog": "catalog:",
+    "@wxyhgk/pi-utils": "catalog:",
+    "@wxyhgk/pi-wire": "catalog:",
     "zod": "catalog:"
   },
   "devDependencies": {

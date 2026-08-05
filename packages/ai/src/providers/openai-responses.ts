@@ -1,6 +1,6 @@
 import { scheduler } from "node:timers/promises";
-import { hostMatchesUrl } from "@oh-my-pi/pi-catalog/hosts";
-import { $flag, logger, structuredCloneJSON } from "@oh-my-pi/pi-utils";
+import { hostMatchesUrl } from "@wxyhgk/pi-catalog/hosts";
+import { $flag, logger, structuredCloneJSON } from "@wxyhgk/pi-utils";
 import * as AIError from "../error";
 import { getEnvApiKey } from "../stream";
 import type {

@@ -1,4 +1,4 @@
-import { getActiveProfile } from "@oh-my-pi/pi-utils/dirs";
+import { getActiveProfile } from "@wxyhgk/pi-utils/dirs";
 import { expandEnvVarsDeep } from "../discovery/helpers";
 import type { AuthStorage } from "../session/auth-storage";
 import {

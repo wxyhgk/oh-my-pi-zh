@@ -1,7 +1,7 @@
 /**
  * `omp browser-relay` — drive the user's own Chrome tabs.
  */
-import { Args, Command, Flags } from "@oh-my-pi/pi-utils/cli";
+import { Args, Command, Flags } from "@wxyhgk/pi-utils/cli";
 import {
 	BROWSER_RELAY_ACTIONS,
 	type BrowserRelayAction,

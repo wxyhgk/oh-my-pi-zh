@@ -1,7 +1,7 @@
 import * as path from "node:path";
-import type { AssistantMessage, Usage } from "@oh-my-pi/pi-ai";
-import type { Component } from "@oh-my-pi/pi-tui";
-import { Container, Text } from "@oh-my-pi/pi-tui";
+import type { AssistantMessage, Usage } from "@wxyhgk/pi-ai";
+import type { Component } from "@wxyhgk/pi-tui";
+import { Container, Text } from "@wxyhgk/pi-tui";
 import { InternalUrlRouter, XD_URL_PREFIX } from "../../internal-urls";
 import { getLanguageFromPath, theme } from "../../modes/theme/theme";
 import { parseLineRanges, selectorLineRanges, splitPathAndSel } from "../../tools/path-utils";

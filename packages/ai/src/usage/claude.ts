@@ -1,6 +1,6 @@
 import { scheduler } from "node:timers/promises";
-import { bareModelId, parseAnthropicModel } from "@oh-my-pi/pi-catalog/identity";
-import { toNumber } from "@oh-my-pi/pi-catalog/utils";
+import { bareModelId, parseAnthropicModel } from "@wxyhgk/pi-catalog/identity";
+import { toNumber } from "@wxyhgk/pi-catalog/utils";
 import * as AIError from "../error";
 import { claudeCodeVersion } from "../providers/claude-code-fingerprint";
 import {

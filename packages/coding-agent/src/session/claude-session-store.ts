@@ -11,8 +11,8 @@ import type {
 	ToolResultMessage,
 	Usage,
 	UserMessage,
-} from "@oh-my-pi/pi-ai";
-import { isRecord } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-ai";
+import { isRecord } from "@wxyhgk/pi-utils";
 import { collectForeignJsonRecords, type ForeignJsonRecord, readForeignJsonRecords } from "./foreign-session-jsonl";
 import type { ForeignSessionInfo, ForeignSessionStore } from "./foreign-session-store";
 import type { ModelChangeEntry, SessionMessageEntry } from "./session-entries";

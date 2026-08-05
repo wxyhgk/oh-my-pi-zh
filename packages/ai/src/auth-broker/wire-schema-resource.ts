@@ -12,7 +12,7 @@
  * exception (standard type keeps extra keys): it preserves provider-specific extension fields so
  * they round-trip through the broker instead of being dropped (see below).
  */
-import { type Type, type } from "@oh-my-pi/omptype";
+import { type Type, type } from "@wxyhgk/omptype";
 import {
 	type ApiKeyCredential,
 	type AuthCredential,

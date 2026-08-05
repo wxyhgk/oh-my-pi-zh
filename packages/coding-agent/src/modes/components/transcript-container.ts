@@ -5,7 +5,7 @@ import {
 	type NativeScrollbackLiveRegion,
 	type RenderStablePrefix,
 	type ViewportTailProvider,
-} from "@oh-my-pi/pi-tui";
+} from "@wxyhgk/pi-tui";
 
 /**
  * A transcript block that is still mutating (a foreground tool awaiting its

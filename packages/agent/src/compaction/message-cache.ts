@@ -23,7 +23,7 @@
  *    drop the stale entry. The convert cache lives in another package, so it
  *    subscribes via {@link registerMessageCacheInvalidator}.
  */
-import type { AssistantMessage } from "@oh-my-pi/pi-ai";
+import type { AssistantMessage } from "@wxyhgk/pi-ai";
 import type { AgentMessage } from "../types";
 
 /** External cache invalidators (e.g. the coding-agent `convertToLlm` memo). */

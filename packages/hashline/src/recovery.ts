@@ -6,7 +6,7 @@
  * Recovery fails closed when the target changed or became ambiguous. The
  * patcher then returns a mismatch with fresh context instead of guessing.
  */
-import { diffLineRuns } from "@oh-my-pi/pi-natives";
+import { diffLineRuns } from "@wxyhgk/pi-natives";
 import { applyEdits } from "./apply";
 import { RECOVERY_EXTERNAL_WARNING, RECOVERY_LINE_REMAP_WARNING, RECOVERY_SESSION_CHAIN_WARNING } from "./messages";
 import type { SnapshotStore } from "./snapshots";

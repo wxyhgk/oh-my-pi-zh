@@ -1,4 +1,4 @@
-import type { ImageContent, TextContent } from "@oh-my-pi/pi-ai";
+import type { ImageContent, TextContent } from "@wxyhgk/pi-ai";
 
 export type Transferable = Bun.Transferable;
 

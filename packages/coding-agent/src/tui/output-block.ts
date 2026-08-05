@@ -1,8 +1,8 @@
 /**
  * Bordered output container with optional header and sections.
  */
-import type { Component } from "@oh-my-pi/pi-tui";
-import { ImageProtocol, padding, TERMINAL, visibleWidth, wrapTextWithAnsi } from "@oh-my-pi/pi-tui";
+import type { Component } from "@wxyhgk/pi-tui";
+import { ImageProtocol, padding, TERMINAL, visibleWidth, wrapTextWithAnsi } from "@wxyhgk/pi-tui";
 import type { Theme, ThemeColor } from "../modes/theme/theme";
 import { getSixelLineMask } from "../utils/sixel";
 import type { State } from "./types";

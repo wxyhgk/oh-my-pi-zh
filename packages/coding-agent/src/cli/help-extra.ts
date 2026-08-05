@@ -1,5 +1,5 @@
-import "@oh-my-pi/pi-utils/env";
-import { APP_NAME, CONFIG_DIR_NAME } from "@oh-my-pi/pi-utils/dirs";
+import "@wxyhgk/pi-utils/env";
+import { APP_NAME, CONFIG_DIR_NAME } from "@wxyhgk/pi-utils/dirs";
 import chalk from "chalk";
 
 export function getExtraHelpText(): string {

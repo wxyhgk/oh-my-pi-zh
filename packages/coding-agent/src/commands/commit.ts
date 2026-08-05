@@ -2,8 +2,8 @@
  * Generate and optionally push a commit with changelog updates.
  */
 
-import { postmortem } from "@oh-my-pi/pi-utils";
-import { Command, Flags } from "@oh-my-pi/pi-utils/cli";
+import { postmortem } from "@wxyhgk/pi-utils";
+import { Command, Flags } from "@wxyhgk/pi-utils/cli";
 import { commitHelp as commandHelp } from "../cli/command-help";
 import { runCommitCommand } from "../commit";
 import type { CommitCommandArgs } from "../commit/types";

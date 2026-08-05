@@ -1,6 +1,6 @@
-import type { AgentOptions } from "@oh-my-pi/pi-agent-core";
-import type { OAuthAccessResolution } from "@oh-my-pi/pi-ai";
-import type { ApiKeyResolver } from "@oh-my-pi/pi-ai/auth-retry";
+import type { AgentOptions } from "@wxyhgk/pi-agent-core";
+import type { OAuthAccessResolution } from "@wxyhgk/pi-ai";
+import type { ApiKeyResolver } from "@wxyhgk/pi-ai/auth-retry";
 import type { AuthStorage } from "../session/auth-storage";
 import type { SecurityAccountRef } from "./contracts";
 

@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@oh-my-pi/pi-agent-core",
+  "name": "@wxyhgk/pi-agent-core",
   "version": "17.2.8",
   "description": "General-purpose agent with transport abstraction, state management, and attachment support",
   "homepage": "https://omp.sh",
@@ -35,16 +35,16 @@
     "fmt": "biome format --write ."
   },
   "dependencies": {
-    "@oh-my-pi/pi-ai": "catalog:",
-    "@oh-my-pi/pi-catalog": "catalog:",
-    "@oh-my-pi/pi-natives": "catalog:",
-    "@oh-my-pi/pi-utils": "catalog:",
-    "@oh-my-pi/pi-wire": "catalog:",
-    "@oh-my-pi/snapcompact": "catalog:",
+    "@wxyhgk/pi-ai": "catalog:",
+    "@wxyhgk/pi-catalog": "catalog:",
+    "@wxyhgk/pi-natives": "catalog:",
+    "@wxyhgk/pi-utils": "catalog:",
+    "@wxyhgk/pi-wire": "catalog:",
+    "@wxyhgk/snapcompact": "catalog:",
     "@opentelemetry/api": "catalog:"
   },
   "devDependencies": {
-    "@oh-my-pi/omptype": "catalog:",
+    "@wxyhgk/omptype": "catalog:",
     "@opentelemetry/context-async-hooks": "catalog:",
     "@opentelemetry/sdk-trace-base": "catalog:",
     "@types/bun": "catalog:"

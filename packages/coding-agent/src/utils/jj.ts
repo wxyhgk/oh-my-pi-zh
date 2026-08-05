@@ -1,6 +1,6 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { $which } from "@oh-my-pi/pi-utils";
+import { $which } from "@wxyhgk/pi-utils";
 import { LRUCache } from "lru-cache/raw";
 import { withTimeoutSignal } from "./fetch-timeout";
 import * as git from "./git";

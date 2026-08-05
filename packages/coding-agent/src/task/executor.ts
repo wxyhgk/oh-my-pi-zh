@@ -5,10 +5,10 @@
  */
 
 import path from "node:path";
-import type { AgentEvent, AgentIdentity, AgentMessage, AgentTelemetryConfig } from "@oh-my-pi/pi-agent-core";
-import { recordHandoff, resolveTelemetry } from "@oh-my-pi/pi-agent-core";
-import type { Api, Model, ServiceTierByFamily, Usage } from "@oh-my-pi/pi-ai";
-import { logger, popLoopPhase, prompt, pushLoopPhase, untilAborted } from "@oh-my-pi/pi-utils";
+import type { AgentEvent, AgentIdentity, AgentMessage, AgentTelemetryConfig } from "@wxyhgk/pi-agent-core";
+import { recordHandoff, resolveTelemetry } from "@wxyhgk/pi-agent-core";
+import type { Api, Model, ServiceTierByFamily, Usage } from "@wxyhgk/pi-ai";
+import { logger, popLoopPhase, prompt, pushLoopPhase, untilAborted } from "@wxyhgk/pi-utils";
 import { AsyncJobManager } from "../async";
 import type { Rule } from "../capability/rule";
 import { ModelRegistry } from "../config/model-registry";

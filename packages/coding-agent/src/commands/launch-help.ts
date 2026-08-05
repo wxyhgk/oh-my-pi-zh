@@ -1,5 +1,5 @@
-import { Args, type CommandMetadata, Flags } from "@oh-my-pi/pi-utils/cli";
-import { APP_NAME } from "@oh-my-pi/pi-utils/dirs";
+import { Args, type CommandMetadata, Flags } from "@wxyhgk/pi-utils/cli";
+import { APP_NAME } from "@wxyhgk/pi-utils/dirs";
 import { CLI_THINKING_LEVELS } from "../cli/thinking-levels";
 import { SERVICE_TIER_OPENAI_VALUES } from "../config/service-tier";
 

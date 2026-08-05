@@ -13,7 +13,7 @@ import {
 	NotifyProtocol,
 	TERMINAL,
 	TERMINAL_ID,
-} from "@oh-my-pi/pi-tui";
+} from "@wxyhgk/pi-tui";
 
 /** Live values the debug view reads off the running TUI, not the static capability table. */
 export interface TerminalRuntimeState {

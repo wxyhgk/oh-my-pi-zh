@@ -1,5 +1,5 @@
-import { type Component, Container, Markdown } from "@oh-my-pi/pi-tui";
-import { formatBytes } from "@oh-my-pi/pi-utils";
+import { type Component, Container, Markdown } from "@wxyhgk/pi-tui";
+import { formatBytes } from "@wxyhgk/pi-utils";
 import { getMarkdownTheme, theme } from "../../modes/theme/theme";
 import { imageReferenceHyperlink, renderPlaceholders } from "../image-references";
 import { highlightMagicKeywords } from "../magic-keywords";

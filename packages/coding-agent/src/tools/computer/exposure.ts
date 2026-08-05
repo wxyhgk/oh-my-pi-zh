@@ -1,4 +1,4 @@
-import type { Model } from "@oh-my-pi/pi-ai";
+import type { Model } from "@wxyhgk/pi-ai";
 
 /** How the computer tool is represented to the active model. */
 export type ComputerExposureMode = "function" | "unavailable";

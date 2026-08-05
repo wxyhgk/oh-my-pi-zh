@@ -7,10 +7,10 @@ import {
 	resolveTelemetry,
 	type StreamFn,
 	type ThinkingLevel,
-} from "@oh-my-pi/pi-agent-core";
-import { generateHandoffFromContext, renderHandoffPrompt } from "@oh-my-pi/pi-agent-core/compaction";
-import type { Message, Model, ServiceTier, SimpleStreamOptions } from "@oh-my-pi/pi-ai";
-import { logger, Snowflake } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-agent-core";
+import { generateHandoffFromContext, renderHandoffPrompt } from "@wxyhgk/pi-agent-core/compaction";
+import type { Message, Model, ServiceTier, SimpleStreamOptions } from "@wxyhgk/pi-ai";
+import { logger, Snowflake } from "@wxyhgk/pi-utils";
 import type { ModelRegistry } from "../config/model-registry";
 import type { Settings } from "../config/settings";
 import type { ExtensionRunner, SessionBeforeSwitchResult } from "../extensibility/extensions";

@@ -20,7 +20,7 @@
  * a superseded revive) can never clobber a newer same-id ref.
  */
 
-import { logger } from "@oh-my-pi/pi-utils";
+import { logger } from "@wxyhgk/pi-utils";
 import type { AgentSession } from "../session/agent-session";
 import {
 	type AgentRef,

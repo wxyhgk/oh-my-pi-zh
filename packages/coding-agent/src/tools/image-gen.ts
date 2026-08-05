@@ -1,16 +1,16 @@
 import * as os from "node:os";
 import * as path from "node:path";
-import { type } from "@oh-my-pi/omptype";
-import { type ApiKey, type FetchImpl, getEnvApiKey, type Model, withAuth } from "@oh-my-pi/pi-ai";
-import { ProviderHttpError } from "@oh-my-pi/pi-ai/error";
+import { type } from "@wxyhgk/omptype";
+import { type ApiKey, type FetchImpl, getEnvApiKey, type Model, withAuth } from "@wxyhgk/pi-ai";
+import { ProviderHttpError } from "@wxyhgk/pi-ai/error";
 import {
 	CODEX_BASE_URL,
 	getCodexAccountId,
 	OPENAI_HEADER_VALUES,
 	OPENAI_HEADERS,
 	URL_PATHS,
-} from "@oh-my-pi/pi-catalog/wire/codex";
-import { getAntigravityUserAgent } from "@oh-my-pi/pi-catalog/wire/gemini-headers";
+} from "@wxyhgk/pi-catalog/wire/codex";
+import { getAntigravityUserAgent } from "@wxyhgk/pi-catalog/wire/gemini-headers";
 import {
 	$env,
 	isEnoent,
@@ -20,7 +20,7 @@ import {
 	readSseJson,
 	Snowflake,
 	untilAborted,
-} from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-utils";
 import packageJson from "../../package.json" with { type: "json" };
 import { isAuthenticated, type ModelRegistry } from "../config/model-registry";
 import { settings } from "../config/settings";

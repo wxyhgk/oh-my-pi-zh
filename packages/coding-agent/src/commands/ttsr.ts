@@ -7,7 +7,7 @@ import * as path from "node:path";
  * TTSR matching pipeline and reports which rules would trigger. `omp ttsr list`
  * shows every TTSR-registered rule the current project/user config would load.
  */
-import { Args, Command, Flags } from "@oh-my-pi/pi-utils/cli";
+import { Args, Command, Flags } from "@wxyhgk/pi-utils/cli";
 import { ttsrHelp as commandHelp } from "../cli/command-help";
 import {
 	runTtsrCommand,

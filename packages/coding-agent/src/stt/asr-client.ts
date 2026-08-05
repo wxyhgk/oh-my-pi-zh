@@ -1,4 +1,4 @@
-import { logger } from "@oh-my-pi/pi-utils";
+import { logger } from "@wxyhgk/pi-utils";
 import {
 	createUnavailableWorker,
 	createWorkerHandle,

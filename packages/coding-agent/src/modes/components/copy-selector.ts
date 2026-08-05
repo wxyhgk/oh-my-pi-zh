@@ -1,4 +1,4 @@
-import { type Component, matchesKey, padding, Text, truncateToWidth, visibleWidth } from "@oh-my-pi/pi-tui";
+import { type Component, matchesKey, padding, Text, truncateToWidth, visibleWidth } from "@wxyhgk/pi-tui";
 import { replaceTabs } from "../../tools/render-utils";
 import { highlightCode, theme } from "../theme/theme";
 import type { CopyTarget } from "../utils/copy-targets";

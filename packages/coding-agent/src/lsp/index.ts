@@ -6,8 +6,8 @@ import type {
 	AgentToolResult,
 	AgentToolUpdateCallback,
 	ToolApprovalDecision,
-} from "@oh-my-pi/pi-agent-core";
-import { isEnoent, logger, once, prompt, untilAborted } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-agent-core";
+import { isEnoent, logger, once, prompt, untilAborted } from "@wxyhgk/pi-utils";
 import type { BunFile } from "bun";
 import { type Theme, theme } from "../modes/theme/theme";
 import lspDescription from "../prompts/tools/lsp.md" with { type: "text" };

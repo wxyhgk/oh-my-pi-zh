@@ -1,8 +1,8 @@
-import type { Effort } from "@oh-my-pi/pi-catalog/effort";
-import { toFirepassWireModelId, toFireworksWireModelId } from "@oh-my-pi/pi-catalog/fireworks-model-id";
-import { isGlm52ReasoningEffortModelId, isKimiK3ModelId } from "@oh-my-pi/pi-catalog/identity";
-import { getSupportedEfforts } from "@oh-my-pi/pi-catalog/model-thinking";
-import { calculateCost } from "@oh-my-pi/pi-catalog/models";
+import type { Effort } from "@wxyhgk/pi-catalog/effort";
+import { toFirepassWireModelId, toFireworksWireModelId } from "@wxyhgk/pi-catalog/fireworks-model-id";
+import { isGlm52ReasoningEffortModelId, isKimiK3ModelId } from "@wxyhgk/pi-catalog/identity";
+import { getSupportedEfforts } from "@wxyhgk/pi-catalog/model-thinking";
+import { calculateCost } from "@wxyhgk/pi-catalog/models";
 import type {
 	OpenAICompat,
 	OpenAIReasoningDisableMode,
@@ -12,15 +12,15 @@ import type {
 	ResolvedOpenAIResponsesCompat,
 	ResolvedOpenAISharedCompat,
 	VercelGatewayRouting,
-} from "@oh-my-pi/pi-catalog/types";
-import { parseAlibabaTokenPlanCredential } from "@oh-my-pi/pi-catalog/wire/alibaba-token-plan";
+} from "@wxyhgk/pi-catalog/types";
+import { parseAlibabaTokenPlanCredential } from "@wxyhgk/pi-catalog/wire/alibaba-token-plan";
 import {
 	COREWEAVE_PROJECT_HEADER,
 	coreWeaveProjectHeaders,
 	hasCoreWeaveProjectHeader,
 	removeBlankCoreWeaveProjectHeaders,
-} from "@oh-my-pi/pi-catalog/wire/coreweave";
-import { parseGitHubCopilotApiKey } from "@oh-my-pi/pi-catalog/wire/github-copilot";
+} from "@wxyhgk/pi-catalog/wire/coreweave";
+import { parseGitHubCopilotApiKey } from "@wxyhgk/pi-catalog/wire/github-copilot";
 import {
 	$env,
 	classifyJsonPrefix,
@@ -31,7 +31,7 @@ import {
 	parseStreamingJsonThrottled,
 	stringifyJson,
 	structuredCloneJSON,
-} from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-utils";
 import * as AIError from "../error";
 import {
 	type Api,

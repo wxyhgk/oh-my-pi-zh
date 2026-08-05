@@ -7,7 +7,7 @@
  */
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { isRecord } from "@oh-my-pi/pi-utils";
+import { isRecord } from "@wxyhgk/pi-utils";
 import type { ThemeColor } from "../modes/theme/theme";
 export type FindingPriority = "P0" | "P1" | "P2" | "P3";
 

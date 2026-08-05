@@ -3,10 +3,10 @@ import {
 	Type as OmpType,
 	type TypeBuilder as OmpTypeBuilder,
 	type TUnsafe,
-} from "@oh-my-pi/omptype/typebox";
-import { upgradeJsonSchemaTo202012, validateJsonSchemaValue } from "@oh-my-pi/pi-ai/utils/schema";
+} from "@wxyhgk/omptype/typebox";
+import { upgradeJsonSchemaTo202012, validateJsonSchemaValue } from "@wxyhgk/pi-ai/utils/schema";
 
-export * from "@oh-my-pi/omptype/typebox";
+export * from "@wxyhgk/omptype/typebox";
 
 const VALIDATION_FAILURE = Symbol("pi.typebox.validationFailure");
 

@@ -12,10 +12,10 @@ import type {
 	DesktopSessionOptions,
 	DesktopWindow,
 	PointerOptions,
-} from "@oh-my-pi/pi-natives";
-import { createDesktopSession } from "@oh-my-pi/pi-natives/desktop";
-import * as postmortem from "@oh-my-pi/pi-utils/postmortem";
-import { Snowflake } from "@oh-my-pi/pi-utils/snowflake";
+} from "@wxyhgk/pi-natives";
+import { createDesktopSession } from "@wxyhgk/pi-natives/desktop";
+import * as postmortem from "@wxyhgk/pi-utils/postmortem";
+import { Snowflake } from "@wxyhgk/pi-utils/snowflake";
 import { JsRuntime, type RuntimeHooks } from "../../eval/js/shared/runtime";
 import { copyToClipboard, readTextFromClipboard } from "../../utils/clipboard";
 import { cloneSafe, RunOutput } from "../browser/run-output";

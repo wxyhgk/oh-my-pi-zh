@@ -1,15 +1,15 @@
-import { type Type, type } from "@oh-my-pi/omptype";
+import { type Type, type } from "@wxyhgk/omptype";
 import type {
 	AgentTool,
 	AgentToolContext,
 	AgentToolResult,
 	AgentToolUpdateCallback,
 	ToolApprovalDecision,
-} from "@oh-my-pi/pi-agent-core";
-import type { Model } from "@oh-my-pi/pi-ai";
-import { isClaudeModelId } from "@oh-my-pi/pi-catalog/identity";
-import type { DesktopCapabilities } from "@oh-my-pi/pi-natives";
-import { once, prompt } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-agent-core";
+import type { Model } from "@wxyhgk/pi-ai";
+import { isClaudeModelId } from "@wxyhgk/pi-catalog/identity";
+import type { DesktopCapabilities } from "@wxyhgk/pi-natives";
+import { once, prompt } from "@wxyhgk/pi-utils";
 import { callSessionTool } from "../eval/js/tool-bridge";
 import computerDescription from "../prompts/tools/computer.md" with { type: "text" };
 import { enforceInlineByteCap } from "../session/streaming-output";

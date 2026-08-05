@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@oh-my-pi/pi-mnemopi",
+  "name": "@wxyhgk/pi-mnemopi",
   "version": "17.2.8",
   "description": "Local SQLite memory engine for Oh My Pi agents",
   "homepage": "https://omp.sh",
@@ -39,10 +39,10 @@
     "fmt": "biome format --write ."
   },
   "dependencies": {
-    "@oh-my-pi/pi-ai": "catalog:",
-    "@oh-my-pi/pi-catalog": "catalog:",
-    "@oh-my-pi/pi-natives": "catalog:",
-    "@oh-my-pi/pi-utils": "catalog:",
+    "@wxyhgk/pi-ai": "catalog:",
+    "@wxyhgk/pi-catalog": "catalog:",
+    "@wxyhgk/pi-natives": "catalog:",
+    "@wxyhgk/pi-utils": "catalog:",
     "lru-cache": "catalog:"
   },
   "peerDependencies": {

@@ -1,5 +1,5 @@
-import { type ApiKey, type FetchImpl, withAuth } from "@oh-my-pi/pi-ai";
-import * as AIError from "@oh-my-pi/pi-ai/error";
+import { type ApiKey, type FetchImpl, withAuth } from "@wxyhgk/pi-ai";
+import * as AIError from "@wxyhgk/pi-ai/error";
 
 import { getDiagnostics } from "./diagnostics";
 import { EXTRACTION_SYSTEM_PROMPT, EXTRACTION_USER_TEMPLATE } from "./prompts";

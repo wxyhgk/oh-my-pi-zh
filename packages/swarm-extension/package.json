@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@oh-my-pi/swarm-extension",
+  "name": "@wxyhgk/swarm-extension",
   "version": "17.2.8",
   "description": "Swarm orchestration extension for omp",
   "homepage": "https://omp.sh",
@@ -31,13 +31,13 @@
     "fmt": "biome format --write ."
   },
   "dependencies": {
-    "@oh-my-pi/pi-utils": "workspace:*"
+    "@wxyhgk/pi-utils": "workspace:*"
   },
   "devDependencies": {
     "@types/bun": "^1.3.14"
   },
   "peerDependencies": {
-    "@oh-my-pi/pi-coding-agent": "^16"
+    "@wxyhgk/pi-coding-agent": "catalog:"
   },
   "engines": {
     "bun": ">=1.3.14"

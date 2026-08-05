@@ -1,7 +1,7 @@
 import type { Dirent } from "node:fs";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
-import { $which } from "@oh-my-pi/pi-utils";
+import { $which } from "@wxyhgk/pi-utils";
 import { $ } from "bun";
 
 const STATS_PROBE_TIMEOUT_MS = 500;

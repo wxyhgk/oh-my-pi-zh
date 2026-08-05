@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@oh-my-pi/pi-wire",
+  "name": "@wxyhgk/pi-wire",
   "version": "17.2.8",
   "description": "Shared wire protocol types for Oh My Pi packages",
   "homepage": "https://omp.sh",

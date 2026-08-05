@@ -1,8 +1,8 @@
-import { type } from "@oh-my-pi/omptype";
-import type { ThinkingLevel } from "@oh-my-pi/pi-agent-core";
-import type { Api, ApiKey, AssistantMessage, Model } from "@oh-my-pi/pi-ai";
-import { completeSimple, validateToolCall } from "@oh-my-pi/pi-ai";
-import { prompt } from "@oh-my-pi/pi-utils";
+import { type } from "@wxyhgk/omptype";
+import type { ThinkingLevel } from "@wxyhgk/pi-agent-core";
+import type { Api, ApiKey, AssistantMessage, Model } from "@wxyhgk/pi-ai";
+import { completeSimple, validateToolCall } from "@wxyhgk/pi-ai";
+import { prompt } from "@wxyhgk/pi-utils";
 import summarySystemPrompt from "../../commit/prompts/summary-system.md" with { type: "text" };
 import summaryUserPrompt from "../../commit/prompts/summary-user.md" with { type: "text" };
 import type { CommitSummary } from "../../commit/types";

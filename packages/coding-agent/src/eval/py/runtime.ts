@@ -7,7 +7,7 @@
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import { $env, $which, getPythonEnvDir } from "@oh-my-pi/pi-utils";
+import { $env, $which, getPythonEnvDir } from "@wxyhgk/pi-utils";
 
 const DEFAULT_ENV_ALLOWLIST = new Set([
 	"PATH",

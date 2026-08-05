@@ -10,7 +10,7 @@
  * touching the persisted settings file.
  */
 
-import { logger } from "@oh-my-pi/pi-utils";
+import { logger } from "@wxyhgk/pi-utils";
 import type { Settings } from "../config/settings";
 
 export type HindsightScoping = "global" | "per-project" | "per-project-tagged";

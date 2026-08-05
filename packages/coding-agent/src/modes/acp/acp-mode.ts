@@ -1,6 +1,6 @@
 import * as stream from "node:stream";
 import { AgentSideConnection, ndJsonStream, type Stream } from "@agentclientprotocol/sdk";
-import { postmortem } from "@oh-my-pi/pi-utils";
+import { postmortem } from "@wxyhgk/pi-utils";
 import type { AgentSession } from "../../session/agent-session";
 import { AcpAgent } from "./acp-agent";
 

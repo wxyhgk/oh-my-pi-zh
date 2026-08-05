@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@oh-my-pi/hashline",
+  "name": "@wxyhgk/hashline",
   "version": "17.2.8",
   "description": "Hashline: a compact, line-anchored patch language and applier. Pluggable FS/IO so it works over disk, in-memory, or any custom backend.",
   "homepage": "https://omp.sh",
@@ -33,7 +33,7 @@
     "fmt": "biome format --write ."
   },
   "dependencies": {
-    "@oh-my-pi/pi-natives": "catalog:",
+    "@wxyhgk/pi-natives": "catalog:",
     "lru-cache": "catalog:"
   },
   "devDependencies": {

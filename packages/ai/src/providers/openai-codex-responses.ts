@@ -1,14 +1,14 @@
 import * as os from "node:os";
 import { scheduler } from "node:timers/promises";
-import { type } from "@oh-my-pi/omptype";
-import { calculateCost } from "@oh-my-pi/pi-catalog/models";
+import { type } from "@wxyhgk/omptype";
+import { calculateCost } from "@wxyhgk/pi-catalog/models";
 import {
 	CODEX_BASE_URL,
 	CODEX_CLIENT_VERSION,
 	getCodexAccountId,
 	OPENAI_HEADER_VALUES,
 	OPENAI_HEADERS,
-} from "@oh-my-pi/pi-catalog/wire/codex";
+} from "@wxyhgk/pi-catalog/wire/codex";
 import {
 	$env,
 	$flag,
@@ -19,7 +19,7 @@ import {
 	parseStreamingJson,
 	readSseJson,
 	structuredCloneJSON,
-} from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-utils";
 import packageJson from "../../package.json" with { type: "json" };
 import * as AIError from "../error";
 import { getEnvApiKey, isOfficialCodexApiUrl } from "../stream";

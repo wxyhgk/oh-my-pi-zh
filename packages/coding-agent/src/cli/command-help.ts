@@ -1,4 +1,4 @@
-import type { CommandMetadata } from "@oh-my-pi/pi-utils/cli";
+import type { CommandMetadata } from "@wxyhgk/pi-utils/cli";
 
 export const acpHelp = {
 	description: "通过 stdio 以 ACP(Agent Client Protocol)服务器模式运行 Oh My Pi",

@@ -1,6 +1,6 @@
 {
   "type": "module",
-  "name": "@oh-my-pi/pi-tui",
+  "name": "@wxyhgk/pi-tui",
   "version": "17.2.8",
   "description": "Terminal User Interface library with differential rendering for efficient text-based applications",
   "homepage": "https://omp.sh",
@@ -37,8 +37,8 @@
     "fmt": "biome format --write ."
   },
   "dependencies": {
-    "@oh-my-pi/pi-natives": "catalog:",
-    "@oh-my-pi/pi-utils": "catalog:",
+    "@wxyhgk/pi-natives": "catalog:",
+    "@wxyhgk/pi-utils": "catalog:",
     "lru-cache": "catalog:",
     "marked": "catalog:"
   },

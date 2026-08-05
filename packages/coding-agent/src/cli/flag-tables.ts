@@ -20,7 +20,7 @@
  * up automatically, so the two cannot drift out of sync.
  *
  * IMPORT RULE: this module MUST NOT import any runtime value from
- * `@oh-my-pi/pi-utils` (or anything that transitively does). That package's
+ * `@wxyhgk/pi-utils` (or anything that transitively does). That package's
  * `env.ts` eagerly loads `.env` files from `getAgentDir()` during module
  * initialization, which would race the profile bootstrap. Type-only imports
  * are erased at runtime and are therefore safe.
@@ -41,7 +41,7 @@ import { CliUsageError } from "./usage-error";
  * passes it to each {@link STRING_SETTERS} call.
  *
  * Keeping these out of the setter closures means this module stays free of
- * runtime imports from `@oh-my-pi/pi-utils`, which is the whole reason it can
+ * runtime imports from `@wxyhgk/pi-utils`, which is the whole reason it can
  * be safely imported by `profile-bootstrap.ts` before `setProfile` runs.
  */
 export interface ParseDeps {

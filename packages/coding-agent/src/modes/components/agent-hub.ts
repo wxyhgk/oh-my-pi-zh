@@ -13,9 +13,9 @@
  *
  * Replaces the old SessionObserverOverlayComponent (ctrl+s observer).
  */
-import { type AgentTool, ThinkingLevel } from "@oh-my-pi/pi-agent-core";
-import { Container, Ellipsis, matchesKey, type OverlayHandle, padding, type TUI, visibleWidth } from "@oh-my-pi/pi-tui";
-import { formatAge, getProjectDir, logger } from "@oh-my-pi/pi-utils";
+import { type AgentTool, ThinkingLevel } from "@wxyhgk/pi-agent-core";
+import { Container, Ellipsis, matchesKey, type OverlayHandle, padding, type TUI, visibleWidth } from "@wxyhgk/pi-tui";
+import { formatAge, getProjectDir, logger } from "@wxyhgk/pi-utils";
 import type { KeyId } from "../../config/keybindings";
 import type { MessageRenderer } from "../../extensibility/extensions/types";
 import { IrcBus } from "../../irc/bus";

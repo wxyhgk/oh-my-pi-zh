@@ -1,4 +1,4 @@
-export { type Type, type } from "@oh-my-pi/omptype";
+export { type Type, type } from "@wxyhgk/omptype";
 export { type ZodType, z } from "zod/v4";
 export * from "./api-registry";
 export type * from "./auth-broker";

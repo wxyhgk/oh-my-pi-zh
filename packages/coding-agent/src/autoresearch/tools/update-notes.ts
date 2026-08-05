@@ -1,5 +1,5 @@
-import { type } from "@oh-my-pi/omptype";
-import { Text } from "@oh-my-pi/pi-tui";
+import { type } from "@wxyhgk/omptype";
+import { Text } from "@wxyhgk/pi-tui";
 import type { ToolDefinition } from "../../extensibility/extensions";
 import type { Theme } from "../../modes/theme/theme";
 import { replaceTabs, truncateToWidth } from "../../tools/render-utils";

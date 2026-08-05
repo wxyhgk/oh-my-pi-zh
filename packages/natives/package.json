@@ -1,5 +1,5 @@
 {
-  "name": "@oh-my-pi/pi-natives",
+  "name": "@wxyhgk/pi-natives",
   "version": "17.2.8",
   "description": "Native Rust bindings for audio, WebRTC, grep, clipboard, image processing, syntax highlighting, PTY, and shell operations via N-API",
   "type": "module",

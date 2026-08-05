@@ -1,5 +1,5 @@
 import * as path from "node:path";
-import { getDaemonRuntimeDir } from "@oh-my-pi/pi-utils";
+import { getDaemonRuntimeDir } from "@wxyhgk/pi-utils";
 
 /** Resolve the private runtime directory shared by omp processes in one project directory. */
 export { getDaemonRuntimeDir as daemonRuntimeDir };

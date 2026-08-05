@@ -28,9 +28,9 @@
  */
 
 import { parseArgs } from "node:util";
-import { type Api, AuthStorage, completeSimple, type Model, SqliteAuthCredentialStore } from "@oh-my-pi/pi-ai";
-import { type GeneratedProvider, getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { getAgentDbPath } from "@oh-my-pi/pi-utils";
+import { type Api, AuthStorage, completeSimple, type Model, SqliteAuthCredentialStore } from "@wxyhgk/pi-ai";
+import { type GeneratedProvider, getBundledModel } from "@wxyhgk/pi-catalog/models";
+import { getAgentDbPath } from "@wxyhgk/pi-utils";
 
 const DEFAULT_TINY = "openrouter/inclusionai/ling-2.6-flash";
 const DEFAULT_SYNTH = "openrouter/openai/gpt-oss-120b";

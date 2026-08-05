@@ -22,7 +22,7 @@ import { Database } from "bun:sqlite";
  */
 import * as os from "node:os";
 import * as path from "node:path";
-import { prompt } from "@oh-my-pi/pi-utils";
+import { prompt } from "@wxyhgk/pi-utils";
 import titleSystemPrompt from "../src/prompts/system/title-system.md" with { type: "text" };
 import { preprocessTinyMessage } from "../src/tiny/message-preproc";
 import { isTinyTitleLocalModelKey } from "../src/tiny/models";

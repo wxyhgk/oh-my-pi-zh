@@ -23,8 +23,8 @@
  * massage shapes the LLM almost got right.
  */
 
-import { type Type, type } from "@oh-my-pi/omptype";
-import { structuredCloneJSON } from "@oh-my-pi/pi-utils";
+import { type Type, type } from "@wxyhgk/omptype";
+import { structuredCloneJSON } from "@wxyhgk/pi-utils";
 import type { ZodType } from "zod/v4";
 import type { $ZodIssue as ZodIssue } from "zod/v4/core";
 import * as AIError from "../error";

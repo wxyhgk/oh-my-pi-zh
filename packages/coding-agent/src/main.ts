@@ -7,8 +7,8 @@
 import * as fsSync from "node:fs";
 import * as os from "node:os";
 import { createInterface } from "node:readline/promises";
-import { EventLoopKeepalive } from "@oh-my-pi/pi-agent-core";
-import type { ImageContent } from "@oh-my-pi/pi-ai";
+import { EventLoopKeepalive } from "@wxyhgk/pi-agent-core";
+import type { ImageContent } from "@wxyhgk/pi-ai";
 import {
 	$env,
 	directoryExists,
@@ -20,7 +20,7 @@ import {
 	setInteractiveHost,
 	setProjectDir,
 	VERSION,
-} from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-utils";
 import chalk from "chalk";
 import { reset as resetCapabilities } from "./capability";
 import { type Args, reportUnrecognizedFlags } from "./cli/args";
@@ -113,7 +113,7 @@ async function checkForNewVersion(currentVersion: string): Promise<string | unde
 		return;
 	}
 	try {
-		const response = await fetch("https://registry.npmjs.org/@oh-my-pi/pi-coding-agent/latest", {
+		const response = await fetch("https://registry.npmjs.org/@wxyhgk/pi-coding-agent/latest", {
 			signal: withTimeoutSignal(5_000),
 		});
 		if (!response.ok) return undefined;

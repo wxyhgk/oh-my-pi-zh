@@ -1,4 +1,4 @@
-import { parseFlag } from "@oh-my-pi/pi-utils";
+import { parseFlag } from "@wxyhgk/pi-utils";
 import { ToolError } from "../../tool-errors";
 import type { Observation, ObservationEntry } from "../tab-protocol";
 

@@ -9,9 +9,9 @@
  * drains pending messages; `list` shows every addressable peer.
  */
 
-import type { AgentToolResult } from "@oh-my-pi/pi-agent-core";
-import { type Component, Text } from "@oh-my-pi/pi-tui";
-import { formatAge, formatDuration } from "@oh-my-pi/pi-utils";
+import type { AgentToolResult } from "@wxyhgk/pi-agent-core";
+import { type Component, Text } from "@wxyhgk/pi-tui";
+import { formatAge, formatDuration } from "@wxyhgk/pi-utils";
 import type { Settings } from "../../config/settings";
 import type { RenderResultOptions } from "../../extensibility/custom-tools/types";
 import { IrcBus, type IrcDeliveryReceipt, type IrcMessage } from "../../irc/bus";

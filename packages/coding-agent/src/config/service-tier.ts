@@ -1,4 +1,4 @@
-import type { ServiceTier, ServiceTierByFamily, ServiceTierFamily } from "@oh-my-pi/pi-ai";
+import type { ServiceTier, ServiceTierByFamily, ServiceTierFamily } from "@wxyhgk/pi-ai";
 import type { SubmenuOption } from "./settings-schema";
 
 /**

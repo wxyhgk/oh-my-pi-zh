@@ -4,7 +4,7 @@
  * Provides diff string generation and the replace-mode edit logic
  * used when not in patch mode.
  */
-import { diffLines, structuredPatchHunks } from "@oh-my-pi/pi-natives";
+import { diffLines, structuredPatchHunks } from "@wxyhgk/pi-natives";
 import { resolveToCwd } from "../tools/path-utils";
 import { type BlockContextSource, findBlockContextLines } from "../utils/block-context";
 import { DEFAULT_FUZZY_THRESHOLD, EditMatchError, findMatch } from "./modes/replace";

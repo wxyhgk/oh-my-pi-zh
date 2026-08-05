@@ -9,7 +9,7 @@
  */
 import * as os from "node:os";
 import { scheduler } from "node:timers/promises";
-import { getInstallId, logger } from "@oh-my-pi/pi-utils";
+import { getInstallId, logger } from "@wxyhgk/pi-utils";
 import {
 	type AuthCredential,
 	type AuthCredentialSnapshotEntry,

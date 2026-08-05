@@ -1,15 +1,15 @@
 import * as fs from "node:fs";
-import { type } from "@oh-my-pi/omptype";
+import { type } from "@wxyhgk/omptype";
 import type {
 	AgentTool,
 	AgentToolContext,
 	AgentToolResult,
 	AgentToolUpdateCallback,
 	ToolApprovalDecision,
-} from "@oh-my-pi/pi-agent-core";
-import type { Component } from "@oh-my-pi/pi-tui";
-import { ImageProtocol, TERMINAL } from "@oh-my-pi/pi-tui";
-import { getProjectDir, isEnoent, logger, prompt } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-agent-core";
+import type { Component } from "@wxyhgk/pi-tui";
+import { ImageProtocol, TERMINAL } from "@wxyhgk/pi-tui";
+import { getProjectDir, isEnoent, logger, prompt } from "@wxyhgk/pi-utils";
 import type { Settings } from "../config/settings";
 import { applyDirenvPreflight, type BashResult, executeBash } from "../exec/bash-executor";
 import type { RenderResultOptions } from "../extensibility/custom-tools/types";

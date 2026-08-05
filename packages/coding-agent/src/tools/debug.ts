@@ -1,5 +1,5 @@
 import * as fs from "node:fs/promises";
-import { type } from "@oh-my-pi/omptype";
+import { type } from "@wxyhgk/omptype";
 import type {
 	AgentTool,
 	AgentToolContext,
@@ -7,10 +7,10 @@ import type {
 	AgentToolUpdateCallback,
 	RenderResultOptions,
 	ToolApprovalDecision,
-} from "@oh-my-pi/pi-agent-core";
-import type { ToolExample } from "@oh-my-pi/pi-ai";
-import { type Component, Text } from "@oh-my-pi/pi-tui";
-import { isEnoent, prompt } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-agent-core";
+import type { ToolExample } from "@wxyhgk/pi-ai";
+import { type Component, Text } from "@wxyhgk/pi-tui";
+import { isEnoent, prompt } from "@wxyhgk/pi-utils";
 import {
 	type DapBreakpointRecord,
 	type DapCapabilities,

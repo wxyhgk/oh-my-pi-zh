@@ -6,9 +6,9 @@
  */
 import * as fs from "node:fs";
 import * as path from "node:path";
-import * as arktype from "@oh-my-pi/omptype";
-import * as zodModule from "@oh-my-pi/omptype/zod";
-import { getAgentDir, getProjectDir, isEnoent, logger } from "@oh-my-pi/pi-utils";
+import * as arktype from "@wxyhgk/omptype";
+import * as zodModule from "@wxyhgk/omptype/zod";
+import { getAgentDir, getProjectDir, isEnoent, logger } from "@wxyhgk/pi-utils";
 import { getConfigDirs } from "../../config";
 import { execCommand } from "../../exec/exec";
 // Runtime self-reference: dereference this namespace only inside loader functions to keep the index.ts cycle safe.

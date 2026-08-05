@@ -5,10 +5,10 @@
  * CustomToolAPI to avoid import resolution issues with custom tools loaded from user directories.
  */
 import * as path from "node:path";
-import { type } from "@oh-my-pi/omptype";
-import * as zodModule from "@oh-my-pi/omptype/zod";
-import type { AgentToolResult } from "@oh-my-pi/pi-agent-core";
-import { logger } from "@oh-my-pi/pi-utils";
+import { type } from "@wxyhgk/omptype";
+import * as zodModule from "@wxyhgk/omptype/zod";
+import type { AgentToolResult } from "@wxyhgk/pi-agent-core";
+import { logger } from "@wxyhgk/pi-utils";
 import { toolCapability } from "../../capability/tool";
 import { type CustomTool, loadCapability } from "../../discovery";
 import type { ExecOptions } from "../../exec/exec";

@@ -1,4 +1,4 @@
-import { Text } from "@oh-my-pi/pi-tui";
+import { Text } from "@wxyhgk/pi-tui";
 import { theme } from "../../modes/theme/theme";
 
 /**

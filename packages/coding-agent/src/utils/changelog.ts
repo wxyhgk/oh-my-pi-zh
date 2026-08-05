@@ -1,5 +1,5 @@
 import * as path from "node:path";
-import { getLastChangelogVersionPath, isEnoent, logger } from "@oh-my-pi/pi-utils";
+import { getLastChangelogVersionPath, isEnoent, logger } from "@wxyhgk/pi-utils";
 import bundledChangelogPath from "../../CHANGELOG.md" with { type: "file" };
 import type { SettingValue } from "../config/settings";
 

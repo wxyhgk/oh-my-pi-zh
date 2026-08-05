@@ -9,11 +9,11 @@
  * Fully mouse-navigable (hover, wheel, click). Session-only switching lives
  * in the compact alt+p picker ({@link ./model-picker}).
  */
-import { ThinkingLevel } from "@oh-my-pi/pi-agent-core";
-import type { Model } from "@oh-my-pi/pi-ai";
-import { getOAuthProviders } from "@oh-my-pi/pi-ai/oauth";
-import { getSupportedEfforts } from "@oh-my-pi/pi-catalog/model-thinking";
-import { getCatalogProviderEntry } from "@oh-my-pi/pi-catalog/provider-models";
+import { ThinkingLevel } from "@wxyhgk/pi-agent-core";
+import type { Model } from "@wxyhgk/pi-ai";
+import { getOAuthProviders } from "@wxyhgk/pi-ai/oauth";
+import { getSupportedEfforts } from "@wxyhgk/pi-catalog/model-thinking";
+import { getCatalogProviderEntry } from "@wxyhgk/pi-catalog/provider-models";
 import {
 	type Component,
 	extractPrintableText,
@@ -26,7 +26,7 @@ import {
 	type TUI,
 	truncateToWidth,
 	visibleWidth,
-} from "@oh-my-pi/pi-tui";
+} from "@wxyhgk/pi-tui";
 import type { ModelRegistry } from "../../config/model-registry";
 import { type ModelRoleLookup, type ResolvedModelRoleValue, resolveModelRoleValue } from "../../config/model-resolver";
 import { getKnownRoleIds, getRoleInfo } from "../../config/model-roles";

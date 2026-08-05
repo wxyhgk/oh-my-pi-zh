@@ -4,8 +4,8 @@
  * Tree-based rendering with collapsed/expanded states for web search results.
  */
 
-import type { Component } from "@oh-my-pi/pi-tui";
-import { Markdown, Text } from "@oh-my-pi/pi-tui";
+import type { Component } from "@wxyhgk/pi-tui";
+import { Markdown, Text } from "@wxyhgk/pi-tui";
 import type { RenderResultOptions } from "../../extensibility/custom-tools/types";
 import { getMarkdownTheme, type Theme } from "../../modes/theme/theme";
 import {

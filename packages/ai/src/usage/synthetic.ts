@@ -1,4 +1,4 @@
-import { isRecord } from "@oh-my-pi/pi-utils/type-guards";
+import { isRecord } from "@wxyhgk/pi-utils/type-guards";
 import type {
 	UsageAmount,
 	UsageFetchContext,

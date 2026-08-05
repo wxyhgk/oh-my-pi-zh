@@ -1,15 +1,15 @@
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { type } from "@oh-my-pi/omptype";
-import type { ThinkingLevel } from "@oh-my-pi/pi-agent-core";
-import type { Effort } from "@oh-my-pi/pi-ai";
+import { type } from "@wxyhgk/omptype";
+import type { ThinkingLevel } from "@wxyhgk/pi-agent-core";
+import type { Effort } from "@wxyhgk/pi-ai";
 import {
 	detectMacOSAppearance,
 	MacAppearanceObserver,
 	type HighlightColors as NativeHighlightColors,
 	highlightCode as nativeHighlightCode,
 	supportsLanguage as nativeSupportsLanguage,
-} from "@oh-my-pi/pi-natives";
+} from "@wxyhgk/pi-natives";
 import type {
 	EditorTheme,
 	MarkdownTheme,
@@ -18,8 +18,8 @@ import type {
 	SymbolTheme,
 	Terminal,
 	TerminalAppearance,
-} from "@oh-my-pi/pi-tui";
-import { adjustHsv, colorLuma, getCustomThemesDir, isEnoent, logger, relativeLuminance } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-tui";
+import { adjustHsv, colorLuma, getCustomThemesDir, isEnoent, logger, relativeLuminance } from "@wxyhgk/pi-utils";
 import chalk from "chalk";
 import { LRUCache } from "lru-cache/raw";
 // Embed theme JSON files at build time
