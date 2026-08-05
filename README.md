@@ -2,6 +2,46 @@
   <img src="https://github.com/can1357/oh-my-pi/blob/main/assets/hero.png?raw=true" alt="omp">
 </p>
 
+<div align="center">
+
+# 简体中文汉化版 🇨🇳
+
+> **这是 [can1357/oh-my-pi](https://github.com/can1357/oh-my-pi) 的简体中文汉化分支。**
+> 启动命令为 **`omp-zh`**,与官方 `omp` 互不冲突,可同时安装使用。
+
+</div>
+
+## 我们做了什么
+
+在保持上游全部功能不变的前提下,完成了**全量中文化**:
+
+| 范围 | 内容 |
+|---|---|
+| **界面** | 设置面板(1200+ 项)、70 个斜杠命令、TUI 组件、状态栏、CLI 帮助与输出全部译为中文 |
+| **提示词** | 系统提示词、工具描述、Agent 角色提示词(159 个文件)译为中文,模型回复默认中文 |
+| **文档** | `docs/` 全部文档(124 篇)与 README 翻译为中文 |
+| **命令名** | 启动命令改为 `omp-zh`,避免与官方版冲突;`--help`/补全/示例同步更新 |
+
+**保留英文的部分**(技术原因):命令名、工具名(如 `inspect_image`)、配置键、模型/提供商名、URL/路径/环境变量、以及参与程序逻辑判断的字符串。汉化过程中未改动任何功能逻辑,测试套件通过(仅剩少量与本机环境相关的预存失败)。
+
+> [!IMPORTANT]
+> 汉化版基于 [can1357/oh-my-pi](https://github.com/can1357/oh-my-pi)(MIT License)派生。
+> 版权归原作者 Mario Zechner 与 Can Bölük 所有,详见 [LICENSE](LICENSE)。
+> 上游更新时,可用 `git fetch` 与 `git merge` 同步,再修复可能的合并冲突。
+
+## 从源码运行(当前方式)
+
+```sh
+git clone <本仓库地址> oh-my-pi-hanhua
+cd oh-my-pi-hanhua
+bun install
+bun --cwd=packages/natives run build   # 构建原生模块(需 bazelisk、cmake)
+sh scripts/link-omp.sh                 # 链接 omp-zh 到 ~/.bun/bin
+omp-zh                                # 启动
+```
+
+---
+
 <p align="center">
   <strong>一个内置 IDE 能力的编码 Agent。</strong>
   <strong><a href="https://omp.sh">omp.sh</a></strong>
@@ -71,13 +111,13 @@ macOS · Linux · Windows · bun ≥ 1.3.14
 
 ```sh
 # zsh — 添加到 ~/.zshrc(或把输出写入 $fpath 中的某个文件)
-eval "$(omp completions zsh)"
+eval "$(omp-zh completions zsh)"
 
 # bash — 添加到 ~/.bashrc
-eval "$(omp completions bash)"
+eval "$(omp-zh completions bash)"
 
 # fish
-omp completions fish > ~/.config/fish/completions/omp.fish
+omp-zh completions fish > ~/.config/fish/completions/omp.fish
 ```
 
 ## 每个工具,都_拉满性能_。
@@ -150,7 +190,7 @@ _[观看演示 ↗](https://omp.sh/clips/advisor.mp4)_
 
 ### 07 · 把链接丢给别人,他们就直接进来。
 
-/collab 把你的实时会话挂到中继上,返回一个链接——外加一个二维码。队友用 omp join 从另一个终端加入,或者直接在浏览器里打开。共享读写权限来结对操作同一个 Agent,或者用 /collab view 生成只读链接,任何人都能观看但无人能操控。帧在客户端封签;中继永远看不到你的密钥。
+/collab 把你的实时会话挂到中继上,返回一个链接——外加一个二维码。队友用 omp-zh join 从另一个终端加入,或者直接在浏览器里打开。共享读写权限来结对操作同一个 Agent,或者用 /collab view 生成只读链接,任何人都能观看但无人能操控。帧在客户端封签;中继永远看不到你的密钥。
 
 ![omp TUI:/collab view 打印 'Collab session started!',包含一条 omp join 命令、一个 my.omp.sh 浏览器链接、提示 'Anyone with this link can watch the session but cannot prompt the agent',以及一个大号可扫描二维码。](https://omp.sh/clips/collab-poster.webp)
 
@@ -343,7 +383,7 @@ providers:
         maxTokens: 32000
 ```
 
-运行 `omp models spark` 验证发现。然后运行 `omp setup`,在默认模型步骤中选择该模型,或在会话中打开 `/model` 把它分配给 `default` 角色。
+运行 `omp-zh models spark` 验证发现。然后运行 `omp-zh setup`,在默认模型步骤中选择该模型,或在会话中打开 `/model` 把它分配给 `default` 角色。
 
 不想用选择器预配置默认值,就把选择器加进 `~/.omp/agent/config.yml`:
 
@@ -471,7 +511,7 @@ Agent 拿到的是结构化内容,而不是剥掉标签的 HTML。
 
 ## 四个入口:_交互式_、_一次性_、RPC 和 ACP。
 
-同一引擎,四个外壳。`omp` 运行 TUI。`omp -p` 回答单个提示词后退出。Node SDK 把会话嵌进你的进程。`omp --mode rpc` 和 `omp acp` 通过 stdio 把方向盘交给另一个程序。
+同一引擎,四个外壳。`omp-zh` 运行 TUI。`omp-zh -p` 回答单个提示词后退出。Node SDK 把会话嵌进你的进程。`omp-zh --mode rpc` 和 `omp-zh acp` 通过 stdio 把方向盘交给另一个程序。
 
 ### 交互式——拿不准时,Agent 会问
 
@@ -509,12 +549,12 @@ await session.prompt("list .ts files");
 
 ### RPC — 通过 stdio 驱动
 
-`omp --mode rpc`
+`omp-zh --mode rpc`
 
 适合非 Node 嵌入者,或当你想要进程隔离时。NDJSON 命令进,响应与事件帧出。`--mode rpc-ui` 额外把工具卡片、选择器和对话框作为 `extension_ui_request` 帧发出,由宿主应答。
 
 ```
-$ omp --mode rpc --no-session
+$ omp-zh --mode rpc --no-session
 > {"id":"r1","type":"prompt","message":"list .ts files"}
 < {"id":"r1","type":"response", ...}
 > {"id":"r2","type":"set_model","provider":"anthropic","modelId":"sonnet-4.5"}
@@ -523,7 +563,7 @@ $ omp --mode rpc --no-session
 
 ### ACP — 与编辑器对话
 
-`omp acp`
+`omp-zh acp`
 
 基于 JSON-RPC 的 [Agent Client Protocol](https://github.com/zed-industries/agent-client-protocol)。当编辑器声明能力时,工具 I/O 走该协议,写入由 `session/request_permission` 把关。
 
