@@ -139,9 +139,7 @@ describe("AgentSession manual snapcompact text-only fallback", () => {
 
 		// Explicit no-LLM request must never reach the provider-backed summarizer.
 		expect(compactSpy).not.toHaveBeenCalled();
-		expect(harness.notices).toContain(
-			`snapcompact 需要支持视觉的模型（${harness.activeModel.id} 仅支持文本）`,
-		);
+		expect(harness.notices).toContain(`snapcompact 需要支持视觉的模型（${harness.activeModel.id} 仅支持文本）`);
 		expect(harness.sessionManager.getBranch().find(entry => entry.type === "compaction")).toBeUndefined();
 	});
 });

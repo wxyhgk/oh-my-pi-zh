@@ -39,12 +39,7 @@ import {
 	normalizeResponsesToolCallId,
 } from "@wxyhgk/pi-ai/utils";
 import { captureOpenAIHttpError } from "@wxyhgk/pi-ai/utils/openai-http";
-import {
-	CODEX_BASE_URL,
-	getCodexAccountId,
-	OPENAI_HEADER_VALUES,
-	OPENAI_HEADERS,
-} from "@wxyhgk/pi-catalog/wire/codex";
+import { CODEX_BASE_URL, getCodexAccountId, OPENAI_HEADER_VALUES, OPENAI_HEADERS } from "@wxyhgk/pi-catalog/wire/codex";
 import { $env, isRecord, logger, prompt, stringifyJson, structuredCloneJSON } from "@wxyhgk/pi-utils";
 import { countTokensConservatively } from "../tokenizer";
 import contextWindowTruncatedOutputPrompt from "./prompts/context-window-truncated-output.md" with { type: "text" };

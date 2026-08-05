@@ -743,9 +743,7 @@ function resolveBenchModels(
 }
 function assertCacheModeSupported(targets: BenchTarget[]): void {
 	if (targets.some(({ model }) => model.api === "openai-codex-responses")) {
-		throw new Error(
-			"--cache 不支持 openai-codex-responses,因为 Codex WebSocket 链式调用无法产生独立的提示词缓存对",
-		);
+		throw new Error("--cache 不支持 openai-codex-responses,因为 Codex WebSocket 链式调用无法产生独立的提示词缓存对");
 	}
 }
 
@@ -757,8 +755,7 @@ export async function runBenchCommand(command: BenchCommandArgs, deps: BenchDepe
 		command.flags.cachePairs !== undefined ||
 		command.flags.cacheConcurrency !== undefined;
 	if (!cacheMode && cacheFlagsUsed) throw new Error("缓存标志需要 --cache");
-	if (cacheMode && command.flags.runs !== undefined)
-		throw new Error("使用 --cache 时请用 --cache-pairs 代替 --runs");
+	if (cacheMode && command.flags.runs !== undefined) throw new Error("使用 --cache 时请用 --cache-pairs 代替 --runs");
 	if (cacheMode && command.flags.prompt !== undefined) throw new Error("--cache 会构建自己的稳定前缀提示词");
 	if (cacheMode && (command.flags.par ?? 1) > 1) {
 		throw new Error("--par 无法并行冷/热对;请改用 --cache-concurrency");

@@ -1190,9 +1190,7 @@ describe("runGcCommand cold-session archive", () => {
 
 		expect(result.archive?.archived).toBe(1);
 		expect(result.archive?.statsRowsDeleted).toBe(1);
-		expect(result.archive?.errors.some(error => error.startsWith(`统计清理扫描 ${corruptArchive}:`))).toBe(
-			true,
-		);
+		expect(result.archive?.errors.some(error => error.startsWith(`统计清理扫描 ${corruptArchive}:`))).toBe(true);
 		expect(rows).toEqual([]);
 	});
 
@@ -1282,9 +1280,7 @@ describe("runGcCommand cold-session archive", () => {
 
 		expect(first.archive?.archived).toBe(0);
 		expect(first.archive?.statsRowsDeleted).toBe(0);
-		expect(first.archive?.errors.some(error => error.startsWith(`统计清理扫描 ${corruptArchive}:`))).toBe(
-			true,
-		);
+		expect(first.archive?.errors.some(error => error.startsWith(`统计清理扫描 ${corruptArchive}:`))).toBe(true);
 		expect(firstMessages).toEqual([{ session_file: ancestorPath, entry_id: sharedAssistant.id }]);
 		expect(firstOffsets).toEqual([
 			{ session_file: ancestorPath, offset: 1, last_modified: 1 },
@@ -1460,9 +1456,7 @@ describe("runGcCommand cold-session archive", () => {
 
 		expect(result.archive?.statsRowsDeleted).toBe(0);
 		expect(result.archive?.historyRowsDeleted).toBe(0);
-		expect(result.archive?.errors).toContain(
-			`统计清理扫描 ${archive}:归档缺少有效的会话头部`,
-		);
+		expect(result.archive?.errors).toContain(`统计清理扫描 ${archive}:归档缺少有效的会话头部`);
 		expect(statsRows).toEqual([{ session_file: historicalStatsPath }]);
 		expect(historyRows).toEqual([{ session_id: "headerless-session" }]);
 	});
@@ -1732,9 +1726,7 @@ describe("runGcCommand lock handling", () => {
 		const lockPath = path.join(root, "gc.lock");
 		await Bun.write(lockPath, `${process.pid}\n${new Date().toISOString()}\n`);
 
-		await expect(runGcCommand({ flags: { agentDir: root, blobs: true } })).rejects.toThrow(
-			`GC 已在运行:${lockPath}`,
-		);
+		await expect(runGcCommand({ flags: { agentDir: root, blobs: true } })).rejects.toThrow(`GC 已在运行:${lockPath}`);
 		expect(await Bun.file(lockPath).exists()).toBe(true);
 	});
 
@@ -1756,9 +1748,7 @@ describe("runGcCommand lock handling", () => {
 		await Bun.write(lockPath, "999999999\n2026-01-01T00:00:00.000Z\n");
 		await Bun.write(breakerPath, `${process.pid}\n${new Date().toISOString()}\n`);
 
-		await expect(runGcCommand({ flags: { agentDir: root, blobs: true } })).rejects.toThrow(
-			`GC 已在运行:${lockPath}`,
-		);
+		await expect(runGcCommand({ flags: { agentDir: root, blobs: true } })).rejects.toThrow(`GC 已在运行:${lockPath}`);
 		expect(await Bun.file(lockPath).exists()).toBe(true);
 		expect(await Bun.file(breakerPath).exists()).toBe(true);
 	});

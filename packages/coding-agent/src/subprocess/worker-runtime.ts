@@ -238,8 +238,7 @@ export async function ensureOnnxRuntimeCudaProviders(
 	if (!shouldInstallOnnxRuntimeCudaProviders(device)) return;
 	const nodeModules = path.join(runtimeDir, "node_modules");
 	const manifest = resolveRuntimeModule(nodeModules, `${ONNX_RUNTIME_NODE_PACKAGE}/package.json`);
-	if (!manifest)
-		throw new Error(`无法在 ${nodeModules} 处的编译运行时中解析 ${ONNX_RUNTIME_NODE_PACKAGE}`);
+	if (!manifest) throw new Error(`无法在 ${nodeModules} 处的编译运行时中解析 ${ONNX_RUNTIME_NODE_PACKAGE}`);
 	const packageDir = path.dirname(manifest);
 	const binDir = path.join(packageDir, LINUX_X64_ONNX_RUNTIME_CUDA_PROVIDER_DIR);
 	const missing = await missingOnnxRuntimeCudaProviderFiles(binDir);

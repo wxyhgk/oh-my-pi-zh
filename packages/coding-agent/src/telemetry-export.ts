@@ -14,15 +14,7 @@
  * family validated under Bun; the 1.x OTLP line deadlocks when its
  * `req.on("close")` handler fires after a successful export.
  */
-import type {
-	AgentRunCoverage,
-	AgentRunSummary,
-	AgentTelemetryConfig,
-	AgentTelemetryWarning,
-	ChatUsageEvent,
-	ToolStatus,
-} from "@wxyhgk/pi-agent-core";
-import { logger, postmortem } from "@wxyhgk/pi-utils";
+
 import {
 	type Attributes,
 	type AttributeValue,
@@ -42,6 +34,15 @@ import { BatchLogRecordProcessor, LoggerProvider } from "@opentelemetry/sdk-logs
 import { MeterProvider, PeriodicExportingMetricReader } from "@opentelemetry/sdk-metrics";
 import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-base";
 import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node";
+import type {
+	AgentRunCoverage,
+	AgentRunSummary,
+	AgentTelemetryConfig,
+	AgentTelemetryWarning,
+	ChatUsageEvent,
+	ToolStatus,
+} from "@wxyhgk/pi-agent-core";
+import { logger, postmortem } from "@wxyhgk/pi-utils";
 
 /**
  * Periodic flush interval. A long-lived `omp` process (the ACP server is

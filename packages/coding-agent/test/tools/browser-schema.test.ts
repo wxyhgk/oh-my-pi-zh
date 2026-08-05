@@ -36,7 +36,7 @@ describe("browser tool schema", () => {
 		expect(validateJsonSchemaValue(toolWireSchema(tool), call.arguments).success).toBe(true);
 		expect(validateToolCall([tool], call)).toEqual(call.arguments);
 		await expect(tool.execute("browser-run-without-code", args)).rejects.toThrow(
-			/缺少 action 'run' 必需的参数 'code'/
+			/缺少 action 'run' 必需的参数 'code'/,
 		);
 	});
 

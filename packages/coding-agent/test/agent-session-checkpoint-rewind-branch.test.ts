@@ -560,9 +560,7 @@ describe("AgentSession checkpoint rewind branch context", () => {
 		const rewindResult = await rewindToolForSession(reloadedSession).execute("call_rewind_after_resume", {
 			report: "post-resume findings",
 		});
-		expect(rewindResult.content.some(part => part.type === "text" && part.text.includes("已请求回退"))).toBe(
-			true,
-		);
+		expect(rewindResult.content.some(part => part.type === "text" && part.text.includes("已请求回退"))).toBe(true);
 	});
 	it("marks extension agent_end willContinue when enforceRewindBeforeYield continues", async () => {
 		const agentEnds: Array<boolean | undefined> = [];

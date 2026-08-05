@@ -182,9 +182,7 @@ async function runLogin(flags: AuthBrokerCommandArgs["flags"]): Promise<void> {
 	let providerArg = flags.provider;
 	if (!providerArg) {
 		if (flags.via) {
-			throw new Error(
-				"用法:omp-zh auth-broker login <provider> --via=user@host(远程登录必须提供 provider)",
-			);
+			throw new Error("用法:omp-zh auth-broker login <provider> --via=user@host(远程登录必须提供 provider)");
 		}
 		providerArg = await pickProviderInteractively(providers);
 	}
@@ -338,9 +336,7 @@ async function pickProviderInteractively(providers: readonly OAuthProviderInfo[]
 async function runRemoteLogin(provider: string, via: string, dryRun: boolean): Promise<void> {
 	const port = CALLBACK_PORTS[provider];
 	if (port === undefined) {
-		throw new Error(
-			`提供商 '${provider}' 没有已知的 OAuth 回调端口。请直接在 broker 主机上使用设备码流程。`,
-		);
+		throw new Error(`提供商 '${provider}' 没有已知的 OAuth 回调端口。请直接在 broker 主机上使用设备码流程。`);
 	}
 	const sshArgs = [
 		"-L",

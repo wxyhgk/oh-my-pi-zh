@@ -55,8 +55,7 @@ export async function ensureAutoresearchBranch(
 			ok: true,
 			branchName: null,
 			created: false,
-			warning:
-				"当前不在 git 仓库中 — autoresearch 将无分支隔离、基线重置或自动提交地运行。",
+			warning: "当前不在 git 仓库中 — autoresearch 将无分支隔离、基线重置或自动提交地运行。",
 		};
 	}
 

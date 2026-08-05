@@ -472,9 +472,7 @@ describe("issue #986 compaction auth fallback", () => {
 
 		const error = await session.compact().catch(err => err);
 		expect(error).toBeInstanceOf(Error);
-		expect((error as Error).message).toContain(
-			`压缩需要 ${currentModel.provider}/${currentModel.id} 的可用凭据`,
-		);
+		expect((error as Error).message).toContain(`压缩需要 ${currentModel.provider}/${currentModel.id} 的可用凭据`);
 		expect((error as Error).message).not.toMatch(/auth_unavailable/i);
 	});
 
@@ -543,9 +541,7 @@ describe("issue #986 compaction auth fallback", () => {
 
 		const error = await session.compact().catch(err => err);
 		expect(error).toBeInstanceOf(Error);
-		expect((error as Error).message).toContain(
-			`压缩需要 ${currentModel.provider}/${currentModel.id} 的可用凭据`,
-		);
+		expect((error as Error).message).toContain(`压缩需要 ${currentModel.provider}/${currentModel.id} 的可用凭据`);
 		// The raw provider envelope must not leak into the actionable error.
 		expect((error as Error).message).not.toContain("authentication_error");
 		expect((error as Error).message).not.toMatch(/\b401\b/);

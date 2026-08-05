@@ -125,20 +125,17 @@ export const TINY_MEMORY_LOCAL_MODELS = [
 		repo: "onnx-community/Qwen3-1.7B-ONNX",
 		dtype: "q4",
 		label: "Qwen3 1.7B",
-		description:
-			"已禁用本地推理:onnxruntime-node 无法运行此 ONNX 导出的 RotaryEmbedding 缓存更新。",
+		description: "已禁用本地推理:onnxruntime-node 无法运行此 ONNX 导出的 RotaryEmbedding 缓存更新。",
 		contextNote: "加载前即被阻止,以避免不支持的 RotaryEmbedding 运行时路径。",
 		reasoning: true,
-		unsupportedReason:
-			"onnxruntime-node 不支持 onnx-community/Qwen3-1.7B-ONNX 中的 Qwen3 RotaryEmbedding 缓存更新",
+		unsupportedReason: "onnxruntime-node 不支持 onnx-community/Qwen3-1.7B-ONNX 中的 Qwen3 RotaryEmbedding 缓存更新",
 	},
 	{
 		key: "llama3.2:3b",
 		repo: "onnx-community/Llama-3.2-3B-Instruct-ONNX",
 		dtype: "q4",
 		label: "Llama 3.2 3B",
-		description:
-			"面向本地记忆/分类任务的更大 Llama 3.2 选项;质量潜力更高,但磁盘/内存/延迟成本也更高。",
+		description: "面向本地记忆/分类任务的更大 Llama 3.2 选项;质量潜力更高,但磁盘/内存/延迟成本也更高。",
 		contextNote: "当更看重模型容量而非加载速度时使用。",
 	},
 	{
@@ -195,8 +192,7 @@ export const TINY_MEMORY_MODEL_OPTIONS = [
 	{
 		value: ONLINE_MEMORY_MODEL_KEY,
 		label: "在线(TINY 角色,否则 @smol)",
-		description:
-			"使用在线模型:设置后使用 /models 中的 TINY 角色,否则使用 @smol。无需本地模型下载或设备端推理。",
+		description: "使用在线模型:设置后使用 /models 中的 TINY 角色,否则使用 @smol。无需本地模型下载或设备端推理。",
 	},
 	...TINY_MEMORY_LOCAL_MODELS.map(model => ({
 		value: model.key,
@@ -257,8 +253,7 @@ export const AUTO_THINKING_MODEL_OPTIONS = [
 	{
 		value: ONLINE_AUTO_THINKING_MODEL_KEY,
 		label: "在线(TINY 角色,否则 @smol)",
-		description:
-			"使用 TINY 角色模型(在 /models 中设置)或 @smol 在线判断提示词难度;无需本地下载或设备端推理。",
+		description: "使用 TINY 角色模型(在 /models 中设置)或 @smol 在线判断提示词难度;无需本地下载或设备端推理。",
 	},
 	...TINY_MEMORY_LOCAL_MODELS.map(model => ({
 		value: model.key,

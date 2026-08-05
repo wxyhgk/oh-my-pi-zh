@@ -74,12 +74,8 @@ describe("LocalProtocolHandler", () => {
 				getSessionId: () => "session-c",
 			});
 			const router = InternalUrlRouter.instance();
-			await expect(router.resolve("local://../secret.txt")).rejects.toThrow(
-				"local:// URL 不允许路径穿越 (..)",
-			);
-			await expect(router.resolve("local://%2E%2E/secret.txt")).rejects.toThrow(
-				"local:// URL 不允许路径穿越 (..)",
-			);
+			await expect(router.resolve("local://../secret.txt")).rejects.toThrow("local:// URL 不允许路径穿越 (..)");
+			await expect(router.resolve("local://%2E%2E/secret.txt")).rejects.toThrow("local:// URL 不允许路径穿越 (..)");
 		});
 	});
 

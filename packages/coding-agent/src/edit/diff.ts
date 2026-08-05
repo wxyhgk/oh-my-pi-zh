@@ -462,9 +462,7 @@ function formatOccurrenceMatchError(
 ): string {
 	const previews = occurrencePreviews?.join("\n\n") ?? "";
 	const moreMsg =
-		occurrences > MAX_OCCURRENCE_PREVIEWS
-			? `(仅显示前 ${MAX_OCCURRENCE_PREVIEWS} 处,共 ${occurrences} 处)`
-			: "";
+		occurrences > MAX_OCCURRENCE_PREVIEWS ? `(仅显示前 ${MAX_OCCURRENCE_PREVIEWS} 处,共 ${occurrences} 处)` : "";
 	const pathSuffix = path ? ` ${path}` : "";
 	return `在${pathSuffix}中找到 ${occurrences} 处匹配${moreMsg}:\n\n${previews}\n\n添加更多上下文行以消除歧义。`;
 }
@@ -808,9 +806,7 @@ function extractMarkerPath(line: string): string | undefined {
 export function parseDiffHunks(diff: string): DiffHunk[] {
 	const multiFileCount = countMultiFileMarkers(diff);
 	if (multiFileCount > 1) {
-		throw new ApplyPatchError(
-			`差异包含 ${multiFileCount} 个文件标记。单文件补丁不能包含多文件标记。`,
-		);
+		throw new ApplyPatchError(`差异包含 ${multiFileCount} 个文件标记。单文件补丁不能包含多文件标记。`);
 	}
 
 	const normalizedDiff = normalizeDiff(diff);

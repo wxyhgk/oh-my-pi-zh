@@ -139,15 +139,11 @@ function validateRedirectConfig(config: MCPOAuthConfig, redirectUri: string | un
 	}
 
 	if (config.callbackPort === undefined) {
-		throw new Error(
-			"HTTPS 回环重定向 URI 需要 oauth.callbackPort 指向 TLS 终结器后面的本地 HTTP 回调监听器",
-		);
+		throw new Error("HTTPS 回环重定向 URI 需要 oauth.callbackPort 指向 TLS 终结器后面的本地 HTTP 回调监听器");
 	}
 
 	if (config.callbackPort === getUriPort(parsed)) {
-		throw new Error(
-			"HTTPS 回环重定向 URI 不能复用同一个本地端口;请单独终结 TLS 并转发到 oauth.callbackPort",
-		);
+		throw new Error("HTTPS 回环重定向 URI 不能复用同一个本地端口;请单独终结 TLS 并转发到 oauth.callbackPort");
 	}
 }
 
@@ -733,9 +729,7 @@ export class MCPOAuthFlow extends OAuthCallbackFlow {
 		const manualHint =
 			"在 mcp.json 的 MCP 服务器条目中配置 oauth.clientId(如果流程需要,还需配置 oauth.clientSecret)。";
 		if (!failure) {
-			return new Error(
-				`OAuth 提供商要求 client_id,且未公布动态客户端注册端点。${manualHint}`,
-			);
+			return new Error(`OAuth 提供商要求 client_id,且未公布动态客户端注册端点。${manualHint}`);
 		}
 		const outcome =
 			failure.status > 0

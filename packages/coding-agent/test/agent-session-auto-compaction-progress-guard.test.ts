@@ -1326,9 +1326,7 @@ describe("AgentSession auto-compaction progress guard", () => {
 		expect(promptSpy).toHaveBeenCalledTimes(1);
 		const noProgress = notices.filter(n => n.source === NOTICE_SOURCE && n.message.includes(NO_PROGRESS_FRAGMENT));
 		expect(noProgress.length).toBe(0);
-		const recovery = notices.filter(
-			n => n.source === NOTICE_SOURCE && n.message.includes("移除了 2 张附加图片"),
-		);
+		const recovery = notices.filter(n => n.source === NOTICE_SOURCE && n.message.includes("移除了 2 张附加图片"));
 		expect(recovery.length).toBe(1);
 		expect(recovery[0].level).toBe("info");
 		// A rescued pass must not stamp the dead-end warning on the entry.

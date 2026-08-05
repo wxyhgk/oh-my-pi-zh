@@ -1182,9 +1182,7 @@ describe("lsp regressions", () => {
 			const filePath = path.join(tempDir.path(), "symbol.ts");
 			await Bun.write(filePath, "foo();\n");
 
-			expect(resolveSymbolColumn(filePath, 1, "foo#2")).rejects.toThrow(
-				'符号 "foo" 的第 2 次出现超出范围',
-			);
+			expect(resolveSymbolColumn(filePath, 1, "foo#2")).rejects.toThrow('符号 "foo" 的第 2 次出现超出范围');
 		} finally {
 			tempDir.removeSync();
 		}
@@ -3114,9 +3112,7 @@ describe("lsp regressions", () => {
 			};
 			try {
 				await expect(lspClient.getOrCreateClient(config, tempDir.path())).rejects.toBeInstanceOf(Error);
-				await expect(lspClient.getOrCreateClient(config, tempDir.path())).rejects.toThrow(
-					"最近初始化失败",
-				);
+				await expect(lspClient.getOrCreateClient(config, tempDir.path())).rejects.toThrow("最近初始化失败");
 
 				vi.restoreAllMocks();
 				const retryServer = installFakeLsp((message, server) => {

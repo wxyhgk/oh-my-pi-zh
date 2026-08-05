@@ -77,9 +77,7 @@ export async function runGrepCommand(cmd: GrepCommandArgs): Promise<void> {
 	const searchPath = path.resolve(expandPath(cmd.path));
 	console.log(chalk.dim(`正在搜索:${searchPath}`));
 	console.log(chalk.dim(`模式:${cmd.pattern}`));
-	console.log(
-		chalk.dim(`输出模式:${cmd.mode},限制:${cmd.limit},上下文行:${cmd.context},Gitignore:${cmd.gitignore}`),
-	);
+	console.log(chalk.dim(`输出模式:${cmd.mode},限制:${cmd.limit},上下文行:${cmd.context},Gitignore:${cmd.gitignore}`));
 
 	console.log("");
 

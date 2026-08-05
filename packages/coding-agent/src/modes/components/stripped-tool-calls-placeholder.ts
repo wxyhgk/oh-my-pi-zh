@@ -10,16 +10,7 @@ export class StrippedToolCallsPlaceholder extends Text {
 	#toolActivityVisible: boolean;
 
 	constructor(strippedToolCalls: number, toolActivityVisible: boolean) {
-		super(
-			theme.fg(
-				"dim",
-				theme.italic(
-					`${strippedToolCalls} 次工具调用被省略 — 此分支上无结果`,
-				),
-			),
-			1,
-			0,
-		);
+		super(theme.fg("dim", theme.italic(`${strippedToolCalls} 次工具调用被省略 — 此分支上无结果`)), 1, 0);
 		this.#toolActivityVisible = toolActivityVisible;
 	}
 

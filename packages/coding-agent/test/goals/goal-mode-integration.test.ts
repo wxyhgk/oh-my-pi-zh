@@ -379,9 +379,7 @@ describe("InteractiveMode goal mode integration", () => {
 
 		await harness.mode.handleGoalModeCommand("Replace the objective");
 
-		expect(showWarning).toHaveBeenCalledWith(
-			"请先恢复当前目标,或先删除它再设置新目标。",
-		);
+		expect(showWarning).toHaveBeenCalledWith("请先恢复当前目标,或先删除它再设置新目标。");
 		expect(harness.session.getGoalModeState()?.enabled).toBe(false);
 		expect(harness.session.getGoalModeState()?.goal.objective).toBe("Ship the release");
 		expect(harness.session.getGoalModeState()?.goal.status).toBe("paused");

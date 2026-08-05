@@ -1250,9 +1250,7 @@ async function createAgentSessionScoped(options: CreateAgentSessionOptions): Pro
 	const ownsAuthStorage = !options.authStorage && !options.modelRegistry;
 	const authStorage = modelRegistry.authStorage;
 	if (options.authStorage && options.authStorage !== authStorage) {
-		throw new Error(
-			"同时提供 options.authStorage 与 options.modelRegistry.authStorage 时,它们必须是同一个实例",
-		);
+		throw new Error("同时提供 options.authStorage 与 options.modelRegistry.authStorage 时,它们必须是同一个实例");
 	}
 	// Subscribe before any getApiKey() call so startup model probes can't fire a
 	// credential_disabled event past us. An embedder's constructor handler makes the
@@ -3101,10 +3099,7 @@ async function createAgentSessionScoped(options: CreateAgentSessionOptions): Pro
 			}
 			const activeModel = agent?.state.model ?? model;
 			if (activeModel && !activeModel.input.includes("image")) {
-				return replaceLlmImagesWithText(
-					converted,
-					"[已省略图片:当前模型不支持图像输入]",
-				);
+				return replaceLlmImagesWithText(converted, "[已省略图片:当前模型不支持图像输入]");
 			}
 			return converted;
 		};

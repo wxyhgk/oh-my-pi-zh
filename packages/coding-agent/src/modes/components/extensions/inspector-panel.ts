@@ -307,11 +307,7 @@ export class InspectorPanel implements Component {
 				return theme.fg("success", `${theme.status.enabled} 已启用`);
 			case "disabled": {
 				const reasonText =
-					reason === "provider-disabled"
-						? "提供商已禁用"
-						: reason === "item-disabled"
-							? "手动禁用"
-							: "未知";
+					reason === "provider-disabled" ? "提供商已禁用" : reason === "item-disabled" ? "手动禁用" : "未知";
 				return theme.fg("dim", `${theme.status.disabled} 已禁用 (${reasonText})`);
 			}
 			case "shadowed":

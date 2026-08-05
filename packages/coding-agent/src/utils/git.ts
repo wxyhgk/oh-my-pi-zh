@@ -1344,8 +1344,7 @@ export const stage = {
 			const fileDiff = fileDiffMap.get(selection.path);
 			if (!fileDiff) throw new Error(`未找到 ${selection.path} 的差异`);
 			if (fileDiff.isBinary) {
-				if (selection.hunks.type !== "all")
-					throw new Error(`无法为二进制文件 ${selection.path} 选择区块`);
+				if (selection.hunks.type !== "all") throw new Error(`无法为二进制文件 ${selection.path} 选择区块`);
 				patchParts.push(fileDiff.content);
 				continue;
 			}

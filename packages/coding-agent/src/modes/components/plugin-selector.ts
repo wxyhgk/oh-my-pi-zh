@@ -53,10 +53,7 @@ export class PluginSelectorComponent extends Container {
 			items.push({
 				value: "__empty__",
 				label: "没有可用插件",
-				description:
-					marketplaceCount === 0
-						? "请先添加市场: /marketplace add <source>"
-						: "已配置的市场中没有插件",
+				description: marketplaceCount === 0 ? "请先添加市场: /marketplace add <source>" : "已配置的市场中没有插件",
 			});
 		}
 

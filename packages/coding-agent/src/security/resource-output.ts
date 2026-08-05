@@ -43,8 +43,6 @@ export function createSecurityResource(options: SecurityResourceOptions): Intern
 		contentType: options.contentType,
 		size: Buffer.byteLength(bounded.content),
 		isDirectory: options.isDirectory,
-		notes: bounded.truncated
-			? [`安全资源已截断至 ${DEFAULT_MAX_LINES} 行 / ${DEFAULT_MAX_BYTES} 字节。`]
-			: undefined,
+		notes: bounded.truncated ? [`安全资源已截断至 ${DEFAULT_MAX_LINES} 行 / ${DEFAULT_MAX_BYTES} 字节。`] : undefined,
 	};
 }

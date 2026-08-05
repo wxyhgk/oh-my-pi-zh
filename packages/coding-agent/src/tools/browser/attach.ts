@@ -52,9 +52,7 @@ export async function waitForCdp(cdpUrl: string, timeoutMs: number, signal?: Abo
 		}
 		await Bun.sleep(150);
 	}
-	throw new ToolError(
-		`等待 CDP 端点 ${cdpUrl} 超时${lastErr instanceof Error ? `: ${lastErr.message}` : ""}`,
-	);
+	throw new ToolError(`等待 CDP 端点 ${cdpUrl} 超时${lastErr instanceof Error ? `: ${lastErr.message}` : ""}`);
 }
 
 /**

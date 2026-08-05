@@ -168,9 +168,7 @@ async function resolvePluginDir(
 	for (const entry of configured) {
 		const resolved = path.resolve(root.path, entry);
 		if (!isWithinPluginRoot(root.path, resolved)) {
-			warnings.push(
-				`[claude-plugins] 忽略 ${root.id} 插件根目录之外的 ${String(matchedKey)} 路径:${entry}`,
-			);
+			warnings.push(`[claude-plugins] 忽略 ${root.id} 插件根目录之外的 ${String(matchedKey)} 路径:${entry}`);
 			continue;
 		}
 		if (seen.has(resolved)) continue;
@@ -545,9 +543,7 @@ async function loadMCPServers(ctx: LoadContext): Promise<LoadResult<MCPServer>> 
 			// occasionally ship .mcp.json entries with neither, which would register a useless
 			// server and surface as a connection error at runtime.
 			if (typeof raw.command !== "string" && typeof raw.url !== "string") {
-				warnings.push(
-					`[claude-plugins] 跳过 ${sourcePath} 中的 MCP 服务器"${serverName}":缺少 command 或 url`,
-				);
+				warnings.push(`[claude-plugins] 跳过 ${sourcePath} 中的 MCP 服务器"${serverName}":缺少 command 或 url`);
 				continue;
 			}
 			const namespacedName = root.plugin ? `${root.plugin}:${serverName}` : serverName;

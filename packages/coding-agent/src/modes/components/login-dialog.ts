@@ -98,9 +98,7 @@ export class LoginDialogComponent extends Container {
 		this.#contentContainer.addChild(new Text(theme.fg("dim", hyperlink), 1, 0));
 
 		if (launchUrl && launchUrl !== url) {
-			this.#contentContainer.addChild(
-				new Text(theme.fg("dim", `本地快捷方式(仅本机):${launchUrl}`), 1, 0),
-			);
+			this.#contentContainer.addChild(new Text(theme.fg("dim", `本地快捷方式(仅本机):${launchUrl}`), 1, 0));
 		}
 
 		if (instructions) {

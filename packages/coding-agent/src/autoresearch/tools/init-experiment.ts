@@ -181,9 +181,7 @@ export function createInitExperimentTool(
 			} else {
 				lines.push(`已更新会话 #${session.id}(分段 ${session.currentSegment}):${session.name}`);
 			}
-			lines.push(
-				`指标:${session.primaryMetric} (${session.metricUnit || "无单位"},${session.direction} 更优)`,
-			);
+			lines.push(`指标:${session.primaryMetric} (${session.metricUnit || "无单位"},${session.direction} 更优)`);
 			lines.push(`基准入口:${DEFAULT_HARNESS_COMMAND}`);
 			if (session.scopePaths.length > 0) {
 				lines.push(`范围内文件:${session.scopePaths.join(", ")}`);
@@ -201,9 +199,7 @@ export function createInitExperimentTool(
 				lines.push(`基线提交:${session.baselineCommit.slice(0, 12)}`);
 			}
 			if (createdSession) {
-				lines.push(
-					"第二阶段:迭代循环已激活。使用 `run_experiment` 运行基线实验并记录它。",
-				);
+				lines.push("第二阶段:迭代循环已激活。使用 `run_experiment` 运行基线实验并记录它。");
 			} else if (bumpedSegment) {
 				lines.push("为新分段运行全新的基线。");
 			}

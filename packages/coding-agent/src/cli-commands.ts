@@ -194,22 +194,22 @@ export const commands: CommandEntry[] = [
 // fires vs. when the argv still falls through to `launch`.
 const RESERVED_TOP_LEVEL_WORDS: Record<string, string> = {
 	extensions:
-		'`omp-zh extensions` 不是管理命令。请使用 `omp-zh plugin list` / `omp-zh plugin install`;如果你是想把 “extensions” 作为提示词发送,请运行 `omp-zh launch extensions`。',
-	list: '`omp-zh list` 不是顶层命令。请使用 `omp-zh plugin list` 列出已安装的插件;如果你是想把 “list” 作为提示词发送,请运行 `omp-zh launch list`。',
+		"`omp-zh extensions` 不是管理命令。请使用 `omp-zh plugin list` / `omp-zh plugin install`;如果你是想把 “extensions” 作为提示词发送,请运行 `omp-zh launch extensions`。",
+	list: "`omp-zh list` 不是顶层命令。请使用 `omp-zh plugin list` 列出已安装的插件;如果你是想把 “list” 作为提示词发送,请运行 `omp-zh launch list`。",
 	remove:
-		'`omp-zh remove` 不是顶层命令。请使用 `omp-zh plugin uninstall <name>` 移除插件;如果你是想把 “remove” 作为提示词发送,请运行 `omp-zh launch remove`。',
+		"`omp-zh remove` 不是顶层命令。请使用 `omp-zh plugin uninstall <name>` 移除插件;如果你是想把 “remove” 作为提示词发送,请运行 `omp-zh launch remove`。",
 	uninstall:
-		'`omp-zh uninstall` 不是顶层命令。请使用 `omp-zh plugin uninstall <name@marketplace>` 移除插件;如果你是想把 “uninstall” 作为提示词发送,请运行 `omp-zh launch uninstall`。',
+		"`omp-zh uninstall` 不是顶层命令。请使用 `omp-zh plugin uninstall <name@marketplace>` 移除插件;如果你是想把 “uninstall” 作为提示词发送,请运行 `omp-zh launch uninstall`。",
 	marketplace:
-		'`omp-zh marketplace` 不是顶层命令。请使用 `omp-zh plugin marketplace <add|remove|update|list>` 管理市场;如果你是想把 “marketplace” 作为提示词发送,请运行 `omp-zh launch marketplace`。',
+		"`omp-zh marketplace` 不是顶层命令。请使用 `omp-zh plugin marketplace <add|remove|update|list>` 管理市场;如果你是想把 “marketplace” 作为提示词发送,请运行 `omp-zh launch marketplace`。",
 	discover:
-		'`omp-zh discover` 不是顶层命令。请使用 `omp-zh plugin discover [marketplace]` 浏览可用插件;如果你是想把 “discover” 作为提示词发送,请运行 `omp-zh launch discover`。',
+		"`omp-zh discover` 不是顶层命令。请使用 `omp-zh plugin discover [marketplace]` 浏览可用插件;如果你是想把 “discover” 作为提示词发送,请运行 `omp-zh launch discover`。",
 	upgrade:
-		'`omp-zh upgrade` 不是顶层命令。请使用 `omp-zh plugin upgrade [name@marketplace]` 升级插件;如果你是想把 “upgrade” 作为提示词发送,请运行 `omp-zh launch upgrade`。',
+		"`omp-zh upgrade` 不是顶层命令。请使用 `omp-zh plugin upgrade [name@marketplace]` 升级插件;如果你是想把 “upgrade” 作为提示词发送,请运行 `omp-zh launch upgrade`。",
 	enable:
-		'`omp-zh enable` 不是顶层命令。请使用 `omp-zh plugin enable <name@marketplace>` 启用插件;如果你是想把 “enable” 作为提示词发送,请运行 `omp-zh launch enable`。',
+		"`omp-zh enable` 不是顶层命令。请使用 `omp-zh plugin enable <name@marketplace>` 启用插件;如果你是想把 “enable” 作为提示词发送,请运行 `omp-zh launch enable`。",
 	disable:
-		'`omp-zh disable` 不是顶层命令。请使用 `omp-zh plugin disable <name@marketplace>` 禁用插件;如果你是想把 “disable” 作为提示词发送,请运行 `omp-zh launch disable`。',
+		"`omp-zh disable` 不是顶层命令。请使用 `omp-zh plugin disable <name@marketplace>` 禁用插件;如果你是想把 “disable” 作为提示词发送,请运行 `omp-zh launch disable`。",
 };
 
 // Sub-actions that make `omp marketplace <sub>` unambiguously a management

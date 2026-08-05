@@ -2408,9 +2408,7 @@ export class InteractiveMode implements InteractiveModeContext {
 				try {
 					await this.session.setModelTemporary(transition.model, transition.thinkingLevel);
 				} catch (error) {
-					this.showWarning(
-						`切换到计划模式模型失败:${error instanceof Error ? error.message : String(error)}`,
-					);
+					this.showWarning(`切换到计划模式模型失败:${error instanceof Error ? error.message : String(error)}`);
 				}
 				return;
 		}
@@ -2425,9 +2423,7 @@ export class InteractiveMode implements InteractiveModeContext {
 		try {
 			await this.session.setModelTemporary(pending.model, pending.thinkingLevel);
 		} catch (error) {
-			this.showWarning(
-				`流式结束后切换模型失败:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.showWarning(`流式结束后切换模型失败:${error instanceof Error ? error.message : String(error)}`);
 		}
 	}
 
@@ -2968,9 +2964,7 @@ export class InteractiveMode implements InteractiveModeContext {
 			await copyToClipboard(content);
 			this.showStatus("计划已复制到剪贴板");
 		} catch (error) {
-			this.showWarning(
-				`复制计划到剪贴板失败:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.showWarning(`复制计划到剪贴板失败:${error instanceof Error ? error.message : String(error)}`);
 		}
 	}
 
@@ -3063,9 +3057,7 @@ export class InteractiveMode implements InteractiveModeContext {
 			this.updateEditorBorderColor();
 			this.showStatus(`继续使用 ${entry.role}:${entry.model.name || entry.model.id}`);
 		} catch (error) {
-			this.showWarning(
-				`无法切换到 ${entry.role} 模型:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.showWarning(`无法切换到 ${entry.role} 模型:${error instanceof Error ? error.message : String(error)}`);
 		}
 	}
 
@@ -3217,9 +3209,7 @@ export class InteractiveMode implements InteractiveModeContext {
 			// prompt. `markPlanReferenceSent` stays unset so
 			// `AgentSession.#buildPlanReferenceMessage` injects the plan reference
 			// on the operator's next `prompt()` call.
-			this.showWarning(
-				"计划已批准,但上下文压缩被取消 —— 未派发执行。请提交一个轮次以继续。",
-			);
+			this.showWarning("计划已批准,但上下文压缩被取消 —— 未派发执行。请提交一个轮次以继续。");
 			return false;
 		}
 
@@ -3293,10 +3283,7 @@ export class InteractiveMode implements InteractiveModeContext {
 		if (this.planModeEnabled) {
 			const planFilePath = this.planModePlanFilePath ?? (await this.#getPlanFilePath());
 			if (await this.#hasPlanModeDraftContent(planFilePath)) {
-				const confirmed = await this.showHookConfirm(
-					"退出计划模式?",
-					"这将退出计划模式,且不会批准计划。",
-				);
+				const confirmed = await this.showHookConfirm("退出计划模式?", "这将退出计划模式,且不会批准计划。");
 				if (!confirmed) return;
 			}
 			await this.#exitPlanMode({ paused: true });
@@ -3383,9 +3370,7 @@ export class InteractiveMode implements InteractiveModeContext {
 		}
 		this.#updateVibeModeStatus();
 		if (options?.persistModeChange !== false) this.sessionManager.appendModeChange("vibe");
-		this.showStatus(
-			"Vibe 模式已启用。您指挥 fast/good 工作会话;工具集为 read + 可选的父级待办 + vibe 工具。",
-		);
+		this.showStatus("Vibe 模式已启用。您指挥 fast/good 工作会话;工具集为 read + 可选的父级待办 + vibe 工具。");
 	}
 
 	async #exitVibeMode(): Promise<void> {
@@ -3401,11 +3386,7 @@ export class InteractiveMode implements InteractiveModeContext {
 		this.#vibeModeOwnerScope = undefined;
 		this.lastAssistantUsage = undefined;
 		this.#updateVibeModeStatus();
-		this.showStatus(
-			killed > 0
-				? `Vibe 模式已禁用。已终止 ${killed} 个工作会话。`
-				: "Vibe 模式已禁用。",
-		);
+		this.showStatus(killed > 0 ? `Vibe 模式已禁用。已终止 ${killed} 个工作会话。` : "Vibe 模式已禁用。");
 	}
 
 	async #handleGoalBudgetCommand(rawBudget: string): Promise<void> {
@@ -3474,9 +3455,7 @@ export class InteractiveMode implements InteractiveModeContext {
 				await this.#startGoalFromObjective(subRest);
 				return;
 			}
-			const objective = (
-				await this.showHookEditor("目标描述", undefined, undefined, { promptStyle: true })
-			)?.trim();
+			const objective = (await this.showHookEditor("目标描述", undefined, undefined, { promptStyle: true }))?.trim();
 			if (!objective) return;
 			await this.#startGoalFromObjective(objective);
 		} catch (error) {
@@ -3555,9 +3534,7 @@ export class InteractiveMode implements InteractiveModeContext {
 				return;
 			case "budget":
 				if (!this.goalModeEnabled) {
-					this.showWarning(
-						this.#getPausedGoalState() ? "调整预算前请先恢复目标。" : "没有进行中的目标。",
-					);
+					this.showWarning(this.#getPausedGoalState() ? "调整预算前请先恢复目标。" : "没有进行中的目标。");
 					return;
 				}
 				if (!rest) {
@@ -3575,9 +3552,7 @@ export class InteractiveMode implements InteractiveModeContext {
 		const summary = goal.objective.length > 48 ? `${goal.objective.slice(0, 47)}…` : goal.objective;
 		const title = state === "active" ? `目标:${summary}(${goal.status})` : `目标已暂停:${summary}`;
 		const items =
-			state === "active"
-				? ["显示详情", "调整预算…", "暂停", "删除"]
-				: ["恢复", "显示详情", "调整预算…", "删除"];
+			state === "active" ? ["显示详情", "调整预算…", "暂停", "删除"] : ["恢复", "显示详情", "调整预算…", "删除"];
 		const choice = await this.showHookSelector(title, items);
 		if (!choice) return;
 		switch (choice) {
@@ -3656,10 +3631,7 @@ export class InteractiveMode implements InteractiveModeContext {
 			this.showWarning("没有可删除的目标。");
 			return;
 		}
-		const confirmed = await this.showHookConfirm(
-			"删除目标?",
-			"这将删除目标记录。累计用量仍会保留在会话日志中。",
-		);
+		const confirmed = await this.showHookConfirm("删除目标?", "这将删除目标记录。累计用量仍会保留在会话日志中。");
 		if (!confirmed) return;
 		await this.session.goalRuntime.dropGoal();
 		await this.#exitGoalMode({ reason: "dropped" });
@@ -3880,9 +3852,7 @@ export class InteractiveMode implements InteractiveModeContext {
 				});
 				if (executionDispatched) this.#planReviewAnnotationState.delete(annotationStateKey);
 			} catch (error) {
-				this.showError(
-					`完成批准计划失败:${error instanceof Error ? error.message : String(error)}`,
-				);
+				this.showError(`完成批准计划失败:${error instanceof Error ? error.message : String(error)}`);
 			}
 			closePlanReview();
 			return;
@@ -3930,30 +3900,12 @@ export class InteractiveMode implements InteractiveModeContext {
 			"😵‍💫 您的 Agent 正因某个工具陷入存在主义危机。",
 			"要把这份恐惧转达给开发者吗?工具 + 让它崩溃的原因,不含个人隐私。",
 		],
-		[
-			"😭 您的 Agent 想为某个行为不端的工具哭诉。",
-			"让它向开发者哭诉?工具 + 眼泪,绝不含个人隐私。",
-		],
-		[
-			"🤬 您的 Agent 对某个工具怒火中烧。",
-			"把怒火转达出去?只需工具名称和激怒它的原因,不含个人隐私。",
-		],
-		[
-			"🫠 您的 Agent 正因某个工具而融化崩溃。",
-			"向开发者报告来善后?工具 + 让它崩溃的原因,不含个人隐私。",
-		],
-		[
-			"🤯 您的 Agent 被某个工具的无理取闹搞坏了脑子。",
-			"把碎片寄给开发者?工具名称 + 造成的困惑,绝不含个人隐私。",
-		],
-		[
-			"😩 您的 Agent 恳求对某个工具提出投诉。",
-			"把表单递给它?工具 + 让它受委屈的原因,不含个人隐私。",
-		],
-		[
-			"🥲 您的 Agent 强装镇定,却被某个工具坑惨了。",
-			"让它向开发者说出真相?工具名称 + 被坑的细节,不含个人隐私。",
-		],
+		["😭 您的 Agent 想为某个行为不端的工具哭诉。", "让它向开发者哭诉?工具 + 眼泪,绝不含个人隐私。"],
+		["🤬 您的 Agent 对某个工具怒火中烧。", "把怒火转达出去?只需工具名称和激怒它的原因,不含个人隐私。"],
+		["🫠 您的 Agent 正因某个工具而融化崩溃。", "向开发者报告来善后?工具 + 让它崩溃的原因,不含个人隐私。"],
+		["🤯 您的 Agent 被某个工具的无理取闹搞坏了脑子。", "把碎片寄给开发者?工具名称 + 造成的困惑,绝不含个人隐私。"],
+		["😩 您的 Agent 恳求对某个工具提出投诉。", "把表单递给它?工具 + 让它受委屈的原因,不含个人隐私。"],
+		["🥲 您的 Agent 强装镇定,却被某个工具坑惨了。", "让它向开发者说出真相?工具名称 + 被坑的细节,不含个人隐私。"],
 	];
 
 	/**
@@ -4881,9 +4833,7 @@ export class InteractiveMode implements InteractiveModeContext {
 			this.#omfgController.dispose();
 			this.renderInitialMessages({ clearTerminalHistory: true });
 			this.updateEditorBorderColor();
-			this.showStatus(
-				result.sessionFile ? `已将 /btw 分支到 ${path.basename(result.sessionFile)}` : "已分支 /btw",
-			);
+			this.showStatus(result.sessionFile ? `已将 /btw 分支到 ${path.basename(result.sessionFile)}` : "已分支 /btw");
 		} catch (error) {
 			this.showError(`无法分支 /btw:${error instanceof Error ? error.message : String(error)}`);
 		}

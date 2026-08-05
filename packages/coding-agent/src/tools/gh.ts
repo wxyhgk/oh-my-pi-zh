@@ -986,9 +986,7 @@ async function resolveAvailableWorktreePath(
 			throw error;
 		}
 	}
-	throw new ToolError(
-		`在 ${basePath} 下找不到未使用的工作树路径(已尝试 ${WORKTREE_PATH_MAX_SUFFIX} 个后缀)`,
-	);
+	throw new ToolError(`在 ${basePath} 下找不到未使用的工作树路径(已尝试 ${WORKTREE_PATH_MAX_SUFFIX} 个后缀)`);
 }
 
 function selectPrCloneUrl(originUrl: string | undefined, repo: Pick<GhRepoViewData, "url" | "sshUrl">): string {
@@ -2266,11 +2264,7 @@ function formatPrCheckoutResult(options: {
 	pushLine(lines, "跨仓库", data.isCrossRepository);
 	pushLine(lines, "维护者可修改", data.maintainerCanModify);
 	lines.push("");
-	lines.push(
-		reused
-			? "复用了现有的 PR 工作树。"
-			: "为此 PR 创建了专用工作树,并配置本地分支推送回 PR 头部分支。",
-	);
+	lines.push(reused ? "复用了现有的 PR 工作树。" : "为此 PR 创建了专用工作树,并配置本地分支推送回 PR 头部分支。");
 	return lines.join("\n").trim();
 }
 

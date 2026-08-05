@@ -152,9 +152,7 @@ export class ExtensionUiController {
 					.sendCustomMessage(normalized, options)
 					.then(() => this.#applyCustomMessageDisplay(wasStreaming, normalized.display))
 					.catch((err: unknown) => {
-						this.ctx.showError(
-							`扩展 sendMessage 失败:${err instanceof Error ? err.message : String(err)}`,
-						);
+						this.ctx.showError(`扩展 sendMessage 失败:${err instanceof Error ? err.message : String(err)}`);
 					});
 			},
 			sendUserMessage: this.#sendExtensionUserMessage,
@@ -1127,9 +1125,7 @@ export class ExtensionUiController {
 	}
 
 	showExtensionError(extensionPath: string, error: string): void {
-		const errorText = new Text(`扩展 "${extensionPath}" 出错:${error}`, 1, 0).setStyleFn(t =>
-			theme.fg("error", t),
-		);
+		const errorText = new Text(`扩展 "${extensionPath}" 出错:${error}`, 1, 0).setStyleFn(t => theme.fg("error", t));
 		this.ctx.present(errorText);
 	}
 	async #handleInteractiveCompact(instructionsOrOptions: string | CompactOptions | undefined): Promise<void> {

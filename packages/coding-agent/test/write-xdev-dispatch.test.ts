@@ -580,9 +580,7 @@ describe("xd:// and top-level calls share the canonical tool map", () => {
 				content: "{}",
 			});
 			expect(unknown.isError).toBe(true);
-			expect(unknown.content.find(entry => entry.type === "text")?.text).toContain(
-				"不存在此工具:xd://no_such_tool",
-			);
+			expect(unknown.content.find(entry => entry.type === "text")?.text).toContain("不存在此工具:xd://no_such_tool");
 		} finally {
 			await removeWithRetries(tempDir);
 		}

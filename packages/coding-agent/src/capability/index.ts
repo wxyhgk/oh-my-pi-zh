@@ -216,9 +216,7 @@ async function loadImpl<T>(
 			const error = capability.validate(deduped[i]);
 			if (error) {
 				const source = deduped[i]._source;
-				allWarnings.push(
-					`[${source?.providerName ?? "未知"}] ${source?.path ?? "未知"} 处的条目无效:${error}`,
-				);
+				allWarnings.push(`[${source?.providerName ?? "未知"}] ${source?.path ?? "未知"} 处的条目无效:${error}`);
 				deduped.splice(i, 1);
 			}
 		}

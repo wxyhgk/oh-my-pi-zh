@@ -195,9 +195,7 @@ describe("guided goal setup", () => {
 			harness.mode.goalModeEnabled = true;
 			await harness.mode.handleGuidedGoalCommand("ship it");
 			expect(promptSpy).not.toHaveBeenCalled();
-			expect(status).toHaveBeenCalledWith(
-				"目标模式已处于活动状态。使用 /goal 管理,或使用 /goal drop 重新开始。",
-			);
+			expect(status).toHaveBeenCalledWith("目标模式已处于活动状态。使用 /goal 管理,或使用 /goal drop 重新开始。");
 
 			harness.mode.goalModeEnabled = false;
 			const now = Date.now();
@@ -216,9 +214,7 @@ describe("guided goal setup", () => {
 			});
 			await harness.mode.handleGuidedGoalCommand("ship it");
 			expect(promptSpy).not.toHaveBeenCalled();
-			expect(warning).toHaveBeenCalledWith(
-				"请先恢复当前目标,或先删除它再设置新目标。",
-			);
+			expect(warning).toHaveBeenCalledWith("请先恢复当前目标,或先删除它再设置新目标。");
 		} finally {
 			await harness.cleanup();
 		}

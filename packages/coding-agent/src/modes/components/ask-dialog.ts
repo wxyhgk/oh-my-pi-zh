@@ -863,12 +863,7 @@ export class AskDialogComponent implements Component {
 		const allLines: string[] = [];
 		const unanswered = this.#unansweredCount();
 		if (unanswered > 0) {
-			allLines.push(
-				theme.fg(
-					"warning",
-					`${unanswered} 个问题未回答;Enter 仍可提交。`,
-				),
-			);
+			allLines.push(theme.fg("warning", `${unanswered} 个问题未回答;Enter 仍可提交。`));
 			allLines.push("");
 		}
 		for (let index = 0; index < this.#questions.length; index++) {

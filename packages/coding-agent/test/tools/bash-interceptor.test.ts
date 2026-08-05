@@ -233,8 +233,6 @@ describe("BashTool argument validation", () => {
 			arguments: { command: "echo should-not-run", async: true },
 		});
 
-		await expect(tool.execute("tool-call", args as unknown as BashToolInput)).rejects.toThrow(
-			"异步 bash 执行已禁用",
-		);
+		await expect(tool.execute("tool-call", args as unknown as BashToolInput)).rejects.toThrow("异步 bash 执行已禁用");
 	});
 });

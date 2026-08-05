@@ -78,9 +78,7 @@ export class OmpProtocolHandler implements ProtocolHandler {
 				.filter(f => f.includes(lookup) || lookup.includes(f.replace(/\.md$/, "")))
 				.slice(0, 5);
 			const suffix =
-				suggestions.length > 0
-					? `\n您是不是想找:${suggestions.join(", ")}`
-					: "\n使用 omp:// 可列出可用文件。";
+				suggestions.length > 0 ? `\n您是不是想找:${suggestions.join(", ")}` : "\n使用 omp:// 可列出可用文件。";
 			throw new Error(`未找到文档文件:${filename}${suffix}`);
 		}
 

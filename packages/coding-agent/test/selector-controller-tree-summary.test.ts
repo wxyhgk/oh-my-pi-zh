@@ -174,11 +174,7 @@ describe("SelectorController tree branch summaries", () => {
 		harness.selector().handleInput("\r");
 		await harness.navigation;
 
-		expect(harness.showHookSelector).toHaveBeenCalledWith("汇总分支?", [
-			"不汇总",
-			"汇总",
-			"使用自定义提示词汇总",
-		]);
+		expect(harness.showHookSelector).toHaveBeenCalledWith("汇总分支?", ["不汇总", "汇总", "使用自定义提示词汇总"]);
 		expect(harness.navigateTree).toHaveBeenCalledWith("root", {
 			summarize: true,
 			customInstructions: undefined,

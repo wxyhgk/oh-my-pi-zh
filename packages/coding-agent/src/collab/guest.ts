@@ -458,9 +458,7 @@ export class CollabGuestLink {
 		this.#readOnly = pending.readOnly;
 		this.#welcomed = true;
 		const suffix = this.#readOnly ? "(只读)" : "";
-		this.#ctx.showStatus(
-			pending.isResync ? `已重新连接到协作会话${suffix}` : `已加入协作会话${suffix}`,
-		);
+		this.#ctx.showStatus(pending.isResync ? `已重新连接到协作会话${suffix}` : `已加入协作会话${suffix}`);
 	}
 
 	#armWelcomeTimer(): void {

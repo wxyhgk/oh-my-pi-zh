@@ -86,11 +86,7 @@ async function callTinyFishSearch(apiKey: string, params: TinyFishSearchParams):
 		const errorText = await response.text();
 		const classified = classifyProviderHttpError("tinyfish", response.status, errorText);
 		if (classified) throw classified;
-		throw new SearchProviderError(
-			"tinyfish",
-			`TinyFish API 错误(${response.status}): ${errorText}`,
-			response.status,
-		);
+		throw new SearchProviderError("tinyfish", `TinyFish API 错误(${response.status}): ${errorText}`, response.status);
 	}
 
 	return (await response.json()) as TinyFishSearchResponse;
@@ -139,8 +135,7 @@ export async function searchTinyFish(params: SearchParams): Promise<SearchRespon
 		},
 		{
 			signal: params.signal,
-			missingKeyMessage:
-				'未找到 TinyFish 凭据。请设置 TINYFISH_API_KEY 或为提供商 "tinyfish" 配置 API 密钥。',
+			missingKeyMessage: '未找到 TinyFish 凭据。请设置 TINYFISH_API_KEY 或为提供商 "tinyfish" 配置 API 密钥。',
 		},
 	);
 

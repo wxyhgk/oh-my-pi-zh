@@ -1638,10 +1638,7 @@ export class ModelHubComponent implements Component {
 	#statusRow(width: number): string {
 		if (this.#assigning !== null) {
 			if (this.#assigning.kind === "fallbackKey") {
-				return truncateToWidth(
-					theme.fg("accent", " 新建回退链 — 按 Enter 选择其保护的模型,Esc 取消"),
-					width,
-				);
+				return truncateToWidth(theme.fg("accent", " 新建回退链 — 按 Enter 选择其保护的模型,Esc 取消"), width);
 			}
 			const info = getRoleInfo(this.#assigning.role, this.#settings);
 			const label = info.tag ?? info.name ?? this.#assigning.role;
@@ -1815,10 +1812,7 @@ export class ModelHubComponent implements Component {
 				);
 				lines[rows - 1] = truncateToWidth(`  ${theme.fg("dim", `${cycleKey} 循环:`)} ${track}`, width);
 			} else {
-				lines[rows - 1] = truncateToWidth(
-					theme.fg("dim", `  ${cycleKey} 循环为空 — 在角色行上按 c 添加`),
-					width,
-				);
+				lines[rows - 1] = truncateToWidth(theme.fg("dim", `  ${cycleKey} 循环为空 — 在角色行上按 c 添加`), width);
 			}
 		}
 		return lines;
@@ -1833,10 +1827,7 @@ export class ModelHubComponent implements Component {
 		const envVars = entry.providerId ? (getCatalogProviderEntry(entry.providerId)?.envVars ?? []) : [];
 		if (envVars.length > 0) {
 			lines.push(
-				truncateToWidth(
-					theme.fg("muted", `  在环境中设置 ${envVars.join(" 或 ")},或在配置中添加密钥。`),
-					width,
-				),
+				truncateToWidth(theme.fg("muted", `  在环境中设置 ${envVars.join(" 或 ")},或在配置中添加密钥。`), width),
 			);
 		} else {
 			lines.push(truncateToWidth(theme.fg("muted", "  在配置中为此提供商添加 API 密钥。"), width));

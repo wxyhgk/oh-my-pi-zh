@@ -418,8 +418,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "interaction",
 			group: "Power (macOS)",
 			label: "阻止睡眠",
-			description:
-				"在活动会话期间阻止 macOS 休眠。每个级别都是累积的 — 会加上所有更低级别的标志。",
+			description: "在活动会话期间阻止 macOS 休眠。每个级别都是累积的 — 会加上所有更低级别的标志。",
 			options: [
 				{
 					value: "off",
@@ -451,8 +450,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "model",
 			group: "Advisor",
 			label: "启用 Advisor",
-			description:
-				"配对第二个模型(分配给 'advisor' 角色),被动审查每一轮并注入备注。",
+			description: "配对第二个模型(分配给 'advisor' 角色),被动审查每一轮并注入备注。",
 		},
 	},
 	"prewalk.enabled": {
@@ -485,8 +483,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "model",
 			group: "Advisor",
 			label: "Advisor 同步积压",
-			description:
-				"如果 Advisor 落后这么多轮,主 Agent 最多暂停 30 秒。Off 禁用追赶延迟。",
+			description: "如果 Advisor 落后这么多轮,主 Agent 最多暂停 30 秒。Off 禁用追赶延迟。",
 			condition: "advisorEnabled",
 		},
 	},
@@ -497,8 +494,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "model",
 			group: "Advisor",
 			label: "Advisor 免疫轮次",
-			description:
-				"在 Advisor 的问题或阻塞项打断后,接下来的这么多主轮次内,其余问题/阻塞项以非打断方式传递。",
+			description: "在 Advisor 的问题或阻塞项打断后,接下来的这么多主轮次内,其余问题/阻塞项以非打断方式传递。",
 			options: [
 				{ value: "0", label: "0 轮", description: "允许每个问题/阻塞项打断。" },
 				{ value: "1", label: "1 轮" },
@@ -703,8 +699,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "appearance",
 			group: "Status Line",
 			label: "紧凑思考级别",
-			description:
-				"在模型名上以单个图标显示思考级别,而非单独的 ` · <level>` 后缀。",
+			description: "在模型名上以单个图标显示思考级别,而非单独的 ` · <level>` 后缀。",
 		},
 	},
 	"tools.artifactSpillThreshold": {
@@ -758,8 +753,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tools",
 			group: "Output Limits",
 			label: "产物头部保留大小 (KB)",
-			description:
-				"输出溢出为产物时,与尾部一起保留在行内的头部内容量(中间省略)。0 表示禁用 — 仅保留尾部。",
+			description: "输出溢出为产物时,与尾部一起保留在行内的头部内容量(中间省略)。0 表示禁用 — 仅保留尾部。",
 			options: [
 				{ value: "0", label: "0 KB", description: "已禁用;仅保留尾部截断" },
 				{ value: "1", label: "1 KB", description: "约 250 token" },
@@ -880,15 +874,13 @@ export const SETTINGS_SCHEMA = {
 	"tui.maxInlineImageColumns": {
 		type: "number",
 		default: 100,
-		description:
-			"内联图片的最大宽度(终端列数,默认 100)。设为 0 则无限制(仅受终端宽度约束)。",
+		description: "内联图片的最大宽度(终端列数,默认 100)。设为 0 则无限制(仅受终端宽度约束)。",
 	},
 
 	"tui.maxInlineImageRows": {
 		type: "number",
 		default: 20,
-		description:
-			"内联图片的最大高度(终端行数,默认 20)。设为 0 则仅使用基于视口的限制(终端高度的 60%)。",
+		description: "内联图片的最大高度(终端行数,默认 20)。设为 0 则仅使用基于视口的限制(终端高度的 60%)。",
 	},
 
 	"tui.maxInlineImages": {
@@ -964,8 +956,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "appearance",
 			group: "Display",
 			label: "终端超链接",
-			description:
-				"将路径和 URL 包裹在 OSC 8 超链接中,实现终端原生的点击打开(auto:检测支持;off:从不;always:无条件)",
+			description: "将路径和 URL 包裹在 OSC 8 超链接中,实现终端原生的点击打开(auto:检测支持;off:从不;always:无条件)",
 		},
 	},
 	"tui.tight": {
@@ -1058,8 +1049,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "appearance",
 			group: "Display",
 			label: "折叠压缩后的历史",
-			description:
-				"在实时记录中,将压缩前的历史折叠到摘要分隔线之后;关闭则在每个压缩点保留完整记录并带分隔线",
+			description: "在实时记录中,将压缩前的历史折叠到摘要分隔线之后;关闭则在每个压缩点保留完整记录并带分隔线",
 		},
 	},
 
@@ -1134,8 +1124,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "model",
 			group: "Thinking",
 			label: "省略思考摘要",
-			description:
-				"指示上游提供商完全省略回复中的思考摘要(在支持的情况下)",
+			description: "指示上游提供商完全省略回复中的思考摘要(在支持的情况下)",
 		},
 	},
 
@@ -1246,8 +1235,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "model",
 			group: "Prompt",
 			label: "在提示词中包含工作区树",
-			description:
-				"在系统提示词中渲染工作区目录树。警告:文件被修改时,这会破坏跨会话的提示词缓存。",
+			description: "在系统提示词中渲染工作区目录树。警告:文件被修改时,这会破坏跨会话的提示词缓存。",
 		},
 	},
 
@@ -1553,8 +1541,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "model",
 			group: "Retry & Fallback",
 			label: "保留余量",
-			description:
-				"当剩余百分比低于此值时,将 coding-plan 模型视为接近上限。未知或未映射的用量保持主模型不变。",
+			description: "当剩余百分比低于此值时,将 coding-plan 模型视为接近上限。未知或未映射的用量保持主模型不变。",
 			condition: "usageAwareFallbackEnabled",
 			options: [
 				{ value: "5", label: "5%", description: "仅在几乎用尽时启用" },
@@ -1795,8 +1782,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "interaction",
 			group: "Startup & Updates",
 			label: "显示启动画面",
-			description:
-				"在正常交互式启动时显示完整的动画设置启动画面,而不重新运行设置。静默启动仍会抑制它。",
+			description: "在正常交互式启动时显示完整的动画设置启动画面,而不重新运行设置。静默启动仍会抑制它。",
 		},
 	},
 
@@ -2015,8 +2001,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "interaction",
 			group: "Collab",
 			label: "Web UI URL",
-			description:
-				"/collab 链接使用的浏览器 UI;留空则从 collab.relayUrl 推导;显式 http:// 仅限 localhost",
+			description: "/collab 链接使用的浏览器 UI;留空则从 collab.relayUrl 推导;显式 http:// 仅限 localhost",
 		},
 	},
 
@@ -2038,8 +2023,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "interaction",
 			group: "Collab",
 			label: "分享服务器",
-			description:
-				"/share 使用的分享查看器/上传基础地址(加密 blob 上传+查看器;链接为 <base>/<id>#<key>)",
+			description: "/share 使用的分享查看器/上传基础地址(加密 blob 上传+查看器;链接为 <base>/<id>#<key>)",
 		},
 	},
 
@@ -2116,8 +2100,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "interaction",
 			group: "Speech",
 			label: "语音转文字提交触发",
-			description:
-				"选择语音听写自动提交的时机:从不、松手(2 个词以上)、松手且句子完整,或当我说“提交”。",
+			description: "选择语音听写自动提交的时机:从不、松手(2 个词以上)、松手且句子完整,或当我说“提交”。",
 			options: STT_SUBMIT_TRIGGER_OPTIONS,
 		},
 	},
@@ -2361,8 +2344,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "context",
 			group: "Compaction",
 			label: "省略无事件结果",
-			description:
-				"消费后修剪被标记为上下文无用的工具结果(无匹配、超时等待)(缓存感知)",
+			description: "消费后修剪被标记为上下文无用的工具结果(无匹配、超时等待)(缓存感知)",
 		},
 	},
 
@@ -2459,8 +2441,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "context",
 			group: "Experimental",
 			label: "Snapcompact 形状",
-			description:
-				"snapcompact 打印文本所用的画框形状(压缩归档和内联成像)。Auto 为当前模型选择调优过的形状。",
+			description: "snapcompact 打印文本所用的画框形状(压缩归档和内联成像)。Auto 为当前模型选择调优过的形状。",
 			options: [
 				{
 					value: "auto",
@@ -2470,8 +2451,7 @@ export const SETTINGS_SCHEMA = {
 				{
 					value: "8x8r-bw",
 					label: "8x8 重复,黑色",
-					description:
-						"unscii 方形单元格,黑色墨水,每行打印两次,副本位于淡色高亮带上。",
+					description: "unscii 方形单元格,黑色墨水,每行打印两次,副本位于淡色高亮带上。",
 				},
 				{
 					value: "8x8r-sent",
@@ -2526,14 +2506,12 @@ export const SETTINGS_SCHEMA = {
 				{
 					value: "8on22-bw",
 					label: "8x13,22px 间距(带行距),黑色",
-					description:
-						"8x22 单元格上的 8x13 字形 — 额外行距,避免行拥挤。OpenAI/Google 的默认。",
+					description: "8x22 单元格上的 8x13 字形 — 额外行距,避免行拥挤。OpenAI/Google 的默认。",
 				},
 				{
 					value: "11on16-bw",
 					label: "8x13,11px 字距(带字距),黑色",
-					description:
-						"11x16 单元格上的 8x13 字形 — 额外字距,避免字符粘连。Anthropic 的默认。",
+					description: "11x16 单元格上的 8x13 字形 — 额外字距,避免字符粘连。Anthropic 的默认。",
 				},
 				{
 					value: "silver16-bw",
@@ -2646,8 +2624,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "memory",
 			group: "Auto-Learn",
 			label: "自动学习(实验性)",
-			description:
-				"Agent 停止后,引导它将经验教训存入记忆,并创建/增强隔离的受管技能",
+			description: "Agent 停止后,引导它将经验教训存入记忆,并创建/增强隔离的受管技能",
 		},
 	},
 	"autolearn.autoContinue": {
@@ -2657,8 +2634,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "memory",
 			group: "Auto-Learn",
 			label: "停止时自动运行捕获",
-			description:
-				"开启时,在停止时自动运行一次私有捕获轮次(消耗额外 token)。关闭时,仅保留常驻的自动学习指引。",
+			description: "开启时,在停止时自动运行一次私有捕获轮次(消耗额外 token)。关闭时,仅保留常驻的自动学习指引。",
 			condition: "autolearnActive",
 		},
 	},
@@ -2794,8 +2770,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "memory",
 			group: "Mnemopi",
 			label: "Mnemopi 主动链接",
-			description:
-				"在存储新记忆时将其摄入情景图谱,链接到相关实体和记忆",
+			description: "在存储新记忆时将其摄入情景图谱,链接到相关实体和记忆",
 			condition: "mnemopiActive",
 		},
 	},
@@ -2817,8 +2792,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "memory",
 			group: "Mnemopi",
 			label: "Mnemopi 嵌入模型",
-			description:
-				"高级:显式指定嵌入模型 id,覆盖变体设置。留空以使用 mnemopi.embeddingVariant。",
+			description: "高级:显式指定嵌入模型 id,覆盖变体设置。留空以使用 mnemopi.embeddingVariant。",
 			condition: "mnemopiActive",
 		},
 	},
@@ -2853,8 +2827,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "memory",
 			group: "Mnemopi",
 			label: "Mnemopi LLM 模式",
-			description:
-				"不使用 LLM,使用在线微型模型(/models 中的 TINY 角色,否则 @smol),或远程 OpenAI 兼容端点",
+			description: "不使用 LLM,使用在线微型模型(/models 中的 TINY 角色,否则 @smol),或远程 OpenAI 兼容端点",
 			condition: "mnemopiActive",
 			options: [
 				{ value: "none", label: "无", description: "禁用 Mnemopi 基于 LLM 的抽取" },
@@ -2971,8 +2944,7 @@ export const SETTINGS_SCHEMA = {
 				{
 					value: "per-project-tagged",
 					label: "按项目(带标签)",
-					description:
-						"共享记忆库,保留项带 project:<cwd> 标签。回忆时项目与未打标签的全局记忆一起呈现",
+					description: "共享记忆库,保留项带 project:<cwd> 标签。回忆时项目与未打标签的全局记忆一起呈现",
 				},
 			],
 			condition: "hindsightActive",
@@ -3346,8 +3318,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "files",
 			group: "Read Summaries",
 			label: "读取摘要展开目标",
-			description:
-				"BFS 展开可省略片段,直到摘要至少达到这么多可见行。0 仅保留最外层的省略。",
+			description: "BFS 展开可省略片段,直到摘要至少达到这么多可见行。0 仅保留最外层的省略。",
 		},
 	},
 
@@ -3358,8 +3329,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "files",
 			group: "Read Summaries",
 			label: "读取摘要展开上限",
-			description:
-				"BFS 展开时摘要大小的硬上限。展开后行数会超过此值的片段被跳过(该片段保持折叠),继续展开其余片段。",
+			description: "BFS 展开时摘要大小的硬上限。展开后行数会超过此值的片段被跳过(该片段保持折叠),继续展开其余片段。",
 		},
 	},
 
@@ -3393,8 +3363,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "files",
 			group: "LSP",
 			label: "延迟 LSP 启动",
-			description:
-				"在首次使用(lsp 工具或编辑匹配的文件类型)时启动语言服务器,而非在会话启动时",
+			description: "在首次使用(lsp 工具或编辑匹配的文件类型)时启动语言服务器,而非在会话启动时",
 		},
 	},
 
@@ -3405,8 +3374,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "files",
 			group: "LSP",
 			label: "共享语言服务器",
-			description:
-				"通过守护进程代理在多个 omp 实例间共享每个项目一个语言服务器(不可用时回退为私有服务器)",
+			description: "通过守护进程代理在多个 omp 实例间共享每个项目一个语言服务器(不可用时回退为私有服务器)",
 		},
 	},
 
@@ -3482,8 +3450,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "shell",
 			group: "Bash",
 			label: "Bash 审批规则",
-			description:
-				"有序的 bash 命令审批规则。每项包含 match 和 approval 字段;仅支持 '*' 通配符。",
+			description: "有序的 bash 命令审批规则。每项包含 match 和 approval 字段;仅支持 '*' 通配符。",
 		},
 	},
 
@@ -3624,8 +3591,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "shell",
 			group: "Eval & Runtimes",
 			label: "Python 解释器",
-			description:
-				"指向确切 Python 可执行文件的可选路径。设置后,自动 Python 运行时发现将被跳过。",
+			description: "指向确切 Python 可执行文件的可选路径。设置后,自动 Python 运行时发现将被跳过。",
 		},
 	},
 	"ruby.interpreter": {
@@ -3635,8 +3601,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "shell",
 			group: "Eval & Runtimes",
 			label: "Ruby 解释器",
-			description:
-				"指向确切 Ruby 可执行文件的可选路径。设置后,自动 Ruby 运行时发现将被跳过。",
+			description: "指向确切 Ruby 可执行文件的可选路径。设置后,自动 Ruby 运行时发现将被跳过。",
 		},
 	},
 	"julia.interpreter": {
@@ -3646,8 +3611,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "shell",
 			group: "Eval & Runtimes",
 			label: "Julia 解释器",
-			description:
-				"指向确切 Julia 可执行文件的可选路径。设置后,自动 Julia 运行时发现将被跳过。",
+			description: "指向确切 Julia 可执行文件的可选路径。设置后,自动 Julia 运行时发现将被跳过。",
 		},
 	},
 
@@ -3691,14 +3655,12 @@ export const SETTINGS_SCHEMA = {
 				{
 					value: "write",
 					label: "写入",
-					description:
-						"自动批准只读和写入工具;bash、eval、browser、task 等执行工具需要确认。",
+					description: "自动批准只读和写入工具;bash、eval、browser、task 等执行工具需要确认。",
 				},
 				{
 					value: "yolo",
 					label: "Yolo",
-					description:
-						"自动批准读取、写入和执行工具。用户策略仍可要求确认或阻止调用。",
+					description: "自动批准读取、写入和执行工具。用户策略仍可要求确认或阻止调用。",
 				},
 			],
 		},
@@ -3888,8 +3850,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tools",
 			group: "Available Tools",
 			label: "生成图片",
-			description:
-				"启用 generate_image 工具(文生图与图片编辑)。tools.xdev 开启时作为 xd:// 设备暴露。",
+			description: "启用 generate_image 工具(文生图与图片编辑)。tools.xdev 开启时作为 xd:// 设备暴露。",
 		},
 	},
 
@@ -4046,8 +4007,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tools",
 			group: "GitHub",
 			label: "GitHub 缓存软 TTL",
-			description:
-				"在此窗口内,缓存的 issue/PR 视图行直接返回(秒;默认 5 分钟)",
+			description: "在此窗口内,缓存的 issue/PR 视图行直接返回(秒;默认 5 分钟)",
 		},
 	},
 
@@ -4058,8 +4018,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tools",
 			group: "GitHub",
 			label: "GitHub 缓存硬 TTL",
-			description:
-				"超过软 TTL 后,缓存行被返回并在后台刷新;超过硬 TTL 后被丢弃(秒;默认 7 天)",
+			description: "超过软 TTL 后,缓存行被返回并在后台刷新;超过硬 TTL 后被丢弃(秒;默认 7 天)",
 		},
 	},
 
@@ -4081,8 +4040,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tools",
 			group: "Available Tools",
 			label: "Security",
-			description:
-				"启用 OMP 原生的安全扫描规划、执行,以及只读的 security:// 资源命名空间",
+			description: "启用 OMP 原生的安全扫描规划、执行,以及只读的 security:// 资源命名空间",
 		},
 	},
 
@@ -4264,8 +4222,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tools",
 			group: "Execution",
 			label: "IRC 超时",
-			description:
-				"hub 消息等待(以及 send await:true)的默认超时(毫秒);0 禁用超时",
+			description: "hub 消息等待(以及 send await:true)的默认超时(毫秒);0 禁用超时",
 			options: [
 				{ value: "0", label: "已禁用" },
 				{ value: "30000", label: "30 秒" },
@@ -4368,8 +4325,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tools",
 			group: "Discovery & MCP",
 			label: "MCP 通知防抖",
-			description:
-				"在将 MCP 资源更新注入对话前的防抖窗口(毫秒)",
+			description: "在将 MCP 资源更新注入对话前的防抖窗口(毫秒)",
 		},
 	},
 
@@ -4501,8 +4457,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tasks",
 			group: "Isolation",
 			label: "应用隔离更改",
-			description:
-				"自动将成功的隔离任务更改应用到父工作区;关闭以保留补丁或分支产物",
+			description: "自动将成功的隔离任务更改应用到父工作区;关闭以保留补丁或分支产物",
 		},
 	},
 
@@ -4586,8 +4541,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tasks",
 			group: "Subagents",
 			label: "每次任务力度",
-			description:
-				"在 task 派生时暴露可选的 effort 参数,允许调用方覆盖每个子代理的思考级别",
+			description: "在 task 派生时暴露可选的 effort 参数,允许调用方覆盖每个子代理的思考级别",
 		},
 	},
 
@@ -4698,8 +4652,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "tasks",
 			group: "Subagents",
 			label: "软请求预算通知",
-			description:
-				"当子代理超过其软请求预算时注入一条收尾引导通知,要求它在 1.5 倍强制结束之前收尾。",
+			description: "当子代理超过其软请求预算时注入一条收尾引导通知,要求它在 1.5 倍强制结束之前收尾。",
 		},
 	},
 
@@ -4876,8 +4829,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Services",
 			label: "Ollama Cloud 最大并发",
-			description:
-				"每个进程的最大并发 Ollama Cloud 子代理运行数;0 禁用该提供商特定限制",
+			description: "每个进程的最大并发 Ollama Cloud 子代理运行数;0 禁用该提供商特定限制",
 		},
 	},
 	"providers.webSearchOrder": {
@@ -4887,8 +4839,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Services",
 			label: "网络搜索提供商顺序",
-			description:
-				"web_search 工具的优先提供商;未列出的提供商之后保留其默认顺序",
+			description: "web_search 工具的优先提供商;未列出的提供商之后保留其默认顺序",
 			options: SEARCH_PROVIDER_CHOICES,
 			ordered: true,
 		},
@@ -4966,8 +4917,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Services",
 			label: "图片提供商顺序",
-			description:
-				"图片生成的优先提供商;未列出的提供商遵循当前会话提供商和内置顺序",
+			description: "图片生成的优先提供商;未列出的提供商遵循当前会话提供商和内置顺序",
 			options: IMAGE_PROVIDER_CHOICES,
 			ordered: true,
 		},
@@ -5070,8 +5020,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Services",
 			label: "语音朗读模式",
-			description:
-				"朗读什么:all = 助手消息+思考;assistant = 仅消息;yield = 仅轮次结束时的最终消息",
+			description: "朗读什么:all = 助手消息+思考;assistant = 仅消息;yield = 仅轮次结束时的最终消息",
 			options: [
 				{ value: "all", label: "全部(消息+思考)" },
 				{ value: "assistant", label: "仅助手消息" },
@@ -5110,8 +5059,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Tiny Model",
 			label: "微型模型",
-			description:
-				"会话标题模型:默认在线(TINY 角色,来自 /models,否则 @smol),或本地设备端模型",
+			description: "会话标题模型:默认在线(TINY 角色,来自 /models,否则 @smol),或本地设备端模型",
 			options: TINY_TITLE_MODEL_OPTIONS,
 		},
 	},
@@ -5164,8 +5112,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "model",
 			group: "Thinking",
 			label: "自动思考模型",
-			description:
-				"`auto` 思考级别的难度分类器:默认在线(TINY 角色,来自 /models,否则为 smol),或本地设备端模型",
+			description: "`auto` 思考级别的难度分类器:默认在线(TINY 角色,来自 /models,否则为 smol),或本地设备端模型",
 			condition: "autoThinkingActive",
 			options: AUTO_THINKING_MODEL_OPTIONS,
 		},
@@ -5194,8 +5141,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "interaction",
 			group: "Agent",
 			label: "检测意外停止",
-			description:
-				"使用一个小模型检测助手说会继续但未调用工具就停止的情况;自动提示它继续。",
+			description: "使用一个小模型检测助手说会继续但未调用工具就停止的情况;自动提示它继续。",
 		},
 	},
 	"providers.unexpectedStopModel": {
@@ -5206,8 +5152,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Tiny Model",
 			label: "意外停止检测模型",
-			description:
-				"意外停止检测的分类器:默认在线(TINY 角色,来自 /models,否则为 smol),或本地设备端模型。",
+			description: "意外停止检测的分类器:默认在线(TINY 角色,来自 /models,否则为 smol),或本地设备端模型。",
 			condition: "unexpectedStopDetection",
 			options: TINY_MEMORY_MODEL_OPTIONS,
 		},
@@ -5254,8 +5199,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Timeouts",
 			label: "流式首个事件超时",
-			description:
-				"等待模型流首个事件的秒数;-1 使用提供商/环境默认值,0 禁用看门狗",
+			description: "等待模型流首个事件的秒数;-1 使用提供商/环境默认值,0 禁用看门狗",
 			options: [
 				{ value: "-1", label: "自动", description: "使用提供商默认值和 PI_* 超时环境变量" },
 				{ value: "0", label: "关闭", description: "禁用首个事件超时" },
@@ -5273,8 +5217,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Timeouts",
 			label: "流式空闲超时",
-			description:
-				"模型流在事件之间可保持静默的秒数;-1 使用提供商/环境默认值,0 禁用看门狗",
+			description: "模型流在事件之间可保持静默的秒数;-1 使用提供商/环境默认值,0 禁用看门狗",
 			options: [
 				{ value: "-1", label: "自动", description: "使用提供商默认值和 PI_* 超时环境变量" },
 				{ value: "0", label: "关闭", description: "禁用空闲超时" },
@@ -5293,8 +5236,7 @@ export const SETTINGS_SCHEMA = {
 			tab: "providers",
 			group: "Protocol",
 			label: "OpenRouter 路由",
-			description:
-				"附加到 OpenRouter 模型 ID 的默认路由变体后缀(选择器已指定变体时覆盖)",
+			description: "附加到 OpenRouter 模型 ID 的默认路由变体后缀(选择器已指定变体时覆盖)",
 			options: [
 				{ value: "default", label: "默认", description: "无后缀;使用 OpenRouter 默认路由" },
 				{ value: "nitro", label: ":nitro", description: "优先吞吐量 / 最低延迟" },

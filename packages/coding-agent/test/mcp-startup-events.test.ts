@@ -22,9 +22,7 @@ describe("mcp/startup-events — connection-status cross-module contract", () =>
 	});
 
 	it("formats the initial connecting banner for a multi-server list", () => {
-		expect(formatMCPConnectingMessage(["alpha", "beta", "gamma"])).toBe(
-			"正在连接 MCP 服务器: alpha, beta, gamma…",
-		);
+		expect(formatMCPConnectingMessage(["alpha", "beta", "gamma"])).toBe("正在连接 MCP 服务器: alpha, beta, gamma…");
 	});
 
 	it("formats a completion update when every server connects", () => {

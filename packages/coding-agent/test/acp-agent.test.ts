@@ -2324,13 +2324,11 @@ describe("ACP agent", () => {
 		);
 		expect(session.promptCalls).toEqual([]);
 		expect(
-			chunks.some(
-				update => {
-					if (update.update.sessionUpdate !== "agent_message_chunk") return false;
-					if (update.update.content.type !== "text") return false;
-					return update.update.content.text === "快速模式当前为关。";
-				},
-			),
+			chunks.some(update => {
+				if (update.update.sessionUpdate !== "agent_message_chunk") return false;
+				if (update.update.content.type !== "text") return false;
+				return update.update.content.text === "快速模式当前为关。";
+			}),
 		).toBe(true);
 
 		harness.abortController.abort();

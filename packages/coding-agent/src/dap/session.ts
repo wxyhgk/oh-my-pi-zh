@@ -153,9 +153,7 @@ function combineDapStartErrors(command: "launch" | "attach", startError: unknown
 	if (startMessage === configurationMessage) {
 		return startError instanceof Error ? startError : new Error(startMessage);
 	}
-	return new Error(
-		`DAP ${command} 失败: ${startMessage}\nDAP configurationDone 也失败: ${configurationMessage}`,
-	);
+	return new Error(`DAP ${command} 失败: ${startMessage}\nDAP configurationDone 也失败: ${configurationMessage}`);
 }
 
 async function throwPreferredDapStartError(
@@ -1565,10 +1563,7 @@ export class DapSessionManager {
 			},
 		};
 		this.#treeOutcomeWaiters.add(waiter);
-		timeout = setTimeout(
-			() => waiter.reject(new Error(`DAP 会话树结果在 ${timeoutMs}ms 后超时`)),
-			timeoutMs,
-		);
+		timeout = setTimeout(() => waiter.reject(new Error(`DAP 会话树结果在 ${timeoutMs}ms 后超时`)), timeoutMs);
 		if (signal) {
 			abortHandler = () =>
 				waiter.reject(signal.reason instanceof Error ? signal.reason : new Error("调试操作已中止"));

@@ -303,9 +303,7 @@ export async function dispatchResolutionDevice(
 	if (device === PROPOSE_DEVICE_NAME) {
 		const handler = session.peekPlanProposalHandler?.();
 		if (!handler) {
-			throw new ToolError(
-				`当前没有等待批准的计划——仅当计划模式激活时,${PROPOSE_DEVICE_PATH} 才接受计划标题。`,
-			);
+			throw new ToolError(`当前没有等待批准的计划——仅当计划模式激活时,${PROPOSE_DEVICE_PATH} 才接受计划标题。`);
 		}
 		const result = await handler(body);
 		return { result, xdev: { tool: device, mode: "execute", args: { title: body }, inner: result.details } };
@@ -332,9 +330,7 @@ export async function dispatchResolutionDevice(
 				xdev: { ...xdevBase, inner: details },
 			};
 		}
-		throw new ToolError(
-			`没有可应用的操作——仅当存在暂存预览时,${RESOLVE_DEVICE_PATH} 才有效。${proposeHint}`,
-		);
+		throw new ToolError(`没有可应用的操作——仅当存在暂存预览时,${RESOLVE_DEVICE_PATH} 才有效。${proposeHint}`);
 	}
 	const invocation: ResolveInvocation = { action, reason: body };
 	const result = (await invoker(invocation)) as AgentToolResult<ResolveDetails>;

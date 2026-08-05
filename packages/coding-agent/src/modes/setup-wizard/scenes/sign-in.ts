@@ -227,8 +227,7 @@ export class SignInTab implements SetupTab {
 					this.#statusLines.push(theme.fg("dim", message));
 					this.host.requestRender();
 				},
-				onManualCodeInput: () =>
-					this.#showPrompt({ message: "粘贴授权代码(或完整重定向 URL):" }),
+				onManualCodeInput: () => this.#showPrompt({ message: "粘贴授权代码(或完整重定向 URL):" }),
 			});
 			// Provider-scoped online refresh so the just-persisted credential re-runs
 			// discovery instead of reusing a fresh authoritative cache row (#5780).

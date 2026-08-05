@@ -289,9 +289,7 @@ export class AgentLifecycleManager {
 
 		const ref = this.#registry.get(id);
 		if (!ref) {
-			throw new Error(
-				`未知 Agent "${id}"——它从未被注册或已被释放。如存在记录,可通过 history://${id} 读取。`,
-			);
+			throw new Error(`未知 Agent "${id}"——它从未被注册或已被释放。如存在记录,可通过 history://${id} 读取。`);
 		}
 		if (ref.session) return ref.session;
 		const inflight = this.#revivals.get(id);

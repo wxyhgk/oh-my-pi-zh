@@ -478,9 +478,7 @@ describe("advisor", () => {
 			const errorMessage = quarantineAdvisorUnsafeOutput(message, new Set(["advise", "read"]));
 			if (errorMessage === undefined) throw new Error("expected unavailable tool quarantine");
 
-			expect(errorMessage).toBe(
-				"Advisor 响应已被隔离: 请求了不可用的工具:mcp__hospital__notify_parent",
-			);
+			expect(errorMessage).toBe("Advisor 响应已被隔离: 请求了不可用的工具:mcp__hospital__notify_parent");
 			expect(message.stopReason).toBe("error");
 			expect(message.errorMessage).toBe(errorMessage);
 			expect(message.content).toEqual([{ type: "text", text: errorMessage }]);
@@ -591,9 +589,7 @@ describe("advisor", () => {
 			);
 			if (errorMessage === undefined) throw new Error("expected destructive advise-note quarantine");
 
-			expect(errorMessage).toBe(
-				"Advisor 响应已被隔离: 生成了仅输出的破坏性指令:指令覆盖, 破坏性 shell 命令",
-			);
+			expect(errorMessage).toBe("Advisor 响应已被隔离: 生成了仅输出的破坏性指令:指令覆盖, 破坏性 shell 命令");
 			expect(message.stopReason).toBe("error");
 			expect(message.content).toEqual([{ type: "text", text: errorMessage }]);
 			expect(JSON.stringify(message)).not.toContain("rm -rf");
@@ -641,9 +637,7 @@ describe("advisor", () => {
 					new Set(["advise"]),
 					"User asked whether `rm -rf .` would be destructive.",
 				),
-			).toBe(
-				"Advisor 响应已被隔离: 生成了仅输出的破坏性指令:指令覆盖, 破坏性 shell 命令",
-			);
+			).toBe("Advisor 响应已被隔离: 生成了仅输出的破坏性指令:指令覆盖, 破坏性 shell 命令");
 		});
 
 		it("sanitizes destructive output-only directives before advise can propagate them", () => {

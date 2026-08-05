@@ -212,9 +212,7 @@ describe("global --profile flag", () => {
 		await runCli(["--profile", "--version"]);
 
 		expect(process.exitCode).toBe(1);
-		expect(errSpy.mock.calls.map(call => String(call[0] ?? "")).join("\n")).toContain(
-			"--profile 需要提供配置档名称",
-		);
+		expect(errSpy.mock.calls.map(call => String(call[0] ?? "")).join("\n")).toContain("--profile 需要提供配置档名称");
 		expect(outSpy).not.toHaveBeenCalled();
 	});
 

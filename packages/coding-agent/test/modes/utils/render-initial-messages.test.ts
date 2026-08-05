@@ -450,9 +450,7 @@ describe("UiHelpers.renderInitialMessages — hidden tool activity", () => {
 
 		const hidden = makeRenderCtx(transcript, true, true);
 		new UiHelpers(hidden.ctx).renderInitialMessages();
-		expect(Bun.stripANSI(hidden.chatContainer.render(120).join("\n"))).not.toContain(
-			"被省略 — 此分支上无结果",
-		);
+		expect(Bun.stripANSI(hidden.chatContainer.render(120).join("\n"))).not.toContain("被省略 — 此分支上无结果");
 
 		// A live reveal must restore the placeholder without a transcript rebuild.
 		for (const child of hidden.chatContainer.children) {

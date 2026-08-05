@@ -40,9 +40,7 @@ export async function listGrievances(options: ListGrievancesOptions): Promise<vo
 		if (options.json) {
 			console.log("[]");
 		} else {
-			console.log(
-				chalk.dim("未找到反馈数据库。自动 QA 尚未记录任何报告(或已被禁用)。"),
-			);
+			console.log(chalk.dim("未找到反馈数据库。自动 QA 尚未记录任何报告(或已被禁用)。"));
 		}
 		return;
 	}
@@ -109,9 +107,7 @@ export async function cleanGrievances(options: CleanGrievancesOptions): Promise<
 		if (options.json) {
 			console.log(JSON.stringify({ deleted: 0 }));
 		} else {
-			console.log(
-				chalk.dim("未找到反馈数据库。自动 QA 尚未记录任何报告(或已被禁用)。"),
-			);
+			console.log(chalk.dim("未找到反馈数据库。自动 QA 尚未记录任何报告(或已被禁用)。"));
 		}
 		return;
 	}
@@ -229,9 +225,7 @@ export async function pushGrievances(options: PushGrievancesOptions): Promise<vo
 
 		if (result.skipped) {
 			console.log(
-				chalk.yellow(
-					"推送已跳过——未配置端点。请设置 `dev.autoqaPush.endpoint` 或 `PI_AUTO_QA_PUSH_URL`。",
-				),
+				chalk.yellow("推送已跳过——未配置端点。请设置 `dev.autoqaPush.endpoint` 或 `PI_AUTO_QA_PUSH_URL`。"),
 			);
 			return;
 		}
@@ -244,11 +238,7 @@ export async function pushGrievances(options: PushGrievancesOptions): Promise<vo
 			return;
 		}
 		const remaining = total - result.pushed;
-		console.log(
-			chalk.red(
-				`推送失败,已推送 ${result.pushed}/${total};仍有 ${remaining} 条反馈未推送。`,
-			),
-		);
+		console.log(chalk.red(`推送失败,已推送 ${result.pushed}/${total};仍有 ${remaining} 条反馈未推送。`));
 		process.exitCode = 1;
 	} finally {
 		db.close();

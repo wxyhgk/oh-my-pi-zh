@@ -727,9 +727,7 @@ describe("searchCodex model selection", () => {
 		const fetchMock: FetchImpl = () =>
 			Promise.resolve(new Response(sse, { status: 200, headers: { "Content-Type": "text/event-stream" } }));
 
-		await expect(searchCodex(makeSearchParams("no search performed", fetchMock))).rejects.toThrow(
-			/未运行网页搜索/,
-		);
+		await expect(searchCodex(makeSearchParams("no search performed", fetchMock))).rejects.toThrow(/未运行网页搜索/);
 	});
 
 	it("advances to the next default candidate when a lite model skips web search (#6988)", async () => {

@@ -161,11 +161,7 @@ export async function searchPublicWeb(
 	}
 
 	if (merged.size === 0 && failures.length === engineIds.length) {
-		throw new SearchProviderError(
-			"public",
-			`所有公共引擎均失败: ${formatSearchProviderFailures(failures)}`,
-			503,
-		);
+		throw new SearchProviderError("public", `所有公共引擎均失败: ${formatSearchProviderFailures(failures)}`, 503);
 	}
 
 	const sources = [...merged.values()]

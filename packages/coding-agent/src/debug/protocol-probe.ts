@@ -230,9 +230,7 @@ export class ProtocolProbeComponent extends Container {
 		if (sizingOn) {
 			this.addChild(new RawLines(buildLargeTextLines()));
 		} else {
-			this.addChild(
-				new Text(theme.fg("dim", "  (在 Kitty 终端上通过 tui.textSizing 设置启用)"), 1, 0),
-			);
+			this.addChild(new Text(theme.fg("dim", "  (在 Kitty 终端上通过 tui.textSizing 设置启用)"), 1, 0));
 		}
 		this.addChild(new Spacer(1));
 
@@ -256,11 +254,7 @@ export class ProtocolProbeComponent extends Container {
 			? theme.fg("warning", "已抑制 (PI_NOTIFICATIONS)")
 			: theme.fg("success", "已发送 — 请查看桌面/标题栏");
 		this.addChild(
-			new Text(
-				`${theme.fg("muted", "通知")} (${theme.fg("dim", notifyProtocolLabel())}) — ${notifyStatus}`,
-				1,
-				0,
-			),
+			new Text(`${theme.fg("muted", "通知")} (${theme.fg("dim", notifyProtocolLabel())}) — ${notifyStatus}`, 1, 0),
 		);
 		this.addChild(new DynamicBorder());
 	}

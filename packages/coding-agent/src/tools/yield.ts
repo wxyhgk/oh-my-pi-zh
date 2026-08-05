@@ -283,18 +283,14 @@ export class YieldTool implements AgentTool<TSchema, YieldDetails> {
 				dataSchema = withSectionVariants(resolved);
 			} else {
 				this.strict = false;
-				dataSchema = looseRecordSchema(
-					schemaError ? schemaDescription : "结构化 JSON 输出(未指定 schema)",
-				);
+				dataSchema = looseRecordSchema(schemaError ? schemaDescription : "结构化 JSON 输出(未指定 schema)");
 			}
 			parameters = wrapYieldParameters(dataSchema);
 			JSON.stringify(parameters);
 			if (!isValidJsonSchema(parameters)) throw new Error("yield 参数 schema 无效");
 		} catch (err) {
 			const errorMsg = err instanceof Error ? err.message : String(err);
-			parameters = wrapYieldParameters(
-				looseRecordSchema(`结构化 JSON 输出(schema 处理失败:${errorMsg})`),
-			);
+			parameters = wrapYieldParameters(looseRecordSchema(`结构化 JSON 输出(schema 处理失败:${errorMsg})`));
 			validate = undefined;
 			this.strict = false;
 		}

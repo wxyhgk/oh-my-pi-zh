@@ -115,7 +115,7 @@ it("drops an unavailable forced choice with the rest of its sequence", async () 
 });
 
 it("throws when forcing a non-active tool", () => {
-	expect(() => session.setForcedToolChoice("read")).toThrow('工具“read”当前未启用。');
+	expect(() => session.setForcedToolChoice("read")).toThrow("工具“read”当前未启用。");
 });
 
 it("drops a deferred forced choice when branching", async () => {

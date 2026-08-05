@@ -738,9 +738,7 @@ export async function searchCodex(params: SearchParams): Promise<SearchResponse>
 	} else {
 		const seed = await findCodexAuth(params.authStorage, params.sessionId, params.signal);
 		if (!seed) {
-			throw new Error(
-				"未找到 Codex OAuth 凭据。请运行 'omp /login openai-codex' 登录以启用 Codex 网页搜索。",
-			);
+			throw new Error("未找到 Codex OAuth 凭据。请运行 'omp /login openai-codex' 登录以启用 Codex 网页搜索。");
 		}
 
 		result = await withOAuthAccess(

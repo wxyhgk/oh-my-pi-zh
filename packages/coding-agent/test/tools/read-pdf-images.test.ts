@@ -403,7 +403,9 @@ describe("read PDF image extraction", () => {
 		const tool = new ReadTool(makeSession(testDir));
 		// `../../escape.png` matches the image-member shape but is not a known
 		// basename, so it must be refused rather than joined into the cache path.
-		await expect(tool.execute("call", { path: `${pdfPath}:../../escape.png` })).rejects.toThrow(/未找到 PDF 图片成员/);
+		await expect(tool.execute("call", { path: `${pdfPath}:../../escape.png` })).rejects.toThrow(
+			/未找到 PDF 图片成员/,
+		);
 	});
 
 	it("lists extractable members for a trailing-colon read", async () => {

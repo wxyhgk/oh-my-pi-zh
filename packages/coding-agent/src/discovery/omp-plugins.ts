@@ -40,8 +40,7 @@ import { resolvePluginStdioPaths } from "./substitute-plugin-root";
 
 const PROVIDER_ID = "omp-plugins";
 const DISPLAY_NAME = "OMP 扩展包";
-const DESCRIPTION =
-	"扩展包内的子发现(skills、hooks、tools、commands、rules、prompts、.mcp.json)";
+const DESCRIPTION = "扩展包内的子发现(skills、hooks、tools、commands、rules、prompts、.mcp.json)";
 const PRIORITY = 90;
 
 // =============================================================================

@@ -171,22 +171,19 @@ export class SecurityScanTool implements AgentTool<typeof securityScanSchema, Se
 				const operationId = requireValue(params.operation_id, "operation_id");
 				const operation = await coordinatorForSession().status(operationId);
 				if (!operation) throw new ToolError(`未知的安全操作:${operationId}`);
-				return textResult(
-					`安全扫描 ${operation.scanId}:${operation.phase};${operation.findingCount} 个发现。`,
-					{ action: params.action, operation },
-				);
+				return textResult(`安全扫描 ${operation.scanId}:${operation.phase};${operation.findingCount} 个发现。`, {
+					action: params.action,
+					operation,
+				});
 			}
 			case "cancel": {
 				const operationId = requireValue(params.operation_id, "operation_id");
 				const cancelled = await coordinatorForSession().cancel(operationId);
-				return textResult(
-					cancelled ? `已请求取消 ${operationId}。` : `没有运行中的操作 ${operationId}。`,
-					{
-						action: params.action,
-						cancelled,
-						operation: (await coordinatorForSession().status(operationId)) ?? undefined,
-					},
-				);
+				return textResult(cancelled ? `已请求取消 ${operationId}。` : `没有运行中的操作 ${operationId}。`, {
+					action: params.action,
+					cancelled,
+					operation: (await coordinatorForSession().status(operationId)) ?? undefined,
+				});
 			}
 			case "cloud_scans": {
 				const configurations = await cloudClientForSession(

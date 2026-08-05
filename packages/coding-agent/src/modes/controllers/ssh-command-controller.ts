@@ -368,9 +368,7 @@ export class SSHCommandController {
 			await removeSSHHost(filePath, name);
 			resetCapabilities();
 
-			this.#showMessage(
-				["", theme.fg("success", `- 已从 ${scope} 配置中移除 SSH 主机 "${name}"`), ""].join("\n"),
-			);
+			this.#showMessage(["", theme.fg("success", `- 已从 ${scope} 配置中移除 SSH 主机 "${name}"`), ""].join("\n"));
 		} catch (error) {
 			this.ctx.showError(`移除主机失败:${error instanceof Error ? error.message : String(error)}`);
 		}

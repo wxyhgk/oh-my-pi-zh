@@ -163,10 +163,7 @@ export class MarketplaceManager {
 			if (clonePath) {
 				await fs.rm(clonePath, { recursive: true, force: true }).catch(() => {});
 			}
-			throw new Error(
-				`市场目录名已从 “${name}” 变为 “${catalog.name}”。` +
-					`请移除并重新添加该市场以完成更新。`,
-			);
+			throw new Error(`市场目录名已从 “${name}” 变为 “${catalog.name}”。` + `请移除并重新添加该市场以完成更新。`);
 		}
 
 		// Promote the temp clone to its final cache location now that drift check passed.
@@ -893,9 +890,7 @@ export class MarketplaceManager {
 			return parseMarketplaceCatalog(content, entry.catalogPath);
 		} catch (err) {
 			if (isEnoent(err)) {
-				throw new Error(
-					`在 ${entry.catalogPath} 未找到市场目录。请尝试:/marketplace update ${entry.name}`,
-				);
+				throw new Error(`在 ${entry.catalogPath} 未找到市场目录。请尝试:/marketplace update ${entry.name}`);
 			}
 			throw err;
 		}

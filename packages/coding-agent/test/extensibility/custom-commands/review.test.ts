@@ -117,9 +117,7 @@ describe("ReviewCommand", () => {
 			ui: {
 				select: (title: string, selectOptions: string[]) => {
 					options?.onSelectCall?.({ title, options: selectOptions });
-					return Promise.resolve(
-						selectResults.shift() ?? options?.selectedMode ?? "4. 自定义审查指令",
-					);
+					return Promise.resolve(selectResults.shift() ?? options?.selectedMode ?? "4. 自定义审查指令");
 				},
 				editor: (
 					title: string,
@@ -480,9 +478,7 @@ describe("ReviewCommand", () => {
 		const result = await command.execute([], ctx);
 
 		expect(result).toBeDefined();
-		expect(
-			reviewModeOptions.filter(option => option === "从对话中审查 PR owner/example#77"),
-		).toHaveLength(1);
+		expect(reviewModeOptions.filter(option => option === "从对话中审查 PR owner/example#77")).toHaveLength(1);
 	});
 
 	it("orders detected PR menu entries by most recent mention", async () => {

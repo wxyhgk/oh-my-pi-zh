@@ -109,11 +109,7 @@ export function buildFileMentionBlock(files: FileMentionMessage["files"], indent
 			const size = typeof file.byteSize === "number" ? formatBytes(file.byteSize) : "未知大小";
 			suffix = file.skippedReason === "binary" ? `(已跳过:二进制,${size})` : `(已跳过:${size})`;
 		} else {
-			suffix = file.image
-				? "(图片)"
-				: file.lineCount === undefined
-					? "(行数未知)"
-					: `(${file.lineCount} 行)`;
+			suffix = file.image ? "(图片)" : file.lineCount === undefined ? "(行数未知)" : `(${file.lineCount} 行)`;
 		}
 		const text = `${theme.fg("dim", `${theme.tree.last} `)}${theme.fg("muted", "读取")} ${theme.fg(
 			"accent",

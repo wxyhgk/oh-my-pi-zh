@@ -216,10 +216,7 @@ export class SetupWizardComponent implements Component, OverlayFocusOwner {
 		header.push("");
 		this.#bodyRowStart = header.length;
 
-		const footer = [
-			"",
-			centerLine(theme.fg("dim", "↑/↓ 选择 · enter 确认 · esc 跳过 · ctrl+c 退出设置"), width),
-		];
+		const footer = ["", centerLine(theme.fg("dim", "↑/↓ 选择 · enter 确认 · esc 跳过 · ctrl+c 退出设置"), width)];
 		const maxBodyLines = Math.max(0, height - header.length - footer.length);
 		const body = this.#activeScene?.render(contentWidth, maxBodyLines).slice(0, maxBodyLines) ?? [];
 		const lines = [...header, ...body.map(line => indentLine(line, width, SCENE_MARGIN_X))];

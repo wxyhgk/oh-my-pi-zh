@@ -11,7 +11,6 @@ import type { ToolCallContext } from "@wxyhgk/pi-agent-core";
 import type { Ellipsis } from "@wxyhgk/pi-natives";
 import type { Component } from "@wxyhgk/pi-tui";
 import { getKeybindings, replaceTabs, truncateToWidth } from "@wxyhgk/pi-tui";
-import { pluralize } from "@wxyhgk/pi-utils";
 import { formatKeyHints, type KeyId } from "../config/keybindings";
 import { isSettingsInitialized, settings } from "../config/settings";
 import { getDefault } from "../config/settings-schema";

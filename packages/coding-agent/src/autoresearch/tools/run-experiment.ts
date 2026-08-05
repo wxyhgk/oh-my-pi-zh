@@ -375,9 +375,7 @@ function buildRunText(details: RunDetails, outputPreview: string, bestMetric: nu
 	lines.push(outputPreview);
 	if (details.truncation && details.fullOutputPath) {
 		lines.push("");
-		lines.push(
-			`输出已截断(限制 ${formatBytes(EXPERIMENT_MAX_BYTES)})。完整输出:${details.fullOutputPath}`,
-		);
+		lines.push(`输出已截断(限制 ${formatBytes(EXPERIMENT_MAX_BYTES)})。完整输出:${details.fullOutputPath}`);
 	}
 	return lines.join("\n").trimEnd();
 }

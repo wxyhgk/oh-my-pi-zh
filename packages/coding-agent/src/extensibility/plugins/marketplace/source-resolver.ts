@@ -67,9 +67,7 @@ async function resolveRelativeSource(
 	const resolved = path.resolve(context.marketplaceClonePath, relativePath);
 
 	if (!pathIsWithin(context.marketplaceClonePath, resolved)) {
-		throw new Error(
-			`插件源 “${source}” 解析到了市场根目录之外 (“${context.marketplaceClonePath}”)`,
-		);
+		throw new Error(`插件源 “${source}” 解析到了市场根目录之外 (“${context.marketplaceClonePath}”)`);
 	}
 
 	await verifyDirExists(resolved, `插件源目录不存在:“${resolved}”`);

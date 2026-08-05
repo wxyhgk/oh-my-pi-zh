@@ -551,9 +551,7 @@ await Bun.sleep(60_000);
 				// The ghost socket ends the read stream cleanly. The reader must wake
 				// the pending request with a connection-closed error; a wake regression
 				// rejects with `DAP request initialize timed out` instead.
-				await expect(client.sendRequest("initialize", {}, undefined, 60_000)).rejects.toThrow(
-					/DAP 连接已关闭/,
-				);
+				await expect(client.sendRequest("initialize", {}, undefined, 60_000)).rejects.toThrow(/DAP 连接已关闭/);
 			} finally {
 				await client.dispose();
 			}

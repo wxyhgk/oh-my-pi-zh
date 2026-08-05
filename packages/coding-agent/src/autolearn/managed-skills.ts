@@ -34,9 +34,7 @@ export function getManagedSkillsDir(agentDir: string = getAgentDir()): string {
 export function sanitizeSkillName(raw: string): string {
 	const name = raw.trim().toLowerCase();
 	if (!SKILL_NAME_PATTERN.test(name)) {
-		throw new Error(
-			`技能名称 "${raw}" 无效。请使用小写字母、数字和连字符(1-64 个字符,以字母或数字开头)。`,
-		);
+		throw new Error(`技能名称 "${raw}" 无效。请使用小写字母、数字和连字符(1-64 个字符,以字母或数字开头)。`);
 	}
 	return name;
 }
@@ -167,9 +165,7 @@ export async function writeManagedSkill(input: WriteManagedSkillInput): Promise<
 	// not the UTF-16 code-unit length of the body alone.
 	const bytes = Buffer.byteLength(content, "utf8");
 	if (bytes > MAX_MANAGED_SKILL_BYTES) {
-		throw new Error(
-			`托管技能为 ${bytes} 字节;上限为 ${MAX_MANAGED_SKILL_BYTES} 字节。请精简正文或描述。`,
-		);
+		throw new Error(`托管技能为 ${bytes} 字节;上限为 ${MAX_MANAGED_SKILL_BYTES} 字节。请精简正文或描述。`);
 	}
 	return serializeSkillMutation(name, async () => {
 		await assertManagedRootSafe();
@@ -183,9 +179,7 @@ export async function writeManagedSkill(input: WriteManagedSkillInput): Promise<
 			throw err;
 		});
 		if (dirStat?.isSymbolicLink()) {
-			throw new Error(
-				`托管技能 "${name}" 经由符号链接解析;拒绝在托管目录之外写入。`,
-			);
+			throw new Error(`托管技能 "${name}" 经由符号链接解析;拒绝在托管目录之外写入。`);
 		}
 		if (input.action === "create") {
 			await fs.mkdir(dir, { recursive: true });

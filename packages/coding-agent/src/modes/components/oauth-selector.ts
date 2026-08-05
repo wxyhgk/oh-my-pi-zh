@@ -241,9 +241,7 @@ export class OAuthSelectorComponent extends Container {
 		if (state === "valid") {
 			return theme.fg("success", ` ${theme.status.enabled} 已登录`) + source;
 		}
-		return this.#hasSelectableAuth(providerId)
-			? theme.fg("success", ` ${theme.status.enabled} 已登录`) + source
-			: "";
+		return this.#hasSelectableAuth(providerId) ? theme.fg("success", ` ${theme.status.enabled} 已登录`) + source : "";
 	}
 
 	#isSearchEnabled(): boolean {

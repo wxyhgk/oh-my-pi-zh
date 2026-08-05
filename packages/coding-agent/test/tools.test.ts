@@ -1104,9 +1104,7 @@ describe("Coding Agent Tools", () => {
 				content,
 			});
 
-			expect(getTextOutput(result)).toContain(
-				`已成功向 ${path.basename(archivePath)} 写入 ${content.length} 字节`,
-			);
+			expect(getTextOutput(result)).toContain(`已成功向 ${path.basename(archivePath)} 写入 ${content.length} 字节`);
 			expect(fs.readFileSync(archivePath, "utf-8")).toBe(content);
 		});
 	});

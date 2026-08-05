@@ -437,7 +437,9 @@ describe("applyPatch", () => {
 		const filePath = path.join(tempDir, "nodiff.txt");
 		await Bun.write(filePath, "content\n");
 
-		await expect(applyPatch({ path: "nodiff.txt", op: "update" }, { cwd: tempDir })).rejects.toThrow("更新操作需要 diff(区块)");
+		await expect(applyPatch({ path: "nodiff.txt", op: "update" }, { cwd: tempDir })).rejects.toThrow(
+			"更新操作需要 diff(区块)",
+		);
 	});
 
 	test("creates parent directories for create", async () => {

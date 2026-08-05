@@ -283,9 +283,7 @@ export class MCPAddWizard extends Container {
 			this.#contentContainer.addChild(new Spacer(1));
 		}
 
-		this.#contentContainer.addChild(
-			new Text(theme.fg("muted", "[仅限字母、数字、短横线、下划线、点、冒号]"), 0, 0),
-		);
+		this.#contentContainer.addChild(new Text(theme.fg("muted", "[仅限字母、数字、短横线、下划线、点、冒号]"), 0, 0));
 		this.#contentContainer.addChild(new Text(theme.fg("muted", "[Enter 继续,Esc 取消]"), 0, 0));
 	}
 
@@ -310,9 +308,7 @@ export class MCPAddWizard extends Container {
 		}
 
 		this.#contentContainer.addChild(new Spacer(1));
-		this.#contentContainer.addChild(
-			new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 取消]"), 0, 0),
-		);
+		this.#contentContainer.addChild(new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 取消]"), 0, 0));
 	}
 
 	#renderCommandStep(): void {
@@ -380,9 +376,7 @@ export class MCPAddWizard extends Container {
 		}
 
 		this.#contentContainer.addChild(new Spacer(1));
-		this.#contentContainer.addChild(
-			new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0),
-		);
+		this.#contentContainer.addChild(new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0));
 	}
 
 	#renderEnvVarNameStep(): void {
@@ -433,9 +427,7 @@ export class MCPAddWizard extends Container {
 		}
 
 		this.#contentContainer.addChild(new Spacer(1));
-		this.#contentContainer.addChild(
-			new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0),
-		);
+		this.#contentContainer.addChild(new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0));
 	}
 
 	#renderConfirmStep(): void {
@@ -462,7 +454,9 @@ export class MCPAddWizard extends Container {
 			this.#contentContainer.addChild(new Text("认证:OAuth(已认证)", 0, 0));
 		} else if (this.#state.authMethod === "manual") {
 			if (this.#state.authLocation === "env") {
-				this.#contentContainer.addChild(new Text(`认证:通过环境变量提供 API 密钥(${this.#state.envVarName})`, 0, 0));
+				this.#contentContainer.addChild(
+					new Text(`认证:通过环境变量提供 API 密钥(${this.#state.envVarName})`, 0, 0),
+				);
 			} else {
 				this.#contentContainer.addChild(new Text(`认证:通过请求头提供 API 密钥(${this.#state.headerName})`, 0, 0));
 			}
@@ -484,9 +478,7 @@ export class MCPAddWizard extends Container {
 		}
 
 		this.#contentContainer.addChild(new Spacer(1));
-		this.#contentContainer.addChild(
-			new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0),
-		);
+		this.#contentContainer.addChild(new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0));
 	}
 
 	handleInput(keyData: string): void {
@@ -855,9 +847,7 @@ export class MCPAddWizard extends Container {
 		}
 
 		this.#contentContainer.addChild(new Spacer(1));
-		this.#contentContainer.addChild(
-			new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0),
-		);
+		this.#contentContainer.addChild(new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0));
 	}
 
 	#renderOAuthAuthUrlStep(): void {
@@ -949,9 +939,7 @@ export class MCPAddWizard extends Container {
 		}
 
 		this.#contentContainer.addChild(new Spacer(1));
-		this.#contentContainer.addChild(
-			new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0),
-		);
+		this.#contentContainer.addChild(new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0));
 	}
 
 	#renderApiKeyStep(): void {
@@ -1181,9 +1169,7 @@ export class MCPAddWizard extends Container {
 		this.#contentContainer.addChild(new Text("正在启动 OAuth 流程...", 0, 0));
 		this.#contentContainer.addChild(new Text(theme.fg("muted", "浏览器将自动打开。"), 0, 0));
 		this.#contentContainer.addChild(new Spacer(1));
-		this.#contentContainer.addChild(
-			new Text(theme.fg("warning", "如果浏览器未打开,请从聊天中复制 URL。"), 0, 0),
-		);
+		this.#contentContainer.addChild(new Text(theme.fg("warning", "如果浏览器未打开,请从聊天中复制 URL。"), 0, 0));
 		this.#contentContainer.addChild(new Spacer(1));
 		this.#contentContainer.addChild(new Text(theme.fg("muted", "(按 Esc 取消)"), 0, 0));
 		this.#requestRender();
@@ -1236,10 +1222,7 @@ export class MCPAddWizard extends Container {
 			if (this.#onTestConnectionCallback) {
 				try {
 					const { promise: timeoutPromise, reject: timeoutReject } = Promise.withResolvers<never>();
-					const timer = setTimeout(
-						() => timeoutReject(new Error("健康检查在 10 秒后超时")),
-						10_000,
-					);
+					const timer = setTimeout(() => timeoutReject(new Error("健康检查在 10 秒后超时")), 10_000);
 					try {
 						await Promise.race([
 							this.#onTestConnectionCallback(this.#buildServerConfigWithAuth(true)),
@@ -1282,11 +1265,7 @@ export class MCPAddWizard extends Container {
 			const errorMsg = sanitize(error instanceof Error ? error.message : String(error));
 			this.#contentContainer.clear();
 			this.#contentContainer.addChild(
-				new Text(
-					cancelled ? theme.fg("muted", "○ OAuth 已取消") : theme.fg("error", "✗ OAuth 身份验证失败"),
-					0,
-					0,
-				),
+				new Text(cancelled ? theme.fg("muted", "○ OAuth 已取消") : theme.fg("error", "✗ OAuth 身份验证失败"), 0, 0),
 			);
 			this.#contentContainer.addChild(new Spacer(1));
 			this.#contentContainer.addChild(new Text(errorMsg, 0, 0));
@@ -1294,30 +1273,20 @@ export class MCPAddWizard extends Container {
 
 			// Provide helpful tips based on error type
 			if (cancelled) {
-				this.#contentContainer.addChild(
-					new Text(theme.fg("muted", "提示:选择重试可再次打开浏览器。"), 0, 0),
-				);
+				this.#contentContainer.addChild(new Text(theme.fg("muted", "提示:选择重试可再次打开浏览器。"), 0, 0));
 			} else if (errorMsg.includes("timeout") || errorMsg.includes("timed out")) {
-				this.#contentContainer.addChild(
-					new Text(theme.fg("muted", "提示:下次请更快地完成授权"), 0, 0),
-				);
+				this.#contentContainer.addChild(new Text(theme.fg("muted", "提示:下次请更快地完成授权"), 0, 0));
 			} else if (errorMsg.includes("Invalid OAuth URLs")) {
-				this.#contentContainer.addChild(
-					new Text(theme.fg("muted", "提示:请检查 OAuth URL 是否正确"), 0, 0),
-				);
+				this.#contentContainer.addChild(new Text(theme.fg("muted", "提示:请检查 OAuth URL 是否正确"), 0, 0));
 			} else if (errorMsg.includes("ECONNREFUSED")) {
-				this.#contentContainer.addChild(
-					new Text(theme.fg("muted", "提示:请确认 OAuth 服务器可访问"), 0, 0),
-				);
+				this.#contentContainer.addChild(new Text(theme.fg("muted", "提示:请确认 OAuth 服务器可访问"), 0, 0));
 			}
 
 			this.#contentContainer.addChild(new Spacer(1));
 			this.#contentContainer.addChild(new Text(`${theme.fg("accent", "→ ")}重试`, 0, 0));
 			this.#contentContainer.addChild(new Text("  编辑 OAuth 设置", 0, 0));
 			this.#contentContainer.addChild(new Spacer(1));
-			this.#contentContainer.addChild(
-				new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0),
-			);
+			this.#contentContainer.addChild(new Text(theme.fg("muted", "[↑↓ 导航,Enter 选择,Esc 返回]"), 0, 0));
 			this.#requestRender();
 
 			// Set up as a selector step

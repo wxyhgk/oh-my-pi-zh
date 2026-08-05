@@ -128,11 +128,7 @@ describe("formatScreenshot", () => {
 				dest: filePath,
 				resized,
 			}),
-		).toEqual([
-			"已捕获截图",
-			`已保存: image/png (2.00 KB) 至 ${filePath}`,
-			"模型: image/webp (1.00 KB, 800x600)",
-		]);
+		).toEqual(["已捕获截图", `已保存: image/png (2.00 KB) 至 ${filePath}`, "模型: image/webp (1.00 KB, 800x600)"]);
 	});
 
 	it("formats temp-only screenshot without save line", () => {

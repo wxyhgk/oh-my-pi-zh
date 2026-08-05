@@ -415,9 +415,7 @@ function buildTodoSyncResult(
 		role: "toolResult",
 		toolCallId,
 		toolName: "todo",
-		content: [
-			{ type: "text", text: error ?? (phases ? formatTodoSyncSummary(phases) : "待办快照未同步") },
-		],
+		content: [{ type: "text", text: error ?? (phases ? formatTodoSyncSummary(phases) : "待办快照未同步") }],
 		details: phases ? { phases, storage: "session" } : undefined,
 		isError: error !== null,
 		timestamp: Date.now(),

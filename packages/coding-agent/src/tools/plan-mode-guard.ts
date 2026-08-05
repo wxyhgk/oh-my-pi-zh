@@ -149,7 +149,5 @@ export function enforcePlanModeWrite(
 
 	if (targetsLocalSandbox(session, targetPath)) return;
 
-	throw new ToolError(
-		"计划模式:工作区为只读。请将计划写入 local://<slug>-plan.md 文件。",
-	);
+	throw new ToolError("计划模式:工作区为只读。请将计划写入 local://<slug>-plan.md 文件。");
 }

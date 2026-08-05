@@ -14,9 +14,7 @@ import type { ToolSession } from ".";
 const manageSkillSchema = type({
 	action: "'create' | 'update' | 'delete'",
 	name: type("string").describe("kebab-case 格式的技能名称"),
-	"description?": type("string").describe(
-		"技能适用场景的一句话描述(create/update 必填)",
-	),
+	"description?": type("string").describe("技能适用场景的一句话描述(create/update 必填)"),
 	"body?": type("string").describe("SKILL.md 的 markdown 正文,不含 frontmatter(create/update 必填)"),
 }).narrow(
 	(p, ctx) =>

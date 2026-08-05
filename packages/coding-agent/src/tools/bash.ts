@@ -652,8 +652,7 @@ export class BashTool implements AgentTool<typeof bashSchemaBase | typeof bashSc
 		}
 		if (result.timedOut === true) {
 			const out = normalizeResultOutput(result);
-			const message =
-				timeoutSec === undefined ? "命令已超时" : `命令在 ${timeoutSec} 秒后超时`;
+			const message = timeoutSec === undefined ? "命令已超时" : `命令在 ${timeoutSec} 秒后超时`;
 			throw new ToolError(out ? `${out}\n\n[${message}]` : message);
 		}
 		if (result.exitCode === undefined) {
@@ -728,8 +727,7 @@ export class BashTool implements AgentTool<typeof bashSchemaBase | typeof bashSc
 
 		if (isTimeout) {
 			details.timedOut = true;
-			const message =
-				timeoutSec === undefined ? "命令已超时" : `命令在 ${timeoutSec} 秒后超时`;
+			const message = timeoutSec === undefined ? "命令已超时" : `命令在 ${timeoutSec} 秒后超时`;
 			// executeBash has already emitted this leading sink notice. PTY output
 			// has not, so provide the LLM-facing annotation exactly once.
 			if (!normalizeResultOutput(result).startsWith(`[${message}]\n`)) {
@@ -1474,11 +1472,7 @@ export class BashTool implements AgentTool<typeof bashSchemaBase | typeof bashSc
 				const out = normalizeResultOutput(result);
 				// The local executor already prepends `[Command cancelled]`; PTY
 				// output does not, so preserve one cancellation notice in either case.
-				const message = out.startsWith("[命令已取消]")
-					? out
-					: out
-						? `${out}\n\n[命令已中止]`
-						: "命令已中止";
+				const message = out.startsWith("[命令已取消]") ? out : out ? `${out}\n\n[命令已中止]` : "命令已中止";
 				if (signal?.aborted) {
 					throw new ToolAbortError(message);
 				}

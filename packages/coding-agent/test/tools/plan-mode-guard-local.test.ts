@@ -101,9 +101,7 @@ describe("enforcePlanModeWrite (working tree read-only, local:// sandbox writabl
 
 	it("rejects deletes and renames outright", () => {
 		const session = makeSession({ artifactsDir: ARTIFACTS_DIR, planMode });
-		expect(() => enforcePlanModeWrite(session, "local://some-plan.md", { op: "delete" })).toThrow(
-			/不允许删除文件/,
-		);
+		expect(() => enforcePlanModeWrite(session, "local://some-plan.md", { op: "delete" })).toThrow(/不允许删除文件/);
 		expect(() => enforcePlanModeWrite(session, "local://some-plan.md", { move: "local://renamed.md" })).toThrow(
 			/不允许重命名文件/,
 		);
@@ -166,9 +164,7 @@ describe("enforcePlanModeWrite accepts absolute local-sandbox paths", () => {
 		const session = makeSession({ artifactsDir: ARTIFACTS_DIR, cwd: REPO_ROOT, planMode });
 		const workingTreePath = path.join(REPO_ROOT, "src", "foo.ts");
 
-		expect(() => enforcePlanModeWrite(session, workingTreePath, { op: "update" })).toThrow(
-			/工作区为只读/,
-		);
+		expect(() => enforcePlanModeWrite(session, workingTreePath, { op: "update" })).toThrow(/工作区为只读/);
 		expect(() => enforcePlanModeWrite(session, `[${workingTreePath}#ABCD]`, { op: "update" })).toThrow(
 			/工作区为只读/,
 		);

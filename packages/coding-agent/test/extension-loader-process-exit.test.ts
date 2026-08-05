@@ -187,7 +187,9 @@ try {
 `);
 
 		expect(exitCode).toBe(0);
-		expect(stdout).toContain("ExtensionExitError:ExtensionExitError: 在受保护的扩展/钩子加载期间,模块调用了 process.exit(37)");
+		expect(stdout).toContain(
+			"ExtensionExitError:ExtensionExitError: 在受保护的扩展/钩子加载期间,模块调用了 process.exit(37)",
+		);
 		expect(stderr).toBe("");
 	});
 

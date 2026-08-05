@@ -514,7 +514,11 @@ export function createGrepToolDefinition(cwd: string, options?: GrepToolOptions)
 			const theme = renderTheme(optionsArg, themeArg);
 			const pattern = stringField(params, "pattern") ?? "";
 			const searchPath = stringField(params, "path") ?? ".";
-			return new Text(`${themedTitle(theme, "grep")} ${themedMuted(theme, `/${pattern}/ 在 ${searchPath} 中`)}`, 0, 0);
+			return new Text(
+				`${themedTitle(theme, "grep")} ${themedMuted(theme, `/${pattern}/ 在 ${searchPath} 中`)}`,
+				0,
+				0,
+			);
 		},
 		renderResult: legacyRenderResult,
 		execute: (toolCallId, params, signal, onUpdate) => {

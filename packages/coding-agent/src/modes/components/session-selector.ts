@@ -532,9 +532,7 @@ class SessionList implements Component {
 				lines.push(truncateToWidth(theme.fg("muted", "  未找到会话"), width));
 			} else {
 				// "Current folder" scope - hint to try "all"
-				lines.push(
-					truncateToWidth(theme.fg("muted", "  当前文件夹中没有会话。按 Tab 查看全部。"), width),
-				);
+				lines.push(truncateToWidth(theme.fg("muted", "  当前文件夹中没有会话。按 Tab 查看全部。"), width));
 			}
 			return lines;
 		}

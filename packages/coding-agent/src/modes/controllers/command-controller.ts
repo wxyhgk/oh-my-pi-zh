@@ -135,9 +135,7 @@ export class CommandController {
 			copyToClipboard(advisorHistory);
 			this.ctx.showStatus("顾问历史记录已复制到剪贴板");
 		} catch (error: unknown) {
-			this.ctx.showError(
-				`复制顾问历史记录失败:${error instanceof Error ? error.message : "未知错误"}`,
-			);
+			this.ctx.showError(`复制顾问历史记录失败:${error instanceof Error ? error.message : "未知错误"}`);
 		}
 	}
 
@@ -154,9 +152,7 @@ export class CommandController {
 			await Bun.write(tmpPath, `${rendered}\n`);
 			this.ctx.showStatus(`调试记录已写入:\n${tmpPath}`);
 		} catch (error: unknown) {
-			this.ctx.showError(
-				`写入调试记录失败:${error instanceof Error ? error.message : "未知错误"}`,
-			);
+			this.ctx.showError(`写入调试记录失败:${error instanceof Error ? error.message : "未知错误"}`);
 		}
 	}
 
@@ -805,9 +801,7 @@ export class CommandController {
 					}
 				}
 				const skippedSuffix = skipped > 0 ? `;跳过了 ${skipped} 个精选模型` : "";
-				this.ctx.showStatus(
-					`已为 ${queued}/${targets.length} 个自动刷新模型加入刷新队列${skippedSuffix}。`,
-				);
+				this.ctx.showStatus(`已为 ${queued}/${targets.length} 个自动刷新模型加入刷新队列${skippedSuffix}。`);
 			}
 			// Reload the cache after a brief grace so the new content (if the refresh
 			// completes synchronously on the server) flows into the system prompt.
@@ -885,9 +879,7 @@ export class CommandController {
 					});
 					created++;
 				} catch (error) {
-					this.ctx.showWarning(
-						`种子 ${seed.id} 失败:${error instanceof Error ? error.message : String(error)}`,
-					);
+					this.ctx.showWarning(`种子 ${seed.id} 失败:${error instanceof Error ? error.message : String(error)}`);
 				}
 			}
 			this.ctx.showStatus(`已创建 ${created} 个新心智模型;${skipped} 个已存在。`);
@@ -1172,9 +1164,7 @@ export class CommandController {
 				if (shouldPersistCwd) await this.#applyBashResultCwd(result);
 			} catch (error) {
 				this.ctx.showError(
-					`Bash 命令已完成,但 OMP 无法更新其工作目录:${
-						error instanceof Error ? error.message : "未知错误"
-					}`,
+					`Bash 命令已完成,但 OMP 无法更新其工作目录:${error instanceof Error ? error.message : "未知错误"}`,
 				);
 			}
 		} catch (error) {
@@ -1906,9 +1896,7 @@ export function renderUsageReports(
 				!!activeAccount &&
 				((!!activeAccount.accountId && activeAccount.accountId === report.metadata?.accountId) ||
 					(!!activeAccount.email && activeAccount.email === report.metadata?.email));
-			resetAccountLines.push(
-				`    • ${label}: ${count} 个已保存的重置${isActive ? " (使用中)" : ""}`,
-			);
+			resetAccountLines.push(`    • ${label}: ${count} 个已保存的重置${isActive ? " (使用中)" : ""}`);
 			const credits = report.resetCredits?.credits;
 			if (credits) {
 				for (const credit of credits) {

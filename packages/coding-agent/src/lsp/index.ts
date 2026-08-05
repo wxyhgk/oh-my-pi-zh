@@ -2277,9 +2277,7 @@ export class LspTool implements AgentTool<typeof lspSchema, LspToolDetails, Them
 				const previewRaw = JSON.stringify(requestParams ?? null);
 				const preview = previewRaw.length > 400 ? `${previewRaw.slice(0, 397)}...` : previewRaw;
 				return {
-					content: [
-						{ type: "text", text: `LSP 错误来自 ${chosenName} 的 ${method}:${msg}\n  参数:${preview}` },
-					],
+					content: [{ type: "text", text: `LSP 错误来自 ${chosenName} 的 ${method}:${msg}\n  参数:${preview}` }],
 					details: { action, serverName: chosenName, success: false, request: params },
 				};
 			}
@@ -2600,11 +2598,7 @@ export class LspTool implements AgentTool<typeof lspSchema, LspToolDetails, Them
 						);
 						const plainLines = plainReferences.map(location => `  ${formatLocation(location, this.session.cwd)}`);
 						const lines = plainLines.length
-							? [
-									...contextualLines,
-									`  ... 另有 ${plainLines.length} 处引用(未显示上下文)`,
-									...plainLines,
-								]
+							? [...contextualLines, `  ... 另有 ${plainLines.length} 处引用(未显示上下文)`, ...plainLines]
 							: contextualLines;
 						output = `找到 ${result.length} 处引用:\n${lines.join("\n")}`;
 					}

@@ -796,9 +796,7 @@ export class UiHelpers {
 		this.ctx.compactionQueuedMessages.push({ text, mode, images: queuedImages } as CompactionQueuedMessage);
 		this.ctx.editor.clearDraft(text);
 		this.ctx.updatePendingMessagesDisplay();
-		this.ctx.showStatus(
-			queuedImages ? "消息(含图片)已排队,压缩后发送" : "消息已排队,压缩后发送",
-		);
+		this.ctx.showStatus(queuedImages ? "消息(含图片)已排队,压缩后发送" : "消息已排队,压缩后发送");
 	}
 
 	async #deliverQueuedMessage(message: CompactionQueuedMessage): Promise<void> {
@@ -857,9 +855,7 @@ export class UiHelpers {
 			this.ctx.session.clearQueue();
 			this.ctx.compactionQueuedMessages = queuedMessages;
 			this.ctx.updatePendingMessagesDisplay();
-			this.ctx.showError(
-				`发送排队消息失败:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.ctx.showError(`发送排队消息失败:${error instanceof Error ? error.message : String(error)}`);
 		};
 
 		try {

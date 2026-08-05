@@ -71,9 +71,7 @@ async function loadAttachmentReferenceInput(options: {
 	if (!attachment) {
 		const available = formatAvailableImageAttachments(options.attachments);
 		if (options.attachments.length === 0) {
-			throw new ToolError(
-				`当前轮次没有可用的图片附件。path="${options.path}" 必须是可读的文件路径或附件 URI。`,
-			);
+			throw new ToolError(`当前轮次没有可用的图片附件。path="${options.path}" 必须是可读的文件路径或附件 URI。`);
 		}
 		throw new ToolError(
 			`无法解析图片附件 '${options.path}'。可用的图片附件: ${available}。请传入附件 URI 或可读的文件系统路径。`,
@@ -124,8 +122,7 @@ export class InspectImageTool implements AgentTool<typeof inspectImageSchema, In
 			caption: "场景/物体问题",
 			call: {
 				path: "photos/shelf.jpg",
-				question:
-					"列出所有清晰可见的产品标签及其货架位置(上/中/下)。若无法辨认,请说明无法辨认。",
+				question: "列出所有清晰可见的产品标签及其货架位置(上/中/下)。若无法辨认,请说明无法辨认。",
 			},
 		},
 	];
@@ -145,9 +142,7 @@ export class InspectImageTool implements AgentTool<typeof inspectImageSchema, In
 		_context?: AgentToolContext,
 	): Promise<AgentToolResult<InspectImageToolDetails>> {
 		if (this.session.settings.get("images.blockImages")) {
-			throw new ToolError(
-				"设置 (images.blockImages=true) 已禁用图片提交。请禁用它以使用 inspect_image。",
-			);
+			throw new ToolError("设置 (images.blockImages=true) 已禁用图片提交。请禁用它以使用 inspect_image。");
 		}
 
 		const modelRegistry = this.session.modelRegistry;

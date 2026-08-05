@@ -577,8 +577,7 @@ export class SecurityCoordinator {
 				activeModel?.provider === plan.model.provider && activeModel.id === plan.model.modelId
 					? activeModel
 					: this.#host.modelRegistry.find(plan.model.provider, plan.model.modelId);
-			if (!model)
-				throw new Error(`安全扫描模型不可用:${plan.model.provider}/${plan.model.modelId}`);
+			if (!model) throw new Error(`安全扫描模型不可用:${plan.model.provider}/${plan.model.modelId}`);
 			const sessionsDirectory = path.join(store.projectDirectory, "sessions");
 			await fs.mkdir(sessionsDirectory, { recursive: true, mode: 0o700 });
 			const sessionManager = SessionManager.create(executionTarget.cwd, sessionsDirectory);

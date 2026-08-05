@@ -1,11 +1,6 @@
 import { type AuthStorage, isAuthRetryableError, type OAuthAccess, withOAuthAccess } from "@wxyhgk/pi-ai";
 import { getProxyForUrl, wrapFetchForProxy } from "@wxyhgk/pi-ai/utils/proxy";
-import {
-	CODEX_BASE_URL,
-	CODEX_CLIENT_VERSION,
-	getCodexAccountId,
-	OPENAI_HEADERS,
-} from "@wxyhgk/pi-catalog/wire/codex";
+import { CODEX_BASE_URL, CODEX_CLIENT_VERSION, getCodexAccountId, OPENAI_HEADERS } from "@wxyhgk/pi-catalog/wire/codex";
 import { LiveWebRtcPeer } from "@wxyhgk/pi-natives";
 import { generateCodexAttestation } from "./attestation";
 import {
@@ -140,8 +135,7 @@ export class CodexLiveTransport {
 	connect(): Promise<void> {
 		if (this.#state === "connected") return Promise.resolve();
 		if (this.#connectPromise) return this.#connectPromise;
-		if (this.#state === "closing" || this.#state === "closed")
-			return Promise.reject(new Error("实时传输已关闭"));
+		if (this.#state === "closing" || this.#state === "closed") return Promise.reject(new Error("实时传输已关闭"));
 		if (this.#options.signal?.aborted) return Promise.reject(abortReason(this.#options.signal));
 		this.#state = "connecting";
 		const operation = this.#connect().catch(async error => {
@@ -224,8 +218,7 @@ export class CodexLiveTransport {
 			throw new LiveSignalingError(response.status, `Codex 实时信令失败（${response.status}）：${detail}`);
 		}
 		const answer = responseBody;
-		if (!answer.trim())
-			throw new LiveSignalingError(response.status, "Codex 实时信令返回了空的 SDP 应答");
+		if (!answer.trim()) throw new LiveSignalingError(response.status, "Codex 实时信令返回了空的 SDP 应答");
 		const callId = parseLiveCallId(response.headers.get("location"));
 		if (!callId) {
 			throw new LiveSignalingError(response.status, "Codex 实时信令未返回有效的呼叫 ID");

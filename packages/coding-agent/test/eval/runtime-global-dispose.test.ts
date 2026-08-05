@@ -118,11 +118,7 @@ describe("JsRuntime global disposal", () => {
 				() => {
 					throw new Error("expected active runtime rejection");
 				},
-				error =>
-					expect(error).toHaveProperty(
-						"message",
-						"无法运行代码:另一个同 realm 的 JS 运行时正在运行",
-					),
+				error => expect(error).toHaveProperty("message", "无法运行代码:另一个同 realm 的 JS 运行时正在运行"),
 			);
 			gate.resolve();
 			await activeSecond;

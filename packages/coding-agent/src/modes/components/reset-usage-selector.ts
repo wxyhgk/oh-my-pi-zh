@@ -56,9 +56,7 @@ export class ResetUsageSelectorComponent extends Container {
 			if (!account) continue;
 			const isSelected = i === this.#selectedIndex;
 			const redeemable = account.availableCount > 0;
-			const countLabel = account.error
-				? account.error
-				: `${account.availableCount} 个已保存重置`;
+			const countLabel = account.error ? account.error : `${account.availableCount} 个已保存重置`;
 			const countText = account.error
 				? theme.fg("error", countLabel)
 				: redeemable
@@ -86,9 +84,7 @@ export class ResetUsageSelectorComponent extends Container {
 		}
 
 		if (total === 0) {
-			this.#listContainer.addChild(
-				new TruncatedText(theme.fg("muted", "  没有已保存重置的 Codex 账户"), 0, 0),
-			);
+			this.#listContainer.addChild(new TruncatedText(theme.fg("muted", "  没有已保存重置的 Codex 账户"), 0, 0));
 		}
 
 		const pending = this.#pendingIndex !== null ? this.#accounts[this.#pendingIndex] : undefined;

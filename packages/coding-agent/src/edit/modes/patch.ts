@@ -634,9 +634,7 @@ function formatSequenceMatchPreviews(
 	if (!matchIndices || matchIndices.length === 0) return undefined;
 	const previews = matchIndices.map(index => formatSequenceMatchPreview(lines, index));
 	const moreMsg =
-		matchCount && matchCount > matchIndices.length
-			? `(仅显示前 ${matchIndices.length} 处,共 ${matchCount} 处)`
-			: "";
+		matchCount && matchCount > matchIndices.length ? `(仅显示前 ${matchIndices.length} 处,共 ${matchCount} 处)` : "";
 	return `${previews.join("\n\n")}${moreMsg}`;
 }
 
@@ -962,8 +960,7 @@ function applyCharacterMatch(
 	// Check for multiple exact occurrences
 	if (matchOutcome.occurrences && matchOutcome.occurrences > 1) {
 		const previews = matchOutcome.occurrencePreviews?.join("\n\n") ?? "";
-		const moreMsg =
-			matchOutcome.occurrences > 5 ? `(仅显示前 5 处,共 ${matchOutcome.occurrences} 处)` : "";
+		const moreMsg = matchOutcome.occurrences > 5 ? `(仅显示前 5 处,共 ${matchOutcome.occurrences} 处)` : "";
 		throw new ApplyPatchError(
 			`在 ${path} 中找到 ${matchOutcome.occurrences} 处匹配${moreMsg}:\n\n${previews}\n\n` +
 				`添加更多上下文行以消除歧义。`,
@@ -972,8 +969,7 @@ function applyCharacterMatch(
 
 	if (matchOutcome.fuzzyMatches && matchOutcome.fuzzyMatches > 1) {
 		throw new ApplyPatchError(
-			`在 ${path} 中找到 ${matchOutcome.fuzzyMatches} 处高置信度匹配。` +
-				`文本必须唯一,请提供更多上下文使其唯一。`,
+			`在 ${path} 中找到 ${matchOutcome.fuzzyMatches} 处高置信度匹配。` + `文本必须唯一,请提供更多上下文使其唯一。`,
 		);
 	}
 
@@ -1075,14 +1071,10 @@ function computeReplacements(
 	for (const hunk of hunks) {
 		let contextIndex: number | undefined;
 		if (hunk.oldStartLine !== undefined && hunk.oldStartLine < 1) {
-			throw new ApplyPatchError(
-				`行提示 ${hunk.oldStartLine} 超出 ${path} 的范围(行号从 1 开始)`,
-			);
+			throw new ApplyPatchError(`行提示 ${hunk.oldStartLine} 超出 ${path} 的范围(行号从 1 开始)`);
 		}
 		if (hunk.newStartLine !== undefined && hunk.newStartLine < 1) {
-			throw new ApplyPatchError(
-				`行提示 ${hunk.newStartLine} 超出 ${path} 的范围(行号从 1 开始)`,
-			);
+			throw new ApplyPatchError(`行提示 ${hunk.newStartLine} 超出 ${path} 的范围(行号从 1 开始)`);
 		}
 		const lineHint = hunk.oldStartLine;
 		const allowAggressiveFallbacks = hunk.changeContext !== undefined || lineHint !== undefined || hunk.isEndOfFile;
@@ -1155,9 +1147,7 @@ function computeReplacements(
 					// Reject if line hint is out of range for insertion
 					// Valid insertion points are 1 to (file length + 1) for 1-indexed hints
 					if (lineHintForInsertion < 1) {
-						throw new ApplyPatchError(
-							`插入 ${path} 时的行提示 ${lineHintForInsertion} 超出范围(行号从 1 开始)`,
-						);
+						throw new ApplyPatchError(`插入 ${path} 时的行提示 ${lineHintForInsertion} 超出范围(行号从 1 开始)`);
 					}
 					if (lineHintForInsertion > originalLines.length + 1) {
 						throw new ApplyPatchError(
@@ -1341,8 +1331,7 @@ function computeReplacements(
 				const preview1 = formatSequenceMatchPreview(originalLines, found);
 				const preview2 = formatSequenceMatchPreview(originalLines, secondMatch.index);
 				throw new ApplyPatchError(
-					`在 ${path} 中找到 2 处匹配:\n\n${preview1}\n\n${preview2}\n\n` +
-						`添加更多上下文行以消除歧义。`,
+					`在 ${path} 中找到 2 处匹配:\n\n${preview1}\n\n${preview2}\n\n` + `添加更多上下文行以消除歧义。`,
 				);
 			}
 		}
@@ -1525,9 +1514,7 @@ async function applyNormalizedPatch(input: PatchInput, options: ApplyPatchOption
 		// intended. The JSON `patch` mode opts out via `allowCreateOverwrite`,
 		// where `op: "create"` doubles as a sanctioned full-file overwrite.
 		if (!allowCreateOverwrite && (await fs.exists(absolutePath))) {
-			throw new ApplyPatchError(
-				`无法创建 ${input.path}:文件已存在。请使用 *** Update File 就地修改。`,
-			);
+			throw new ApplyPatchError(`无法创建 ${input.path}:文件已存在。请使用 *** Update File 就地修改。`);
 		}
 		// Strip + prefixes if present (handles diffs formatted as additions)
 		const normalizedContent = normalizeCreateContent(input.diff);

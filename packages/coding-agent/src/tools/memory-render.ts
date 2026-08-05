@@ -200,9 +200,7 @@ export const reflectToolRenderer = {
 				}
 				const remaining = answerLines.length - shown.length;
 				if (remaining > 0) {
-					lines.push(
-						`  ${theme.fg("dim", `… 还有 ${remaining} 行`)} ${formatExpandHint(theme, expanded, true)}`,
-					);
+					lines.push(`  ${theme.fg("dim", `… 还有 ${remaining} 行`)} ${formatExpandHint(theme, expanded, true)}`);
 				}
 				return lines.map(line => truncateToWidth(line, width, Ellipsis.Omit));
 			},

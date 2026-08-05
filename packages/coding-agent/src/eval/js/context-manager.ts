@@ -232,9 +232,7 @@ export async function disposeVmContextsByOwner(ownerId: string): Promise<void> {
 		if (sessions.get(session.sessionKey) === session) sessions.delete(session.sessionKey);
 		toKill.push(session);
 	}
-	await Promise.all(
-		toKill.map(session => killSession(session, new ToolError("JS 上下文已释放"), { force: false })),
-	);
+	await Promise.all(toKill.map(session => killSession(session, new ToolError("JS 上下文已释放"), { force: false })));
 }
 
 /**

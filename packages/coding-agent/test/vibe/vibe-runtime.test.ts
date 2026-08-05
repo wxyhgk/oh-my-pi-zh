@@ -1757,9 +1757,7 @@ describe("vibe session registry", () => {
 		}
 		expect((await SessionManager.peekSessionInit(explicitRef.sessionFile))?.init?.task).toBe(INITIAL_VIBE_TASK);
 		expect((await SessionManager.peekSessionInit(modeExitRef.sessionFile))?.init?.task).toBe(INITIAL_VIBE_TASK);
-		await expect(AgentLifecycleManager.global().ensureLive("explicitly-killed")).rejects.toThrow(
-			"无法恢复",
-		);
+		await expect(AgentLifecycleManager.global().ensureLive("explicitly-killed")).rejects.toThrow("无法恢复");
 		await expect(
 			resumedRegistry.send(resumedSession, { session: "explicitly-killed", message: FOLLOW_UP_VIBE_TASK }),
 		).rejects.toThrow('Unknown vibe session "explicitly-killed"');

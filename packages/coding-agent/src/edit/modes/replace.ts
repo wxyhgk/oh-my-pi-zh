@@ -110,9 +110,7 @@ export class EditMatchError extends Error {
 			: "模糊匹配已禁用。请在设置中启用 'Edit fuzzy match' 以接受高置信度匹配。";
 
 		return [
-			options.allowFuzzy
-				? `在 ${path} 中找不到足够接近的匹配。`
-				: `在 ${path} 中找不到完全匹配的文本。`,
+			options.allowFuzzy ? `在 ${path} 中找不到足够接近的匹配。` : `在 ${path} 中找不到完全匹配的文本。`,
 			``,
 			`最接近的匹配(相似度 ${similarity}%)位于第 ${closest.startLine} 行:`,
 			`  - ${oldLine}`,

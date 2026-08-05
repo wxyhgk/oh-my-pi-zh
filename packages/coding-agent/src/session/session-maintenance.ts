@@ -773,9 +773,7 @@ export class SessionMaintenance {
 							"snapcompact 生成了过多的常驻图像负载。未尝试 LLM 回退。",
 							"compaction",
 						);
-						throw new Error(
-							"snapcompact 无法在本地运行：常驻图像负载超出单次请求预算。",
-						);
+						throw new Error("snapcompact 无法在本地运行：常驻图像负载超出单次请求预算。");
 					}
 					const ctxWindow = this.#model?.contextWindow ?? 0;
 					const budget =
@@ -1522,9 +1520,7 @@ export class SessionMaintenance {
 	#buildCompactionAuthError(): Error {
 		const currentModel = this.#model;
 		if (!currentModel) {
-			return new Error(
-				"压缩需要一个具有可用凭据的模型，但当前没有已认证的压缩模型。",
-			);
+			return new Error("压缩需要一个具有可用凭据的模型，但当前没有已认证的压缩模型。");
 		}
 		return new Error(
 			`压缩需要 ${currentModel.provider}/${currentModel.id} 的可用凭据。 ` +
@@ -2508,8 +2504,7 @@ export class SessionMaintenance {
 						logger.warn("Snapcompact skipped: kept history alone exceeds the context budget", {
 							model: this.#model?.id,
 						});
-						snapcompactBlocker =
-							"snapcompact：仅保留的历史记录就超出上下文预算；改用 context-full 自动压缩。";
+						snapcompactBlocker = "snapcompact：仅保留的历史记录就超出上下文预算；改用 context-full 自动压缩。";
 					} else {
 						snapcompactResult = await snapcompact.compact(preparation, {
 							convertToLlm,
@@ -2525,8 +2520,7 @@ export class SessionMaintenance {
 								framePayloadBytes,
 								budget: snapcompact.FRAME_DATA_BYTES_BUDGET,
 							});
-							snapcompactBlocker =
-								"snapcompact 生成了过多的常驻图像负载；改用 context-full 自动压缩。";
+							snapcompactBlocker = "snapcompact 生成了过多的常驻图像负载；改用 context-full 自动压缩。";
 							snapcompactResult = undefined;
 						}
 						if (snapcompactResult) {
@@ -2542,8 +2536,7 @@ export class SessionMaintenance {
 									projected,
 									budget,
 								});
-								snapcompactBlocker =
-									"snapcompact 未能将上下文压缩到限制以内；改用 context-full 自动压缩。";
+								snapcompactBlocker = "snapcompact 未能将上下文压缩到限制以内；改用 context-full 自动压缩。";
 								snapcompactResult = undefined;
 							}
 						}

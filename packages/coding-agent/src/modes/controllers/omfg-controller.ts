@@ -94,10 +94,7 @@ export class OmfgController {
 
 				if (!candidate.validated) {
 					request.component.setStatus("confirming", "无法确认与对话匹配。");
-					const shouldSave = await this.ctx.showHookConfirm(
-						"验证",
-						"无法确认此规则与对话匹配。仍要保存吗?",
-					);
+					const shouldSave = await this.ctx.showHookConfirm("验证", "无法确认此规则与对话匹配。仍要保存吗?");
 					if (!this.#isActiveRequest(request)) return;
 					if (!shouldSave) {
 						request.component.markRejected();

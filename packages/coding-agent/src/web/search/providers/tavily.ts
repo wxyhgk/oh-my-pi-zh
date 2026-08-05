@@ -210,8 +210,7 @@ export async function searchTavily(params: SearchParams): Promise<SearchResponse
 	const numResults = clampNumResults(tavilyParams.num_results, DEFAULT_NUM_RESULTS, MAX_NUM_RESULTS);
 	const authOptions = {
 		signal: params.signal,
-		missingKeyMessage:
-			'未找到 Tavily 凭据。请设置 TAVILY_API_KEY 或为提供商 "tavily" 配置 API 密钥。',
+		missingKeyMessage: '未找到 Tavily 凭据。请设置 TAVILY_API_KEY 或为提供商 "tavily" 配置 API 密钥。',
 	};
 	const callWithAuth = (searchParams: TavilySearchParams) =>
 		withAuth(keyOrResolver, key => callTavilySearch(key, searchParams), authOptions);

@@ -99,8 +99,7 @@ export const STT_MODELS = [
 		},
 		englishOnly: false,
 		label: "Parakeet TDT v3(SoTA)",
-		description:
-			"NVIDIA Parakeet TDT 0.6B v3,支持 25 种语言。Open ASR 排行榜领先者——准确率最高,解码速度最快。默认。",
+		description: "NVIDIA Parakeet TDT 0.6B v3,支持 25 种语言。Open ASR 排行榜领先者——准确率最高,解码速度最快。默认。",
 		sizeHint: "~680 MB",
 	},
 ] as const satisfies readonly SttModelSpec[];

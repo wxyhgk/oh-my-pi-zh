@@ -406,9 +406,7 @@ describe("AgentSession.branchFromBtw", () => {
 		await Promise.resolve();
 		hookRelease.resolve();
 
-		await expect(branchPromise).rejects.toThrow(
-			"会话维护或用户操作仍在运行时无法进行 /btw 分支",
-		);
+		await expect(branchPromise).rejects.toThrow("会话维护或用户操作仍在运行时无法进行 /btw 分支");
 		expect(activeSession.sessionFile).toBe(originalFile);
 	});
 

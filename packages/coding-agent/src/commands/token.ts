@@ -89,9 +89,7 @@ export default class Token extends Command {
 				});
 				if (!resolution?.ok) {
 					const reason = resolution && !resolution.ok ? resolution.error : "没有可用的 OAuth 凭据";
-					process.stderr.write(
-						`${chalk.red(`无法获取提供商 "${providerName}" 账户 ${n} 的 token：${reason}`)}\n`,
-					);
+					process.stderr.write(`${chalk.red(`无法获取提供商 "${providerName}" 账户 ${n} 的 token：${reason}`)}\n`);
 					process.exitCode = 1;
 					return;
 				}

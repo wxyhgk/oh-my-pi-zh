@@ -19,9 +19,7 @@ export async function buildDirectoryResource(
 		return directoryOrder || a.name.localeCompare(b.name);
 	});
 	const content =
-		entries.length === 0
-			? "(空目录)"
-			: entries.map(e => `${e.name}${e.isDirectory() ? "/" : ""}`).join("\n");
+		entries.length === 0 ? "(空目录)" : entries.map(e => `${e.name}${e.isDirectory() ? "/" : ""}`).join("\n");
 	return {
 		url,
 		content,

@@ -137,9 +137,7 @@ describe("security publication", () => {
 		};
 		const first = tool.execute("first", params, undefined, undefined, undefined as never);
 		await putStarted.promise;
-		await expect(tool.execute("second", params, undefined, undefined, undefined as never)).rejects.toThrow(
-			"已发布",
-		);
+		await expect(tool.execute("second", params, undefined, undefined, undefined as never)).rejects.toThrow("已发布");
 		expect(putCalls).toBe(1);
 		releasePut.resolve();
 		await first;

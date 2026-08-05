@@ -141,9 +141,7 @@ describe("parseMarketplaceCatalog", () => {
 	});
 
 	it("throws on invalid JSON", () => {
-		expect(() => parseMarketplaceCatalog("{not json", "/f.json")).toThrow(
-			"解析 /f.json 处的市场目录失败",
-		);
+		expect(() => parseMarketplaceCatalog("{not json", "/f.json")).toThrow("解析 /f.json 处的市场目录失败");
 	});
 });
 

@@ -51,9 +51,7 @@ describe("prompt action autocomplete", () => {
 		expect(suggestions?.items.find(item => item.label === "复制整个提示词")?.description).toBe(
 			"Alt+Shift+C/Ctrl+Shift+C",
 		);
-		expect(suggestions?.items.find(item => item.label === "移动光标到行首")?.description).toBe(
-			"Home/F6",
-		);
+		expect(suggestions?.items.find(item => item.label === "移动光标到行首")?.description).toBe("Home/F6");
 		expect(suggestions?.items.find(item => item.label === "移动光标到行尾")?.description).toBe("F7");
 		expect(suggestions?.items.find(item => item.label === "撤销")?.description).toBe("F8");
 	});

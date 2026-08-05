@@ -217,8 +217,7 @@ function extractAccount(access: {
 	orgId?: string;
 	orgName?: string;
 }): string {
-	const base =
-		access.email ?? access.accountId ?? access.projectId ?? access.enterpriseUrl ?? "(未知 OAuth 账户)";
+	const base = access.email ?? access.accountId ?? access.projectId ?? access.enterpriseUrl ?? "(未知 OAuth 账户)";
 	// Two subscriptions (orgs) can share one email — name the org so per-account
 	// bench rows stay tellable apart.
 	const org = access.orgName ?? access.orgId;
@@ -565,9 +564,7 @@ async function resolveDryBalanceModel(
 
 	const allowedModels = await resolveAllowedModels(modelRegistry, settings, preferences);
 	if (allowedModels.length === 0) {
-		throw new Error(
-			"没有可用模型。请使用 --model 选择模型,或配置 enabledModels/默认模型设置。",
-		);
+		throw new Error("没有可用模型。请使用 --model 选择模型,或配置 enabledModels/默认模型设置。");
 	}
 
 	const defaultRoleSpec = resolveModelRoleValue(settings?.getModelRole("default"), allowedModels, {
@@ -585,8 +582,7 @@ async function resolveDryBalanceModel(
 
 	return {
 		model: allowedModels[0],
-		warning:
-			"默认解析期间没有允许的模型具有可用凭据;dry-balance 将对第一个允许的模型报告 OAuth 失败。",
+		warning: "默认解析期间没有允许的模型具有可用凭据;dry-balance 将对第一个允许的模型报告 OAuth 失败。",
 	};
 }
 

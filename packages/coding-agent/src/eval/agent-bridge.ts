@@ -177,9 +177,7 @@ export async function runEvalAgent(args: unknown, options: EvalAgentBridgeOption
 		if (policy.isIsolated && changesApplied === false) {
 			const summary = mergeSummary.replace(/<\/?system-notification>/g, "").trim();
 			const recoveryHint = await buildStructuredSubagentRecoveryHint(result, artifactsDir);
-			throw new ToolError(
-				`agent() 隔离应用失败:${result.id}${summary ? `: ${summary}` : ""}${recoveryHint}`,
-			);
+			throw new ToolError(`agent() 隔离应用失败:${result.id}${summary ? `: ${summary}` : ""}${recoveryHint}`);
 		}
 
 		const structuredOutput = result.structuredOutput;

@@ -784,9 +784,7 @@ export class MCPCommandController {
 		const manualInput = this.ctx.oauthManualInput;
 		if (manualInput.hasPending()) {
 			const pendingProvider = manualInput.pendingProviderId ?? "another provider";
-			throw new Error(
-				`已在进行 ${pendingProvider} 的 OAuth 登录。请先完成或取消它,再开始 MCP OAuth。`,
-			);
+			throw new Error(`已在进行 ${pendingProvider} 的 OAuth 登录。请先完成或取消它,再开始 MCP OAuth。`);
 		}
 		let manualInputClaim: { promise: Promise<string>; clear: (reason?: string) => void } | undefined;
 		const oauthTimeout = new AbortController();
@@ -836,13 +834,7 @@ export class MCPCommandController {
 						block.addChild(new Spacer(1));
 						block.addChild(new Text(theme.fg("muted", "正在准备浏览器授权..."), 1, 0));
 						block.addChild(new Spacer(1));
-						block.addChild(
-							new Text(
-								theme.fg("muted", "正在等待授权...(按 Esc 取消,5 分钟超时)"),
-								1,
-								0,
-							),
-						);
+						block.addChild(new Text(theme.fg("muted", "正在等待授权...(按 Esc 取消,5 分钟超时)"), 1, 0));
 						block.addChild(new Text(theme.fg("muted", MCP_MANUAL_LOGIN_TIP), 1, 0));
 						block.addChild(new Spacer(1));
 						block.addChild(new Text(theme.fg("accent", "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"), 1, 0));
@@ -874,9 +866,7 @@ export class MCPCommandController {
 						const pendingInput = manualInput.tryClaimInput(MCP_MANUAL_INPUT_PROVIDER_ID);
 						if (!pendingInput) {
 							const pendingProvider = manualInput.pendingProviderId ?? "another provider";
-							throw new Error(
-								`已在进行 ${pendingProvider} 的 OAuth 登录。请先完成或取消它,再开始 MCP OAuth。`,
-							);
+							throw new Error(`已在进行 ${pendingProvider} 的 OAuth 登录。请先完成或取消它,再开始 MCP OAuth。`);
 						}
 						manualInputClaim = pendingInput;
 						return pendingInput.promise;
@@ -1526,9 +1516,7 @@ export class MCPCommandController {
 				return;
 			}
 
-			this.#showMessage(
-				["", theme.fg("muted", `正在测试与 "${name}" 的连接...(esc 取消)`), ""].join("\n"),
-			);
+			this.#showMessage(["", theme.fg("muted", `正在测试与 "${name}" 的连接...(esc 取消)`), ""].join("\n"));
 
 			// Resolve auth config if needed
 			let resolvedConfig: MCPServerConfig;
@@ -1618,9 +1606,7 @@ export class MCPCommandController {
 				}
 				if (isCurrentlyDisabled === !enabled) {
 					this.#showMessage(
-						["", theme.fg("muted", `服务器 "${name}" 已${enabled ? "启用" : "禁用"}。`), ""].join(
-							"\n",
-						),
+						["", theme.fg("muted", `服务器 "${name}" 已${enabled ? "启用" : "禁用"}。`), ""].join("\n"),
 					);
 					return;
 				}
@@ -1653,9 +1639,7 @@ export class MCPCommandController {
 
 			if ((found.config.enabled ?? true) === enabled) {
 				this.#showMessage(
-					["", theme.fg("muted", `服务器 "${name}" 已${enabled ? "启用" : "禁用"}。`), ""].join(
-						"\n",
-					),
+					["", theme.fg("muted", `服务器 "${name}" 已${enabled ? "启用" : "禁用"}。`), ""].join("\n"),
 				);
 				return;
 			}
@@ -1747,9 +1731,7 @@ export class MCPCommandController {
 			await updateMCPServer(found.filePath, name, updated);
 			await this.reloadServers();
 
-			this.#showMessage(
-				["", theme.fg("success", `- 已清除 "${name}" 的授权 (${found.scope} 配置)`), ""].join("\n"),
-			);
+			this.#showMessage(["", theme.fg("success", `- 已清除 "${name}" 的授权 (${found.scope} 配置)`), ""].join("\n"));
 		} catch (error) {
 			this.ctx.showError(`清除授权失败:${error instanceof Error ? error.message : String(error)}`);
 		}
@@ -1887,9 +1869,7 @@ export class MCPCommandController {
 				return;
 			}
 			if (!options.silent) {
-				this.ctx.showError(
-					`重新授权服务器失败:${error instanceof Error ? error.message : String(error)}`,
-				);
+				this.ctx.showError(`重新授权服务器失败:${error instanceof Error ? error.message : String(error)}`);
 			}
 		}
 	}
@@ -1947,9 +1927,7 @@ export class MCPCommandController {
 				this.ctx.showError(`重新连接到 "${name}" 失败。请检查服务器状态和日志。`);
 			}
 		} catch (error) {
-			this.ctx.showError(
-				`重新连接到 "${name}" 失败:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.ctx.showError(`重新连接到 "${name}" 失败:${error instanceof Error ? error.message : String(error)}`);
 		}
 	}
 
@@ -2187,9 +2165,7 @@ export class MCPCommandController {
 				await this.#validateSmitheryApiKey(apiKey);
 				return apiKey;
 			} catch (error) {
-				this.ctx.showError(
-					`Smithery API 密钥验证失败:${error instanceof Error ? error.message : String(error)}`,
-				);
+				this.ctx.showError(`Smithery API 密钥验证失败:${error instanceof Error ? error.message : String(error)}`);
 			}
 		}
 	}
@@ -2446,9 +2422,7 @@ export class MCPCommandController {
 		}
 
 		try {
-			this.#showMessage(
-				["", theme.fg("muted", `正在搜索 Smithery 注册表:"${parsed.keyword}"...`), ""].join("\n"),
-			);
+			this.#showMessage(["", theme.fg("muted", `正在搜索 Smithery 注册表:"${parsed.keyword}"...`), ""].join("\n"));
 			const results = await this.#runSmitheryOperationWithAuthRetry(
 				apiKey =>
 					searchSmitheryRegistry(parsed.keyword, {

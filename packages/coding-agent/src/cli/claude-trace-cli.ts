@@ -774,9 +774,7 @@ export async function runClaudeMessagesCapture(args: ClaudeTraceCommandArgs = {}
 			return late.exchange;
 		}
 		if (first.kind === "pty-error") {
-			throw new Error(
-				`Claude 命令在 /v1/messages 完成前失败:${errorMessage(first.error)}${outputSuffix()}`,
-			);
+			throw new Error(`Claude 命令在 /v1/messages 完成前失败:${errorMessage(first.error)}${outputSuffix()}`);
 		}
 		throw new Error(`Claude 命令在 /v1/messages 完成前退出${outputSuffix()}`);
 	} finally {

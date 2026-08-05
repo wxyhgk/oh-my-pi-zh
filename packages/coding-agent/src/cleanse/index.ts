@@ -58,9 +58,7 @@ export async function runCleanseCommand(options: CleanseCommandOptions = {}): Pr
 		const initialReport = await suite.run(abortController.signal);
 		printCheckReport(initialReport);
 		if (initialReport.diagnostics.length === 0) {
-			process.stdout.write(
-				`干净:${initialReport.checks.length} 个检查器全部通过。\n`,
-			);
+			process.stdout.write(`干净:${initialReport.checks.length} 个检查器全部通过。\n`);
 			return { exitCode: 0, status: "clean", report: initialReport };
 		}
 
@@ -77,9 +75,7 @@ export async function runCleanseCommand(options: CleanseCommandOptions = {}): Pr
 			hooks: {
 				onStart(name, assignment) {
 					if (progress.interactive) return;
-					process.stdout.write(
-						`[开始] ${name}:${formatAssignmentFiles(assignment)}(权重 ${assignment.weight})\n`,
-					);
+					process.stdout.write(`[开始] ${name}:${formatAssignmentFiles(assignment)}(权重 ${assignment.weight})\n`);
 				},
 				onFinish(outcome) {
 					progress.complete();
@@ -99,17 +95,13 @@ export async function runCleanseCommand(options: CleanseCommandOptions = {}): Pr
 				collect: signal => suite.run(signal),
 				dispatch: (batch, wave, report, signal) => activeRuntime.dispatch(batch, wave, report, signal),
 				onWave(_wave, batch) {
-					process.stdout.write(
-						`正在分派 ${batch.length} 个加权任务...\n`,
-					);
+					process.stdout.write(`正在分派 ${batch.length} 个加权任务...\n`);
 					progress.start(batch.length);
 				},
 				onReport(_wave, report) {
 					progress.finish();
 					printInteractiveFailures();
-					process.stdout.write(
-						`验证:剩余 ${report.diagnostics.length} 条诊断。\n`,
-					);
+					process.stdout.write(`验证:剩余 ${report.diagnostics.length} 条诊断。\n`);
 				},
 			},
 		);
@@ -178,9 +170,7 @@ function formatAssignmentFiles(assignment: CleanseAssignment): string {
 
 function printRemaining(report: CleanseDiagnosticReport): void {
 	const groups = groupDiagnosticsByFile(report.diagnostics);
-	process.stderr.write(
-		`未解决:${report.diagnostics.length} 条诊断。\n`,
-	);
+	process.stderr.write(`未解决:${report.diagnostics.length} 条诊断。\n`);
 	for (const group of groups.slice(0, DISPLAY_FILE_LIMIT)) {
 		process.stderr.write(`- ${group.file ?? "<项目>"}:${group.diagnostics.length}\n`);
 	}

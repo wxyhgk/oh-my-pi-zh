@@ -8,9 +8,7 @@ import type { ConventionalAnalysis } from "../../commit/types";
 import { toReasoningEffort } from "../../thinking";
 import { createConventionalAnalysisTool, parseConventionalAnalysisResponse } from "../shared-llm";
 
-const ConventionalAnalysisTool = createConventionalAnalysisTool(
-	"分析差异并返回约定式提交分类。",
-);
+const ConventionalAnalysisTool = createConventionalAnalysisTool("分析差异并返回约定式提交分类。");
 
 export interface ConventionalAnalysisInput {
 	model: Model<Api>;

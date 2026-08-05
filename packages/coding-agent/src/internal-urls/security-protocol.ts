@@ -32,8 +32,7 @@ function securityEnabledFromContext(context?: ResolveContext): boolean | undefin
 	}
 }
 
-const SECURITY_DISABLED_MESSAGE =
-	"security:// 已禁用。请通过设置 `security.enabled = true`(设置 → 工具 → 安全)启用。";
+const SECURITY_DISABLED_MESSAGE = "security:// 已禁用。请通过设置 `security.enabled = true`(设置 → 工具 → 安全)启用。";
 
 export class SecurityDisabledError extends Error {
 	constructor() {
@@ -51,8 +50,7 @@ function splitSecurityPath(url: InternalUrl): string[] {
 function formatScans(scans: SecurityScanSummary[]): string {
 	if (scans.length === 0) return "# 安全扫描\n\n此项目未存储任何扫描。\n";
 	const rows = scans.map(
-		scan =>
-			`- \`${scan.id}\` — ${scan.status};${scan.findingCount} 个发现;${scan.producer.name};${scan.createdAt}`,
+		scan => `- \`${scan.id}\` — ${scan.status};${scan.findingCount} 个发现;${scan.producer.name};${scan.createdAt}`,
 	);
 	return `# 安全扫描\n\n${rows.join("\n")}\n`;
 }

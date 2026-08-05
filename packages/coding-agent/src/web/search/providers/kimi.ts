@@ -131,11 +131,7 @@ async function callKimiSearch(
 		const errorText = await response.text();
 		const classified = classifyProviderHttpError("kimi", response.status, errorText);
 		if (classified) throw classified;
-		throw new SearchProviderError(
-			"kimi",
-			`Kimi 搜索 API 错误(${response.status}): ${errorText}`,
-			response.status,
-		);
+		throw new SearchProviderError("kimi", `Kimi 搜索 API 错误(${response.status}): ${errorText}`, response.status);
 	}
 
 	const data = (await response.json()) as KimiSearchResponse;

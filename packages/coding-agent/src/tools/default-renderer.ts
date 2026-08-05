@@ -130,9 +130,7 @@ export function formatDefaultToolExecution(
 
 	if (outputLines.length > maxOutputLines) {
 		const remaining = outputLines.length - maxOutputLines;
-		lines.push(
-			`${uiTheme.fg("dim", `… 还有 ${remaining} 行`)} ${formatExpandHint(uiTheme, options.expanded, true)}`,
-		);
+		lines.push(`${uiTheme.fg("dim", `… 还有 ${remaining} 行`)} ${formatExpandHint(uiTheme, options.expanded, true)}`);
 	} else if (!options.expanded) {
 		lines.push(formatExpandHint(uiTheme, options.expanded, true));
 	}

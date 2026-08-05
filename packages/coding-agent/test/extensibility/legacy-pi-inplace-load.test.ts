@@ -885,8 +885,7 @@ describe("legacy-pi in-place module loading (issue #1674)", () => {
 		expect(mod.runtimeContract).toEqual({
 			firstFlag: true,
 			secondHasFlag: false,
-			initializationError:
-				"扩展运行时尚未初始化。扩展加载期间无法调用操作方法。",
+			initializationError: "扩展运行时尚未初始化。扩展加载期间无法调用操作方法。",
 		});
 	});
 

@@ -120,9 +120,7 @@ export async function runAgentsCommand(cmd: AgentsCommandArgs): Promise<void> {
 			writeStdout(chalk.green(`${theme.status.success} 已写入:${result.written.length}`));
 			if (result.skipped.length > 0) {
 				writeStdout(
-					chalk.yellow(
-						`${theme.status.warning} 已跳过存在的文件:${result.skipped.length}(使用 --force 覆盖)`,
-					),
+					chalk.yellow(`${theme.status.warning} 已跳过存在的文件:${result.skipped.length}(使用 --force 覆盖)`),
 				);
 			}
 

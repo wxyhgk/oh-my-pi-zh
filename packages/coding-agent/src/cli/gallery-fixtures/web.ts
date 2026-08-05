@@ -46,23 +46,20 @@ export const webFixtures: Record<string, GalleryFixture> = {
 						{
 							title: "Node.js vs Bun: A 2026 Performance Deep Dive",
 							url: "https://blog.platformatic.dev/nodejs-vs-bun-2026",
-							snippet:
-								"在 CPU 密集型工作负载上差距缩小,但 Bun 更快的模块解析让冷启动仍然领先。",
+							snippet: "在 CPU 密集型工作负载上差距缩小,但 Bun 更快的模块解析让冷启动仍然领先。",
 							ageSeconds: 86400 * 3,
 							author: "Matteo Collina",
 						},
 						{
 							title: "Real-world API latency: Bun, Deno, and Node compared",
 							url: "https://www.theregister.com/2026/05/18/js_runtime_latency/",
-							snippet:
-								"在持续负载下 p99 延迟趋同,表明运行时选择对稳态服务的影响较小。",
+							snippet: "在持续负载下 p99 延迟趋同,表明运行时选择对稳态服务的影响较小。",
 							ageSeconds: 86400 * 19,
 						},
 						{
 							title: "Why we migrated our CLI tooling from Node to Bun",
 							url: "https://engineering.example.com/posts/bun-cli-migration",
-							snippet:
-								"启动时间从 180ms 降至 22ms,每次开发者命令调用都节省了数秒。",
+							snippet: "启动时间从 180ms 降至 22ms,每次开发者命令调用都节省了数秒。",
 							ageSeconds: 86400 * 27,
 							author: "Dana Whitfield",
 						},

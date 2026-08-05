@@ -326,8 +326,7 @@ export function hasObsidian(): boolean {
 	return isVaultEnabled() && resolveObsidianBinary() !== null;
 }
 
-const VAULT_DISABLED_MESSAGE =
-	"vault:// 已禁用。请通过设置 `vault.enabled = true`(设置 → 工具 → Obsidian 库)启用。";
+const VAULT_DISABLED_MESSAGE = "vault:// 已禁用。请通过设置 `vault.enabled = true`(设置 → 工具 → Obsidian 库)启用。";
 
 export class VaultDisabledError extends Error {
 	constructor() {
@@ -429,9 +428,7 @@ export function resolveVaultUrlToPath(input: string | InternalUrl): string {
 
 	const cachedRoot = getCachedVaultRoot(parsed.ref);
 	if (!cachedRoot) {
-		throw new Error(
-			"vault:// 路径解析需要已缓存的库根目录;请先读取 vault:// 或使用写入工具",
-		);
+		throw new Error("vault:// 路径解析需要已缓存的库根目录;请先读取 vault:// 或使用写入工具");
 	}
 
 	const resolvedRoot = fs.realpathSync(cachedRoot);

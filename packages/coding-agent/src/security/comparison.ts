@@ -214,9 +214,7 @@ export function compareSecurityLineage(
 	// An incomplete after-scan proves nothing about unmatched earlier findings;
 	// claiming them "resolved" against a cancelled/partial/failed run would be a lie.
 	if (after.scan.status !== "completed") {
-		throw new Error(
-			`安全血缘比较需要已完成的 after 扫描;${after.scan.id} 状态为 ${after.scan.status}`,
-		);
+		throw new Error(`安全血缘比较需要已完成的 after 扫描;${after.scan.id} 状态为 ${after.scan.status}`);
 	}
 	const differential = compareSecurityProducers(before, after);
 	const beforeById = new Map(before.findings.map(finding => [finding.id, finding]));

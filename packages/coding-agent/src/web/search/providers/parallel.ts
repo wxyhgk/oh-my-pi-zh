@@ -68,9 +68,7 @@ async function searchWithAuthStorage(
 ): Promise<ParallelSearchResult> {
 	const apiKey = await authStorage.getApiKey("parallel", sessionId, { signal: params.signal });
 	if (!apiKey) {
-		throw new ParallelApiError(
-			"未找到 Parallel 凭据。请设置 PARALLEL_API_KEY 或运行 'omp /login parallel' 登录。",
-		);
+		throw new ParallelApiError("未找到 Parallel 凭据。请设置 PARALLEL_API_KEY 或运行 'omp /login parallel' 登录。");
 	}
 
 	// Drive the (already-present) credential through the central force-refresh /

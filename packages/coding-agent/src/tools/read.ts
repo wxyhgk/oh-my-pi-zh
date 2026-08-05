@@ -716,9 +716,7 @@ function splitPdfImageMemberReadPath(readPath: string): { pdfPath: string; membe
 }
 
 const readSchema = type({
-	path: type("string").describe(
-		"本地路径、内部 URI(如 memory://、skill://)或 URL。支持内联选择器。",
-	),
+	path: type("string").describe("本地路径、内部 URI(如 memory://、skill://)或 URL。支持内联选择器。"),
 });
 
 export type ReadToolInput = typeof readSchema.infer;
@@ -2381,8 +2379,7 @@ export class ReadTool implements AgentTool<typeof readSchema, ReadToolDetails> {
 				let suffixResolution: { from: string; to: string } | undefined;
 				try {
 					const stat = await Bun.file(absolutePdfPath).stat();
-					if (stat.isDirectory())
-						throw new ToolError(`路径 '${pdfImageMemberPath.pdfPath}' 是目录,不是 PDF 文件`);
+					if (stat.isDirectory()) throw new ToolError(`路径 '${pdfImageMemberPath.pdfPath}' 是目录,不是 PDF 文件`);
 				} catch (error) {
 					if (!isNotFoundError(error) || isRemoteMountPath(absolutePdfPath)) throw error;
 					const suffixMatch = await this.#findSuffixMatchCached(suffixCache, pdfImageMemberPath.pdfPath, signal);
@@ -2727,9 +2724,7 @@ export class ReadTool implements AgentTool<typeof readSchema, ReadToolDetails> {
 								? "文件为空。"
 								: `请使用 :1 从开头读取,或使用 :${totalFileLines} 读取最后一行。`;
 						return toolResult<ReadToolDetails>({ resolvedPath: absolutePath, suffixResolution })
-							.text(
-								`第 ${requestedStart + 1} 行超出文件末尾(共 ${totalFileLines} 行)。${suggestion}`,
-							)
+							.text(`第 ${requestedStart + 1} 行超出文件末尾(共 ${totalFileLines} 行)。${suggestion}`)
 							.done();
 					}
 
@@ -2996,9 +2991,7 @@ export class ReadTool implements AgentTool<typeof readSchema, ReadToolDetails> {
 	async #readConflictRegion(id: number, scope: ConflictScope | undefined): Promise<AgentToolResult<ReadToolDetails>> {
 		const entry: ConflictEntry | undefined = getConflictHistory(this.session).get(id);
 		if (!entry) {
-			throw new ToolError(
-				`未找到冲突 #${id}。冲突 id 会在 \`read\` 显示标记块时注册;请重新读取文件以获取最新 id。`,
-			);
+			throw new ToolError(`未找到冲突 #${id}。冲突 id 会在 \`read\` 显示标记块时注册;请重新读取文件以获取最新 id。`);
 		}
 
 		const region = renderConflictRegion(entry, scope);
@@ -3431,9 +3424,7 @@ export class ReadTool implements AgentTool<typeof readSchema, ReadToolDetails> {
 			const start = offset ? Math.max(0, offset - 1) : 0;
 			if (start >= allLines.length) {
 				const suggestion =
-					allLines.length === 0
-						? "列表为空。"
-						: `请使用 :1 从开头读取,或使用 :${allLines.length} 读取最后一行。`;
+					allLines.length === 0 ? "列表为空。" : `请使用 :1 从开头读取,或使用 :${allLines.length} 读取最后一行。`;
 				return toolResult(details)
 					.text(`第 ${start + 1} 行超出列表末尾(共 ${allLines.length} 行)。${suggestion}`)
 					.sourcePath(tree.rootPath)

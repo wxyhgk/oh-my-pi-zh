@@ -1428,9 +1428,7 @@ export class EventController {
 			// This is the render boundary, not the persisted result: the stored
 			// error stays full-fidelity for the transcript and for replays.
 			const detail = textContent ? previewLine(sanitizeText(textContent), TRUNCATE_LENGTHS.LINE) : "";
-			this.ctx.showWarning(
-				`待办更新失败${detail ? `:${detail}` : "。在待办成功前,进度可能已过期。"}`,
-			);
+			this.ctx.showWarning(`待办更新失败${detail ? `:${detail}` : "。在待办成功前,进度可能已过期。"}`);
 		}
 		// Plan approval rides a `write` to xd://propose: the dispatch metadata on
 		// the write details carries the approval payload as `inner`.

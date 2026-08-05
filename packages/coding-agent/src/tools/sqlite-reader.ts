@@ -360,8 +360,7 @@ const FORBIDDEN_WHERE_KEYWORDS = new Set([
 	"pragma",
 ]);
 
-const COMMENT_OR_TERMINATOR_ERROR =
-	"SQLite 'where' 子句不能包含注释或语句终止符;如需原始 SQL,请使用 '?q=SELECT ...'";
+const COMMENT_OR_TERMINATOR_ERROR = "SQLite 'where' 子句不能包含注释或语句终止符;如需原始 SQL,请使用 '?q=SELECT ...'";
 const FORBIDDEN_KEYWORD_ERROR =
 	"SQLite 'where' 子句不能包含 LIMIT/OFFSET/UNION/INTERSECT/EXCEPT/ATTACH/DETACH/PRAGMA;如需原始 SQL,请使用 '?q=SELECT ...'";
 
@@ -689,9 +688,7 @@ export function queryRows(
 	const totalCount = db.prepare<SqliteCountRow, []>(countSql).get()?.count ?? 0;
 	const statement = db.prepare<SqliteRow, SQLQueryBindings[]>(selectSql);
 	if (statement.paramsCount !== 2) {
-		throw new ToolError(
-			"SQLite where 子句改变了预期的分页参数;如需原始 SQL,请使用 q=SELECT ...",
-		);
+		throw new ToolError("SQLite where 子句改变了预期的分页参数;如需原始 SQL,请使用 q=SELECT ...");
 	}
 	const rows = statement.all(opts.limit, opts.offset);
 	return { columns, rows, totalCount };

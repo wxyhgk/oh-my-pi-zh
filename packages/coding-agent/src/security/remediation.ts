@@ -55,10 +55,9 @@ export function assertSecurityRemediationBaselineClean(baseline: WorktreeBaselin
 	const dirty = repoBaselineDirty(baseline);
 	if (dirty.length === 0) return;
 	throw new Error(
-		[
-			`安全修复拒绝在脏工作树上操作(${dirty.join(", ")})。`,
-			"创建隔离修复工作区前,请先提交或暂存这些更改。",
-		].join(" "),
+		[`安全修复拒绝在脏工作树上操作(${dirty.join(", ")})。`, "创建隔离修复工作区前,请先提交或暂存这些更改。"].join(
+			" ",
+		),
 	);
 }
 

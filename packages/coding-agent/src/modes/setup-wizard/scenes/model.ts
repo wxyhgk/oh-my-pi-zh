@@ -56,10 +56,7 @@ class ModelSceneController implements SetupSceneController {
 	}
 
 	render(width: number, maxLines?: number): readonly string[] {
-		const lines = [
-			this.#status ?? theme.fg("muted", "输入以搜索。回车将高亮模型保存为默认模型。"),
-			"",
-		];
+		const lines = [this.#status ?? theme.fg("muted", "输入以搜索。回车将高亮模型保存为默认模型。"), ""];
 		const budget = maxLines === undefined ? MAX_VISIBLE_MODELS : maxLines - lines.length - BROWSER_FRAME_ROWS;
 		this.#browser.setMaxVisible(Math.max(1, Math.min(MAX_VISIBLE_MODELS, budget)));
 		this.#browserRowStart = lines.length;

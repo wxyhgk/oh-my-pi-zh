@@ -353,8 +353,7 @@ export async function mergeIsolatedChanges(opts: IsolationMergeOptions): Promise
 		if (changesApplied) {
 			summary = hadAnyChanges ? "\n\n已应用的补丁:是" : "\n\n没有需要应用的更改。";
 		} else {
-			const notification =
-				"<system-notification>补丁未应用,必须手动处理。</system-notification>";
+			const notification = "<system-notification>补丁未应用,必须手动处理。</system-notification>";
 			const patchList = result.patchPath ? `\n\n补丁产物:\n- ${result.patchPath}` : "";
 			summary = `\n\n${notification}${patchList}`;
 		}

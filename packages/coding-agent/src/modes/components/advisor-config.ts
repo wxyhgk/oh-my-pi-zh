@@ -411,7 +411,7 @@ export class AdvisorConfigOverlayComponent implements Component {
 		}
 		if (value === "scope") {
 			if (this.#dirty) {
-				this.#cb.notify('存在未保存的更改 — 切换范围前请先“保存并应用”或“关闭”。');
+				this.#cb.notify("存在未保存的更改 — 切换范围前请先“保存并应用”或“关闭”。");
 				return;
 			}
 			const next = this.#otherScope();
@@ -601,11 +601,7 @@ export class AdvisorConfigOverlayComponent implements Component {
 			this.#dirty = true;
 			this.#showDetail(index);
 		};
-		this.#setScreen(
-			"tools",
-			list,
-			"Enter / 点击切换 · 选择完成或按 Esc 应用(空 = 无工具;read/grep/glob = 默认)",
-		);
+		this.#setScreen("tools", list, "Enter / 点击切换 · 选择完成或按 Esc 应用(空 = 无工具;read/grep/glob = 默认)");
 	}
 
 	/** `index === -1` edits the shared top-level instructions; otherwise advisor[index]. */

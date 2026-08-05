@@ -124,9 +124,7 @@ function assertWriteTargetAddressable(target: string, router: InternalUrlRouter)
 	const suggestion = canonicalScheme
 		? ` 您是指 '${canonicalScheme}://${uriLike[2]}' 吗?`
 		: " 工具设备使用 'xd://<tool>'。";
-	throw new ToolError(
-		`未知的 URI 类写入目标 '${trimmed}'。${suggestion}请在路径前加 './' 以文件系统路径方式写入。`,
-	);
+	throw new ToolError(`未知的 URI 类写入目标 '${trimmed}'。${suggestion}请在路径前加 './' 以文件系统路径方式写入。`);
 }
 
 /**
@@ -931,9 +929,7 @@ export class WriteTool implements AgentTool<typeof writeSchema, WriteToolDetails
 		const history = getConflictHistory(this.session);
 		const allEntries = history.entries();
 		if (allEntries.length === 0) {
-			throw new ToolError(
-				"`conflict://*` 没有可解决的冲突——当前没有注册任何冲突。请先重新读取含冲突的文件。",
-			);
+			throw new ToolError("`conflict://*` 没有可解决的冲突——当前没有注册任何冲突。请先重新读取含冲突的文件。");
 		}
 
 		// Per-id directive mode: content made solely of `<id>: @side` lines
@@ -1047,9 +1043,7 @@ export class WriteTool implements AgentTool<typeof writeSchema, WriteToolDetails
 		}
 		if (directives && selectedEntries.length < allEntries.length) {
 			const remaining = allEntries.filter(entry => !directives.has(entry.id)).map(entry => `#${entry.id}`);
-			summaryLines.push(
-				`指令模式:${remaining.length} 个未列出的冲突仍已注册(${remaining.join(", ")})。`,
-			);
+			summaryLines.push(`指令模式:${remaining.length} 个未列出的冲突仍已注册(${remaining.join(", ")})。`);
 		}
 		if (totalEchoTrimmed > 0) {
 			summaryLines.push(
@@ -1057,9 +1051,7 @@ export class WriteTool implements AgentTool<typeof writeSchema, WriteToolDetails
 			);
 		}
 		if (failedFiles.length > 0) {
-			summaryLines.push(
-				`解决 ${failedFiles.length} 个文件失败——已注册的条目保持原样,可重试:`,
-			);
+			summaryLines.push(`解决 ${failedFiles.length} 个文件失败——已注册的条目保持原样,可重试:`);
 			for (const file of failedFiles) {
 				summaryLines.push(`  ${file.displayPath}: ${file.count} 个冲突 (${file.error})`);
 			}

@@ -107,7 +107,7 @@ describe("createSessionManager — missing session (#2084)", () => {
 				),
 			).rejects.toMatchObject({
 				name: "SessionResolutionError",
-				message: '未找到会话 “019ea530-0000-7000-0000-000000000000”。',
+				message: "未找到会话 “019ea530-0000-7000-0000-000000000000”。",
 				hint: expect.stringContaining("omp-zh --resume"),
 			});
 
@@ -179,7 +179,7 @@ describe("createSessionManager — missing session (#2084)", () => {
 				),
 			).rejects.toMatchObject({
 				name: "SessionResolutionError",
-				message: '未找到会话 “019ea530-0000-7000-0000-000000000000”。',
+				message: "未找到会话 “019ea530-0000-7000-0000-000000000000”。",
 				hint: expect.stringContaining("omp-zh --resume"),
 			});
 		} finally {

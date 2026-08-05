@@ -162,9 +162,7 @@ export function renderJsonTreeLines(
 					// Show truncation and closing quote
 					if (strLines.length > maxStrLines) {
 						truncated = true;
-						pushLine(
-							`${continuePrefix}   ${theme.fg("dim", ` …(还有 ${strLines.length - maxStrLines} 行)"`)}`,
-						);
+						pushLine(`${continuePrefix}   ${theme.fg("dim", ` …(还有 ${strLines.length - maxStrLines} 行)"`)}`);
 					} else {
 						// Add closing quote to last line - need to modify the last pushed line
 						const lastIdx = lines.length - 1;

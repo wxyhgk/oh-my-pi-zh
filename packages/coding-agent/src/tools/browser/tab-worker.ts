@@ -449,12 +449,9 @@ function createRunPageScope(page: Page): RunPageScope {
 					"清除浏览器请求拦截超时",
 				);
 			} catch (error) {
-				throw new RequestInterceptionCleanupError(
-					"browser.run 后清除浏览器请求拦截失败",
-					{
-						error: error instanceof Error ? error.message : String(error),
-					},
-				);
+				throw new RequestInterceptionCleanupError("browser.run 后清除浏览器请求拦截失败", {
+					error: error instanceof Error ? error.message : String(error),
+				});
 			}
 		},
 	};
@@ -1304,9 +1301,7 @@ export class WorkerCore {
 								page.$(normalizeSelector(selector)),
 							)) as ElementHandle | null;
 							if (!root)
-								throw new ToolError(
-									`tab.ariaSnapshot:选择器 ${JSON.stringify(selector)} 未匹配到任何元素`,
-								);
+								throw new ToolError(`tab.ariaSnapshot:选择器 ${JSON.stringify(selector)} 未匹配到任何元素`);
 						}
 						try {
 							return await untilAborted(sig, () => captureAriaSnapshot(page, root, opts));
@@ -1324,9 +1319,7 @@ export class WorkerCore {
 					const html = (await untilAborted(sig, () => page.content())) as string;
 					const result = await extractReadableFromHtml(html, page.url(), format);
 					if (!result) {
-						throw new ToolError(
-							`tab.extract(${JSON.stringify(format)}) 在 ${page.url()} 上未找到可读内容`,
-						);
+						throw new ToolError(`tab.extract(${JSON.stringify(format)}) 在 ${page.url()} 上未找到可读内容`);
 					}
 					const content = format === "markdown" ? result.markdown : result.text;
 					if (!content) {
@@ -1756,9 +1749,7 @@ export class WorkerCore {
 				handle.evaluate(el => (el as unknown as { tagName: string }).tagName),
 			)) as string;
 			if (tagName !== "INPUT")
-				throw new ToolError(
-					`tab.uploadFile() 需要 <input type="file"> 元素(当前为 <${tagName.toLowerCase()}>)`,
-				);
+				throw new ToolError(`tab.uploadFile() 需要 <input type="file"> 元素(当前为 <${tagName.toLowerCase()}>)`);
 			await untilAborted(signal, () => upload.uploadFile(...absolute));
 		} finally {
 			await handle.dispose().catch(() => undefined);

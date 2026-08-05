@@ -99,8 +99,7 @@ export interface PullCodexSecurityCloudResultsInput {
 }
 
 function object(value: unknown): JsonObject {
-	if (!value || typeof value !== "object" || Array.isArray(value))
-		throw new Error("Codex Security 云返回了无效对象");
+	if (!value || typeof value !== "object" || Array.isArray(value)) throw new Error("Codex Security 云返回了无效对象");
 	return value as JsonObject;
 }
 
@@ -109,8 +108,7 @@ function optionalObject(value: unknown): JsonObject {
 }
 
 function requiredString(value: unknown, field: string): string {
-	if (typeof value !== "string" || value.length === 0)
-		throw new Error(`Codex Security 云响应缺少 ${field}`);
+	if (typeof value !== "string" || value.length === 0) throw new Error(`Codex Security 云响应缺少 ${field}`);
 	return value;
 }
 
@@ -451,8 +449,7 @@ function locationsAndEvidence(
 			if (sourcePath) locations.push({ path: sourcePath, startLine: 1, role: "cloud-file" });
 		}
 	}
-	if (locations.length === 0)
-		throw new Error("Codex Security 云发现没有可用的仓库相对位置");
+	if (locations.length === 0) throw new Error("Codex Security 云发现没有可用的仓库相对位置");
 	const validationReport = text(commit.validation_report) ?? text(commit.fix_check_report);
 	if (validationReport) {
 		evidenceInputs.push({
@@ -583,9 +580,7 @@ async function assertCloudRepositoryMatchesStore(
 ): Promise<void> {
 	const origin = await git.remote.url(store.repositoryRoot, "origin", signal);
 	if (!origin) {
-		throw new Error(
-			"Codex Security 云导入需要可验证的仓库身份;此项目没有 'origin' 远程",
-		);
+		throw new Error("Codex Security 云导入需要可验证的仓库身份;此项目没有 'origin' 远程");
 	}
 	if (repositoryIdentity(origin) !== repositoryIdentity(configuration.repositoryUrl)) {
 		throw new Error("Codex Security 云配置与此项目的 origin 远程不匹配");
@@ -665,9 +660,7 @@ export async function pullCodexSecurityCloudResults(
 				excludePaths: [],
 				surfaces: [],
 				explicitExclusions: [],
-				deferred: [
-					{ id: "cloud-coverage", reason: "云端覆盖收据不通过 findings API 公开。" },
-				],
+				deferred: [{ id: "cloud-coverage", reason: "云端覆盖收据不通过 findings API 公开。" }],
 			},
 			reportRef: "report.md",
 			sarifRef: "results.sarif",

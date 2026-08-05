@@ -122,19 +122,12 @@ function formatOutput(contentType: string, oEmbed: SpotifyOEmbedResponse, og: Op
 	sections.push("\n---\n");
 	if (contentType === "playlist") {
 		sections.push(
-			"**注意**:播放列表详情(音轨、创建者、关注者数量)需要认证。 " +
-				"未配置 Spotify API 凭据时仅提供基本元数据。\n",
+			"**注意**:播放列表详情(音轨、创建者、关注者数量)需要认证。 " + "未配置 Spotify API 凭据时仅提供基本元数据。\n",
 		);
 	} else if (contentType === "album") {
-		sections.push(
-			"**注意**:音轨列表与专辑详细信息需要认证。 " +
-				"未配置 Spotify API 凭据时仅提供基本元数据。\n",
-		);
+		sections.push("**注意**:音轨列表与专辑详细信息需要认证。 " + "未配置 Spotify API 凭据时仅提供基本元数据。\n");
 	} else if (contentType === "podcast-show") {
-		sections.push(
-			"**注意**:剧集列表与节目详细信息需要认证。 " +
-				"未配置 Spotify API 凭据时仅提供基本元数据。\n",
-		);
+		sections.push("**注意**:剧集列表与节目详细信息需要认证。 " + "未配置 Spotify API 凭据时仅提供基本元数据。\n");
 	}
 
 	sections.push(`**URL**: ${url}\n`);

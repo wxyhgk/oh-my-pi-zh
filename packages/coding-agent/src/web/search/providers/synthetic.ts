@@ -86,8 +86,7 @@ export async function searchSynthetic(params: SearchParamsWithFetch): Promise<Se
 		key => callSyntheticSearch(key, query, params.signal, fetchImpl, params.timeoutMs),
 		{
 			signal: params.signal,
-			missingKeyMessage:
-				"未找到 Synthetic 凭据。请设置 SYNTHETIC_API_KEY 或运行 'omp /login synthetic' 登录。",
+			missingKeyMessage: "未找到 Synthetic 凭据。请设置 SYNTHETIC_API_KEY 或运行 'omp /login synthetic' 登录。",
 		},
 	);
 	const sources: SearchSource[] = [];

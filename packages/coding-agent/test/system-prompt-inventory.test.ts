@@ -103,9 +103,7 @@ describe("system prompt tool inventory", () => {
 		// Tolerate either prompt layout: the compact "# 工具清单" name list and the
 		// verbose "## functions" namespace. The slice just needs to isolate the
 		// rendered tool list from the rest of the prompt.
-		const starts = ["# 工具清单", "## functions"]
-			.map(header => text.indexOf(header))
-			.filter(index => index >= 0);
+		const starts = ["# 工具清单", "## functions"].map(header => text.indexOf(header)).filter(index => index >= 0);
 		const inventoryStart = starts.length > 0 ? Math.min(...starts) : -1;
 		expect(inventoryStart).toBeGreaterThan(-1);
 		const sectionEnds = ["\n工具策略", "\n# "]
@@ -355,9 +353,7 @@ describe("system prompt tool inventory", () => {
 			nativeTools: true,
 			inlineToolDescriptors: false,
 		});
-		expect(inventoryFrom(systemPrompt.join("\n\n")).trim()).toBe(
-			"# 工具清单\n- Edit: `apply_patch`\n- Read: `read`",
-		);
+		expect(inventoryFrom(systemPrompt.join("\n\n")).trim()).toBe("# 工具清单\n- Edit: `apply_patch`\n- Read: `read`");
 	});
 
 	it("does not construct descriptor records for a compact native inventory", async () => {
@@ -404,9 +400,7 @@ describe("system prompt tool inventory", () => {
 			nativeTools: true,
 			inlineToolDescriptors: false,
 		});
-		expect(inventoryFrom(systemPrompt.join("\n\n")).trim()).toBe(
-			"# 工具清单\n- Edit: `apply_patch`\n- Read: `read`",
-		);
+		expect(inventoryFrom(systemPrompt.join("\n\n")).trim()).toBe("# 工具清单\n- Edit: `apply_patch`\n- Read: `read`");
 		expect(Array.from(reads.values())).toEqual([
 			{ label: 1, wireName: 1, description: 0, parameters: 0, examples: 0 },
 			{ label: 1, wireName: 1, description: 0, parameters: 0, examples: 0 },

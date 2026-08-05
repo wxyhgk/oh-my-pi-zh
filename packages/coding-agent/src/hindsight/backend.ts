@@ -118,8 +118,7 @@ export const hindsightBackend: MemoryBackend = {
 		const previous = session?.setHindsightSessionState(undefined);
 		previous?.dispose();
 		logger.warn(
-			"Hindsight 记忆存储在服务器端;仅清除了本地召回缓存。" +
-				"如需清除上游状态,请从 Hindsight 界面删除对应记忆库。",
+			"Hindsight 记忆存储在服务器端;仅清除了本地召回缓存。" + "如需清除上游状态,请从 Hindsight 界面删除对应记忆库。",
 		);
 	},
 

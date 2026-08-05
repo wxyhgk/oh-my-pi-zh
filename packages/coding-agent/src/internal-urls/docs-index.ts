@@ -82,9 +82,7 @@ function getIndex(): DocsIndex {
 	// no newline is a broken build (truncated/corrupt embed), not a placeholder.
 	const decoded = decodeDocsIndex(docsEmbed);
 	if (decoded === null) {
-		throw new Error(
-			"嵌入式文档索引格式错误:非空负载缺少换行分隔符。请重新构建二进制或包。",
-		);
+		throw new Error("嵌入式文档索引格式错误:非空负载缺少换行分隔符。请重新构建二进制或包。");
 	}
 	index = decoded;
 	return index;

@@ -47,9 +47,7 @@ export async function processFileArguments(fileArgs: string[], options?: Process
 		const ext = path.extname(absolutePath).toLowerCase();
 		const maxBytes = mimeType ? MAX_CLI_IMAGE_BYTES : MAX_CLI_TEXT_BYTES;
 		if (stat.size > maxBytes) {
-			console.error(
-				chalk.yellow(`警告:跳过文件内容(过大:${formatBytes(stat.size)}):${absolutePath}`),
-			);
+			console.error(chalk.yellow(`警告:跳过文件内容(过大:${formatBytes(stat.size)}):${absolutePath}`));
 			text += `<file name="${absolutePath}">(已跳过:文件过大,${formatBytes(stat.size)})</file>\n`;
 			continue;
 		}

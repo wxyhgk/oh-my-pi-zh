@@ -655,9 +655,7 @@ export function formatUsageBreakdown(
 		const providerUnreported = unreportedByProvider.get(provider) ?? [];
 		const accountCount = providerReports.length + providerUnreported.length;
 		lines.push("");
-		lines.push(
-			`${chalk.bold.cyan(formatProviderName(provider))} ${chalk.dim(`— ${accountCount} 个账户`)}`,
-		);
+		lines.push(`${chalk.bold.cyan(formatProviderName(provider))} ${chalk.dim(`— ${accountCount} 个账户`)}`);
 		// Provider-wide disclaimers render once per provider, not per limit.
 		const providerNotes = [...new Set(providerReports.flatMap(report => report.notes ?? []))];
 		for (const note of providerNotes)
@@ -817,16 +815,12 @@ export function formatUsageHistory(
 	}
 
 	const lines: string[] = [];
-	lines.push(
-		`${chalk.bold("用量历史")}${chalk.dim(` · 最近 ${formatDuration(nowMs - sinceMs)} · 每个桶的峰值`)}`,
-	);
+	lines.push(`${chalk.bold("用量历史")}${chalk.dim(` · 最近 ${formatDuration(nowMs - sinceMs)} · 每个桶的峰值`)}`);
 
 	for (const provider of [...providers.keys()].sort((a, b) => a.localeCompare(b))) {
 		const accounts = providers.get(provider) ?? new Map<string, HistoryAccount>();
 		lines.push("");
-		lines.push(
-			`${chalk.bold.cyan(formatProviderName(provider))} ${chalk.dim(`— ${accounts.size} 个账户`)}`,
-		);
+		lines.push(`${chalk.bold.cyan(formatProviderName(provider))} ${chalk.dim(`— ${accounts.size} 个账户`)}`);
 		const sortedAccounts = [...accounts.values()].sort((a, b) => a.label.localeCompare(b.label));
 		for (const account of sortedAccounts) {
 			lines.push(`  ${chalk.bold(redaction?.get(account.label) ?? account.label)}`);
@@ -969,9 +963,7 @@ export async function runUsageCommand(cmd: UsageCommandArgs): Promise<void> {
 			if (entries.length === 0) {
 				const scope = cmd.provider ? `(提供商“${cmd.provider}”)` : "";
 				process.stderr.write(
-					chalk.yellow(
-						`尚无用量历史记录${scope}。快照会在每次获取用量时累积(TUI 底部、/usage、omp usage)。\n`,
-					),
+					chalk.yellow(`尚无用量历史记录${scope}。快照会在每次获取用量时累积(TUI 底部、/usage、omp usage)。\n`),
 				);
 				process.exitCode = 1;
 				return;

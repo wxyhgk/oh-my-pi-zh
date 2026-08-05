@@ -164,9 +164,7 @@ export class DebugSelectorComponent extends Container {
 		const block = new TranscriptBlock();
 		block.addChild(new Text(theme.fg("accent", `${theme.status.info} CPU 分析已启动`), 1, 0));
 		block.addChild(new Spacer(1));
-		block.addChild(
-			new Text(theme.fg("muted", "请复现性能问题,然后按 Enter 停止分析。"), 1, 0),
-		);
+		block.addChild(new Text(theme.fg("muted", "请复现性能问题,然后按 Enter 停止分析。"), 1, 0));
 		this.ctx.present(block);
 
 		// Wait for Enter keypress
@@ -400,10 +398,7 @@ export class DebugSelectorComponent extends Container {
 		const block = new TranscriptBlock();
 		block.addChild(
 			new Text(
-				theme.fg(
-					"success",
-					`${theme.status.success} JavaScriptCore 远程检查器${existing ? "已在运行" : "已启动"}`,
-				),
+				theme.fg("success", `${theme.status.success} JavaScriptCore 远程检查器${existing ? "已在运行" : "已启动"}`),
 				1,
 				0,
 			),

@@ -1403,13 +1403,9 @@ export const imageGenTool: CustomTool<typeof imageGenSchema, ImageGenToolDetails
 									} catch {
 										// Keep raw text.
 									}
-									throw new ProviderHttpError(
-										`xAI 图像请求失败(${resp.status}): ${message}`,
-										resp.status,
-										{
-											headers: resp.headers,
-										},
-									);
+									throw new ProviderHttpError(`xAI 图像请求失败(${resp.status}): ${message}`, resp.status, {
+										headers: resp.headers,
+									});
 								}
 								return rawText;
 							},
@@ -1596,13 +1592,9 @@ export const imageGenTool: CustomTool<typeof imageGenSchema, ImageGenToolDetails
 								} catch {
 									// Keep raw text.
 								}
-								throw new ProviderHttpError(
-									`Gemini 图像请求失败(${resp.status}): ${message}`,
-									resp.status,
-									{
-										headers: resp.headers,
-									},
-								);
+								throw new ProviderHttpError(`Gemini 图像请求失败(${resp.status}): ${message}`, resp.status, {
+									headers: resp.headers,
+								});
 							}
 							return text;
 						},

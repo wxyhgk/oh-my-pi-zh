@@ -63,9 +63,7 @@ const browserSchema = type({
 		height: "number",
 		"scale?": "number",
 	},
-	"wait_until?": type("'load' | 'domcontentloaded' | 'networkidle0' | 'networkidle2'").describe(
-		"导航等待条件",
-	),
+	"wait_until?": type("'load' | 'domcontentloaded' | 'networkidle0' | 'networkidle2'").describe("导航等待条件"),
 	"dialogs?": type("'accept' | 'dismiss'").describe("自动处理对话框"),
 	"code?": type("string").describe("要在标签页中运行的 js 代码"),
 	"timeout?": type("number").describe("超时秒数"),

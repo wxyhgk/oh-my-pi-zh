@@ -40,8 +40,7 @@ export const localBackend: MemoryBackend = {
 			active: true,
 			writable: true,
 			searchable: false,
-			message:
-				"本地 rollout 摘要记忆已启用;`learn` 工具的经验教训会保存到 learned.md。暂不支持结构化搜索。",
+			message: "本地 rollout 摘要记忆已启用;`learn` 工具的经验教训会保存到 learned.md。暂不支持结构化搜索。",
 		};
 	},
 };

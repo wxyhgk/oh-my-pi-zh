@@ -53,9 +53,7 @@ export default class Say extends Command {
 		let exitCode = 0;
 		const unsubscribe = ttsClient.onProgress(event => {
 			if (event.status === "progress" && typeof event.progress === "number") {
-				process.stderr.write(
-					`\r${chalk.dim(`正在下载 ${event.file ?? model}：${Math.round(event.progress)}%`)}`,
-				);
+				process.stderr.write(`\r${chalk.dim(`正在下载 ${event.file ?? model}：${Math.round(event.progress)}%`)}`);
 			} else if (event.status === "done" || event.status === "ready") {
 				// Clear the progress line once the download finishes.
 				process.stderr.write("\r\x1b[K");
@@ -138,9 +136,7 @@ export default class Say extends Command {
 
 	#synthesisFailed(model: string): void {
 		process.stderr.write(
-			chalk.red(
-				`错误：无法使用本地 TTS 模型 "${model}" 合成语音。请运行 \`omp-zh setup speech\` 安装它。\n`,
-			),
+			chalk.red(`错误：无法使用本地 TTS 模型 "${model}" 合成语音。请运行 \`omp-zh setup speech\` 安装它。\n`),
 		);
 	}
 }

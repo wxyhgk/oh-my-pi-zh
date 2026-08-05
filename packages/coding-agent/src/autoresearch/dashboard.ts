@@ -277,9 +277,7 @@ export function renderDashboardLines(
 		),
 	];
 	if (state.results.length > current.length) {
-		lines.push(
-			truncateToWidth(`来自更早分段的归档:${state.results.length - current.length} 次运行`, width),
-		);
+		lines.push(truncateToWidth(`来自更早分段的归档:${state.results.length - current.length} 次运行`, width));
 	}
 	if (runtime.lastRunSummary) {
 		lines.push(

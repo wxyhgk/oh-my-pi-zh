@@ -41,9 +41,7 @@ describe("ssh file-transfer POSIX guard", () => {
 		});
 		const target: SSHConnectionTarget = { name: "noshell", host: "noshell" };
 		await expect(readRemoteFile(target, "/etc/hosts", { maxBytes: 1024 })).rejects.toThrow(/已验证的 POSIX shell/);
-		await expect(writeRemoteFile(target, "/tmp/x", new Uint8Array([1]), {})).rejects.toThrow(
-			/已验证的 POSIX shell/,
-		);
+		await expect(writeRemoteFile(target, "/tmp/x", new Uint8Array([1]), {})).rejects.toThrow(/已验证的 POSIX shell/);
 	});
 
 	it("dispatches transfer commands through the verified transferShell, not the login shell", async () => {

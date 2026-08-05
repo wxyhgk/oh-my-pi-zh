@@ -159,9 +159,7 @@ async function getReleaseBinaryAsset(
 		throw err;
 	}
 	if ((response.status === 403 && !githubToken) || response.status === 429) {
-		throw new Error(
-			"获取发布元数据时超出 GitHub API 速率限制;请稍后重试或设置 GITHUB_TOKEN 或 GH_TOKEN",
-		);
+		throw new Error("获取发布元数据时超出 GitHub API 速率限制;请稍后重试或设置 GITHUB_TOKEN 或 GH_TOKEN");
 	}
 	if (!response.ok) {
 		throw new Error(`获取 GitHub 发布元数据失败:${response.statusText}`);
@@ -207,11 +205,7 @@ export async function downloadVerifiedBinary(options: VerifiedBinaryDownloadOpti
 		transform(chunk, _encoding, callback) {
 			size += chunk.byteLength;
 			if (size > options.expectedSize) {
-				callback(
-					new Error(
-						`下载的二进制文件大小不匹配:应为 ${options.expectedSize} 字节,实际收到至少 ${size}`,
-					),
-				);
+				callback(new Error(`下载的二进制文件大小不匹配:应为 ${options.expectedSize} 字节,实际收到至少 ${size}`));
 				return;
 			}
 			hash.update(chunk);

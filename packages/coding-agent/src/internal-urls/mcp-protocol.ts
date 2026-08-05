@@ -130,9 +130,7 @@ export class McpProtocolHandler implements ProtocolHandler {
 			targetServer = resolveTargetServer(mcpManager, uri);
 		}
 		if (!targetServer) {
-			throw new Error(
-				`没有 MCP 服务器提供资源 "${uri}"。\n\n可用资源:\n${formatAvailableResources(mcpManager)}`,
-			);
+			throw new Error(`没有 MCP 服务器提供资源 "${uri}"。\n\n可用资源:\n${formatAvailableResources(mcpManager)}`);
 		}
 
 		let result: MCPResourceReadResult | undefined;

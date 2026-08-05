@@ -208,9 +208,7 @@ async function executeApplyPatchPerFile(
 					.slice(i + 1)
 					.map(e => e.path)
 					.join(", ");
-				contentTexts.push(
-					`未应用的文件: ${skippedPaths};请重新读取相关文件,并仅重新提交失败和未应用的文件。`,
-				);
+				contentTexts.push(`未应用的文件: ${skippedPaths};请重新读取相关文件,并仅重新提交失败和未应用的文件。`);
 			}
 			// Stopping early skips the last-entry flush above; finalize the
 			// already-written files so an intervening failure cannot leave them
@@ -315,9 +313,7 @@ async function executeSinglePathEntries(
 			}
 			if (i + 1 < runs.length) {
 				contentTexts.push(
-					(i + 2 === runs.length
-						? `第 ${runs.length} 项未应用`
-						: `第 ${i + 2}-${runs.length} 项未应用`) +
+					(i + 2 === runs.length ? `第 ${runs.length} 项未应用` : `第 ${i + 2}-${runs.length} 项未应用`) +
 						`;请重新读取文件,并仅重新提交失败和未应用的条目。`,
 				);
 			}

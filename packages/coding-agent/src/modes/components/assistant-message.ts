@@ -561,11 +561,7 @@ export class AssistantMessageComponent extends Container {
 		if (total > lines.length) {
 			const hidden = total - lines.length;
 			this.#contentContainer.addChild(
-				new Text(
-					theme.fg("dim", `  … +${hidden} 更多行 (${expandKeyHint()} 展开)`),
-					1,
-					0,
-				),
+				new Text(theme.fg("dim", `  … +${hidden} 更多行 (${expandKeyHint()} 展开)`), 1, 0),
 			);
 		}
 	}

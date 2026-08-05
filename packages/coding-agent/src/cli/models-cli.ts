@@ -200,9 +200,7 @@ function renderProviderModels(
 
 	if (json) {
 		if (configError) {
-			process.stderr.write(
-				`警告:models.yml 校验失败——已禁用自定义提供商\n${configError.message}\n`,
-			);
+			process.stderr.write(`警告:models.yml 校验失败——已禁用自定义提供商\n${configError.message}\n`);
 		}
 		const output: ModelsJson = { models: filtered.slice().sort(byProviderThenId).map(toModelJson) };
 		writeLine(JSON.stringify(output));

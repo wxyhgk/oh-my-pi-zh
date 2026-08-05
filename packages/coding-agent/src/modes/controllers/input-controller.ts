@@ -1209,9 +1209,7 @@ export class InputController {
 			}
 			this.ctx.updatePendingMessagesDisplay();
 			this.ctx.showStatus(
-				messages.length === 1
-					? "已为压缩后排队 1 条消息"
-					: `已为压缩后排队 ${messages.length} 条消息`,
+				messages.length === 1 ? "已为压缩后排队 1 条消息" : `已为压缩后排队 ${messages.length} 条消息`,
 			);
 			this.ctx.ui.requestRender();
 			return;
@@ -2000,9 +1998,7 @@ export class InputController {
 				this.ctx.editor.setText(result);
 			}
 		} catch (error) {
-			this.ctx.showWarning(
-				`打开外部编辑器失败:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.ctx.showWarning(`打开外部编辑器失败:${error instanceof Error ? error.message : String(error)}`);
 		} finally {
 			if (ttyHandle) {
 				await ttyHandle.close();

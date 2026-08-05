@@ -114,9 +114,7 @@ function formatBlockResolution(resolution: BlockResolution): string {
 	const op = BLOCK_OP_LABELS[resolution.op].replace("N", String(resolution.anchorLine));
 	const lines = resolution.end - resolution.start + 1;
 	const span =
-		resolution.start === resolution.end
-			? `第 ${resolution.start} 行`
-			: `第 ${resolution.start}-${resolution.end} 行`;
+		resolution.start === resolution.end ? `第 ${resolution.start} 行` : `第 ${resolution.start}-${resolution.end} 行`;
 	const suffix =
 		resolution.op === "insert_after"
 			? `;正文落在第 ${resolution.end} 行之后`

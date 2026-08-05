@@ -81,9 +81,7 @@ const searchSchema = type({
 	),
 	"case?": type("boolean").describe("区分大小写搜索"),
 	"gitignore?": type("boolean").describe("遵循 gitignore"),
-	"skip?": type("number")
-		.or("null")
-		.describe("收集结果前要跳过的文件——上次调用达到文件上限时用于分页"),
+	"skip?": type("number").or("null").describe("收集结果前要跳过的文件——上次调用达到文件上限时用于分页"),
 });
 
 export type GrepToolInput = typeof searchSchema.infer;
@@ -181,9 +179,7 @@ async function parsePathSpecs(rawEntries: readonly string[], cwd: string): Promi
 		if (!literalFilesystemMatch && split.sel) {
 			const parsed = parseLineRanges(split.sel);
 			if (!parsed) {
-				throw new ToolError(
-					`路径条目 "${entry}"——仅支持 ":50-100" 之类的行范围选择器(不支持 ":raw"/":conflicts")`,
-				);
+				throw new ToolError(`路径条目 "${entry}"——仅支持 ":50-100" 之类的行范围选择器(不支持 ":raw"/":conflicts")`);
 			}
 			if (hasGlobPathChars(split.path)) {
 				throw new ToolError(`行范围选择器需要单个文件,不能是 glob: ${entry}`);
@@ -1071,9 +1067,7 @@ export class GrepTool implements AgentTool<typeof searchSchema, GrepToolDetails>
 								throw new ToolError(`行范围选择器对应的路径未找到: ${spec.original}`);
 							}
 							if (!stats.isFile()) {
-								throw new ToolError(
-									`行范围选择器需要单个文件: ${spec.original} 是目录`,
-								);
+								throw new ToolError(`行范围选择器需要单个文件: ${spec.original} 是目录`);
 							}
 							mergeRangesInto(rangesByAbsPath, absKey, spec.ranges);
 						} else {
@@ -1406,8 +1400,8 @@ export class GrepTool implements AgentTool<typeof searchSchema, GrepToolDetails>
 				// even a prefix of (rare mmap failures), but cannot name them.
 				const oversizedScanNote =
 					!oversizedNote && skippedOversizedCount > 0
-					? `已跳过 ${skippedOversizedCount} 个无法读取的大文件;请直接用 \`read\` 读取它们`
-					: undefined;
+						? `已跳过 ${skippedOversizedCount} 个无法读取的大文件;请直接用 \`read\` 读取它们`
+						: undefined;
 				const archiveNote =
 					archiveUnreadable.length > 0
 						? `已跳过压缩包条目(搜索仅支持文本成员): ${archiveUnreadable.join(", ")}`

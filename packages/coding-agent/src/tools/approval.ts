@@ -203,8 +203,7 @@ export function requiresApproval(
 			throw new Error(`工具 "${tool.name}" 被工具策略阻止。${reason ? `\n原因: ${reason}` : ""}`);
 		}
 		throw new Error(
-			`工具 "${tool.name}" 被用户策略阻止。\n` +
-				`若要允许:请从配置中移除 "tools.approval.${tool.name}: deny"。`,
+			`工具 "${tool.name}" 被用户策略阻止。\n` + `若要允许:请从配置中移除 "tools.approval.${tool.name}: deny"。`,
 		);
 	}
 

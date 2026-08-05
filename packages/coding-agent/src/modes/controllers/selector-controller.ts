@@ -1010,9 +1010,7 @@ export class SelectorController {
 				onCycleOrderChange: order => {
 					try {
 						this.ctx.settings.set("cycleOrder", order);
-						this.ctx.showStatus(
-							order.length > 0 ? `快速切换循环:${order.join(" → ")}` : "快速切换循环已清除",
-						);
+						this.ctx.showStatus(order.length > 0 ? `快速切换循环:${order.join(" → ")}` : "快速切换循环已清除");
 					} catch (error) {
 						this.ctx.showError(error instanceof Error ? error.message : String(error));
 					}
@@ -1398,9 +1396,7 @@ export class SelectorController {
 		// to — completing the navigation with it would silently drop the
 		// user's intent to chat (roboomp review on #5895).
 		if (result.details?.chatRedirect) {
-			this.ctx.showError(
-				"从树中重新回答时无法使用“就此进行对话” — 请改选一个选项或输入自定义回答。",
-			);
+			this.ctx.showError("从树中重新回答时无法使用“就此进行对话” — 请改选一个选项或输入自定义回答。");
 			return undefined;
 		}
 		return result;
@@ -1418,9 +1414,7 @@ export class SelectorController {
 			try {
 				foreignSessions = await store.list();
 			} catch (error) {
-				this.ctx.showError(
-					`列出 ${sourceName} 会话失败:${error instanceof Error ? error.message : String(error)}`,
-				);
+				this.ctx.showError(`列出 ${sourceName} 会话失败:${error instanceof Error ? error.message : String(error)}`);
 				return;
 			}
 			if (foreignSessions.length === 0) {
@@ -1433,9 +1427,7 @@ export class SelectorController {
 				try {
 					await this.ctx.settings.flush();
 				} catch (error) {
-					this.ctx.showError(
-						`保存待定设置失败:${error instanceof Error ? error.message : String(error)}`,
-					);
+					this.ctx.showError(`保存待定设置失败:${error instanceof Error ? error.message : String(error)}`);
 					return false;
 				}
 				const foreignSession = foreignByPath.get(session.path);
@@ -1474,10 +1466,9 @@ export class SelectorController {
 						await storage.deleteSessionWithArtifacts(session.path);
 						return true;
 					} catch (error) {
-						throw new Error(
-							`删除会话失败:${error instanceof Error ? error.message : String(error)}`,
-							{ cause: error },
-						);
+						throw new Error(`删除会话失败:${error instanceof Error ? error.message : String(error)}`, {
+							cause: error,
+						});
 					}
 				},
 				historyMatcher,
@@ -1617,10 +1608,7 @@ export class SelectorController {
 			return;
 		}
 
-		const confirmed = await this.ctx.showHookConfirm(
-			"删除会话",
-			"这将永久删除当前会话。\n您将返回会话选择器。",
-		);
+		const confirmed = await this.ctx.showHookConfirm("删除会话", "这将永久删除当前会话。\n您将返回会话选择器。");
 
 		if (!confirmed) {
 			this.ctx.showStatus("已取消删除");
@@ -1705,13 +1693,7 @@ export class SelectorController {
 			const whoBase = identity?.type === "oauth" ? (identity.email ?? identity.accountId) : undefined;
 			const whoOrg = identity?.type === "oauth" ? (identity.orgName ?? identity.orgId) : undefined;
 			const who = whoBase ? ` as ${whoBase}${whoOrg ? ` (${whoOrg})` : ""}` : whoOrg ? ` as ${whoOrg}` : "";
-			block.addChild(
-				new Text(
-					theme.fg("success", `${theme.status.success} 已成功登录 ${providerId}${who}`),
-					1,
-					0,
-				),
-			);
+			block.addChild(new Text(theme.fg("success", `${theme.status.success} 已成功登录 ${providerId}${who}`), 1, 0));
 			block.addChild(new Text(theme.fg("dim", `凭据已保存到 ${getAgentDbPath()}`), 1, 0));
 			this.ctx.present(block);
 			return true;
@@ -1746,10 +1728,7 @@ export class SelectorController {
 			const block = new TranscriptBlock();
 			block.addChild(
 				new Text(
-					theme.fg(
-						"success",
-						`${theme.status.success} 已成功从 ${providerId} 退出登录 ${account.label}`,
-					),
+					theme.fg("success", `${theme.status.success} 已成功从 ${providerId} 退出登录 ${account.label}`),
 					1,
 					0,
 				),
@@ -1757,9 +1736,7 @@ export class SelectorController {
 			block.addChild(new Text(theme.fg("dim", `凭据已从 ${getAgentDbPath()} 中移除`), 1, 0));
 			const remainingSource = authStorage.describeCredentialSource(providerId, this.ctx.session.sessionId);
 			if (remainingSource) {
-				block.addChild(
-					new Text(theme.fg("warning", `${providerId} 仍通过 ${remainingSource} 进行身份验证`), 1, 0),
-				);
+				block.addChild(new Text(theme.fg("warning", `${providerId} 仍通过 ${remainingSource} 进行身份验证`), 1, 0));
 			}
 			this.ctx.present(block);
 		} catch (error: unknown) {
@@ -1772,9 +1749,7 @@ export class SelectorController {
 		try {
 			await authStorage.reload();
 		} catch (error: unknown) {
-			this.ctx.showError(
-				`无法加载已存储的凭据:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.ctx.showError(`无法加载已存储的凭据:${error instanceof Error ? error.message : String(error)}`);
 			return;
 		}
 		const provider = getOAuthProviders().find(candidate => candidate.id === providerId);
@@ -1875,9 +1850,7 @@ export class SelectorController {
 		try {
 			accountList = await session.listCurrentProviderOAuthAccounts();
 		} catch (error) {
-			this.ctx.showError(
-				`无法加载提供商账户:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.ctx.showError(`无法加载提供商账户:${error instanceof Error ? error.message : String(error)}`);
 			return;
 		}
 		if (!accountList) {
@@ -1968,9 +1941,7 @@ export class SelectorController {
 		try {
 			outcome = await this.ctx.session.redeemResetCredit(account.target);
 		} catch (error) {
-			this.ctx.showError(
-				`重置失败(${account.label}):${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.ctx.showError(`重置失败(${account.label}):${error instanceof Error ? error.message : String(error)}`);
 			return;
 		}
 		const message = describeRedeemOutcome(outcome, account.label);

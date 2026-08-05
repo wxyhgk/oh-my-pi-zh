@@ -35,8 +35,7 @@ const NO_VISION_MODEL_NOTE =
 	"[未配置支持视觉的模型,无法自动描述该图片。图片已保存;" +
 	"请配置视觉模型角色(modelRoles.vision),并使用 inspect_image 工具进行分析。]";
 
-const DESCRIPTION_UNAVAILABLE_NOTE =
-	"[图片描述不可用:视觉模型未返回可用文本。图片已保存以供进一步分析。]";
+const DESCRIPTION_UNAVAILABLE_NOTE = "[图片描述不可用:视觉模型未返回可用文本。图片已保存以供进一步分析。]";
 
 /** Registry surface needed to resolve a vision model and authorize requests. */
 export type VisionFallbackRegistry = Pick<ModelRegistry, "getAvailable" | "getApiKey" | "resolver">;

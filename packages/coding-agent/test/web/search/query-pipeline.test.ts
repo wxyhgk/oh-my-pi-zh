@@ -63,8 +63,6 @@ describe("web search directive pipeline", () => {
 		// Leniency: nothing matched site:nowhere.example, so all sources survive
 		// and the model is told the constraint was relaxed.
 		expect(result.details.response.sources).toHaveLength(SOURCES.length);
-		expect(result.content[0]?.text).toStartWith(
-			"注意: 没有结果匹配 `site:nowhere.example`;该约束已放宽",
-		);
+		expect(result.content[0]?.text).toStartWith("注意: 没有结果匹配 `site:nowhere.example`;该约束已放宽");
 	});
 });

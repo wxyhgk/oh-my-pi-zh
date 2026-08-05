@@ -96,9 +96,7 @@ const hubSchema = type({
 	}).describe("start:就绪条件;所有提供的条件都必须满足"),
 	"restart?": type("'no' | 'on-failure' | 'always'").describe("start:重启策略;默认为 no"),
 	"persist?": type("boolean").describe("start:最后一个 omp 客户端退出后仍继续存活;默认为 false"),
-	"detached?": type("boolean").describe(
-		"start:每次 omp 和 broker 退出后仍继续存活;隐含 persist 并禁用 PTY 输入",
-	),
+	"detached?": type("boolean").describe("start:每次 omp 和 broker 退出后仍继续存活;隐含 persist 并禁用 PTY 输入"),
 	"lines?": type("number > 0").describe("logs:输出行数;默认 100,最多 1000"),
 	"head?": type("boolean").describe("logs:从头读取而非从尾部"),
 	"grep?": type("string > 0").describe("logs:正则筛选"),
@@ -109,9 +107,7 @@ const hubSchema = type({
 	"text?": type("string > 0").describe("带 name 的 send:stdin 文本"),
 	"enter?": type("boolean").describe("带 name 的 send:在文本后追加 Enter;默认为 true"),
 	"keys?": type("string[]").describe("带 name 的 send:文本后的终端按键"),
-	"signal?": type("'SIGINT' | 'SIGTERM' | 'SIGHUP' | 'SIGQUIT' | 'SIGKILL'").describe(
-		"带 name 的 send:进程树信号",
-	),
+	"signal?": type("'SIGINT' | 'SIGTERM' | 'SIGHUP' | 'SIGQUIT' | 'SIGKILL'").describe("带 name 的 send:进程树信号"),
 	"timeout?": type("number > 0").describe("带 name 的 logs/stop/wait:最大秒数;默认 30(stop:5)"),
 });
 

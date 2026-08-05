@@ -107,11 +107,7 @@ async function formatComputerUseStatus(session: AgentSession): Promise<string> {
 	const active = session.getEnabledToolNames().includes("computer");
 	const model = session.model;
 	const modelName = model ? formatModelString(model) : "无";
-	const exposure = !enabled
-		? "未暴露(已禁用)"
-		: !active
-			? "未暴露(工具未激活)"
-			: computerExposureMode(model);
+	const exposure = !enabled ? "未暴露(已禁用)" : !active ? "未暴露(工具未激活)" : computerExposureMode(model);
 	const configured = {
 		display: session.settings.get("computer.display"),
 		maxWidth: session.settings.get("computer.maxWidth"),
@@ -153,9 +149,7 @@ async function applyComputerUseToggle(session: AgentSession, enable: boolean): P
 		return "当前会话不支持计算机使用。";
 	}
 	session.settings.override("computer.enabled", enable);
-	return enable
-		? `当前会话已启用计算机使用。${await formatComputerUseStatus(session)}`
-		: "当前会话已禁用计算机使用。";
+	return enable ? `当前会话已启用计算机使用。${await formatComputerUseStatus(session)}` : "当前会话已禁用计算机使用。";
 }
 
 /** Session-effective `/vision status` line. */
@@ -163,11 +157,7 @@ function formatVisionStatus(session: AgentSession): string {
 	const { mode, active, model } = session.inspectImageState();
 	const override = session.getInspectImageModeOverride();
 	const modelObj = session.model;
-	const capability = modelObj
-		? modelObj.input.includes("image")
-			? "原生图像输入"
-			: "无原生图像输入"
-		: "无活动模型";
+	const capability = modelObj ? (modelObj.input.includes("image") ? "原生图像输入" : "无原生图像输入") : "无活动模型";
 	return [
 		`inspect_image: ${active ? "激活" : "未激活"}`,
 		`模式:${mode}${override ? "(会话覆盖)" : ""}`,
@@ -569,9 +559,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 			}
 
 			const model = runtime.session.model;
-			await runtime.output(
-				model ? `当前模型:${model.provider}/${model.id}` : "当前未选择模型。",
-			);
+			await runtime.output(model ? `当前模型:${model.provider}/${model.id}` : "当前未选择模型。");
 			return commandConsumed();
 		},
 		handleTui: (_command, runtime) => {
@@ -638,9 +626,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 			if (arg === "on") {
 				const supported = runtime.ctx.session.setFastMode(true);
 				refreshStatusLine(runtime.ctx);
-				runtime.ctx.showStatus(
-					supported ? "快速模式已启用。" : "当前模型不支持快速模式。",
-				);
+				runtime.ctx.showStatus(supported ? "快速模式已启用。" : "当前模型不支持快速模式。");
 				runtime.ctx.editor.setText("");
 				return;
 			}
@@ -805,9 +791,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 			}
 			if (verb === "on") {
 				const active = runtime.session.setAdvisorEnabled(true);
-				await runtime.output(
-					active ? "顾问已启用。" : "顾问设置已启用,但未为 'advisor' 角色分配模型。",
-				);
+				await runtime.output(active ? "顾问已启用。" : "顾问设置已启用,但未为 'advisor' 角色分配模型。");
 				return commandConsumed();
 			}
 			if (verb === "off") {
@@ -826,9 +810,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 				return commandConsumed();
 			}
 			if (verb === "configure") {
-				await runtime.output(
-					"/advisor configure 会打开交互式编辑器,仅在交互式 TUI 中可用。",
-				);
+				await runtime.output("/advisor configure 会打开交互式编辑器,仅在交互式 TUI 中可用。");
 				return commandConsumed();
 			}
 			return usage("用法:/advisor [on|off|status|dump [raw]|configure]", runtime);
@@ -851,9 +833,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 			}
 			if (verb === "on") {
 				const active = runtime.ctx.session.setAdvisorEnabled(true);
-				runtime.ctx.showStatus(
-					active ? "顾问已启用。" : "顾问设置已启用,但未为 'advisor' 角色分配模型。",
-				);
+				runtime.ctx.showStatus(active ? "顾问已启用。" : "顾问设置已启用,但未为 'advisor' 角色分配模型。");
 				refreshStatusLine(runtime.ctx);
 				runtime.ctx.editor.setText("");
 				return;
@@ -1021,20 +1001,13 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 			const knownStartVerb = verb === "start" || verb === "view";
 			const view = verb === "view";
 			if (ctx.collabHost) {
-				showCollabLink(
-					ctx,
-					ctx.collabHost,
-					view ? "只读协作会话进行中" : "协作会话进行中",
-					view,
-				);
+				showCollabLink(ctx, ctx.collabHost, view ? "只读协作会话进行中" : "协作会话进行中", view);
 				return;
 			}
 			const explicitUrl = knownStartVerb ? rest : args;
 			const relayInput = explicitUrl || ctx.settings.get("collab.relayUrl") || "";
 			if (!relayInput) {
-				ctx.showError(
-					"未配置中继。请在 /settings 中设置 collab.relayUrl,或直接传入:/collab relay.example.com",
-				);
+				ctx.showError("未配置中继。请在 /settings 中设置 collab.relayUrl,或直接传入:/collab relay.example.com");
 				return;
 			}
 			// Scheme-less relay args default to wss (ws:// must be spelled out for localhost).
@@ -1133,9 +1106,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 				} catch (err) {
 					// Setting was already mutated; surface the restart failure so the
 					// user knows the browser is in an inconsistent state.
-					await runtime.output(
-						`浏览器模式已设置为${next ? "无头" : "可见"},但重启失败:${errorMessage(err)}`,
-					);
+					await runtime.output(`浏览器模式已设置为${next ? "无头" : "可见"},但重启失败:${errorMessage(err)}`);
 					return commandConsumed();
 				}
 			}
@@ -1270,11 +1241,9 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 			const { verb, rest } = parseSubcommand(command.args);
 			if (!verb || (verb === "info" && !rest)) {
 				await runtime.output(
-					[
-						`会话:${runtime.session.sessionId}`,
-						`标题:${runtime.session.sessionName}`,
-						`CWD:${runtime.cwd}`,
-					].join("\n"),
+					[`会话:${runtime.session.sessionId}`, `标题:${runtime.session.sessionName}`, `CWD:${runtime.cwd}`].join(
+						"\n",
+					),
 				);
 				return commandConsumed();
 			}
@@ -1292,9 +1261,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 				} catch (err) {
 					return usage(`删除会话失败:${errorMessage(err)}`, runtime);
 				}
-				await runtime.output(
-					`会话已删除:${sessionFile}。请使用 ACP \`session/load\` 切换到其他会话。`,
-				);
+				await runtime.output(`会话已删除:${sessionFile}。请使用 ACP \`session/load\` 切换到其他会话。`);
 				return commandConsumed();
 			}
 			if (verb === "pin") {
@@ -1705,9 +1672,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 		handle: async (_command, runtime) => {
 			const result = runtime.session.freshSession();
 			if (!result) {
-				await runtime.output(
-					"请等待当前响应完成或中止它,然后再刷新提供商状态。",
-				);
+				await runtime.output("请等待当前响应完成或中止它,然后再刷新提供商状态。");
 				return commandConsumed();
 			}
 			await runtime.output(formatFreshSessionResult(result));
@@ -2186,10 +2151,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 				return commandConsumed();
 			}
 			if ((verb === "install" || verb === "uninstall") && !rest) {
-				return usage(
-					"交互式插件选择器仅限 TUI。请传入显式的 name@marketplace 参数。",
-					runtime,
-				);
+				return usage("交互式插件选择器仅限 TUI。请传入显式的 name@marketplace 参数。", runtime);
 			}
 			try {
 				const manager = await createMarketplaceManager(runtime);
@@ -2303,10 +2265,7 @@ const BUILTIN_SLASH_COMMAND_REGISTRY: ReadonlyArray<SlashCommandSpec> = [
 						return commandConsumed();
 					}
 					default:
-						return usage(
-							`未知的 /marketplace 子命令:${verb}。请使用 /marketplace help 查看可用命令。`,
-							runtime,
-						);
+						return usage(`未知的 /marketplace 子命令:${verb}。请使用 /marketplace help 查看可用命令。`, runtime);
 				}
 			} catch (err) {
 				return usage(`市场错误:${errorMessage(err)}`, runtime);

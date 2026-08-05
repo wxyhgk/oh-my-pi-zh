@@ -657,7 +657,6 @@ export function formatFreshnessNote(status: CacheStatus, fetchedAtMs: number, no
 			: ageSec < 3600
 				? `${Math.round(ageSec / 60)} 分钟前`
 				: `${Math.round(ageSec / 3600)} 小时前`;
-	if (status === "stale")
-		return `警告:正在显示 ${human} 的缓存内容;实时刷新失败或仍在运行`;
+	if (status === "stale") return `警告:正在显示 ${human} 的缓存内容;实时刷新失败或仍在运行`;
 	return `缓存: ${human}`;
 }

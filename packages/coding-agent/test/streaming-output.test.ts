@@ -551,9 +551,7 @@ describe("truncation notice formatting", () => {
 			originalContent: "abcdefghij",
 			suffix: " [suffix]",
 		});
-		expect(partialLineNotice).toBe(
-			"\n\n[显示第 1 行的最后 4B（行大小为 10B）。完整输出：/tmp/full.log [suffix]]",
-		);
+		expect(partialLineNotice).toBe("\n\n[显示第 1 行的最后 4B（行大小为 10B）。完整输出：/tmp/full.log [suffix]]");
 
 		const lineTruncation = truncateTail("l1\nl2\nl3", { maxLines: 2, maxBytes: 100 });
 		expect(formatTailTruncationNotice(lineTruncation)).toBe("\n\n[显示第 2-3 行（共 3 行）]");

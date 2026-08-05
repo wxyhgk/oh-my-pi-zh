@@ -381,8 +381,7 @@ function buildReviewPromptFromDiff(
 
 	const stats = parseDiff(diffText);
 	if (stats.files.length === 0) {
-		if (ctx.hasUI)
-			ctx.ui.notify(options.filteredMessage ?? "没有可审查的文件(所有更改均被过滤)", "warning");
+		if (ctx.hasUI) ctx.ui.notify(options.filteredMessage ?? "没有可审查的文件(所有更改均被过滤)", "warning");
 		return undefined;
 	}
 
@@ -604,12 +603,9 @@ export class ReviewCommand implements CustomCommand {
 			}
 
 			case "custom": {
-				const instructions = await ctx.ui.editor(
-					"输入自定义审查指令",
-					"审查以下内容:\n\n",
-					undefined,
-					{ promptStyle: true },
-				);
+				const instructions = await ctx.ui.editor("输入自定义审查指令", "审查以下内容:\n\n", undefined, {
+					promptStyle: true,
+				});
 				if (!instructions?.trim()) return undefined;
 
 				const reviewDiff = await getUncommittedReviewDiff(this.api).catch(() => undefined);

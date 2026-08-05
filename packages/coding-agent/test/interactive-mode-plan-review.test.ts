@@ -534,10 +534,7 @@ describe("InteractiveMode plan review rendering", () => {
 		const constructorPlan = "# Plan\n\nOriginal constructor body.\n";
 		const editedPlan = "# Plan\n\nEdited in overlay.\n\n## Verify\n\n- run focused test\n";
 
-		const choice = mode.showPlanReview(constructorPlan, "计划模式 - 下一步", [
-			"批准并执行",
-			"完善计划",
-		]);
+		const choice = mode.showPlanReview(constructorPlan, "计划模式 - 下一步", ["批准并执行", "完善计划"]);
 
 		expect(capturedOverlay).toBeDefined();
 		const overlay = capturedOverlay!;
@@ -717,12 +714,7 @@ describe("InteractiveMode plan review rendering", () => {
 		expect(selector).toHaveBeenCalledWith(
 			expect.any(String),
 			"计划模式 - 下一步",
-			[
-				"批准并执行",
-				"批准并压缩上下文",
-				"批准并保留上下文(~7.3k / 10k)",
-				"完善计划",
-			],
+			["批准并执行", "批准并压缩上下文", "批准并保留上下文(~7.3k / 10k)", "完善计划"],
 			expect.any(Object),
 			expect.any(Object),
 		);
@@ -1710,9 +1702,7 @@ describe("InteractiveMode plan review rendering", () => {
 		});
 
 		// Operator was told the dispatch was deferred.
-		expect(showWarningSpy).toHaveBeenCalledWith(
-			expect.stringContaining("计划已批准,但上下文压缩被取消"),
-		);
+		expect(showWarningSpy).toHaveBeenCalledWith(expect.stringContaining("计划已批准,但上下文压缩被取消"));
 		// Plan reference path was recorded so the session knows about the approved
 		// plan at its final destination …
 		expect(setPlanRefSpy).toHaveBeenCalledWith(planFilePath);

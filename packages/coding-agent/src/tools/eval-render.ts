@@ -617,9 +617,7 @@ export const evalToolRenderer = {
 						const outputContent = formatCellOutputLines(cell, expanded, previewLines, uiTheme, width);
 						const outputLines = [...outputContent.lines];
 						if (!expanded && outputContent.hiddenCount > 0) {
-							outputLines.push(
-								uiTheme.fg("dim", `… 还有 ${outputContent.hiddenCount} 行(ctrl+o 展开)`),
-							);
+							outputLines.push(uiTheme.fg("dim", `… 还有 ${outputContent.hiddenCount} 行(ctrl+o 展开)`));
 						}
 						if (statusLines.length > 0) {
 							if (outputLines.length > 0) {

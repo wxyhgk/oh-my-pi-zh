@@ -236,8 +236,7 @@ export async function loadWatchdogConfigFile(filePath: string): Promise<Watchdog
 	try {
 		text = await Bun.file(filePath).text();
 	} catch (err) {
-		if (!isEnoent(err))
-			logger.warn("Advisor 配置:读取编辑文件失败", { path: filePath, error: String(err) });
+		if (!isEnoent(err)) logger.warn("Advisor 配置:读取编辑文件失败", { path: filePath, error: String(err) });
 		return { advisors: [] };
 	}
 	let parsed: unknown;

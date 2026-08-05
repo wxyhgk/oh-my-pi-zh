@@ -263,9 +263,7 @@ export async function fetchMarketplace(source: string, cacheDir: string): Promis
 	// type === "url"
 	const response = await fetch(source, { signal: AbortSignal.timeout(60_000) });
 	if (!response.ok) {
-		throw new Error(
-			`从 ${source} 获取市场目录失败:HTTP ${response.status} ${response.statusText}`,
-		);
+		throw new Error(`从 ${source} 获取市场目录失败:HTTP ${response.status} ${response.statusText}`);
 	}
 	const text = await response.text();
 	const catalog = parseMarketplaceCatalog(text, source);

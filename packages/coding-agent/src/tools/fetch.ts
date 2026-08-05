@@ -185,9 +185,7 @@ export function parseReadUrlTarget(readPath: string): ParsedReadUrlTarget | null
 		}
 		if (ranges !== undefined) {
 			// Two range groups on the same URL (`…:5-10:20-30`) — combine with commas instead.
-			throw new ToolError(
-				`URL 选择器包含多个范围组;请用逗号合并(例如 \`:5-10,20-30\`)。`,
-			);
+			throw new ToolError(`URL 选择器包含多个范围组;请用逗号合并(例如 \`:5-10,20-30\`)。`);
 		}
 		const parsed = parseLineRanges(sel);
 		if (parsed === null) {
@@ -1120,9 +1118,7 @@ async function renderUrl(
 	let skipConvertibleBinaryRetry = false;
 	if (imageMimeType) {
 		if (!isInlineImageMimeTypeSupported(imageMimeType)) {
-			notes.push(
-				`图片 MIME 类型 ${imageMimeType} 不支持内联模型序列化;仅返回文本元数据`,
-			);
+			notes.push(`图片 MIME 类型 ${imageMimeType} 不支持内联模型序列化;仅返回文本元数据`);
 			notes.push("回退为使用初始响应进行文本渲染");
 			skipConvertibleBinaryRetry = true;
 		} else {
@@ -1134,9 +1130,7 @@ async function renderUrl(
 					notes.push(
 						`图片超过内联源大小限制(${binary.buffer.byteLength} 字节 > ${MAX_INLINE_IMAGE_SOURCE_BYTES} 字节)`,
 					);
-					const output = finalizeOutput(
-						`已获取图片内容(${imageMimeType}),但体积过大,无法内联渲染。`,
-					);
+					const output = finalizeOutput(`已获取图片内容(${imageMimeType}),但体积过大,无法内联渲染。`);
 					return {
 						url,
 						finalUrl,
@@ -1175,9 +1169,7 @@ async function renderUrl(
 					notes.push(
 						`调整大小后图片超过内联输出限制(${resized.buffer.length} 字节 > ${MAX_INLINE_IMAGE_OUTPUT_BYTES} 字节)`,
 					);
-					const output = finalizeOutput(
-						`已获取图片内容(${imageMimeType}),但体积过大,无法内联渲染。`,
-					);
+					const output = finalizeOutput(`已获取图片内容(${imageMimeType}),但体积过大,无法内联渲染。`);
 					return {
 						url,
 						finalUrl,

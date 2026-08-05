@@ -178,11 +178,7 @@ export class HindsightRetainQueue {
 	}
 
 	#notifyRetainFailure(count: number, errorText: string): void {
-		this.#state.session.emitNotice(
-			"warning",
-			`记忆保留失败(共 ${count} 条):${errorText}`,
-			"Hindsight",
-		);
+		this.#state.session.emitNotice("warning", `记忆保留失败(共 ${count} 条):${errorText}`, "Hindsight");
 	}
 }
 

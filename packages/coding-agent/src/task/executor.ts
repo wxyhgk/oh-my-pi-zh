@@ -533,8 +533,7 @@ interface FinalizeSubprocessOutputResult {
 export const SUBAGENT_WARNING_SCHEMA_OVERRIDDEN =
 	"SYSTEM WARNING: 子代理用尽 schema 重试预算;结果虽未通过输出 schema 校验,仍被接受。";
 export const SUBAGENT_WARNING_NULL_YIELD = "SYSTEM WARNING: 子代理以 null 数据调用了 yield。";
-export const SUBAGENT_WARNING_MISSING_YIELD =
-	"SYSTEM WARNING: 子代理在 3 次提醒后仍未调用 yield 工具即退出。";
+export const SUBAGENT_WARNING_MISSING_YIELD = "SYSTEM WARNING: 子代理在 3 次提醒后仍未调用 yield 工具即退出。";
 
 /** Build a schema_violation outcome — surfaced as a non-zero exit so callers treat it as a failure. */
 function buildSchemaViolationOutcome(
@@ -1189,8 +1188,7 @@ function createSubagentRunMonitor(args: RunMonitorArgs): SubagentRunMonitor {
 		refreshRecentOutput();
 		progress.durationMs = Date.now() - startTime;
 		onProgress?.({ ...progress });
-		const activityGist =
-			progress.lastIntent ?? (progress.currentTool ? `运行中 ${progress.currentTool}` : undefined);
+		const activityGist = progress.lastIntent ?? (progress.currentTool ? `运行中 ${progress.currentTool}` : undefined);
 		if (activityGist) AgentRegistry.global().setActivity(id, activityGist);
 		if (args.eventBus) {
 			args.eventBus.emit(TASK_SUBAGENT_PROGRESS_CHANNEL, {
@@ -2009,8 +2007,7 @@ async function driveSessionToYield(
 		// output preserved as salvage).
 		if (monitor.yieldInvalidatedByAsync() && !abortSignal.aborted) {
 			exitCode = 1;
-			error ??=
-				"子代理最后一次 yield 之后后台任务结果才到达;它没有提交涵盖这些结果的更新 yield。";
+			error ??= "子代理最后一次 yield 之后后台任务结果才到达;它没有提交涵盖这些结果的更新 yield。";
 		}
 	} catch (err) {
 		if (abortSignal.aborted && monitor.yieldCalled() && !monitor.runtimeLimitExceeded()) {

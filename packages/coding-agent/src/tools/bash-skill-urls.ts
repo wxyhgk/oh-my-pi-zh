@@ -242,9 +242,7 @@ async function resolveInternalUrlToPath(
 
 	if (scheme === "local") {
 		if (!localOptions) {
-			throw new ToolError(
-				"无法在 bash 命令中解析 local:// URL:当前会话的本地协议选项不可用。",
-			);
+			throw new ToolError("无法在 bash 命令中解析 local:// URL:当前会话的本地协议选项不可用。");
 		}
 		const resolvedLocalPath = resolveLocalUrlToPath(url, localOptions);
 		if (ensureLocalParentDirs) {
@@ -255,8 +253,7 @@ async function resolveInternalUrlToPath(
 
 	if (!internalRouter?.canHandle(url)) {
 		throw new ToolError(
-			`无法在 bash 命令中解析 ${scheme}:// URL: ${url}\n` +
-				"当前会话中此协议的内部 URL 路由不可用。",
+			`无法在 bash 命令中解析 ${scheme}:// URL: ${url}\n` + "当前会话中此协议的内部 URL 路由不可用。",
 		);
 	}
 

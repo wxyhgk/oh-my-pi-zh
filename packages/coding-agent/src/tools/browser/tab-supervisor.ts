@@ -506,8 +506,7 @@ async function runInTabWithSnapshot(
 				async reason => await forceKillTab(name, reason),
 			);
 		} catch (error) {
-			const runTimedOut =
-				error instanceof ToolError && error.message.startsWith("浏览器代码执行超时(超过 ");
+			const runTimedOut = error instanceof ToolError && error.message.startsWith("浏览器代码执行超时(超过 ");
 			if (runTimedOut || error instanceof RecoverableWorkerError) {
 				try {
 					if (tab.worker.mode === "inline") {

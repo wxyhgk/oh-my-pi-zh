@@ -100,11 +100,7 @@ function renderReadGroupFixtureState(state: GalleryFixtureState, width: number, 
 	);
 
 	if (state === "error") {
-		component.updateResult(
-			textResult("错误:选择器 1270-1274 超出文件范围", undefined, true),
-			false,
-			"read-ranges",
-		);
+		component.updateResult(textResult("错误:选择器 1270-1274 超出文件范围", undefined, true), false, "read-ranges");
 		component.attachUsage(
 			["read-ranges"],
 			GROUPED_READ_USAGE,

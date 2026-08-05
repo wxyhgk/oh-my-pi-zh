@@ -441,9 +441,7 @@ describe("retain.execute (Mnemopi backend)", () => {
 	it("throws when no per-session Mnemopi state is registered", async () => {
 		const settings = Settings.isolated({ "memory.backend": "mnemopi" });
 		const tool = MemoryRetainTool.createIf(makeSession(settings))!;
-		await expect(tool.execute("call-mnemopi-no-state", { items: [{ content: "x" }] })).rejects.toThrow(
-			/尚未初始化/,
-		);
+		await expect(tool.execute("call-mnemopi-no-state", { items: [{ content: "x" }] })).rejects.toThrow(/尚未初始化/);
 	});
 });
 
@@ -1575,8 +1573,6 @@ describe("reflect.execute (Mnemopi backend)", () => {
 	it("throws when no per-session Mnemopi state is registered", async () => {
 		const settings = Settings.isolated({ "memory.backend": "mnemopi" });
 		const tool = MemoryReflectTool.createIf(makeSession(settings))!;
-		await expect(tool.execute("call-mnemopi-reflect-no-state", { query: "anything" })).rejects.toThrow(
-			/尚未初始化/,
-		);
+		await expect(tool.execute("call-mnemopi-reflect-no-state", { query: "anything" })).rejects.toThrow(/尚未初始化/);
 	});
 });

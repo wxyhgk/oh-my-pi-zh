@@ -69,10 +69,7 @@ const QuestionItem = arkType({
 	"recommended?": arkType("number").describe("推荐选项索引"),
 }).narrow((question, ctx) => {
 	const reserved = question.options.find(option => RESERVED_OPTION_LABELS[option.label] === true);
-	return (
-		reserved === undefined ||
-		ctx.mustBe(`定义的选项标签不得与运行时保留标签冲突: ${reserved.label}`)
-	);
+	return reserved === undefined || ctx.mustBe(`定义的选项标签不得与运行时保留标签冲突: ${reserved.label}`);
 });
 
 const askSchema = arkType({
@@ -321,10 +318,7 @@ function buildCustomInputRows(
 	const emitGap = (gap: CustomInputOptionGap) => {
 		const checkedSuffix = gap.checked > 0 ? `，${gap.checked} 项已选` : "";
 		rows.push({
-			text: clampLineToWidth(
-				`    … 还有 ${gap.total} 个选项${checkedSuffix} …`,
-				contentWidth,
-			),
+			text: clampLineToWidth(`    … 还有 ${gap.total} 个选项${checkedSuffix} …`, contentWidth),
 			priority: 2,
 		});
 	};

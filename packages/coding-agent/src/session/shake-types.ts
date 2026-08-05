@@ -27,9 +27,7 @@ export interface ShakeResult {
 export function formatShakeSummary(result: ShakeResult): string {
 	if (result.mode === "images") {
 		const n = result.imagesDropped ?? 0;
-		return n === 0
-			? "此会话中未找到图片。"
-			: `已从本会话中移除 ${n} 张图片。`;
+		return n === 0 ? "此会话中未找到图片。" : `已从本会话中移除 ${n} 张图片。`;
 	}
 	const parts: string[] = [];
 	if (result.toolResultsDropped > 0) {

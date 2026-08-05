@@ -363,9 +363,7 @@ export async function searchSearXNG(params: {
 
 	const endpoint = findEndpoint();
 	if (!endpoint) {
-		throw new Error(
-			"未配置 SearXNG 端点。请在设置中配置 searxng.endpoint,或在环境变量中配置 SEARXNG_ENDPOINT。",
-		);
+		throw new Error("未配置 SearXNG 端点。请在设置中配置 searxng.endpoint,或在环境变量中配置 SEARXNG_ENDPOINT。");
 	}
 
 	const auth = findAuth();
@@ -426,11 +424,7 @@ export async function searchSearXNG(params: {
 		const upstreamFailures = response.unresponsive_engines
 			.map(([engine, reason]) => `${engine}: ${reason}`)
 			.join("; ");
-		throw new SearchProviderError(
-			"searxng",
-			`SearXNG 未返回可用结果;上游引擎失败: ${upstreamFailures}`,
-			503,
-		);
+		throw new SearchProviderError("searxng", `SearXNG 未返回可用结果;上游引擎失败: ${upstreamFailures}`, 503);
 	}
 
 	return {

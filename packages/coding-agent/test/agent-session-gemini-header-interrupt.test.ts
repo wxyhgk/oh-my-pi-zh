@@ -204,10 +204,7 @@ describe("AgentSession Gemini header-runaway interrupt", () => {
 		expect(guardNotice).toBeDefined();
 		// The continuation carried the hidden tool-call reminder (custom -> developer).
 		const reminderInContext = contexts[1].messages.some(
-			m =>
-				m.role === "developer" &&
-				/规划标题/.test(messageText(m)) &&
-				/工具调用/.test(messageText(m)),
+			m => m.role === "developer" && /规划标题/.test(messageText(m)) && /工具调用/.test(messageText(m)),
 		);
 		expect(reminderInContext).toBe(true);
 		// It names the header count that tripped the guard.

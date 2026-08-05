@@ -252,10 +252,7 @@ export class CollabHost {
 		};
 		socket.connect();
 
-		const timeout = setTimeout(
-			() => firstOpen.reject(new Error("连接中继超时")),
-			CONNECT_TIMEOUT_MS,
-		);
+		const timeout = setTimeout(() => firstOpen.reject(new Error("连接中继超时")), CONNECT_TIMEOUT_MS);
 		try {
 			await firstOpen.promise;
 		} catch (err) {
@@ -413,11 +410,7 @@ export class CollabHost {
 				socket.send({ t: "ui-request", request: pending.request }, fromPeer);
 			}
 		}
-		this.#ctx.session.emitNotice(
-			"info",
-			`${cleanName} 加入了协作会话${canWrite ? "" : "(只读)"}`,
-			"collab",
-		);
+		this.#ctx.session.emitNotice("info", `${cleanName} 加入了协作会话${canWrite ? "" : "(只读)"}`, "collab");
 		this.#updateStatusSegment();
 		this.#scheduleStateBroadcast();
 	}

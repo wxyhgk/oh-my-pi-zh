@@ -1232,15 +1232,7 @@ function renderAgentResult(
 				? theme.styledSymbol("status.done", "text")
 				: theme.status.error;
 	const iconColor = needsWarning ? "warning" : success ? "success" : mergeFailed ? "warning" : "error";
-	const statusText = aborted
-		? "已中止"
-		: needsWarning
-			? "警告"
-			: success
-				? "完成"
-				: mergeFailed
-					? "合并失败"
-					: "失败";
+	const statusText = aborted ? "已中止" : needsWarning ? "警告" : success ? "完成" : mergeFailed ? "合并失败" : "失败";
 
 	// Main status line: id: description [status] · stats · ⟨agent⟩
 	const trimmedDescription = result.description ? sanitizeText(result.description).trim() : undefined;

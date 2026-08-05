@@ -79,9 +79,7 @@ export async function runReadCommand(cmd: ReadCommandArgs): Promise<void> {
 				if (!block.text.endsWith("\n")) process.stdout.write("\n");
 			} else if (block.type === "image") {
 				const decodedBytes = Buffer.from(block.data, "base64").byteLength;
-				process.stdout.write(
-					chalk.dim(`[图片内容:${block.mimeType},解码后 ${decodedBytes} 字节 base64]\n`),
-				);
+				process.stdout.write(chalk.dim(`[图片内容:${block.mimeType},解码后 ${decodedBytes} 字节 base64]\n`));
 			}
 		}
 	} catch (err) {

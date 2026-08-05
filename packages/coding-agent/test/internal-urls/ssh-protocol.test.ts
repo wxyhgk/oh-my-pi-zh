@@ -262,18 +262,20 @@ describe("SshProtocolHandler", () => {
 
 	it("rejects ssh:// password and empty-username userinfo before matching a host", async () => {
 		mockHosts([{ name: "prod", host: "10.0.0.5", _source: SOURCE }]);
-		await expect(handler.resolve(parseInternalUrl("ssh://user:pass@prod/etc/hosts"))).rejects.toThrow(/不支持密码认证/);
+		await expect(handler.resolve(parseInternalUrl("ssh://user:pass@prod/etc/hosts"))).rejects.toThrow(
+			/不支持密码认证/,
+		);
 		await expect(handler.resolve(parseInternalUrl("ssh://:pw@prod/etc/hosts"))).rejects.toThrow(/不支持密码认证/);
 		await expect(handler.resolve(parseInternalUrl("ssh://@prod/etc/hosts"))).rejects.toThrow(/用户名为空/);
 		await expect(handler.resolve(parseInternalUrl("ssh://@prod:22/etc/hosts"))).rejects.toThrow(/用户名为空/);
 		await expect(handler.resolve(parseInternalUrl("ssh://user:@prod/etc/hosts"))).rejects.toThrow(
 			/权威部分不受支持或格式错误/,
 		);
-		await expect(handler.resolve(parseInternalUrl("ssh://:@prod/etc/hosts"))).rejects.toThrow(/权威部分不受支持或格式错误/);
-		await expect(handler.resolve(parseInternalUrl("ssh://prod%ZZ/etc/hosts"))).rejects.toThrow(/百分号转义/i);
-		await expect(handler.resolve(parseInternalUrl("ssh://user%ZZ@prod/etc/hosts"))).rejects.toThrow(
-			/百分号转义/i,
+		await expect(handler.resolve(parseInternalUrl("ssh://:@prod/etc/hosts"))).rejects.toThrow(
+			/权威部分不受支持或格式错误/,
 		);
+		await expect(handler.resolve(parseInternalUrl("ssh://prod%ZZ/etc/hosts"))).rejects.toThrow(/百分号转义/i);
+		await expect(handler.resolve(parseInternalUrl("ssh://user%ZZ@prod/etc/hosts"))).rejects.toThrow(/百分号转义/i);
 	});
 
 	it("matches a configured colon-suffixed alias via %3A instead of treating it as an empty port", async () => {

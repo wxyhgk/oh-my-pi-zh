@@ -446,12 +446,9 @@ export class FileSessionStorage implements SessionStorage {
 			await fsp.rm(artifactsDir, { recursive: true, force: true });
 		} catch (err) {
 			const error = toError(err);
-			throw new Error(
-				`会话文件已删除，但移除产物目录 ${artifactsDir} 失败：${error.message}`,
-				{
-					cause: error,
-				},
-			);
+			throw new Error(`会话文件已删除，但移除产物目录 ${artifactsDir} 失败：${error.message}`, {
+				cause: error,
+			});
 		}
 	}
 }

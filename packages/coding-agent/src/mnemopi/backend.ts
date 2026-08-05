@@ -417,12 +417,7 @@ function normalizeImportance(value: number | undefined): number {
 }
 
 function renderMnemopiDiagnostics(entries: readonly { bank: string; summary: DiagnosticSummary }[]): string {
-	const lines = [
-		"# Mnemopi 记忆诊断",
-		"",
-		"| 记忆库 | 通过 | 失败 | 完整性 | 数据库 |",
-		"|---|---:|---:|---|---|",
-	];
+	const lines = ["# Mnemopi 记忆诊断", "", "| 记忆库 | 通过 | 失败 | 完整性 | 数据库 |", "|---|---:|---:|---|---|"];
 	for (const { bank, summary } of entries) {
 		const integrity = summary.entries.find(entry => entry.check === "integrity_check")?.status ?? "未知";
 		lines.push(

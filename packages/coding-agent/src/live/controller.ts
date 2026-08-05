@@ -136,9 +136,7 @@ export class LiveSessionController {
 	/** Connects the realtime surface and starts microphone streaming. */
 	async start(): Promise<void> {
 		if (this.#stopped) {
-			throw (
-				this.#failure ?? new Error("此实时会话已停止；如需重新连接，请新建控制器。")
-			);
+			throw this.#failure ?? new Error("此实时会话已停止；如需重新连接，请新建控制器。");
 		}
 		if (this.#started) return;
 		this.#started = true;

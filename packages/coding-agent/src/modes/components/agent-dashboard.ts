@@ -983,9 +983,7 @@ export class AgentDashboard extends Container {
 			this.addChild(new Text(`  ${line}`, 0, 0));
 		}
 		if (wrappedPrompt.length > promptPreview.length) {
-			this.addChild(
-				new Text(theme.fg("dim", `  ... 还有 ${wrappedPrompt.length - promptPreview.length} 行`), 0, 0),
-			);
+			this.addChild(new Text(theme.fg("dim", `  ... 还有 ${wrappedPrompt.length - promptPreview.length} 行`), 0, 0));
 		}
 		if (this.#createError) {
 			this.addChild(new Spacer(1));
@@ -1045,9 +1043,7 @@ export class AgentDashboard extends Container {
 			this.addChild(this.#editInput);
 			this.addChild(new Spacer(1));
 
-			this.addChild(
-				new Text(theme.fg("muted", `默认 pattern:${replaceTabs(joinPatterns(defaultPatterns))}`), 0, 0),
-			);
+			this.addChild(new Text(theme.fg("muted", `默认 pattern:${replaceTabs(joinPatterns(defaultPatterns))}`), 0, 0));
 			this.addChild(
 				new Text(
 					`${theme.fg("muted", "默认解析结果:")} ${defaultResolution ? formatResolution(defaultResolution) : theme.fg("dim", "(未解析)")}`,

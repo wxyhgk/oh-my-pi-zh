@@ -295,9 +295,7 @@ describe("SQLite tool support", () => {
 			/注释或语句终止符/i,
 		);
 		expect(() => parseSqliteSelector("users", "where=status='active' LIMIT 1")).toThrow(/LIMIT\/OFFSET\/UNION/i);
-		expect(() => parseSqliteSelector("users", "where=1=1; DROP TABLE users")).toThrow(
-			/注释或语句终止符/i,
-		);
+		expect(() => parseSqliteSelector("users", "where=1=1; DROP TABLE users")).toThrow(/注释或语句终止符/i);
 	});
 
 	it("allows semicolons inside quoted SQLite where string literals", async () => {

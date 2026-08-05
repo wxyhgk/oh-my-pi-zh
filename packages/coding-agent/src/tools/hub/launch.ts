@@ -579,9 +579,7 @@ export function launchRenderResult(
 					body.push(
 						theme.fg(
 							"warning",
-							pending.length > 0
-								? `未就绪 —— ${pending.join("; ")}。仍在运行。`
-								: "就绪检查超时;进程仍在运行。",
+							pending.length > 0 ? `未就绪 —— ${pending.join("; ")}。仍在运行。` : "就绪检查超时;进程仍在运行。",
 						),
 					);
 				} else if (params.ready && daemon && daemon.readyAt === undefined && TERMINAL_STATES[daemon.state]) {
@@ -606,9 +604,7 @@ export function launchRenderResult(
 					body.push(
 						theme.fg(
 							"warning",
-							pending.length > 0
-								? `等待超时 —— 仍在等待 ${pending.join("; ")}。`
-								: "等待超时。",
+							pending.length > 0 ? `等待超时 —— 仍在等待 ${pending.join("; ")}。` : "等待超时。",
 						),
 					);
 				}

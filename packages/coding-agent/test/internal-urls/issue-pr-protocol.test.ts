@@ -290,15 +290,11 @@ describe("pr:// protocol handler", () => {
 
 	it("rejects empty / dot / dotdot path segments", async () => {
 		const router = InternalUrlRouter.instance();
-		await expect(router.resolve("pr://owner//77")).rejects.toThrow(
-			/无效的 pr:\/\/ URL:路径段为空或不安全/,
-		);
+		await expect(router.resolve("pr://owner//77")).rejects.toThrow(/无效的 pr:\/\/ URL:路径段为空或不安全/);
 		await expect(router.resolve("pr://owner/repo/77/diff//2")).rejects.toThrow(
 			/无效的 pr:\/\/ URL:路径段为空或不安全/,
 		);
-		await expect(router.resolve("pr://owner/../77/diff")).rejects.toThrow(
-			/无效的 pr:\/\/ URL:路径段为空或不安全/,
-		);
+		await expect(router.resolve("pr://owner/../77/diff")).rejects.toThrow(/无效的 pr:\/\/ URL:路径段为空或不安全/);
 		await expect(router.resolve("issue://owner/./repo/1")).rejects.toThrow(
 			/无效的 issue:\/\/ URL:路径段为空或不安全/,
 		);

@@ -711,10 +711,7 @@ export class EvalTool implements AgentTool<typeof evalSchema> {
 				const combinedOutput = cellOutputs.join("\n\n");
 				const hasImages = images.length > 0;
 				const outputText =
-					combinedOutput ||
-					(hasImages
-						? `(显示了 ${images.length} 张图片;无文本输出)`
-						: "(无输出)");
+					combinedOutput || (hasImages ? `(显示了 ${images.length} 张图片;无文本输出)` : "(无输出)");
 				const summaryForMeta = await summarizeFinal(combinedOutput, finalizeOutput);
 
 				const details: EvalToolDetails = {

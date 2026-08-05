@@ -11,9 +11,7 @@ import { escapeXmlAttribute, escapeXmlText } from "@wxyhgk/pi-utils";
 import adviseDescription from "../prompts/advisor/advise-tool.md" with { type: "text" };
 
 const adviseSchema = type({
-	note: type("string").describe(
-		"给你正在观察的 Agent 的一条具体建议。简洁、具体、可操作。",
-	),
+	note: type("string").describe("给你正在观察的 Agent 的一条具体建议。简洁、具体、可操作。"),
 	"severity?": type("'nit' | 'concern' | 'blocker'").describe("这条建议的重要程度。普通小问题可省略。"),
 });
 

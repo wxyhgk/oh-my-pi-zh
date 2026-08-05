@@ -9,14 +9,10 @@ export function buildSshTarget(username: string | undefined, host: string): stri
 	// string reaches any `ssh` argv (this is the single render chokepoint for
 	// every connection, transfer, and sshfs mount).
 	if (host.startsWith("-")) {
-		throw new Error(
-			`无效的 SSH 主机"${host}":SSH 目标不能以 "-" 开头(参数注入防护)`,
-		);
+		throw new Error(`无效的 SSH 主机"${host}":SSH 目标不能以 "-" 开头(参数注入防护)`);
 	}
 	if (username?.startsWith("-")) {
-		throw new Error(
-			`无效的 SSH 用户名"${username}":SSH 用户名不能以 "-" 开头(参数注入防护)`,
-		);
+		throw new Error(`无效的 SSH 用户名"${username}":SSH 用户名不能以 "-" 开头(参数注入防护)`);
 	}
 	return username ? `${username}@${host}` : host;
 }

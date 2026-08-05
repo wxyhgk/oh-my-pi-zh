@@ -78,11 +78,7 @@ describe("InputController.presentLargePasteMenu actions", () => {
 		await controller.presentLargePasteMenu("payload", 1);
 
 		const options = spies.showHookSelector.mock.calls[0][1] as Array<{ label: string }>;
-		expect(options.map(option => option.label)).toEqual([
-			"作为包裹块附加",
-			"作为本地文件附加",
-			"直接粘贴",
-		]);
+		expect(options.map(option => option.label)).toEqual(["作为包裹块附加", "作为本地文件附加", "直接粘贴"]);
 	});
 
 	it("wraps the paste in attachment XML collapsed to a marker", async () => {

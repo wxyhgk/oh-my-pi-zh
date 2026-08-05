@@ -24,8 +24,7 @@ export default class Gallery extends Command {
 		}),
 		plain: Flags.boolean({ description: "从输出中去除 ANSI 样式", default: false }),
 		screenshot: Flags.boolean({
-			description:
-				"通过 VHS 将渲染输出捕获为 PNG 截图，而不是打印 ANSI（需要 vhs）",
+			description: "通过 VHS 将渲染输出捕获为 PNG 截图，而不是打印 ANSI（需要 vhs）",
 			default: false,
 		}),
 		out: Flags.string({

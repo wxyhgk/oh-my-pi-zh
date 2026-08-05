@@ -297,16 +297,12 @@ export class MemoryProtocolHandler implements ProtocolHandler {
 			}
 			const hit = tryResolveMnemopiMemory(namespace);
 			if (hit) return renderMnemopiMemory(url, hit);
-			throw new Error(
-				`在任何作用域记忆库中均未找到 mnemopi 记忆 ${namespace}。使用 \`recall\` 可列出可用的 id。`,
-			);
+			throw new Error(`在任何作用域记忆库中均未找到 mnemopi 记忆 ${namespace}。使用 \`recall\` 可列出可用的 id。`);
 		}
 
 		const roots = memoryRootsForContext(context);
 		if (roots.length === 0) {
-			throw new Error(
-				"此项目尚无记忆产物。请先运行一个启用了记忆功能的会话。",
-			);
+			throw new Error("此项目尚无记忆产物。请先运行一个启用了记忆功能的会话。");
 		}
 
 		let anyExists = false;
@@ -323,9 +319,7 @@ export class MemoryProtocolHandler implements ProtocolHandler {
 		}
 
 		if (!anyExists) {
-			throw new Error(
-				"此项目尚无记忆产物。请先运行一个启用了记忆功能的会话。",
-			);
+			throw new Error("此项目尚无记忆产物。请先运行一个启用了记忆功能的会话。");
 		}
 
 		throw new Error(`未找到记忆文件:${url.href}`);

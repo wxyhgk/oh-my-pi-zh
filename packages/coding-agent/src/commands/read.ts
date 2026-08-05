@@ -11,8 +11,7 @@ export default class Read extends Command {
 	static description = commandHelp.description;
 	static args = {
 		path: Args.string({
-			description:
-				"要读取的路径、URL 或内部 URI（附加 :sel 可指定行范围或 raw 模式，例如 src/foo.ts:50-100）",
+			description: "要读取的路径、URL 或内部 URI（附加 :sel 可指定行范围或 raw 模式，例如 src/foo.ts:50-100）",
 			required: true,
 		}),
 	};

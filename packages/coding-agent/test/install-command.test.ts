@@ -27,7 +27,7 @@ describe("install command is registered as a top-level subcommand", () => {
 
 	test("CLI runner rejects only bare reserved management words", () => {
 		expect(resolveCliArgv(["extensions"])).toEqual({
-			error: '`omp-zh extensions` 不是管理命令。请使用 `omp-zh plugin list` / `omp-zh plugin install`;如果你是想把 “extensions” 作为提示词发送,请运行 `omp-zh launch extensions`。',
+			error: "`omp-zh extensions` 不是管理命令。请使用 `omp-zh plugin list` / `omp-zh plugin install`;如果你是想把 “extensions” 作为提示词发送,请运行 `omp-zh launch extensions`。",
 		});
 		expect(resolveCliArgv(["extensions", "are", "not", "loading"])).toEqual({
 			argv: ["launch", "extensions", "are", "not", "loading"],

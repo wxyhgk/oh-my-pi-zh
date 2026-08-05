@@ -147,9 +147,7 @@ describe("hashline noop loop guard", () => {
 			const tag = getFileReadCache(session).record(filePath, source);
 			const realEdit = `${formatHashlineHeader("a.ts", tag)}\nPUT 2-2:\n+BBB\n`;
 			const editResult = await executeHashlineSingle(execOptions(realEdit, session));
-			expect(editResult.content[0]?.type === "text" ? editResult.content[0].text : "").not.toContain(
-				"字节完全相同",
-			);
+			expect(editResult.content[0]?.type === "text" ? editResult.content[0].text : "").not.toContain("字节完全相同");
 			expect(await Bun.file(filePath).text()).toBe("aaa\nBBB\nccc\n");
 
 			// Now re-snapshot the (changed) file state and produce a fresh no-op
@@ -159,9 +157,7 @@ describe("hashline noop loop guard", () => {
 			const newTag = getFileReadCache(session).record(filePath, newSource);
 			const newNoop = `${formatHashlineHeader("a.ts", newTag)}\nPUT 2-2:\n+BBB\n`;
 			const result = await executeHashlineSingle(execOptions(newNoop, session));
-			expect(result.content[0]?.type === "text" ? result.content[0].text : "").toContain(
-				"字节完全相同",
-			);
+			expect(result.content[0]?.type === "text" ? result.content[0].text : "").toContain("字节完全相同");
 		});
 	});
 
@@ -182,9 +178,7 @@ describe("hashline noop loop guard", () => {
 			const sessionB = makeSession(tempDir);
 			const inputB = buildNoopInput(filePath, "a.ts", sessionB);
 			const result = await executeHashlineSingle(execOptions(inputB, sessionB));
-			expect(result.content[0]?.type === "text" ? result.content[0].text : "").toContain(
-				"字节完全相同",
-			);
+			expect(result.content[0]?.type === "text" ? result.content[0].text : "").toContain("字节完全相同");
 		});
 	});
 });

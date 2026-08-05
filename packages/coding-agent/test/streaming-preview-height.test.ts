@@ -443,9 +443,7 @@ describe("streaming tool call preview height (bounded across renderers)", () => 
 			expect(renderedLines, `${testCase.name} preview should keep ${lastVisible}`).toContain(lastVisible);
 			expect(renderedLines, `${testCase.name} preview should elide line-0`).not.toContain("line-0");
 			expect(renderedLines, `${testCase.name} preview should elide ${lastHidden}`).not.toContain(lastHidden);
-			expect(text, `${testCase.name} preview should advertise the elided head`).toContain(
-				`… 前面还有 ${hidden} 行`,
-			);
+			expect(text, `${testCase.name} preview should advertise the elided head`).toContain(`… 前面还有 ${hidden} 行`);
 		}
 	}, 30_000);
 

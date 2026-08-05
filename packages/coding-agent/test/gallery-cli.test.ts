@@ -28,9 +28,7 @@ describe("gallery harness", () => {
 	});
 
 	it("rejects unknown gallery state tokens before rendering", () => {
-		expect(() => parseGalleryStates(["bogus"])).toThrow(
-			/无效的 --state 'bogus'/,
-		);
+		expect(() => parseGalleryStates(["bogus"])).toThrow(/无效的 --state 'bogus'/);
 	});
 
 	it("renders every registered tool in every lifecycle state without throwing", async () => {

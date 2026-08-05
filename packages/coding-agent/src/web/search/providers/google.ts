@@ -153,11 +153,7 @@ async function callGoogleHtml(params: SearchParams, numResults: number): Promise
 		throw new SearchProviderError("google", `Google HTML 错误(${page.status})`, page.status);
 	}
 	if (blocked === "javascript") {
-		throw new SearchProviderError(
-			"google",
-			"Google 返回了 JavaScript 验证页而非渲染后的搜索结果。",
-			429,
-		);
+		throw new SearchProviderError("google", "Google 返回了 JavaScript 验证页而非渲染后的搜索结果。", 429);
 	}
 	return page.html;
 }

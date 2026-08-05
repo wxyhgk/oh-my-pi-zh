@@ -409,8 +409,7 @@ export function buildSpecializationAdvisory(
 	const generics = agentNames.filter(name => GENERIC_SPAWN_AGENTS.has(name));
 	if (generics.length < 2) return undefined;
 	const specialist = scoutAvailable
-		? `请查看 Agent 列表寻找更贴近的专长类型——例如只读调研应使用 ` +
-			`\`agent: "scout"\`,它运行在更快的模型上。`
+		? `请查看 Agent 列表寻找更贴近的专长类型——例如只读调研应使用 ` + `\`agent: "scout"\`,它运行在更快的模型上。`
 		: `请查看 Agent 列表寻找更贴近的专长类型。`;
 	return `提示:本次调用派生了 ${generics.length} 个通用 \`${generics[0]}\` 工作 Agent。${specialist}`;
 }
@@ -944,9 +943,7 @@ export class TaskTool implements AgentTool<TaskToolSchemaInstance, TaskToolDetai
 		}
 
 		const scheduleFailureSummary =
-			failedSchedules.length > 0
-				? ` 未能调度 ${failedSchedules.length} 个派生:${failedSchedules.join("; ")}。`
-				: "";
+			failedSchedules.length > 0 ? ` 未能调度 ${failedSchedules.length} 个派生:${failedSchedules.join("; ")}。` : "";
 		const coordinationHint = [
 			started.length === 1
 				? ircEnabled
@@ -1194,9 +1191,7 @@ export class TaskTool implements AgentTool<TaskToolSchemaInstance, TaskToolDetai
 						delete progress.resolvedModelIsFallback;
 					}
 					onSettled?.(resultFailed);
-					const statusText = resultFailed
-						? `后台任务 ${agentId} 失败。`
-						: `后台任务 ${agentId} 已完成。`;
+					const statusText = resultFailed ? `后台任务 ${agentId} 失败。` : `后台任务 ${agentId} 已完成。`;
 					await reportProgress(statusText, buildDetails() as unknown as Record<string, unknown>);
 					const deliveryText = `${finalText}${await buildFollowUpHint(singleResult?.aborted === true)}`;
 					if (resultFailed) {

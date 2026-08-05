@@ -38,9 +38,7 @@ export function normalizePlanTitle(title: string): { title: string; fileName: st
 		.replace(/^-+|-+$/g, "");
 
 	if (!sanitized) {
-		throw new ToolError(
-			"计划标题在清理后必须至少包含一个字母、数字、下划线或连字符。",
-		);
+		throw new ToolError("计划标题在清理后必须至少包含一个字母、数字、下划线或连字符。");
 	}
 
 	const fileName = `${sanitized}.md`;
@@ -183,9 +181,7 @@ export async function resolveApprovedPlan(input: ResolveApprovedPlanInput): Prom
 	}
 
 	const target = ordered[0] ?? input.statePlanFilePath;
-	throw new ToolError(
-		`在 ${target} 处未找到计划文件。请先将定稿计划写入 ${target}，再请求批准。`,
-	);
+	throw new ToolError(`在 ${target} 处未找到计划文件。请先将定稿计划写入 ${target}，再请求批准。`);
 }
 
 function finalizeApprovedPlan(planFilePath: string, planContent: string, suppliedTitle: unknown): ResolvedApprovedPlan {

@@ -1438,8 +1438,7 @@ export class MCPManager {
 						},
 						isDefinitiveFailure: error =>
 							isDefinitiveOAuthFailure(error instanceof Error ? error.message : String(error)),
-						disabledCause: error =>
-							`OAuth 刷新失败: ${error instanceof Error ? error.message : String(error)}`,
+						disabledCause: error => `OAuth 刷新失败: ${error instanceof Error ? error.message : String(error)}`,
 						keepCredentialOnRefreshFailure: error =>
 							!(error instanceof Error && error.message.includes("broker-redacted")),
 						onRefreshFailure: refreshError => {

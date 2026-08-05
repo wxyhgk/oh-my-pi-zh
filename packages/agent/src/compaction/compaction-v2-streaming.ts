@@ -24,12 +24,7 @@ import {
 	resolveOpenAIRequestSetup,
 } from "@wxyhgk/pi-ai/providers/openai-shared";
 import { captureOpenAIHttpError } from "@wxyhgk/pi-ai/utils/openai-http";
-import {
-	CODEX_BASE_URL,
-	getCodexAccountId,
-	OPENAI_HEADER_VALUES,
-	OPENAI_HEADERS,
-} from "@wxyhgk/pi-catalog/wire/codex";
+import { CODEX_BASE_URL, getCodexAccountId, OPENAI_HEADER_VALUES, OPENAI_HEADERS } from "@wxyhgk/pi-catalog/wire/codex";
 import { $env, logger, stringifyJson } from "@wxyhgk/pi-utils";
 
 // ============================================================================

@@ -27,8 +27,7 @@ export default class AuthGateway extends Command {
 		bind: Flags.string({ description: "`serve` 的绑定地址（host:port）", char: "b" }),
 		regenerate: Flags.boolean({ description: "重新生成网关 bearer token（token）" }),
 		"no-auth": Flags.boolean({
-			description:
-				"禁用入站 bearer-token 认证（serve）。当绑定到 loopback 时很有用——允许任何调用方。",
+			description: "禁用入站 bearer-token 认证（serve）。当绑定到 loopback 时很有用——允许任何调用方。",
 		}),
 		strict: Flags.boolean({
 			description:

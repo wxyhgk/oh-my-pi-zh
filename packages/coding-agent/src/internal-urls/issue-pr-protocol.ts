@@ -85,9 +85,7 @@ function parseListOptions(url: InternalUrl, scheme: Scheme, repo: string | undef
 	if (limitRaw !== null) {
 		const parsed = parsePositiveDecimalInt(limitRaw);
 		if (parsed === undefined) {
-			throw new Error(
-				`无效的 ${scheme}:// 列表限制 '${limitRaw}'。应为正整数(最大 ${LIST_LIMIT_MAX})。`,
-			);
+			throw new Error(`无效的 ${scheme}:// 列表限制 '${limitRaw}'。应为正整数(最大 ${LIST_LIMIT_MAX})。`);
 		}
 		limit = Math.min(parsed, LIST_LIMIT_MAX);
 	}
@@ -168,14 +166,10 @@ function parseUrl(url: InternalUrl, scheme: Scheme): Parsed {
 	// rather than the misleading "Invalid number: foo".
 	if (diffParts.length > 0) {
 		if (scheme === "issue") {
-			throw new Error(
-				`无效的 issue:// URL。Issue 视图没有 diff;拉取请求请使用 pr://<owner>/<repo>/<n>/diff。`,
-			);
+			throw new Error(`无效的 issue:// URL。Issue 视图没有 diff;拉取请求请使用 pr://<owner>/<repo>/<n>/diff。`);
 		}
 		if (diffParts[0] !== "diff" || diffParts.length > 2) {
-			throw new Error(
-				`无效的 pr:// URL。应为 pr://<n>、pr://<n>/diff、pr://<n>/diff/all 或 pr://<n>/diff/<i>`,
-			);
+			throw new Error(`无效的 pr:// URL。应为 pr://<n>、pr://<n>/diff、pr://<n>/diff/all 或 pr://<n>/diff/<i>`);
 		}
 	}
 
@@ -245,9 +239,7 @@ async function resolveListRepo(
 		return await resolveDefaultRepoMemoized(cwd, context?.signal);
 	} catch (err) {
 		const message = err instanceof Error ? err.message : String(err);
-		throw new Error(
-			`${scheme}:// 无法从当前会话解析默认仓库:${message}\n请改用 ${scheme}://<owner>/<repo>。`,
-		);
+		throw new Error(`${scheme}:// 无法从当前会话解析默认仓库:${message}\n请改用 ${scheme}://<owner>/<repo>。`);
 	}
 }
 
@@ -336,8 +328,7 @@ async function fetchAndRenderList(
 		scheme === "issue"
 			? `# ${repo} 中的 Issue(${options.state},最多 ${options.limit} 条)`
 			: `# ${repo} 中的拉取请求(${options.state},最多 ${options.limit} 条)`;
-	const body =
-		items.length === 0 ? "_无匹配。_" : items.map(item => formatListItem(scheme, repo, item)).join("\n\n");
+	const body = items.length === 0 ? "_无匹配。_" : items.map(item => formatListItem(scheme, repo, item)).join("\n\n");
 	const footer = `\n\n---\n读取指定条目:\`${scheme}://${repo}/<N>\`(或当前仓库使用 \`${scheme}://<N>\`)。`;
 	const rendered = `${header}\n\n${body}${footer}`;
 
@@ -378,9 +369,7 @@ function buildSingleResource({
 		notes.push(`差异:${diffUrl}`);
 	}
 	const content =
-		status === "stale"
-			? `> 警告:GitHub 实时刷新失败;此 ${scheme} 内容为缓存,可能已过期。\n\n${rendered}`
-			: rendered;
+		status === "stale" ? `> 警告:GitHub 实时刷新失败;此 ${scheme} 内容为缓存,可能已过期。\n\n${rendered}` : rendered;
 	return {
 		url: url.href,
 		content,
@@ -430,10 +419,7 @@ async function fetchAndRenderPrDiff(
 			content,
 			contentType: "text/plain",
 			size: Buffer.byteLength(content, "utf-8"),
-			notes: [
-				freshness,
-				`pr://${repo}/${parsed.number} 的完整差异(${files.length} 个文件)`,
-			],
+			notes: [freshness, `pr://${repo}/${parsed.number} 的完整差异(${files.length} 个文件)`],
 		};
 	}
 

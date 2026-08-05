@@ -280,8 +280,7 @@ export class GlobTool implements AgentTool<typeof findSchema, GlobToolDetails> {
 				});
 			};
 
-			const missingPathsNote =
-				missingPaths.length > 0 ? `已跳过缺失路径: ${missingPaths.join(", ")}` : undefined;
+			const missingPathsNote = missingPaths.length > 0 ? `已跳过缺失路径: ${missingPaths.join(", ")}` : undefined;
 
 			const buildResult = (
 				files: string[],

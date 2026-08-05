@@ -1499,9 +1499,7 @@ export async function runRootCommand(
 	// Handle CLI --api-key as runtime override (not persisted)
 	if (parsedArgs.apiKey) {
 		if (!sessionOptions.model && !sessionOptions.modelPattern) {
-			process.stderr.write(
-				`${chalk.red("--api-key 需要通过 --model、--provider/--model 或 --models 指定模型")}\n`,
-			);
+			process.stderr.write(`${chalk.red("--api-key 需要通过 --model、--provider/--model 或 --models 指定模型")}\n`);
 			process.exit(1);
 		}
 		if (sessionOptions.model) {

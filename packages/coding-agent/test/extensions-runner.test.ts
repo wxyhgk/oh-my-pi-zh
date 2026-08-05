@@ -1583,8 +1583,8 @@ describe("ExtensionRunner", () => {
 				["openai", undefined],
 			]);
 			expect(errors).toHaveLength(2);
-			expect(errors[0]).toContain('服务层级 “scale” 对模型系列 “anthropic” 无效');
-			expect(errors[1]).toContain('服务层级 “priority” 对模型系列 “bogus” 无效');
+			expect(errors[0]).toContain("服务层级 “scale” 对模型系列 “anthropic” 无效");
+			expect(errors[1]).toContain("服务层级 “priority” 对模型系列 “bogus” 无效");
 		});
 	});
 
@@ -1782,10 +1782,7 @@ describe("ExtensionRunner", () => {
 				{ type: "ui_select" },
 				{ type: "tool_approval_resolved", approved: true },
 			]);
-			expect(select).toHaveBeenCalledWith(expect.stringContaining("允许工具: dangerous_tool"), [
-				"批准",
-				"拒绝",
-			]);
+			expect(select).toHaveBeenCalledWith(expect.stringContaining("允许工具: dangerous_tool"), ["批准", "拒绝"]);
 			delete globalState.__approvalEvents;
 		});
 

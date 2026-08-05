@@ -52,9 +52,7 @@ const getComputerSchema: () => ComputerSchema = once(() =>
 		code: type("string").describe(
 			"在持久化计算机会话中执行的 JavaScript;支持顶层 await;`desktop`、`wait`、`assert` 在作用域内可用",
 		),
-		"read_only?": type("boolean").describe(
-			"true = 仅检查模式:允许截图与 ax 读取,禁止所有输入/变更操作",
-		),
+		"read_only?": type("boolean").describe("true = 仅检查模式:允许截图与 ax 读取,禁止所有输入/变更操作"),
 		"timeout?": type("number").describe("运行时间预算(秒)"),
 		"+": "reject",
 	}),

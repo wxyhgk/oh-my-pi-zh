@@ -481,9 +481,7 @@ async function runList(json: boolean, cwd: string): Promise<void> {
 		if ((rule.scope ?? []).length > 0) condParts.push(`scope: ${rule.scope!.join(", ")}`);
 		if ((rule.globs ?? []).length > 0) condParts.push(`globs: ${rule.globs!.join(", ")}`);
 		const provider = rule._source?.provider ? chalk.dim(` [${rule._source.provider}]`) : "";
-		process.stdout.write(
-			`  ${chalk.bold(rule.name)}${provider} ${chalk.dim(condParts.join("  ") || "无条件")}\n`,
-		);
+		process.stdout.write(`  ${chalk.bold(rule.name)}${provider} ${chalk.dim(condParts.join("  ") || "无条件")}\n`);
 		if (rule.description) process.stdout.write(`${chalk.dim(`    ${rule.description}`)}\n`);
 	}
 }
@@ -804,9 +802,7 @@ async function runScan(args: TtsrScanArgs, json: boolean, cwd: string): Promise<
 	const rules = args.rule ? await loadIsolatedScanRule(args.rule) : await loadProjectScanRules(cwd);
 
 	if (rules.length === 0) {
-		const msg = args.rule
-			? "规则已注册,但没有产生任何 TTSR 条目。"
-			: "该项目未注册任何 TTSR 规则。";
+		const msg = args.rule ? "规则已注册,但没有产生任何 TTSR 条目。" : "该项目未注册任何 TTSR 规则。";
 		if (json) {
 			process.stdout.write(`${JSON.stringify({ error: msg })}\n`);
 		} else {
@@ -819,9 +815,7 @@ async function runScan(args: TtsrScanArgs, json: boolean, cwd: string): Promise<
 		plan => plan.regexConditions.length > 0 || plan.astConditions.length > 0,
 	);
 	if (scanRulePlans.length === 0) {
-		const msg = args.rule
-			? "规则已注册,但没有产生可用的 TTSR 条件。"
-			: "该项目未注册任何可用的 TTSR 规则。";
+		const msg = args.rule ? "规则已注册,但没有产生可用的 TTSR 条件。" : "该项目未注册任何可用的 TTSR 规则。";
 		if (json) {
 			process.stdout.write(`${JSON.stringify({ error: msg })}\n`);
 		} else {

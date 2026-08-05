@@ -81,13 +81,7 @@ export class CheckpointTool implements AgentTool<typeof checkpointSchema, Checkp
 		}
 		const startedAt = new Date().toISOString();
 		return toolResult<CheckpointToolDetails>({ goal: params.goal, startedAt })
-			.text(
-				[
-					"检查点已创建。",
-					`目标: ${params.goal}`,
-					"运行调查后,使用简明的报告调用 rewind。",
-				].join("\n"),
-			)
+			.text(["检查点已创建。", `目标: ${params.goal}`, "运行调查后,使用简明的报告调用 rewind。"].join("\n"))
 			.done();
 	}
 }
@@ -120,9 +114,7 @@ export class RewindTool implements AgentTool<typeof rewindSchema, RewindToolDeta
 	): Promise<AgentToolResult<RewindToolDetails>> {
 		if (!this.session.getCheckpointState?.()) {
 			if (this.session.getLastCompletedRewind?.()) {
-				throw new ToolError(
-					"检查点已完成;请直接使用保留的回退报告,而不是再次调用 rewind。",
-				);
+				throw new ToolError("检查点已完成;请直接使用保留的回退报告,而不是再次调用 rewind。");
 			}
 			throw new ToolError("没有活动中的检查点。调用 rewind 前请先创建检查点。");
 		}

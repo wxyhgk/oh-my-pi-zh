@@ -5772,9 +5772,7 @@ export class AgentSession {
 		const command = this.#extensionRunner.getCommand(commandName);
 
 		if (command) {
-			throw new Error(
-				`扩展命令“/${commandName}”无法排队。请使用 prompt()，或在未流式传输时执行该命令。`,
-			);
+			throw new Error(`扩展命令“/${commandName}”无法排队。请使用 prompt()，或在未流式传输时执行该命令。`);
 		}
 	}
 
@@ -8569,7 +8567,9 @@ export class AgentSession {
 				case "reset": {
 					redeemed++;
 					const left =
-						action.availableCount === undefined ? undefined : `（剩余 ${Math.max(0, action.availableCount - 1)}）`;
+						action.availableCount === undefined
+							? undefined
+							: `（剩余 ${Math.max(0, action.availableCount - 1)}）`;
 					const detail =
 						action.reason === "expiring-credit"
 							? `它将在 ${formatDuration(action.expiresInMs ?? 0)} 后过期`

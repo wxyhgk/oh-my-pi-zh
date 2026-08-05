@@ -908,9 +908,7 @@ describe("YieldTool", () => {
 		// Runtime AJV still validates the original schema — token too short.
 		// First MAX_SCHEMA_RETRIES (=3) invalid yields throw with a retry hint.
 		for (let attempt = 1; attempt <= 3; attempt++) {
-			await expect(tool.execute(`call-ref-${attempt}`, firstArgs as never)).rejects.toThrow(
-				"输出 不符合 schema",
-			);
+			await expect(tool.execute(`call-ref-${attempt}`, firstArgs as never)).rejects.toThrow("输出 不符合 schema");
 		}
 
 		const overrideCall: ToolCall = {

@@ -202,10 +202,7 @@ function assertPlanControlsAllowed(request: StructuredSubagentRequest, planMode:
 		isolation &&
 		(Object.hasOwn(isolation, "requested") || Object.hasOwn(isolation, "apply") || Object.hasOwn(isolation, "merge"))
 	) {
-		throw new StructuredSubagentError(
-			"preflight",
-			"子代理隔离、应用与合并控制在计划模式(plan mode)下不可用。",
-		);
+		throw new StructuredSubagentError("preflight", "子代理隔离、应用与合并控制在计划模式(plan mode)下不可用。");
 	}
 }
 
@@ -227,10 +224,7 @@ function assertDepthAndSpawnAllowed(request: StructuredSubagentRequest, agentNam
 	}
 	const spawnPolicy = resolveSpawnPolicy(request.session.getSessionSpawns());
 	if (!spawnPolicy.enabled || (spawnPolicy.allowedAgents !== null && !spawnPolicy.allowedAgents.includes(agentName))) {
-		throw new StructuredSubagentError(
-			"preflight",
-			`无法派生 '${agentName}'。允许:${spawnPolicy.allowedErrorText}`,
-		);
+		throw new StructuredSubagentError("preflight", `无法派生 '${agentName}'。允许:${spawnPolicy.allowedErrorText}`);
 	}
 }
 
@@ -287,10 +281,7 @@ export async function resolveEffectiveSubagentPolicy(
 	const isolationMode = request.session.settings.get("task.isolation.mode");
 	const isIsolated = request.isolation?.requested === true;
 	if (isIsolated && isolationMode === "none") {
-		throw new StructuredSubagentError(
-			"preflight",
-			`子代理隔离执行需要设置 task.isolation.mode;当前模式为 "none"。`,
-		);
+		throw new StructuredSubagentError("preflight", `子代理隔离执行需要设置 task.isolation.mode;当前模式为 "none"。`);
 	}
 	return {
 		discovery,
@@ -553,11 +544,7 @@ export async function runStructuredSubagent(request: StructuredSubagentRequest):
 				isolationContext = await prepareIsolationContext(request.session.cwd);
 			} catch (error) {
 				const message = error instanceof Error ? error.message : String(error);
-				throw new StructuredSubagentError(
-					"isolation",
-					`隔离子代理执行需要 git 仓库。${message}`,
-					{ cause: error },
-				);
+				throw new StructuredSubagentError("isolation", `隔离子代理执行需要 git 仓库。${message}`, { cause: error });
 			}
 		}
 		const result = !isolationContext

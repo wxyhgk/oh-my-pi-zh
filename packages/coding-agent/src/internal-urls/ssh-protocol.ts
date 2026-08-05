@@ -76,14 +76,10 @@ function remotePathFromUrl(url: InternalUrl): string {
 	// silently operating on the truncated path; a literal `?`/`#` in a filename
 	// must be percent-encoded (`%3F`/`%23`).
 	if (url.search) {
-		throw new Error(
-			`ssh:// 不支持 URL 查询字符串;路径中的字面 '?' 请百分号编码为 %3F:${url.href}`,
-		);
+		throw new Error(`ssh:// 不支持 URL 查询字符串;路径中的字面 '?' 请百分号编码为 %3F:${url.href}`);
 	}
 	if (url.hash) {
-		throw new Error(
-			`ssh:// 不支持 URL 片段;路径中的字面 '#' 请百分号编码为 %23:${url.href}`,
-		);
+		throw new Error(`ssh:// 不支持 URL 片段;路径中的字面 '#' 请百分号编码为 %23:${url.href}`);
 	}
 	const raw = url.rawPathname ?? url.pathname;
 	let decoded: string;
@@ -93,9 +89,7 @@ function remotePathFromUrl(url: InternalUrl): string {
 		throw new Error(`ssh:// 路径中的 URL 编码无效:${url.href}`);
 	}
 	if (!decoded) {
-		throw new Error(
-			"ssh:// 需要绝对路径,例如 ssh://host/etc/hosts,或根目录使用 ssh://host/",
-		);
+		throw new Error("ssh:// 需要绝对路径,例如 ssh://host/etc/hosts,或根目录使用 ssh://host/");
 	}
 	return decoded;
 }
@@ -165,9 +159,7 @@ async function resolveTarget(url: InternalUrl, cwd?: string): Promise<SSHConnect
 		}
 	}
 	if (url.password) {
-		throw new Error(
-			"ssh:// 不支持密码认证;ssh:// 使用密钥/Agent 认证 — 请从 URL 中移除 ':<password>'",
-		);
+		throw new Error("ssh:// 不支持密码认证;ssh:// 使用密钥/Agent 认证 — 请从 URL 中移除 ':<password>'");
 	}
 	const isIpv6Literal = bareHost.startsWith("[") && bareHost.endsWith("]");
 	const sshHost = isIpv6Literal ? bareHost.slice(1, -1) : bareHost;
@@ -265,9 +257,7 @@ export class SshProtocolHandler implements ProtocolHandler {
 		if (!(url.rawHost || url.hostname)) {
 			const rawPath = url.rawPathname ?? url.pathname;
 			if (rawPath && rawPath !== "/") {
-				throw new Error(
-					`ssh:// 需要在路径前指定主机:ssh://<host>${rawPath}(无主机的 ssh://${rawPath} 无效)`,
-				);
+				throw new Error(`ssh:// 需要在路径前指定主机:ssh://<host>${rawPath}(无主机的 ssh://${rawPath} 无效)`);
 			}
 			return this.#resolveHostIndex(url, context?.cwd);
 		}

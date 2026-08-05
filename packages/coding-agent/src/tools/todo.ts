@@ -324,9 +324,7 @@ function resolveTaskOrError(
 	const hit = findTaskByContent(phases, content);
 	if (!hit) {
 		if (/^task-\d+$/.test(content)) {
-			errors.push(
-				`任务 "${content}" 未找到。任务按内容引用而非 ID——请从上一次结果中传入任务的完整文本。`,
-			);
+			errors.push(`任务 "${content}" 未找到。任务按内容引用而非 ID——请从上一次结果中传入任务的完整文本。`);
 		} else {
 			const totalTasks = phases.reduce((sum, phase) => sum + phase.tasks.length, 0);
 			const hint = totalTasks === 0 ? " (任务列表为空——是被替换了还是尚未创建?)" : "";

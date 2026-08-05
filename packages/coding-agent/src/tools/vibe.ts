@@ -50,9 +50,7 @@ import {
 export const VIBE_TOOL_NAMES = ["vibe_spawn", "vibe_send", "vibe_wait", "vibe_kill", "vibe_list"] as const;
 
 const vibeSpawnSchema = type({
-	cli: type("'fast' | 'good'").describe(
-		"worker 类型:fast = 低延迟模型,适合机械性工作;good = 强模型,适合困难工作",
-	),
+	cli: type("'fast' | 'good'").describe("worker 类型:fast = 低延迟模型,适合机械性工作;good = 强模型,适合困难工作"),
 	"name?": type("string <= 48").describe("可选的会话名称;省略时自动生成"),
 	prompt: type("string > 0").describe("首条指令;worker 启动时不携带其他上下文"),
 });
@@ -234,14 +232,11 @@ export class VibeKillTool implements AgentTool<typeof vibeKillSchema, VibeToolDe
 	async execute(_toolCallId: string, params: typeof vibeKillSchema.infer): Promise<AgentToolResult<VibeToolDetails>> {
 		const outcome = await VibeSessionRegistry.global().kill(this.session, params.session);
 		const cancelNote = outcome.cancelledTurn ? " 其进行中的轮次已被取消。" : "";
-		return textResult(
-			`已终止会话 \`${outcome.id}\`。${cancelNote}转录记录保留在 history://${outcome.id}。`,
-			{
-				op: "kill",
-				screens: screensOf(this.session),
-				killed: outcome,
-			},
-		);
+		return textResult(`已终止会话 \`${outcome.id}\`。${cancelNote}转录记录保留在 history://${outcome.id}。`, {
+			op: "kill",
+			screens: screensOf(this.session),
+			killed: outcome,
+		});
 	}
 }
 
@@ -264,10 +259,7 @@ export class VibeListTool implements AgentTool<typeof vibeListSchema, VibeToolDe
 			return textResult("没有 vibe 会话。用 vibe_spawn 派生一个。", details);
 		}
 		const lines = screens.map(screen => {
-			const parts = [
-				`- \`${screen.id}\` [${screen.cli}] ${statusLabel(screen.state)}`,
-				`${screen.turns} 轮次`,
-			];
+			const parts = [`- \`${screen.id}\` [${screen.cli}] ${statusLabel(screen.state)}`, `${screen.turns} 轮次`];
 			if (screen.queued > 0) parts.push(`${screen.queued} 排队中`);
 			if (screen.model) parts.push(screen.model);
 			if (screen.lastActivity) parts.push(`最近:${screen.lastActivity}`);
@@ -504,9 +496,7 @@ function describeCall(op: VibeOp, args: VibeRenderArgs | undefined): string {
 		case "send":
 			return `发送 → ${args?.session ? frameText(args.session, 40) : "?"}`;
 		case "wait":
-			return args?.sessions?.length
-				? `等待 ${frameText(args.sessions.join(", "), 60)}`
-				: "等待运行中的会话";
+			return args?.sessions?.length ? `等待 ${frameText(args.sessions.join(", "), 60)}` : "等待运行中的会话";
 		case "kill":
 			return `终止 ${args?.session ? frameText(args.session, 40) : "?"}`;
 		case "list":
@@ -619,11 +609,7 @@ export function createVibeToolRenderer(op: VibeOp) {
 				if (settledById.size > 0) meta.push(uiTheme.fg("success", `${settledById.size} 已结束`));
 				if (details.wait?.timedOut) meta.push(uiTheme.fg("warning", "已超时"));
 				const title =
-					op === "wait"
-						? waiting
-							? "vibe 等待 — 正在观看画面墙"
-							: "vibe 等待"
-						: `vibe 会话 (${screens.length})`;
+					op === "wait" ? (waiting ? "vibe 等待 — 正在观看画面墙" : "vibe 等待") : `vibe 会话 (${screens.length})`;
 				const header = renderStatusLine(
 					{
 						icon: details.wait?.timedOut ? "warning" : running > 0 ? "info" : "done",

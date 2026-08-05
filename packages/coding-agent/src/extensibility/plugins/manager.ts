@@ -511,9 +511,7 @@ export class PluginManager {
 					resolved = findGitPackageName(gitSource, depsAfter);
 				}
 				if (!resolved) {
-					throw new Error(
-						`已安装 ${spec.packageName},但无法从 plugins/package.json 确定包名`,
-					);
+					throw new Error(`已安装 ${spec.packageName},但无法从 plugins/package.json 确定包名`);
 				}
 				actualName = resolved;
 			} else {

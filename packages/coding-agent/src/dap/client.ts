@@ -534,10 +534,7 @@ export class DapClient {
 
 		const { promise: guardPromise, reject: guardReject, resolve: guardResolve } = Promise.withResolvers<void>();
 		const timer = setTimeout(
-			() =>
-				guardReject(
-					new Error(`DAP 适配器 ${this.adapter.name} 写入超时(超过 ${WRITE_MESSAGE_TIMEOUT_MS}ms)`),
-				),
+			() => guardReject(new Error(`DAP 适配器 ${this.adapter.name} 写入超时(超过 ${WRITE_MESSAGE_TIMEOUT_MS}ms)`)),
 			WRITE_MESSAGE_TIMEOUT_MS,
 		);
 		const rejectOnExit = () => {
@@ -730,9 +727,7 @@ export class DapClient {
 		const stderr = this.proc.peekStderr().trim();
 		const exitCode = this.proc.exitCode;
 		const error = new Error(
-			stderr
-				? `DAP 适配器已退出(退出码 ${exitCode}): ${stderr}`
-				: `DAP 适配器意外退出(退出码 ${exitCode})`,
+			stderr ? `DAP 适配器已退出(退出码 ${exitCode}): ${stderr}` : `DAP 适配器意外退出(退出码 ${exitCode})`,
 		);
 		this.#failConnection(error);
 	}

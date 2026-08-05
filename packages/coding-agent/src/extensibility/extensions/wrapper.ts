@@ -295,9 +295,7 @@ export class ExtensionToolWrapper<TParameters extends TSchema = TSchema, TDetail
 				const reason = "no interactive UI available";
 				await emitApprovalResolved(false, reason);
 				if (pendingSafetyChecks.length > 0) {
-					throw new Error(
-						`工具 “${this.tool.name}” 有待处理的提供商安全检查,但没有可用的交互式 UI。`,
-					);
+					throw new Error(`工具 “${this.tool.name}” 有待处理的提供商安全检查,但没有可用的交互式 UI。`);
 				}
 				throw new Error(
 					`工具 “${this.tool.name}” 需要批准,但没有可用的交互式 UI。\n` +

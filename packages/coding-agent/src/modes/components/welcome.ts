@@ -327,16 +327,16 @@ export class WelcomeComponent implements Component {
 
 		// Right column
 		const rightLines = [
-		 ` ${theme.bold(theme.fg("accent", "提示"))}`,
-		 ` ${theme.fg("dim", "#")}${theme.fg("muted", " 用于提示词操作")}`,
-		 ` ${theme.fg("dim", "/")}${theme.fg("muted", " 用于命令")}`,
-		 ` ${theme.fg("dim", "!")}${theme.fg("muted", " 运行 bash")}`,
-		 ` ${theme.fg("dim", "$")}${theme.fg("muted", " 运行 python")}`,
-		 separator,
-		 ` ${theme.bold(theme.fg("accent", "LSP 服务器"))}`,
-		 ...lspLines,
-		 separator,
-		 ` ${theme.bold(theme.fg("accent", "最近会话"))}`,
+			` ${theme.bold(theme.fg("accent", "提示"))}`,
+			` ${theme.fg("dim", "#")}${theme.fg("muted", " 用于提示词操作")}`,
+			` ${theme.fg("dim", "/")}${theme.fg("muted", " 用于命令")}`,
+			` ${theme.fg("dim", "!")}${theme.fg("muted", " 运行 bash")}`,
+			` ${theme.fg("dim", "$")}${theme.fg("muted", " 运行 python")}`,
+			separator,
+			` ${theme.bold(theme.fg("accent", "LSP 服务器"))}`,
+			...lspLines,
+			separator,
+			` ${theme.bold(theme.fg("accent", "最近会话"))}`,
 			...sessionLines,
 			"",
 		];

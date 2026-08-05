@@ -42,8 +42,7 @@ export function parseSecurityScanBundle(value: unknown): SecurityScanBundle {
 		if (!findingIds.has(findingId)) throw new Error(`安全扫描引用了缺失的发现:${findingId}`);
 	}
 	for (const findingId of findingIds) {
-		if (!referencedFindingIds.has(findingId))
-			throw new Error(`安全扫描清单遗漏了发现:${findingId}`);
+		if (!referencedFindingIds.has(findingId)) throw new Error(`安全扫描清单遗漏了发现:${findingId}`);
 	}
 	for (const finding of bundle.findings) {
 		if (finding.scanId !== bundle.scan.id) {

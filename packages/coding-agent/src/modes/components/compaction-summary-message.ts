@@ -112,8 +112,7 @@ export class CompactionSummaryMessageComponent implements Component {
 	#detailMarkdown(): string {
 		const tokenStr = this.message.tokensBefore.toLocaleString();
 		const frameCount = this.message.images?.length ?? 0;
-		const frameNote =
-			frameCount > 0 ? `\n\n_已附加 ${frameCount} 个 snapcompact 帧_` : "";
+		const frameNote = frameCount > 0 ? `\n\n_已附加 ${frameCount} 个 snapcompact 帧_` : "";
 		const warningNote = this.message.warning ? `\n\n${theme.icon.warning} **警告:** ${this.message.warning}` : "";
 		return `**已从 ${tokenStr} token 压缩**${warningNote}\n\n${this.message.summary}${frameNote}`;
 	}

@@ -142,9 +142,7 @@ export function createLogExperimentTool(
 					const newSha = await tryReadHeadSha(ctx.cwd);
 					if (newSha) commitHash = newSha;
 				} else if (!onAutoresearchBranch) {
-					warnings.push(
-						"已跳过自动提交:当前不在专用 autoresearch 分支上。修改的文件仍保留在工作区中。",
-					);
+					warnings.push("已跳过自动提交:当前不在专用 autoresearch 分支上。修改的文件仍保留在工作区中。");
 				} else if (allModified.length === 0) {
 					gitNote = "无可提交内容";
 				}
@@ -180,9 +178,7 @@ export function createLogExperimentTool(
 			const asi: ASIData | undefined = mergeAsi(pendingRun.parsedAsi, sanitizeAsi(params.asi));
 
 			if (pendingRun.parsedPrimary !== null && metric !== pendingRun.parsedPrimary) {
-				warnings.push(
-					`记录的指标 ${metric} 与解析出的主指标 ${pendingRun.parsedPrimary} 不同。两个值均已存储。`,
-				);
+				warnings.push(`记录的指标 ${metric} 与解析出的主指标 ${pendingRun.parsedPrimary} 不同。两个值均已存储。`);
 			}
 
 			const loggedAt = Date.now();

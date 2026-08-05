@@ -545,9 +545,7 @@ function validateLaunchProgram(
 ): void {
 	if (programKind !== "directory" || adapter.acceptsDirectoryProgram) return;
 	const displayPath = formatPathRelativeToCwd(program, cwd, { trailingSlash: true });
-	throw new ToolError(
-		`启动程序解析为目录: ${displayPath}。请传入可执行文件路径,或选择支持包目录的适配器。`,
-	);
+	throw new ToolError(`启动程序解析为目录: ${displayPath}。请传入可执行文件路径,或选择支持包目录的适配器。`);
 }
 
 interface DebugRenderArgs extends Partial<DebugParams> {}
@@ -576,9 +574,7 @@ function resolveDisassemblyReference(memoryReference: string | undefined): strin
 	if (snapshot.instructionPointerReference) {
 		return snapshot.instructionPointerReference;
 	}
-	throw new ToolError(
-		"disassemble 需要 memory_reference,除非当前停止位置有指令指针引用",
-	);
+	throw new ToolError("disassemble 需要 memory_reference,除非当前停止位置有指令指针引用");
 }
 
 const DEBUG_ACTION_LABELS: Readonly<Record<string, string>> = {
@@ -613,7 +609,7 @@ const DEBUG_ACTION_LABELS: Readonly<Record<string, string>> = {
 };
 
 function summarizeDebugCall(args: DebugRenderArgs): string {
-	const action = args.action ? DEBUG_ACTION_LABELS[args.action] ?? args.action.replaceAll("_", " ") : "请求";
+	const action = args.action ? (DEBUG_ACTION_LABELS[args.action] ?? args.action.replaceAll("_", " ")) : "请求";
 	if (args.program) {
 		return `${action} ${truncateToWidth(args.program, TRUNCATE_LENGTHS.TITLE)}`;
 	}
@@ -660,7 +656,8 @@ export const debugToolRenderer = {
 		const outputBlock = new CachedOutputBlock();
 		return markFramedBlockComponent({
 			render(width: number): readonly string[] {
-				const action = DEBUG_ACTION_LABELS[args?.action ?? result.details?.action ?? "debug"] ??
+				const action =
+					DEBUG_ACTION_LABELS[args?.action ?? result.details?.action ?? "debug"] ??
 					(args?.action ?? result.details?.action ?? "debug").replaceAll("_", " ");
 				const success = !options.isPartial && !result.isError;
 				const statusIcon = success
@@ -779,9 +776,7 @@ export class DebugTool implements AgentTool<typeof debugSchema, DebugToolDetails
 					throw new ToolError(formatAdapterUnavailable(selection.adapterName, selection.command, commandCwd));
 				}
 				if (selection.kind === "none") {
-					throw new ToolError(
-						`没有可用的调试器适配器。已安装的适配器: ${getConfiguredAdapters(commandCwd)}`,
-					);
+					throw new ToolError(`没有可用的调试器适配器。已安装的适配器: ${getConfiguredAdapters(commandCwd)}`);
 				}
 				const { adapter } = selection;
 				validateLaunchProgram(program, commandCwd, programKind, adapter);
@@ -806,9 +801,7 @@ export class DebugTool implements AgentTool<typeof debugSchema, DebugToolDetails
 						const command = getAdapterConfigs(commandCwd)[params.adapter]?.command ?? params.adapter;
 						throw new ToolError(formatAdapterUnavailable(params.adapter, command, commandCwd));
 					}
-					throw new ToolError(
-						`没有可用的调试器适配器。已安装的适配器: ${getConfiguredAdapters(commandCwd)}`,
-					);
+					throw new ToolError(`没有可用的调试器适配器。已安装的适配器: ${getConfiguredAdapters(commandCwd)}`);
 				}
 				const snapshot = await dapSessionManager.attach(
 					{ adapter, cwd: commandCwd, pid: params.pid, port: params.port, host: params.host },

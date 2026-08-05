@@ -372,9 +372,7 @@ async function handleInstall(
 					scope: flags.scope,
 				});
 				console.log(
-					chalk.green(
-						`${theme.status.success} 已从 ${target.marketplace} 安装 ${target.name}(${entry.version})`,
-					),
+					chalk.green(`${theme.status.success} 已从 ${target.marketplace} 安装 ${target.name}(${entry.version})`),
 				);
 			} catch (err) {
 				console.error(chalk.red(`${theme.status.error} 安装 ${spec} 失败:${err}`));
@@ -388,18 +386,10 @@ async function handleInstall(
 			// node_modules tree so source edits show up without a reinstall. Matches
 			// `omp plugin link <path>` so users can use either verb interchangeably.
 			if (flags.scope) {
-				console.error(
-					chalk.yellow(
-						`警告:--scope 仅支持市场安装(name@marketplace)。已对 ${spec} 忽略。`,
-					),
-				);
+				console.error(chalk.yellow(`警告:--scope 仅支持市场安装(name@marketplace)。已对 ${spec} 忽略。`));
 			}
 			if (flags.force) {
-				console.error(
-					chalk.yellow(
-						`警告:--force 对本地路径安装无效(link 本身是幂等的)。已对 ${spec} 忽略。`,
-					),
-				);
+				console.error(chalk.yellow(`警告:--force 对本地路径安装无效(link 本身是幂等的)。已对 ${spec} 忽略。`));
 			}
 			if (flags.dryRun) {
 				if (flags.json) {
@@ -428,11 +418,7 @@ async function handleInstall(
 
 		// --scope only applies to marketplace installs; warn when it would be silently no-op'd for npm.
 		if (flags.scope) {
-			console.error(
-				chalk.yellow(
-					`警告:--scope 仅支持市场安装(name@marketplace)。已对 ${spec} 忽略。`,
-				),
-			);
+			console.error(chalk.yellow(`警告:--scope 仅支持市场安装(name@marketplace)。已对 ${spec} 忽略。`));
 		}
 
 		// npm path
@@ -716,9 +702,7 @@ async function handleConfig(
 	flags: { json?: boolean; local?: boolean },
 ): Promise<void> {
 	if (args.length === 0) {
-		console.error(
-			chalk.red(`用法:${APP_NAME} plugin config <list|get|set|delete|validate> <plugin> [key] [value]`),
-		);
+		console.error(chalk.red(`用法:${APP_NAME} plugin config <list|get|set|delete|validate> <plugin> [key] [value]`));
 		process.exit(1);
 	}
 

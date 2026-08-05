@@ -248,8 +248,7 @@ export async function executeSend(
 					// skipped, which would prompt a duplicate resend on the next turn.
 					if (signal?.aborted) {
 						lines.push(
-							`消息已投递,但在 ${to} 回复之前等待被中断。` +
-								"处理完中断后,请再次检查 `inbox` 或 `wait`。",
+							`消息已投递,但在 ${to} 回复之前等待被中断。` + "处理完中断后,请再次检查 `inbox` 或 `wait`。",
 						);
 					} else {
 						throw reply.error;

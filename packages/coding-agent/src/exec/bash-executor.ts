@@ -524,9 +524,7 @@ export async function executeBash(command: string, options?: BashExecutorOptions
 
 		// Handle timeout
 		if (winner.result.timedOut) {
-			const annotation = options?.timeout
-				? `命令在 ${Math.round(options.timeout / 1000)} 秒后超时`
-				: "命令已超时";
+			const annotation = options?.timeout ? `命令在 ${Math.round(options.timeout / 1000)} 秒后超时` : "命令已超时";
 			resetSession = true;
 			if (shellSession) {
 				quarantineShellSession(sessionKey, runPromise, abortCleanupPromise);

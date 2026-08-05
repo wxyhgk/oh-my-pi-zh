@@ -434,9 +434,7 @@ export class TodoCommandController {
 			const taskCount = parsed.reduce((sum, p) => sum + p.tasks.length, 0);
 			this.ctx.showStatus(`已从编辑器更新待办事项:${parsed.length} 个阶段,${taskCount} 项任务。`);
 		} catch (error) {
-			this.ctx.showWarning(
-				`打开外部编辑器失败:${error instanceof Error ? error.message : String(error)}`,
-			);
+			this.ctx.showWarning(`打开外部编辑器失败:${error instanceof Error ? error.message : String(error)}`);
 		} finally {
 			if (fileHandle) {
 				await fileHandle.close().catch(() => {});

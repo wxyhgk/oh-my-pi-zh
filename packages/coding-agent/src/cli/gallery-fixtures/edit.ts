@@ -97,7 +97,9 @@ export const editFixtures: Record<string, GalleryFixture> = {
 		streamingArgs: { file_path: "scripts/prune-changelogs.ts", rename: "scripts/archived/prune-changelogs.ts" },
 		args: { file_path: "scripts/prune-changelogs.ts", rename: "scripts/archived/prune-changelogs.ts" },
 		result: {
-			content: [{ type: "text", text: "已将 scripts/prune-changelogs.ts 移动到 scripts/archived/prune-changelogs.ts" }],
+			content: [
+				{ type: "text", text: "已将 scripts/prune-changelogs.ts 移动到 scripts/archived/prune-changelogs.ts" },
+			],
 			details: {
 				op: "update",
 				path: "scripts/archived/prune-changelogs.ts",
@@ -107,9 +109,7 @@ export const editFixtures: Record<string, GalleryFixture> = {
 			},
 		},
 		errorResult: {
-			content: [
-				{ type: "text", text: "编辑失败:目标 scripts/archived/prune-changelogs.ts 已存在" },
-			],
+			content: [{ type: "text", text: "编辑失败:目标 scripts/archived/prune-changelogs.ts 已存在" }],
 			isError: true,
 			details: {
 				op: "update",

@@ -432,10 +432,7 @@ export const createAutoresearchExtension: ExtensionFactory = api => {
 				await git.clean(ctx.cwd);
 				ctx.ui.notify(`工作区已重置到基线 ${session.baselineCommit.slice(0, 12)}。`, "info");
 			} catch (err) {
-				ctx.ui.notify(
-					`重置工作区到基线失败:${err instanceof Error ? err.message : String(err)}`,
-					"error",
-				);
+				ctx.ui.notify(`重置工作区到基线失败:${err instanceof Error ? err.message : String(err)}`, "error");
 			}
 		} else if (shouldResetTree) {
 			ctx.ui.notify("未记录基线提交 — 已跳过工作区重置。", "warning");

@@ -46,9 +46,7 @@ export function selectSecurityAccount(
 		if (requestedCredentialId !== undefined) {
 			throw new Error(`安全 OAuth 凭据 ${requestedCredentialId} 对 ${provider} 不可用`);
 		}
-		throw new Error(
-			`${provider} 有多个 OAuth 账户可用;请提供 credentialId 以固定一个精确账户`,
-		);
+		throw new Error(`${provider} 有多个 OAuth 账户可用;请提供 credentialId 以固定一个精确账户`);
 	}
 	const account: SecurityAccountRef = { provider, credentialId: selected.credentialId };
 	if (selected.accountId !== undefined) account.accountId = selected.accountId;

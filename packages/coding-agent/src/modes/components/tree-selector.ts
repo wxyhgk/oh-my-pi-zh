@@ -604,8 +604,7 @@ class TreeList implements Component {
 					if (textContent) {
 						result = theme.fg("success", "助手: ") + textContent;
 					} else if (presentation.kind === "full") {
-						result =
-							theme.fg("success", "助手: ") + theme.fg("error", normalize(presentation.text).slice(0, 80));
+						result = theme.fg("success", "助手: ") + theme.fg("error", normalize(presentation.text).slice(0, 80));
 					} else if (msgWithContent.stopReason === "aborted") {
 						result = theme.fg("success", "助手: ") + theme.fg("muted", "(已中止)");
 					} else {

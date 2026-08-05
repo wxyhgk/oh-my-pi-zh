@@ -90,9 +90,7 @@ describe("resolveApproval override and user policy", () => {
 		expect(resolveApproval(dangerous, {}, "yolo", { bash: "allow" }).policy).toBe("allow");
 		expect(resolveApproval(dangerous, {}, "yolo", { bash: "prompt" }).policy).toBe("prompt");
 		expect(resolveApproval(dangerous, {}, "yolo", { bash: "deny" }).policy).toBe("deny");
-		expect(() => requiresApproval(dangerous, {}, "yolo", { bash: "deny" })).toThrow(
-			'工具 "bash" 被用户策略阻止',
-		);
+		expect(() => requiresApproval(dangerous, {}, "yolo", { bash: "deny" })).toThrow('工具 "bash" 被用户策略阻止');
 	});
 
 	it("tool-owned deny policy blocks before mode and user allow policies", () => {
@@ -106,9 +104,7 @@ describe("resolveApproval override and user policy", () => {
 			policy: "deny",
 			source: "tool",
 		});
-		expect(() => requiresApproval(blocked, {}, "write", { bash: "allow" })).toThrow(
-			'工具 "bash" 被工具策略阻止',
-		);
+		expect(() => requiresApproval(blocked, {}, "write", { bash: "allow" })).toThrow('工具 "bash" 被工具策略阻止');
 	});
 
 	it("valid user policy overrides mode and tier when no tool override is active", () => {

@@ -293,9 +293,7 @@ export async function searchWithParallel(
 ): Promise<ParallelSearchResult> {
 	const apiKey = findParallelApiKey(storage);
 	if (!apiKey) {
-		throw new ParallelApiError(
-			"未找到 Parallel 凭据。请设置 PARALLEL_API_KEY,或通过 'omp /login parallel' 登录。",
-		);
+		throw new ParallelApiError("未找到 Parallel 凭据。请设置 PARALLEL_API_KEY,或通过 'omp /login parallel' 登录。");
 	}
 
 	const fetchImpl = options.fetch ?? fetch;
@@ -327,9 +325,7 @@ export async function extractWithParallel(
 ): Promise<ParallelExtractResult> {
 	const apiKey = findParallelApiKey(storage);
 	if (!apiKey) {
-		throw new ParallelApiError(
-			"未找到 Parallel 凭据。请设置 PARALLEL_API_KEY,或通过 'omp /login parallel' 登录。",
-		);
+		throw new ParallelApiError("未找到 Parallel 凭据。请设置 PARALLEL_API_KEY,或通过 'omp /login parallel' 登录。");
 	}
 
 	const fetchImpl = options.fetch ?? fetch;

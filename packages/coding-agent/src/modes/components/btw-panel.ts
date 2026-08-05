@@ -152,8 +152,7 @@ export class BtwPanelComponent extends Container {
 		}
 		const text = this.#visibleAnswer;
 		if (!text) {
-			const waiting =
-				this.#state === "running" ? `${theme.status.pending} 正在等待响应…` : "未返回文本。";
+			const waiting = this.#state === "running" ? `${theme.status.pending} 正在等待响应…` : "未返回文本。";
 			return new Text(theme.fg("dim", waiting), 1, 0);
 		}
 		return new Markdown(text, 1, 0, getMarkdownTheme());

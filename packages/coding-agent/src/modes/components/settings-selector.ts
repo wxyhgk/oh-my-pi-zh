@@ -276,9 +276,7 @@ class MultiSelectSubmenu extends Container {
 		this.addChild(this.#selectList);
 
 		this.addChild(new Spacer(1));
-		const hint = this.ordered
-			? "  回车/空格切换 · ←/→ 移动 · 1-9 定位 · Esc 返回"
-			: "  回车/空格切换 · Esc 返回";
+		const hint = this.ordered ? "  回车/空格切换 · ←/→ 移动 · 1-9 定位 · Esc 返回" : "  回车/空格切换 · Esc 返回";
 		this.addChild(new Text(theme.fg("dim", hint), 0, 0));
 	}
 
@@ -369,14 +367,7 @@ class ProviderLimitsSubmenu extends Container {
 		this.addChild(new Text(theme.bold(theme.fg("accent", "最大并发请求数")), 0, 0));
 		this.addChild(new Spacer(1));
 		this.addChild(
-			new Text(
-				theme.fg(
-					"muted",
-					"选择一个提供商,输入正数以限制并发 LLM 请求,或清空以设为无限制。",
-				),
-				0,
-				0,
-			),
+			new Text(theme.fg("muted", "选择一个提供商,输入正数以限制并发 LLM 请求,或清空以设为无限制。"), 0, 0),
 		);
 		this.addChild(new Spacer(1));
 

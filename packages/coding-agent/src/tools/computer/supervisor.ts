@@ -214,14 +214,12 @@ export class ComputerSupervisor implements ComputerController {
 		} catch (error) {
 			started.reject(error);
 		}
-		this.#startPromise = withTimeout(
-			started.promise,
-			this.#timeouts.startMs,
-			"启动 computer worker 超时",
-		).catch(async error => {
-			await this.#terminate(error);
-			throw error;
-		});
+		this.#startPromise = withTimeout(started.promise, this.#timeouts.startMs, "启动 computer worker 超时").catch(
+			async error => {
+				await this.#terminate(error);
+				throw error;
+			},
+		);
 		return this.#startPromise;
 	}
 

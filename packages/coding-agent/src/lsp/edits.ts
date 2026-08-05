@@ -262,7 +262,9 @@ export async function applyWorkspaceEdit(edit: WorkspaceEdit, cwd: string): Prom
 				const newPath = uriToFile(op.newUri);
 				await fs.mkdir(path.dirname(newPath), { recursive: true });
 				await fs.rename(oldPath, newPath);
-				applied.push(`已将 ${formatPathRelativeToCwd(oldPath, cwd)} 重命名为 ${formatPathRelativeToCwd(newPath, cwd)}`);
+				applied.push(
+					`已将 ${formatPathRelativeToCwd(oldPath, cwd)} 重命名为 ${formatPathRelativeToCwd(newPath, cwd)}`,
+				);
 			} else {
 				const filePath = uriToFile(op.uri);
 				await fs.rm(filePath, { recursive: true });
