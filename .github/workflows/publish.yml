@@ -21,15 +21,14 @@ jobs:   # 原生模块构建矩阵:darwin 两个平台在 mac 上构建,linux �
    build-natives:
       name: 构建原生模块 (${{ matrix.name }})
       strategy:
-         fail-fast: false
          matrix:
             include:
                - name: darwin
-                 runner: macos-14 # arm64;darwin-all 含 darwin-x64 交叉编译
-                 targets: darwin-all
+                 runner: macos-14
+                 targets: "darwin-arm64 darwin-x64-baseline"
                - name: linux-win
                  runner: ubuntu-22.04
-                 targets: linux-all # linux 全平台 + win32-x64
+                 targets: "linux-arm64 linux-musl-arm64 linux-musl-x64-baseline linux-x64-baseline linux-x64-modern win32-x64-baseline"
       runs-on: ${{ matrix.runner }}
       steps:
          - uses: actions/checkout@v4
@@ -54,7 +53,7 @@ jobs:   # 原生模块构建矩阵:darwin 两个平台在 mac 上构建,linux �
            run: |
               export PATH="$HOME/.bun/bin:$PATH"
               # 逐个 target 构建,避免并发链接 OOM(上游同款做法)
-              for target in ${{ matrix.targets == 'darwin-all' && 'darwin-arm64 darwin-x64-baseline' || 'linux-arm64 linux-musl-arm64 linux-musl-x64-baseline linux-x64-baseline linux-x64-modern win32-x64-baseline' }}; do
+              for target in ${{ matrix.targets }}; do
                 bun scripts/bazel-natives.ts "$target" --dest packages/natives/native
               done
 
