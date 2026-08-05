@@ -4,6 +4,7 @@
 		"module": "ESNext",
 		"lib": ["ES2024", "DOM.AsyncIterable"],
 		"moduleResolution": "Bundler",
+		"customConditions": ["bun"],
 		"moduleDetection": "force",
 		"strict": true,
 		"skipLibCheck": true,
