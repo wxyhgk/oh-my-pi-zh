@@ -134,7 +134,16 @@ jobs:
          - uses: actions/checkout@v4
          - uses: ./.github/actions/bun-install
          - name: Type check workspace
-           run: bun run ci:check:full
+           run: |
+              set -o pipefail
+              bun run ci:check:full 2>&1 | tee "$RUNNER_TEMP/ci-check.log"
+         - name: Upload type check log
+           if: ${{ failure() }}
+           uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+           with:
+              name: ci-check-log
+              path: ${{ runner.temp }}/ci-check.log
+              if-no-files-found: error
          - name: Build collab web
            run: bun run collab:web:build
 
