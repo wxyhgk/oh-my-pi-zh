@@ -144,6 +144,12 @@ jobs:
               name: ci-check-log
               path: ${{ runner.temp }}/ci-check.log
               if-no-files-found: error
+         - name: Report type check failure
+           if: ${{ failure() }}
+           shell: bash
+           run: |
+              summary="$(tail -n 80 "$RUNNER_TEMP/ci-check.log" | tr '\n' ' ' | cut -c1-6000)"
+              echo "::error file=ci-check.log,line=1::$summary"
          - name: Build collab web
            run: bun run collab:web:build
 
