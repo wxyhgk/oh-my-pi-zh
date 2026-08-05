@@ -31,6 +31,15 @@ async function replaceInFiles(paths: readonly string[], pattern: RegExp, replace
 	}
 }
 
+async function replaceInFilesIfMatched(paths: readonly string[], pattern: RegExp, replacement: string): Promise<void> {
+	for (const filePath of paths) {
+		const file = Bun.file(filePath);
+		const before = await file.text();
+		const after = before.replace(pattern, replacement);
+		if (after !== before) await Bun.write(filePath, after);
+	}
+}
+
 // =============================================================================
 // Shared functions
 // =============================================================================
@@ -256,6 +265,7 @@ async function cmdRelease(versionOrBump: string): Promise<void> {
 	}
 
 	await replaceInFiles(publicPkgPaths, /"version": "[^"]+"/, `"version": "${version}"`);
+	await replaceInFilesIfMatched(pkgJsonPaths, /("@wxyhgk\/[^"]+"\s*:\s*)"(\d+\.\d+\.\d+)"/g, `$1"${version}"`);
 
 	// Verify
 	console.log("  Verifying versions:");
