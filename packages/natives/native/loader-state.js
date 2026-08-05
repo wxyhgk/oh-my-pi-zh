@@ -8,7 +8,7 @@ import packageJson from "../package.json" with { type: "json" };
 import { embeddedAddon } from "./embedded-addon.js";
 
 /**
- * Native addon loader for `@oh-my-pi/pi-natives`.
+ * Native addon loader for the package that owns this file.
  *
  * Owns every step between "Node imports `native/index.js`" and "the right
  * `pi_natives.<platform>-<arch>*.node` is required, validated, and returned":
@@ -59,7 +59,10 @@ function getNativesDir() {
 function resolveLeafPackageDir(platformTag) {
 	try {
 		const require_ = createRequire(import.meta.url);
-		return path.dirname(require_.resolve(`@oh-my-pi/pi-natives-${platformTag}/package.json`));
+		const packageName = packageJson.name;
+		const scope = packageName.startsWith("@") ? packageName.slice(0, packageName.indexOf("/")) : "";
+		const leafName = scope ? `${scope}/pi-natives-${platformTag}` : `pi-natives-${platformTag}`;
+		return path.dirname(require_.resolve(`${leafName}/package.json`));
 	} catch {
 		return null;
 	}
@@ -636,8 +639,8 @@ export function validateLoadedBindings(ctx, bindings, candidate) {
 	if (residentSentinel && diskHasExpectedSentinel) {
 		const residentVersion = residentSentinel.slice("__piNativesV".length).replace(/_/g, ".");
 		throw new Error(
-			`Loaded ${candidate}, which exposes the @oh-my-pi/pi-natives@${residentVersion} version ` +
-				`sentinel \`${residentSentinel}\` but not the @${ctx.packageVersion} sentinel ` +
+			`Loaded ${candidate}, which exposes the ${packageJson.name}@${residentVersion} version ` +
+				`sentinel \`${residentSentinel}\` but not the ${packageJson.name}@${ctx.packageVersion} sentinel ` +
 				`\`${ctx.versionSentinelExport}\` this loader expects. omp was upgraded to ` +
 				`${ctx.packageVersion} while this session was running; the ${residentVersion} addon is ` +
 				"still resident in this process. Disk is already consistent — restart omp to pick up " +
@@ -645,7 +648,7 @@ export function validateLoadedBindings(ctx, bindings, candidate) {
 		);
 	}
 	throw new Error(
-		`Loaded ${candidate} but it does not expose the @oh-my-pi/pi-natives@${ctx.packageVersion} ` +
+		`Loaded ${candidate} but it does not expose the ${packageJson.name}@${ctx.packageVersion} ` +
 			`version sentinel \`${ctx.versionSentinelExport}\`. The .node file on disk is from a different ` +
 			"release than this loader — reinstall to re-sync.",
 	);
@@ -687,7 +690,7 @@ function buildHelpMessage(ctx) {
 		);
 	}
 	return (
-		"If installed via npm/bun, try reinstalling: bun install @oh-my-pi/pi-natives\n" +
+		`If installed via npm/bun, try reinstalling: bun install ${packageJson.name}\n` +
 		"If developing locally, build with: bun --cwd=packages/natives run build\n" +
 		"Explicit targets: bun scripts/bazel-natives.ts <target> --dest packages/natives/native"
 	);

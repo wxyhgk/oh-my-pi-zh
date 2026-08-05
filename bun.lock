@@ -21,7 +21,7 @@
     },
     "packages/agent": {
       "name": "@wxyhgk/pi-agent-core",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "dependencies": {
         "@opentelemetry/api": "catalog:",
         "@wxyhgk/pi-ai": "catalog:",
@@ -40,7 +40,7 @@
     },
     "packages/ai": {
       "name": "@wxyhgk/pi-ai",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "dependencies": {
         "@bufbuild/protobuf": "catalog:",
         "@wxyhgk/omptype": "catalog:",
@@ -64,7 +64,7 @@
     },
     "packages/catalog": {
       "name": "@wxyhgk/pi-catalog",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "dependencies": {
         "@bufbuild/protobuf": "catalog:",
         "@wxyhgk/omptype": "catalog:",
@@ -78,7 +78,7 @@
     },
     "packages/coding-agent": {
       "name": "@wxyhgk/pi-coding-agent",
-      "version": "17.2.8",
+      "version": "17.2.12",
       "bin": {
         "omp-zh": "src/cli.ts",
       },
@@ -152,7 +152,7 @@
     },
     "packages/hashline": {
       "name": "@wxyhgk/hashline",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "dependencies": {
         "@wxyhgk/pi-natives": "catalog:",
         "lru-cache": "catalog:",
@@ -196,7 +196,7 @@
     },
     "packages/mnemopi": {
       "name": "@wxyhgk/pi-mnemopi",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "bin": {
         "mnemopi": "src/cli.ts",
       },
@@ -223,15 +223,22 @@
     },
     "packages/natives": {
       "name": "@wxyhgk/pi-natives",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "devDependencies": {
         "@napi-rs/cli": "catalog:",
         "@types/bun": "catalog:",
       },
+      "optionalDependencies": {
+        "@wxyhgk/pi-natives-darwin-arm64": "17.2.9",
+        "@wxyhgk/pi-natives-darwin-x64": "17.2.9",
+        "@wxyhgk/pi-natives-linux-arm64": "17.2.9",
+        "@wxyhgk/pi-natives-linux-x64": "17.2.9",
+        "@wxyhgk/pi-natives-win32-x64": "17.2.9",
+      },
     },
     "packages/omptype": {
       "name": "@wxyhgk/omptype",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "devDependencies": {
         "@ark/attest": "0.56.3",
         "@ark/schema": "0.56.2",
@@ -245,7 +252,7 @@
     },
     "packages/snapcompact": {
       "name": "@wxyhgk/snapcompact",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "dependencies": {
         "@wxyhgk/pi-ai": "catalog:",
         "@wxyhgk/pi-natives": "catalog:",
@@ -258,7 +265,7 @@
     },
     "packages/stats": {
       "name": "@wxyhgk/omp-stats",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "bin": {
         "omp-stats": "./src/index.ts",
       },
@@ -301,7 +308,7 @@
     },
     "packages/tui": {
       "name": "@wxyhgk/pi-tui",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "dependencies": {
         "@wxyhgk/pi-natives": "catalog:",
         "@wxyhgk/pi-utils": "catalog:",
@@ -340,7 +347,7 @@
     },
     "packages/utils": {
       "name": "@wxyhgk/pi-utils",
-      "version": "17.2.8",
+      "version": "17.2.12",
       "dependencies": {
         "@wxyhgk/pi-natives": "catalog:",
         "handlebars": "catalog:",
@@ -353,7 +360,7 @@
     },
     "packages/wire": {
       "name": "@wxyhgk/pi-wire",
-      "version": "17.2.8",
+      "version": "17.2.9",
       "devDependencies": {
         "@types/bun": "catalog:",
       },
@@ -415,19 +422,19 @@
     "@types/react-dom": "^19.2.3",
     "@types/turndown": "5.0.6",
     "@typescript/native-preview": "7.0.0-dev.20260707.2",
-    "@wxyhgk/hashline": "17.2.8",
-    "@wxyhgk/omp-stats": "17.2.8",
-    "@wxyhgk/omptype": "17.2.8",
-    "@wxyhgk/pi-agent-core": "17.2.8",
-    "@wxyhgk/pi-ai": "17.2.8",
-    "@wxyhgk/pi-catalog": "17.2.8",
-    "@wxyhgk/pi-coding-agent": "17.2.8",
-    "@wxyhgk/pi-mnemopi": "17.2.8",
-    "@wxyhgk/pi-natives": "17.2.8",
-    "@wxyhgk/pi-tui": "17.2.8",
-    "@wxyhgk/pi-utils": "17.2.8",
-    "@wxyhgk/pi-wire": "17.2.8",
-    "@wxyhgk/snapcompact": "17.2.8",
+    "@wxyhgk/hashline": "17.2.9",
+    "@wxyhgk/omp-stats": "17.2.9",
+    "@wxyhgk/omptype": "17.2.9",
+    "@wxyhgk/pi-agent-core": "17.2.9",
+    "@wxyhgk/pi-ai": "17.2.9",
+    "@wxyhgk/pi-catalog": "17.2.9",
+    "@wxyhgk/pi-coding-agent": "17.2.12",
+    "@wxyhgk/pi-mnemopi": "17.2.9",
+    "@wxyhgk/pi-natives": "17.2.9",
+    "@wxyhgk/pi-tui": "17.2.9",
+    "@wxyhgk/pi-utils": "17.2.12",
+    "@wxyhgk/pi-wire": "17.2.9",
+    "@wxyhgk/snapcompact": "17.2.9",
     "@xterm/headless": "^6.0.0",
     "chalk": "^5.6.2",
     "chart.js": "^4.5.1",
