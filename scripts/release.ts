@@ -19,6 +19,18 @@ function git(args: readonly string[]) {
 	return $`git -c core.fsmonitor=false -c core.untrackedCache=false -c fetch.pruneTags=false ${args}`;
 }
 
+async function replaceInFiles(paths: readonly string[], pattern: RegExp, replacement: string): Promise<void> {
+	for (const filePath of paths) {
+		const file = Bun.file(filePath);
+		const before = await file.text();
+		const after = before.replace(pattern, replacement);
+		if (after === before) {
+			throw new Error(`Pattern did not match ${filePath}: ${pattern}`);
+		}
+		await Bun.write(filePath, after);
+	}
+}
+
 // =============================================================================
 // Shared functions
 // =============================================================================
@@ -243,7 +255,7 @@ async function cmdRelease(versionOrBump: string): Promise<void> {
 		publicPkgPaths.push(pkgPath);
 	}
 
-	await $`sd '"version": "[^"]+"' ${`"version": "${version}"`} ${publicPkgPaths}`;
+	await replaceInFiles(publicPkgPaths, /"version": "[^"]+"/, `"version": "${version}"`);
 
 	// Verify
 	console.log("  Verifying versions:");
@@ -262,7 +274,7 @@ async function cmdRelease(versionOrBump: string): Promise<void> {
 
 	// 3. Update Rust workspace version
 	console.log(`Updating Rust workspace version to ${version}…`);
-	await $`sd '^version = "[^"]+"' ${`version = "${version}"`} Cargo.toml`;
+	await replaceInFiles(["Cargo.toml"], /^version = "[^"]+"/m, `version = "${version}"`);
 
 	// Verify
 	const cargoToml = await Bun.file("Cargo.toml").text();
@@ -299,7 +311,7 @@ async function cmdRelease(versionOrBump: string): Promise<void> {
 		"packages/natives/native/index.d.ts",
 		"packages/natives/native/index.js",
 	];
-	await $`sd '__piNativesV[A-Za-z0-9_]+' ${sentinelName} ${sentinelFiles}`;
+	await replaceInFiles(sentinelFiles, /__piNativesV[A-Za-z0-9_]+/, sentinelName);
 	const libRs = await Bun.file("crates/pi-natives/src/lib.rs").text();
 	if (!libRs.includes(`js_name = "${sentinelName}"`)) {
 		console.error(
