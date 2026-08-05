@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+import { dirname } from "node:path";
 /**
  * Release script for pi-mono
  *
@@ -14,6 +15,11 @@ import { runChangelogFixer } from "./fix-changelogs";
 const changelogGlob = new Glob("packages/*/CHANGELOG.md");
 const packageJsonGlob = new Glob("packages/*/package.json");
 const cargoTomlGlob = new Glob("crates/*/Cargo.toml");
+
+const bunDir = dirname(process.execPath);
+if (!process.env.PATH?.split(":").includes(bunDir)) {
+	process.env.PATH = `${bunDir}:${process.env.PATH ?? ""}`;
+}
 
 function git(args: readonly string[]) {
 	return $`git -c core.fsmonitor=false -c core.untrackedCache=false -c fetch.pruneTags=false ${args}`;
