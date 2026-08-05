@@ -31,7 +31,7 @@
 import { $, Glob } from "bun";
 
 const changelogGlob = new Glob("packages/*/CHANGELOG.md");
-const REPO = process.env.OMP_REPO ?? process.env.GITHUB_REPOSITORY ?? "can1357/oh-my-pi";
+const REPO = process.env.OMP_REPO ?? process.env.GITHUB_REPOSITORY ?? "wxyhgk/oh-my-pi-zh";
 
 // Canonical ordering used by `fix-changelogs`; unknown categories sort
 // alphabetically after these.
