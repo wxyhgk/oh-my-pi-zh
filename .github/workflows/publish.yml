@@ -104,12 +104,12 @@ jobs:   # 原生模块构建矩阵:darwin 两个平台在 mac 上构建,linux �
          - name: 安装依赖
            run: bun install --frozen-lockfile
 
-         - name: 配置 npm 认证
+         - name: 配置 npm 认证(仅当提供 token;OIDC 模式可跳过)
+           if: ${{ secrets.NPM_TOKEN != '' }}
            run: |
               npm config set //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
               npm whoami
            env:
-              # OIDC trusted publishing 可用时 npm 自动走 OIDC;否则 fallback 到该 token
               NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
          - name: 生成叶子包
