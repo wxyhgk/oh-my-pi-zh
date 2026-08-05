@@ -32,7 +32,7 @@
 ## 从源码运行(当前方式)
 
 ```sh
-git clone <本仓库地址> oh-my-pi-hanhua
+git clone https://github.com/wxyhgk/oh-my-pi-zh.git
 cd oh-my-pi-hanhua
 bun install
 bun --cwd=packages/natives run build   # 构建原生模块(需 bazelisk、cmake)
