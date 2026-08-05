@@ -1,0 +1,26 @@
+厌倦了输入 "keep going"?只需发送一个 '.'
+你可以用 /btw 提出一个侧边问题
+使用 /tan 将当前对话分叉为后台 Agent
+可以使用 Ctrl+D 退出,但会保存你的草稿!
+用 `omp-zh stats` 看看哪个模型被你"虐待"得最多
+尝试任务隔离来创建 CoW 工作树
+需要便宜的嵌套模型调用?使用 `completion(x...)`。有一大批任务?让 clanker 用起来!
+意大利面条式代码?试试用 /omfg 抱怨一下
+你知道吗?kitty/tmux/cmux/zellij/wezterm 的每个分屏都保持自己的会话 — `omp-zh -c` 会恢复正确的那一个
+在消息中加入 `ultrathink` 一词以获得更困难的多步推理 — 输入时会看到它发出彩虹光芒
+在消息中说 `orchestrate` 即可驱动带并行子 Agent 的多阶段任务 — 输入时它会发光
+在消息中说 `workflowz` 即可在 eval 中用并行子 Agent 驱动任务 — 输入时它会发光
+登录同一提供商的多个账户 — 再次使用 `/login` — omp 会自动在它们之间负载均衡
+运行一次 `omp-zh auth-broker serve`,每台机器都能通过网络获取实时 token — 刷新密钥永远不会离开主机;`omp-zh auth-gateway` 作为即插即用代理位于其前端,任何兼容 OpenAI 的客户端都可以访问
+按 alt+p(或 /switch)切换提供商,按 ctrl+p 循环切换角色模型 smol -> slow -> 等等
+按 ctrl+r 搜索你的提示词历史并复用过去的消息
+当模型总是选错工具时,`/force read` 可将下一轮次固定到某个特定工具
+`/copy code` 将最后一个代码块复制到剪贴板 — `/copy cmd` 复制最后一条 shell/python 命令
+`/shake` 将沉重的工具结果从上下文中移除,无需完整 /compact 即可回收 token — `/shake images` 仅移除图片
+实时配对:`/collab` 通过端到端加密的中继链接共享你的会话 — 队友运行 `/join <link>` 即可观看工具调用流式输出,并用自己的 omp 向 Agent 发送提示
+按 ← ← 深入查看运行中或已完成的 Agent,检查其工具调用与转录
+遇到 Codex 速率限制?`/usage reset` 会消耗一次保存的重置额度,立即恢复你的配额
+没有原生 tool_calling?推理提供商无法正确解析它们?`PI_DIALECT=glm|kimi|anthropic…` 会在本地为它们完成转换!
+开启 `/advisor`,附加一个审查每一轮次并悄悄注入建议的第二模型
+尝试用 -> 开头你的提示词,并写一个列表(1. Do X, 2. Do Y)
+按 shift+tab 循环切换推理努力等级

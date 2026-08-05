@@ -1,0 +1,39 @@
+load("@crates//:defs.bzl", "aliases", "all_crate_deps")
+load("@rules_rust//rust:defs.bzl", "rust_library", "rust_test")
+
+package(default_visibility = ["//visibility:public"])
+
+exports_files(["Cargo.toml"])
+
+# napi-free voice engine (miniaudio capture/playback + WebRTC/Opus live peer).
+# Keeping the webrtc/opus/maudio graph behind this rlib means the pi_natives
+# leaf — which recompiles on every release (version-sentinel edit in lib.rs) —
+# no longer pays for the voice stack's monomorphization.
+rust_library(
+    name = "pi-voice",
+    srcs = glob(["src/**/*.rs"]),
+    aliases = aliases(),
+    crate_name = "pi_voice",
+    edition = "2024",
+    proc_macro_deps = all_crate_deps(proc_macro = True),
+    version = "17.1.5",
+    deps = all_crate_deps(normal = True),
+)
+
+rust_test(
+    name = "pi-voice_test",
+    crate = ":pi-voice",
+    edition = "2024",
+    proc_macro_deps = all_crate_deps(proc_macro_dev = True),
+    deps = all_crate_deps(normal_dev = True),
+)
+
+# Direct C/Rust ABI comparison for miniaudio's opaque device state on the host.
+# The patched crate also carries paired target-gated C and Rust static assertions
+# so every cross-built Linux binding gets equivalent compile-time validation.
+rust_test(
+    name = "maudio_layout_test",
+    srcs = ["bazel/maudio_layout.rs"],
+    edition = "2024",
+    deps = ["@crates//:maudio"],
+)

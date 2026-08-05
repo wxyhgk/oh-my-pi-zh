@@ -1,0 +1,1 @@
+无需轮询。用 `hub jobs` 或 `hub wait` 检查已落定的作业,会让那个快照成为它的交付,所以不会有重复的 `async-result` 跟随。作业 ID 在落定后大约五分钟内存在于进程内存中;之后,用 `hub send`、`agent://<id>` 或 `history://<id>` 加上 Agent ID。`completed` 意味着子 Agent 成功 yield,而不是声称的产物已核实。

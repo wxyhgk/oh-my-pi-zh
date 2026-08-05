@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="referrer" content="no-referrer">
+  <title>会话导出</title>
+  <template-css/>
+  <theme-vars/>
+  <script>try{const t=localStorage.getItem("omp-export-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch{}</script>
+</head>
+<body>
+  <button id="hamburger" title="打开侧边栏" aria-label="打开侧边栏"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+  <div id="sidebar-overlay"></div>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-controls">
+          <input type="text" class="sidebar-search" id="tree-search" placeholder="搜索条目…" autocomplete="off" spellcheck="false">
+          <select class="theme-select" id="theme-select" title="颜色主题" aria-label="颜色主题">
+            <option value="auto">自动</option>
+            <option value="light">浅色</option>
+            <option value="dark">深色</option>
+          </select>
+        </div>
+        <div class="sidebar-filters">
+          <button class="filter-btn active" data-filter="default" title="隐藏设置条目">默认</button>
+          <button class="filter-btn" data-filter="no-tools" title="默认不含工具结果">无工具</button>
+          <button class="filter-btn" data-filter="user-only" title="仅用户消息">用户</button>
+          <button class="filter-btn" data-filter="labeled-only" title="仅带标签条目">带标签</button>
+          <button class="filter-btn" data-filter="all" title="显示全部">全部</button>
+          <button class="sidebar-close" id="sidebar-close" title="关闭" aria-label="关闭侧边栏">✕</button>
+        </div>
+      </div>
+      <div class="tree-container" id="tree-container"></div>
+      <div class="tree-status" id="tree-status"></div>
+    </aside>
+    <div id="sidebar-resizer" role="separator" aria-orientation="vertical" aria-label="调整会话树侧边栏大小"></div>
+    <main id="content">
+      <div id="header-container"></div>
+      <div id="messages"></div>
+    </main>
+    <div id="image-modal" class="image-modal">
+      <img id="modal-image" src="" alt="">
+    </div>
+  </div>
+
+  <script id="session-data" type="application/json">{{SESSION_DATA}}</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/15.0.4/marked.min.js" integrity="sha512-VmLxPVdDGeR+F0DzUHVqzHwaR4ZSSh1g/7aYXwKT1PAGVxunOEcysta+4H5Utvmpr2xExEPybZ8q+iM9F1tGdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js" integrity="sha512-D9gUyxqja7hBtkWpPWGt9wfbfaMGVt9gnyCvYa+jojwwPHLCzUm5i8rpk7vD7wNee9bA35eYIjobYPaQuKS1MQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <template-tool-views/>
+  <template-js/>
+</body>
+</html>
