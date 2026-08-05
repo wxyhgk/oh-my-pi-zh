@@ -3,9 +3,9 @@ name: 发布 npm 包
 # 手动触发(workflow_dispatch)或推送 v* tag 时发布:
 #   1. 矩阵构建各平台原生模块(natives)
 #   2. 生成并发布 5 个平台叶子包(@wxyhgk/pi-natives-<平台>)
-#   3. 发布 14 个主包与 TS 包(含 @wxyhgk/pi-coding-agent,bin 为 omp-zh)
+#   3. 发布 13 个主包与 TS 包(含 @wxyhgk/pi-coding-agent,bin 为 omp-zh)
 #
- # 首次发布可用短期 NPM_TOKEN 引导；配置 trusted publisher 后改为纯 OIDC，无需 token。
+# 首次发布可用短期 NPM_TOKEN 引导；配置 trusted publisher 后改为纯 OIDC，无需 token。
 
 on:
    workflow_dispatch:
