@@ -514,9 +514,9 @@ checksum = "72b3254f16251a8381aa12e40e3c4d2f0199f8c6508fbecb9d91f575e0fbb8c6"
 
 [[package]]
 name = "base64"
-version = "0.23.0"
+version = "0.23.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b25655df2c3cdd83c5e5b293b88acd880332b2ddadd7c30ac43144fdc0033da9"
+checksum = "ac07cdecf99051d9a5238b80f35af32cdeba5b336e55d957b318b50137e18da5"
 
 [[package]]
 name = "base64-simd"
@@ -1963,9 +1963,9 @@ dependencies = [
 
 [[package]]
 name = "encoding_rs_io"
-version = "0.1.7"
+version = "0.1.8"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1cc3c5651fb62ab8aa3103998dade57efdd028544bd300516baa31840c252a83"
+checksum = "fba3fe847045ecff794b9c138293a80db914678c453ad63fbf0c6a9eb6e00b22"
 dependencies = [
  "encoding_rs",
 ]
@@ -2573,9 +2573,9 @@ checksum = "e4eba85ea1d0a966a983acd07deee566e67395d2d96b6fb39e62b5a833f1eb0b"
 
 [[package]]
 name = "globset"
-version = "0.4.19"
+version = "0.4.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e47d37d2ae4464254884b60ab7071be2b876a9c35b696bd018ddcc76847309cd"
+checksum = "07c34a9410465b45bd9787443bc7370f37735bad04b0f0cd57ff1a3186c98988"
 dependencies = [
  "aho-corasick",
  "bstr",
@@ -2783,13 +2783,13 @@ checksum = "c9356095b4b41197bba32173600e1582792cda618f65d12f68e2e77d273413c5"
 
 [[package]]
 name = "html-to-markdown-rs"
-version = "3.10.2"
+version = "3.10.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bf23a50d1e4f5ca342b75308a309466882f672a324654a363e26ff723a40e791"
+checksum = "1b0fdf3ba00130a03686f79af007ba066f13e2b0ea3d736ede049cfd8b55015a"
 dependencies = [
  "ahash",
  "astral-tl",
- "base64 0.23.0",
+ "base64 0.23.1",
  "bitflags 2.13.1",
  "html-escape",
  "html5ever",
@@ -3148,9 +3148,9 @@ dependencies = [
 
 [[package]]
 name = "ignore"
-version = "0.4.32"
+version = "0.4.33"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0b17771570a2b94107741a7b033f19132c2eee21d59d21b24d2ced26500bd66e"
+checksum = "00b69833ed729dc5aa7d19541d96d6cf8e9137194207a04916d658e43168402f"
 dependencies = [
  "crossbeam-deque",
  "globset",
@@ -3537,9 +3537,9 @@ checksum = "e2db585e1d738fc771bf08a151420d3ed193d9d895a36df7f6f8a9456b911ddc"
 
 [[package]]
 name = "kqueue"
-version = "1.2.0"
+version = "1.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "273c0752728918e0ac4976f2b275b6fefb9ecd400585dec929419f3844cd87b5"
+checksum = "8d763e5b24120b4ddf50de6c92308156765aabfbbccebf401da7cff2d70a41ea"
 dependencies = [
  "kqueue-sys",
  "libc",
@@ -4899,7 +4899,7 @@ dependencies = [
 
 [[package]]
 name = "pi-ast"
-version = "17.2.9"
+version = "17.2.14"
 dependencies = [
  "anyhow",
  "ast-grep-core",
@@ -4968,19 +4968,19 @@ dependencies = [
 
 [[package]]
 name = "pi-iso"
-version = "17.2.9"
+version = "17.2.14"
 dependencies = [
  "async-trait",
  "libc",
  "parking_lot",
- "similar 3.1.1",
+ "similar 3.1.2",
  "tokio",
  "windows-sys 0.61.2",
 ]
 
 [[package]]
 name = "pi-natives"
-version = "17.2.9"
+version = "17.2.14"
 dependencies = [
  "anyhow",
  "arboard",
@@ -5050,7 +5050,7 @@ dependencies = [
 
 [[package]]
 name = "pi-shell"
-version = "17.2.9"
+version = "17.2.14"
 dependencies = [
  "anyhow",
  "brush-builtins",
@@ -5137,7 +5137,7 @@ dependencies = [
 
 [[package]]
 name = "pi-voice"
-version = "17.2.9"
+version = "17.2.14"
 dependencies = [
  "audiopus_sys",
  "bytes",
@@ -5151,7 +5151,7 @@ dependencies = [
 
 [[package]]
 name = "pi-walker"
-version = "17.2.9"
+version = "17.2.14"
 dependencies = [
  "dashmap",
  "globset",
@@ -5169,7 +5169,7 @@ dependencies = [
  "clap",
  "parking_lot",
  "pi-uutils-ctx",
- "similar 3.1.1",
+ "similar 3.1.2",
  "tempfile",
 ]
 
@@ -5714,9 +5714,9 @@ dependencies = [
 
 [[package]]
 name = "regex-automata"
-version = "0.4.16"
+version = "0.4.18"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8fcfdb36bda0c880c5931cdc7a2bcdc8ba4556847b9d912bca70bc94708711ad"
+checksum = "ad8553b9b26413251cbf30e620595c7a41b3887f03da04579c0e6b0d6a06b4b2"
 dependencies = [
  "aho-corasick",
  "memchr",
@@ -6238,9 +6238,9 @@ checksum = "bbbb5d9659141646ae647b42fe094daf6c6192d1620870b449d9557f748b2daa"
 
 [[package]]
 name = "similar"
-version = "3.1.1"
+version = "3.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e6505efef05804732ed8a3f2d4f279429eb485bd69d5b0cc6b19cc02005cda16"
+checksum = "85ee016af5d736b69fc89e19254540fa4b5f5492853fb5503920f084011c78b6"
 dependencies = [
  "bstr",
 ]

@@ -1,6 +1,6 @@
 {
 	"name": "@wxyhgk/pi-natives",
-	"version": "17.2.9",
+	"version": "17.2.14",
 	"description": "Native Rust bindings for audio, WebRTC, grep, clipboard, image processing, syntax highlighting, PTY, and shell operations via N-API",
 	"type": "module",
 	"homepage": "https://omp.sh",
@@ -80,10 +80,10 @@
 		}
 	},
 	"optionalDependencies": {
-		"@wxyhgk/pi-natives-linux-x64": "17.2.9",
-		"@wxyhgk/pi-natives-linux-arm64": "17.2.9",
-		"@wxyhgk/pi-natives-darwin-x64": "17.2.9",
-		"@wxyhgk/pi-natives-darwin-arm64": "17.2.9",
-		"@wxyhgk/pi-natives-win32-x64": "17.2.9"
+		"@wxyhgk/pi-natives-linux-x64": "17.2.14",
+		"@wxyhgk/pi-natives-linux-arm64": "17.2.14",
+		"@wxyhgk/pi-natives-darwin-x64": "17.2.14",
+		"@wxyhgk/pi-natives-darwin-arm64": "17.2.14",
+		"@wxyhgk/pi-natives-win32-x64": "17.2.14"
 	}
 }

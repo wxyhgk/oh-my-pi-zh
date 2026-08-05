@@ -1,7 +1,7 @@
 {
 	"type": "module",
 	"name": "@wxyhgk/hashline",
-	"version": "17.2.9",
+	"version": "17.2.14",
 	"description": "Hashline: a compact, line-anchored patch language and applier. Pluggable FS/IO so it works over disk, in-memory, or any custom backend.",
 	"homepage": "https://omp.sh",
 	"author": "Can Boluk",
