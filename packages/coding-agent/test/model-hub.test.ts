@@ -3,21 +3,21 @@ import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
 import { stripVTControlCharacters } from "node:util";
-import { ThinkingLevel } from "@oh-my-pi/pi-agent-core";
-import type { Model } from "@oh-my-pi/pi-ai";
-import { buildModel } from "@oh-my-pi/pi-catalog/build";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import type { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
+import { ThinkingLevel } from "@wxyhgk/pi-agent-core";
+import type { Model } from "@wxyhgk/pi-ai";
+import { buildModel } from "@wxyhgk/pi-catalog/build";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
+import type { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
 import {
 	type ModelHubCallbacks,
 	ModelHubComponent,
 	type ModelHubOptions,
 	resetProviderAutoRefreshGuard,
-} from "@oh-my-pi/pi-coding-agent/modes/components/model-hub";
-import { getThemeByName, setThemeInstance } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { AUTO_THINKING } from "@oh-my-pi/pi-coding-agent/thinking";
-import type { TUI } from "@oh-my-pi/pi-tui";
+} from "@wxyhgk/pi-coding-agent/modes/components/model-hub";
+import { getThemeByName, setThemeInstance } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { AUTO_THINKING } from "@wxyhgk/pi-coding-agent/thinking";
+import type { TUI } from "@wxyhgk/pi-tui";
 
 function normalize(lines: readonly string[]): string {
 	return stripVTControlCharacters(lines.join("\n")).replace(/\s+/g, " ").trim();

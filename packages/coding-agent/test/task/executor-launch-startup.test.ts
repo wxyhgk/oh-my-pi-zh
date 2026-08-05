@@ -1,14 +1,14 @@
 import { afterEach, expect, it, vi } from "bun:test";
-import { AuthStorage } from "@oh-my-pi/pi-ai";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { ExtensionRuntime } from "@oh-my-pi/pi-coding-agent/extensibility/extensions/loader";
-import type { CreateAgentSessionResult } from "@oh-my-pi/pi-coding-agent/sdk";
-import * as sdkModule from "@oh-my-pi/pi-coding-agent/sdk";
-import type { AgentSession, AgentSessionEvent } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { runSubprocess } from "@oh-my-pi/pi-coding-agent/task/executor";
-import { EventBus } from "@oh-my-pi/pi-coding-agent/utils/event-bus";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { AuthStorage } from "@wxyhgk/pi-ai";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { ExtensionRuntime } from "@wxyhgk/pi-coding-agent/extensibility/extensions/loader";
+import type { CreateAgentSessionResult } from "@wxyhgk/pi-coding-agent/sdk";
+import * as sdkModule from "@wxyhgk/pi-coding-agent/sdk";
+import type { AgentSession, AgentSessionEvent } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { runSubprocess } from "@wxyhgk/pi-coding-agent/task/executor";
+import { EventBus } from "@wxyhgk/pi-coding-agent/utils/event-bus";
+import { TempDir } from "@wxyhgk/pi-utils";
 
 const authStorages: AuthStorage[] = [];
 const tempDirs: TempDir[] = [];

@@ -1,16 +1,16 @@
 import { afterEach, describe, expect, it, vi } from "bun:test";
 import * as path from "node:path";
-import type { AssistantMessage, Model } from "@oh-my-pi/pi-ai";
-import type { AsyncJobRegisterOptions } from "@oh-my-pi/pi-coding-agent/async/job-manager";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { resolveLocalRoot } from "@oh-my-pi/pi-coding-agent/internal-urls/local-protocol";
-import { TanCommandController } from "@oh-my-pi/pi-coding-agent/modes/controllers/tan-command-controller";
-import type { InteractiveModeContext } from "@oh-my-pi/pi-coding-agent/modes/types";
-import { AgentRegistry, MAIN_AGENT_ID } from "@oh-my-pi/pi-coding-agent/registry/agent-registry";
-import type { CreateAgentSessionOptions, CreateAgentSessionResult } from "@oh-my-pi/pi-coding-agent/sdk";
-import * as sdkModule from "@oh-my-pi/pi-coding-agent/sdk";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import type { AssistantMessage, Model } from "@wxyhgk/pi-ai";
+import type { AsyncJobRegisterOptions } from "@wxyhgk/pi-coding-agent/async/job-manager";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { resolveLocalRoot } from "@wxyhgk/pi-coding-agent/internal-urls/local-protocol";
+import { TanCommandController } from "@wxyhgk/pi-coding-agent/modes/controllers/tan-command-controller";
+import type { InteractiveModeContext } from "@wxyhgk/pi-coding-agent/modes/types";
+import { AgentRegistry, MAIN_AGENT_ID } from "@wxyhgk/pi-coding-agent/registry/agent-registry";
+import type { CreateAgentSessionOptions, CreateAgentSessionResult } from "@wxyhgk/pi-coding-agent/sdk";
+import * as sdkModule from "@wxyhgk/pi-coding-agent/sdk";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { TempDir } from "@wxyhgk/pi-utils";
 
 interface CapturedJobRunContext {
 	jobId: string;

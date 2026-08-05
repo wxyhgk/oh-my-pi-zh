@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
-import { postmortem } from "@oh-my-pi/pi-utils";
+import { postmortem } from "@wxyhgk/pi-utils";
 import { JsRuntime, type RuntimeHooks } from "../../src/eval/js/shared/runtime";
 import { bindRunFacade, markHandled, waitForRun } from "../../src/tools/run-scope";
 import { ToolAbortError } from "../../src/tools/tool-errors";

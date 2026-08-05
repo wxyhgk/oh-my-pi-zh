@@ -2,16 +2,16 @@ import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import { Agent } from "@oh-my-pi/pi-agent-core";
-import type { Model } from "@oh-my-pi/pi-ai";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { buildSystemPrompt } from "@oh-my-pi/pi-coding-agent/system-prompt";
-import { usesCodexTaskPrompt } from "@oh-my-pi/pi-coding-agent/task/prompt-policy";
-import { removeSyncWithRetries } from "@oh-my-pi/pi-utils";
+import { Agent } from "@wxyhgk/pi-agent-core";
+import type { Model } from "@wxyhgk/pi-ai";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { buildSystemPrompt } from "@wxyhgk/pi-coding-agent/system-prompt";
+import { usesCodexTaskPrompt } from "@wxyhgk/pi-coding-agent/task/prompt-policy";
+import { removeSyncWithRetries } from "@wxyhgk/pi-utils";
 import { cleanupTempHome } from "./helpers/temp-home-cleanup";
 
 const EMPTY_TREE = {

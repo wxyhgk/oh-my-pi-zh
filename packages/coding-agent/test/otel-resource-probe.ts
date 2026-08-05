@@ -10,12 +10,12 @@
  * entries and service.name resolves to OTEL_SERVICE_NAME.
  */
 
+import { trace } from "@opentelemetry/api";
 import {
 	flushTelemetryExport,
 	initTelemetryExport,
 	isTelemetryExportEnabled,
-} from "@oh-my-pi/pi-coding-agent/telemetry-export";
-import { trace } from "@opentelemetry/api";
+} from "@wxyhgk/pi-coding-agent/telemetry-export";
 
 let body: Buffer | undefined;
 const server = Bun.serve({

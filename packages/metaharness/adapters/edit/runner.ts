@@ -12,26 +12,26 @@ import {
 	formatHashlineHeader,
 	InMemorySnapshotStore,
 	Tokenizer as HashlineTokenizer,
-} from "@oh-my-pi/hashline";
-import type { AgentMessage, ResolvedThinkingLevel, ThinkingLevel } from "@oh-my-pi/pi-agent-core";
-import type { Model, ToolExample } from "@oh-my-pi/pi-ai";
-import { formatSessionDumpText, RpcClient } from "@oh-my-pi/pi-coding-agent";
-import { prompt } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/hashline";
+import type { AgentMessage, ResolvedThinkingLevel, ThinkingLevel } from "@wxyhgk/pi-agent-core";
+import type { Model, ToolExample } from "@wxyhgk/pi-ai";
+import { formatSessionDumpText, RpcClient } from "@wxyhgk/pi-coding-agent";
+import { prompt } from "@wxyhgk/pi-utils";
 import { diffLines } from "diff";
-import { formatDirectory } from "@oh-my-pi/typescript-edit-benchmark/formatter";
+import { formatDirectory } from "@wxyhgk/typescript-edit-benchmark/formatter";
 import {
 	discoverSharedInfra,
 	InProcessClient,
 	type SharedInfra,
-} from "@oh-my-pi/typescript-edit-benchmark/in-process-client";
+} from "@wxyhgk/typescript-edit-benchmark/in-process-client";
 import benchmarkRetryPrompt from "./prompts/benchmark-retry.md" with { type: "text" };
 import benchmarkSystemPrompt from "./prompts/benchmark-system.md" with { type: "text" };
 import benchmarkTaskPrompt from "./prompts/benchmark-task.md" with { type: "text" };
-import type { EditTask } from "@oh-my-pi/typescript-edit-benchmark/tasks";
+import type { EditTask } from "@wxyhgk/typescript-edit-benchmark/tasks";
 import {
 	verifyExpectedFileSubset,
 	verifyExpectedFiles,
-} from "@oh-my-pi/typescript-edit-benchmark/verify";
+} from "@wxyhgk/typescript-edit-benchmark/verify";
 
 const REPO_ROOT = path.resolve(import.meta.dir, "..", "..", "..", "..");
 const RUNS_DIR = path.join(REPO_ROOT, "runs");

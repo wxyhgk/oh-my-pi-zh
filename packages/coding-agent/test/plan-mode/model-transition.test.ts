@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
-import { ThinkingLevel } from "@oh-my-pi/pi-agent-core";
-import type { Model } from "@oh-my-pi/pi-ai";
+import { ThinkingLevel } from "@wxyhgk/pi-agent-core";
+import type { Model } from "@wxyhgk/pi-ai";
 import type { ResolvedModelRoleValue } from "../../src/config/model-resolver";
 import { resolvePlanModelTransition } from "../../src/plan-mode/model-transition";
 import { AUTO_THINKING } from "../../src/thinking";

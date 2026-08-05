@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { mapWithConcurrencyLimitAllSettled } from "@oh-my-pi/pi-coding-agent/task/parallel";
+import { mapWithConcurrencyLimitAllSettled } from "@wxyhgk/pi-coding-agent/task/parallel";
 
 describe("mapWithConcurrencyLimitAllSettled", () => {
 	it("waits for valid siblings after one item rejects and keeps input order", async () => {

@@ -2,8 +2,8 @@ import { describe, expect, it } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
 import * as url from "node:url";
-import { __buildLegacyPiPackageRootOverrides } from "@oh-my-pi/pi-coding-agent/extensibility/plugins/legacy-pi-compat";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { __buildLegacyPiPackageRootOverrides } from "@wxyhgk/pi-coding-agent/extensibility/plugins/legacy-pi-compat";
+import { TempDir } from "@wxyhgk/pi-utils";
 import { __renderLegacyPiVirtualModule, collectBundledPiEntries } from "../../scripts/legacy-pi-virtual-module";
 
 const bundledModuleKeys = new Set((await collectBundledPiEntries()).map(entry => entry.key));

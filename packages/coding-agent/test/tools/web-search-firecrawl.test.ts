@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
-import type { AuthStorage, FetchImpl } from "@oh-my-pi/pi-ai";
-import { FirecrawlProvider, searchFirecrawl } from "@oh-my-pi/pi-coding-agent/web/search/providers/firecrawl";
-import { SearchProviderError } from "@oh-my-pi/pi-coding-agent/web/search/types";
+import type { AuthStorage, FetchImpl } from "@wxyhgk/pi-ai";
+import { FirecrawlProvider, searchFirecrawl } from "@wxyhgk/pi-coding-agent/web/search/providers/firecrawl";
+import { SearchProviderError } from "@wxyhgk/pi-coding-agent/web/search/types";
 
 const TEST_KEY = "test-firecrawl-key";
 

@@ -1,6 +1,6 @@
 import { describe, expect, test } from "bun:test";
-import { CATALOG_PROVIDERS } from "@oh-my-pi/pi-catalog/provider-models/descriptors";
-import { GMI_CLOUD_STATIC_MODELS } from "@oh-my-pi/pi-catalog/provider-models/openai-compat";
+import { CATALOG_PROVIDERS } from "@wxyhgk/pi-catalog/provider-models/descriptors";
+import { GMI_CLOUD_STATIC_MODELS } from "@wxyhgk/pi-catalog/provider-models/openai-compat";
 
 describe("GMI Cloud provider", () => {
 	test("static seed covers the descriptor's default model", () => {

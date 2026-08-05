@@ -1,8 +1,8 @@
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import type { AssistantMessage } from "@oh-my-pi/pi-ai";
-import { Editor } from "@oh-my-pi/pi-tui";
+import type { AssistantMessage } from "@wxyhgk/pi-ai";
+import { Editor } from "@wxyhgk/pi-tui";
 import { Settings } from "../src/config/settings";
 import { AssistantMessageComponent } from "../src/modes/components/assistant-message";
 import { TranscriptContainer } from "../src/modes/components/transcript-container";

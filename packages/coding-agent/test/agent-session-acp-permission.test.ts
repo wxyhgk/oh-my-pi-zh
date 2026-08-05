@@ -6,24 +6,24 @@
  * behavior they have in the TUI.
  */
 import { afterEach, beforeEach, expect, it, spyOn } from "bun:test";
-import { type } from "@oh-my-pi/omptype";
-import { Agent, type AgentTool } from "@oh-my-pi/pi-agent-core";
-import { createMockModel, type MockModelOptions } from "@oh-my-pi/pi-ai/providers/mock";
-import { AssistantMessageEventStream } from "@oh-my-pi/pi-ai/utils/event-stream";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { type SettingPath, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { EditTool } from "@oh-my-pi/pi-coding-agent/edit";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
+import { type } from "@wxyhgk/omptype";
+import { Agent, type AgentTool } from "@wxyhgk/pi-agent-core";
+import { createMockModel, type MockModelOptions } from "@wxyhgk/pi-ai/providers/mock";
+import { AssistantMessageEventStream } from "@wxyhgk/pi-ai/utils/event-stream";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
+import { type SettingPath, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { EditTool } from "@wxyhgk/pi-coding-agent/edit";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
 import type {
 	ClientBridge,
 	ClientBridgePermissionOutcome,
 	ClientBridgePermissionToolCall,
-} from "@oh-my-pi/pi-coding-agent/session/client-bridge";
-import { convertToLlm } from "@oh-my-pi/pi-coding-agent/session/messages";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import { dispatchXdevTool, resolveMountedXdevExecutable, type XdevState } from "@oh-my-pi/pi-coding-agent/tools/xdev";
-import { TempDir } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/session/client-bridge";
+import { convertToLlm } from "@wxyhgk/pi-coding-agent/session/messages";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import { dispatchXdevTool, resolveMountedXdevExecutable, type XdevState } from "@wxyhgk/pi-coding-agent/tools/xdev";
+import { TempDir } from "@wxyhgk/pi-utils";
 
 // ---------------------------------------------------------------------------
 // Shared setup

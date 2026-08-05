@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "bun:test";
-import { OutputBacklogGuard, ProcessTerminal } from "@oh-my-pi/pi-tui/terminal";
-import { setTerminalHeadless } from "@oh-my-pi/pi-utils";
+import { OutputBacklogGuard, ProcessTerminal } from "@wxyhgk/pi-tui/terminal";
+import { setTerminalHeadless } from "@wxyhgk/pi-utils";
 
 // Regression test for https://github.com/can1357/oh-my-pi/issues/6854
 //

@@ -20,17 +20,17 @@
 
 import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as path from "node:path";
-import { Agent } from "@oh-my-pi/pi-agent-core";
-import { effectiveReserveTokens, estimateTokens, prepareCompaction } from "@oh-my-pi/pi-agent-core/compaction";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { computeNonMessageTokens } from "@oh-my-pi/pi-coding-agent/modes/utils/context-usage";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { TempDir } from "@oh-my-pi/pi-utils";
-import * as snapcompact from "@oh-my-pi/snapcompact";
+import { Agent } from "@wxyhgk/pi-agent-core";
+import { effectiveReserveTokens, estimateTokens, prepareCompaction } from "@wxyhgk/pi-agent-core/compaction";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { computeNonMessageTokens } from "@wxyhgk/pi-coding-agent/modes/utils/context-usage";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { TempDir } from "@wxyhgk/pi-utils";
+import * as snapcompact from "@wxyhgk/snapcompact";
 
 describe("AgentSession snapcompact frame-budget sizing", () => {
 	let tempDir: TempDir;

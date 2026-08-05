@@ -1,17 +1,17 @@
 import { beforeAll, describe, expect, it, vi } from "bun:test";
 import { stripVTControlCharacters } from "node:util";
-import { type } from "@oh-my-pi/omptype";
-import type { AgentToolContext } from "@oh-my-pi/pi-agent-core";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
+import { type } from "@wxyhgk/omptype";
+import type { AgentToolContext } from "@wxyhgk/pi-agent-core";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
 import type {
 	ExtensionAskDialogQuestion,
 	ExtensionAskDialogResult,
 	ExtensionUISelectItem,
-} from "@oh-my-pi/pi-coding-agent/extensibility/extensions";
-import { getThemeByName, initTheme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import { AskTool, askToolRenderer } from "@oh-my-pi/pi-coding-agent/tools/ask";
-import { ToolAbortError } from "@oh-my-pi/pi-coding-agent/tools/tool-errors";
+} from "@wxyhgk/pi-coding-agent/extensibility/extensions";
+import { getThemeByName, initTheme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import { AskTool, askToolRenderer } from "@wxyhgk/pi-coding-agent/tools/ask";
+import { ToolAbortError } from "@wxyhgk/pi-coding-agent/tools/tool-errors";
 
 function createSession(overrides: Partial<ToolSession> = {}): ToolSession {
 	return {

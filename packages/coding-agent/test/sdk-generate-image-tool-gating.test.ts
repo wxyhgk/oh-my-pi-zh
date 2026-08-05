@@ -2,17 +2,17 @@ import { afterAll, afterEach, beforeAll, describe, expect, it } from "bun:test";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import { type } from "@oh-my-pi/omptype";
-import type { AgentTool } from "@oh-my-pi/pi-agent-core";
-import { AuthStorage } from "@oh-my-pi/pi-ai";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import type { CustomTool } from "@oh-my-pi/pi-coding-agent/extensibility/custom-tools/types";
-import { createAgentSession } from "@oh-my-pi/pi-coding-agent/sdk";
-import type { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { removeSyncWithRetries, Snowflake } from "@oh-my-pi/pi-utils";
+import { type } from "@wxyhgk/omptype";
+import type { AgentTool } from "@wxyhgk/pi-agent-core";
+import { AuthStorage } from "@wxyhgk/pi-ai";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import type { CustomTool } from "@wxyhgk/pi-coding-agent/extensibility/custom-tools/types";
+import { createAgentSession } from "@wxyhgk/pi-coding-agent/sdk";
+import type { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { removeSyncWithRetries, Snowflake } from "@wxyhgk/pi-utils";
 
 // Regression for issue #5305: image-gen is registered as a custom tool, and
 // custom tools are force-activated regardless of the `toolNames` filter. Before

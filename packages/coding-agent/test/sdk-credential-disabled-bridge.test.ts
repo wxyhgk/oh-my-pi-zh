@@ -2,16 +2,16 @@ import { afterEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import { AuthStorage, type CredentialDisabledEvent } from "@oh-my-pi/pi-ai";
-import * as oauthUtils from "@oh-my-pi/pi-ai/oauth";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import type { Extension, ExtensionError, ExtensionFactory } from "@oh-my-pi/pi-coding-agent/extensibility/extensions";
-import { ExtensionRunner } from "@oh-my-pi/pi-coding-agent/extensibility/extensions";
-import { ExtensionRuntime } from "@oh-my-pi/pi-coding-agent/extensibility/extensions/loader";
-import { createAgentSession } from "@oh-my-pi/pi-coding-agent/sdk";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { removeSyncWithRetries, Snowflake } from "@oh-my-pi/pi-utils";
+import { AuthStorage, type CredentialDisabledEvent } from "@wxyhgk/pi-ai";
+import * as oauthUtils from "@wxyhgk/pi-ai/oauth";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import type { Extension, ExtensionError, ExtensionFactory } from "@wxyhgk/pi-coding-agent/extensibility/extensions";
+import { ExtensionRunner } from "@wxyhgk/pi-coding-agent/extensibility/extensions";
+import { ExtensionRuntime } from "@wxyhgk/pi-coding-agent/extensibility/extensions/loader";
+import { createAgentSession } from "@wxyhgk/pi-coding-agent/sdk";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { removeSyncWithRetries, Snowflake } from "@wxyhgk/pi-utils";
 
 interface SessionDirs {
 	cwd: string;

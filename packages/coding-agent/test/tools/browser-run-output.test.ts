@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
-import { RunOutput } from "@oh-my-pi/pi-coding-agent/tools/browser/run-output";
-import { formatSelectorMatchHint, toActionableHandle } from "@oh-my-pi/pi-coding-agent/tools/browser/tab-worker";
+import { RunOutput } from "@wxyhgk/pi-coding-agent/tools/browser/run-output";
+import { formatSelectorMatchHint, toActionableHandle } from "@wxyhgk/pi-coding-agent/tools/browser/tab-worker";
 import type { ElementHandle } from "puppeteer-core";
 
 // Regression coverage for the invisible-output failure mode: `display("string")`,

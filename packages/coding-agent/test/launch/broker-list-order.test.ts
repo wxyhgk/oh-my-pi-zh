@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { TempDir } from "@wxyhgk/pi-utils";
 import { createDaemonBrokerClient, type DaemonBrokerClient } from "../../src/launch/client";
 import type { DaemonSnapshot, DaemonSpec } from "../../src/launch/protocol";
 

@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from "bun:test";
-import { handleInputOrEscape } from "@oh-my-pi/pi-coding-agent/modes/components/plugin-settings";
-import { setKittyProtocolActive } from "@oh-my-pi/pi-tui";
+import { handleInputOrEscape } from "@wxyhgk/pi-coding-agent/modes/components/plugin-settings";
+import { setKittyProtocolActive } from "@wxyhgk/pi-tui";
 
 afterEach(() => {
 	setKittyProtocolActive(false);

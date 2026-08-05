@@ -5,8 +5,8 @@ import {
 	DebugLogViewerModel,
 	LOAD_OLDER_LABEL,
 	SESSION_BOUNDARY_WARNING,
-} from "@oh-my-pi/pi-coding-agent/debug/log-viewer";
-import { getThemeByName, setThemeInstance } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
+} from "@wxyhgk/pi-coding-agent/debug/log-viewer";
+import { getThemeByName, setThemeInstance } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
 
 beforeAll(async () => {
 	const theme = await getThemeByName("dark");

@@ -10,12 +10,12 @@
  * protobuf POST at /v1/traces.
  */
 
+import { trace } from "@opentelemetry/api";
 import {
 	flushTelemetryExport,
 	initTelemetryExport,
 	isTelemetryExportEnabled,
-} from "@oh-my-pi/pi-coding-agent/telemetry-export";
-import { trace } from "@opentelemetry/api";
+} from "@wxyhgk/pi-coding-agent/telemetry-export";
 
 let received = false;
 

@@ -4,9 +4,9 @@ import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
 import { gunzipSync, gzipSync } from "node:zlib";
-import { withStatsSyncLock } from "@oh-my-pi/omp-stats/aggregator";
-import { type GcResult, runGcCommand } from "@oh-my-pi/pi-coding-agent/cli/gc-cli";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
+import { withStatsSyncLock } from "@wxyhgk/omp-stats/aggregator";
+import { type GcResult, runGcCommand } from "@wxyhgk/pi-coding-agent/cli/gc-cli";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
 import {
 	getAgentDir,
 	getBlobsDir,
@@ -14,7 +14,7 @@ import {
 	getSessionsDir,
 	setAgentDir,
 	setProjectDir,
-} from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-utils";
 import { runCli } from "../src/cli";
 import { beginSettingsTest, restoreSettingsTestState, type SettingsTestState } from "./helpers/settings-test-state";
 

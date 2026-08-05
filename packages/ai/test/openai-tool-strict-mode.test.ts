@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
-import { type } from "@oh-my-pi/omptype";
-import { streamOpenAICompletions } from "@oh-my-pi/pi-ai/providers/openai-completions";
-import { streamOpenAIResponses } from "@oh-my-pi/pi-ai/providers/openai-responses";
+import { type } from "@wxyhgk/omptype";
+import { streamOpenAICompletions } from "@wxyhgk/pi-ai/providers/openai-completions";
+import { streamOpenAIResponses } from "@wxyhgk/pi-ai/providers/openai-responses";
 import type {
 	Context,
 	FetchImpl,
@@ -10,9 +10,9 @@ import type {
 	OpenAICompat,
 	ProviderSessionState,
 	Tool,
-} from "@oh-my-pi/pi-ai/types";
-import { buildModel } from "@oh-my-pi/pi-catalog/build";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
+} from "@wxyhgk/pi-ai/types";
+import { buildModel } from "@wxyhgk/pi-catalog/build";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
 
 const testTool: Tool = {
 	name: "echo",

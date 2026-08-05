@@ -1,19 +1,19 @@
 import { afterEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { Agent, type AgentTool } from "@oh-my-pi/pi-agent-core";
-import * as compactionModule from "@oh-my-pi/pi-agent-core/compaction";
-import { z } from "@oh-my-pi/pi-ai";
-import { createMockModel, type MockResponse } from "@oh-my-pi/pi-ai/providers/mock";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { loadExtensions } from "@oh-my-pi/pi-coding-agent/extensibility/extensions/loader";
-import { ExtensionRunner } from "@oh-my-pi/pi-coding-agent/extensibility/extensions/runner";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { convertToLlm } from "@oh-my-pi/pi-coding-agent/session/messages";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { getProjectAgentDir, TempDir } from "@oh-my-pi/pi-utils";
+import { Agent, type AgentTool } from "@wxyhgk/pi-agent-core";
+import * as compactionModule from "@wxyhgk/pi-agent-core/compaction";
+import { z } from "@wxyhgk/pi-ai";
+import { createMockModel, type MockResponse } from "@wxyhgk/pi-ai/providers/mock";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { loadExtensions } from "@wxyhgk/pi-coding-agent/extensibility/extensions/loader";
+import { ExtensionRunner } from "@wxyhgk/pi-coding-agent/extensibility/extensions/runner";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { convertToLlm } from "@wxyhgk/pi-coding-agent/session/messages";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { getProjectAgentDir, TempDir } from "@wxyhgk/pi-utils";
 
 const noopSchema = z.object({});
 const noopTool: AgentTool<typeof noopSchema, undefined> = {

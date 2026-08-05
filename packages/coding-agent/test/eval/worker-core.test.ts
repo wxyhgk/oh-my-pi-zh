@@ -3,14 +3,14 @@ import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
 import { pathToFileURL } from "node:url";
-import { WorkerCore } from "@oh-my-pi/pi-coding-agent/eval/js/worker-core";
+import { WorkerCore } from "@wxyhgk/pi-coding-agent/eval/js/worker-core";
 import type {
 	SessionSnapshot,
 	Transport,
 	WorkerInbound,
 	WorkerOutbound,
-} from "@oh-my-pi/pi-coding-agent/eval/js/worker-protocol";
-import { postmortem } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/eval/js/worker-protocol";
+import { postmortem } from "@wxyhgk/pi-utils";
 
 interface WorkerHarness {
 	send(message: WorkerInbound): void;

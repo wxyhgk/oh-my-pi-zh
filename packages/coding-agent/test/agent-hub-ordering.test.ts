@@ -6,13 +6,13 @@
  * agents that appear while the hub is open are appended at the end.
  */
 import { afterEach, beforeAll, describe, expect, it, setSystemTime, vi } from "bun:test";
-import { IrcBus } from "@oh-my-pi/pi-coding-agent/irc/bus";
-import { AgentHubOverlayComponent } from "@oh-my-pi/pi-coding-agent/modes/components/agent-hub";
-import { SessionObserverRegistry } from "@oh-my-pi/pi-coding-agent/modes/session-observer-registry";
-import { initTheme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { AgentRegistry } from "@oh-my-pi/pi-coding-agent/registry/agent-registry";
-import type { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { visibleWidth } from "@oh-my-pi/pi-tui/utils";
+import { IrcBus } from "@wxyhgk/pi-coding-agent/irc/bus";
+import { AgentHubOverlayComponent } from "@wxyhgk/pi-coding-agent/modes/components/agent-hub";
+import { SessionObserverRegistry } from "@wxyhgk/pi-coding-agent/modes/session-observer-registry";
+import { initTheme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { AgentRegistry } from "@wxyhgk/pi-coding-agent/registry/agent-registry";
+import type { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { visibleWidth } from "@wxyhgk/pi-tui/utils";
 
 interface GeometryStub {
 	setRows(n: number): void;

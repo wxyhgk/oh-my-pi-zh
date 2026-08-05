@@ -1,5 +1,5 @@
 import { expect, it } from "bun:test";
-import { type } from "@oh-my-pi/omptype/ark";
+import { type } from "@wxyhgk/omptype/ark";
 
 const validIPv4 = "192.168.1.1";
 const validIPv6 = "2001:0db8:85a3:0000:0000:8a2e:0370:7334";

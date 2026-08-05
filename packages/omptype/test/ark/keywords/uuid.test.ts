@@ -1,5 +1,5 @@
 import { expect, it } from "bun:test";
-import { type } from "@oh-my-pi/omptype/ark";
+import { type } from "@wxyhgk/omptype/ark";
 
 const validUuidV4 = "f70b8242-dd57-4e6b-b0b7-649d997140a0";
 

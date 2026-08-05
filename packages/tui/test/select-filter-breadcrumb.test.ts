@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it } from "bun:test";
-import { type SelectItem, SelectList, type SelectListTheme } from "@oh-my-pi/pi-tui";
-import { currentLoopPhase, popLoopPhase, takeRecentLoopPhase } from "@oh-my-pi/pi-utils";
+import { type SelectItem, SelectList, type SelectListTheme } from "@wxyhgk/pi-tui";
+import { currentLoopPhase, popLoopPhase, takeRecentLoopPhase } from "@wxyhgk/pi-utils";
 
 /**
  * Contract: the SelectList fuzzy filter — a synchronous, potentially expensive

@@ -16,15 +16,15 @@ import {
 	clearClaudePluginRootsCache,
 	listClaudePluginRoots,
 	resolveActiveProjectRegistryPath,
-} from "@oh-my-pi/pi-coding-agent/discovery/helpers";
-import type { InstalledPluginEntry } from "@oh-my-pi/pi-coding-agent/extensibility/plugins/marketplace";
+} from "@wxyhgk/pi-coding-agent/discovery/helpers";
+import type { InstalledPluginEntry } from "@wxyhgk/pi-coding-agent/extensibility/plugins/marketplace";
 import {
 	addInstalledPlugin,
 	buildPluginId,
 	readInstalledPluginsRegistry,
 	writeInstalledPluginsRegistry,
-} from "@oh-my-pi/pi-coding-agent/extensibility/plugins/marketplace";
-import { removeSyncWithRetries } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/extensibility/plugins/marketplace";
+import { removeSyncWithRetries } from "@wxyhgk/pi-utils";
 
 // ── Fixtures ──────────────────────────────────────────────────────────────────
 

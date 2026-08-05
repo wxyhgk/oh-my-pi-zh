@@ -1,8 +1,8 @@
 import { beforeAll, describe, expect, it } from "bun:test";
 import { stripVTControlCharacters } from "node:util";
-import { getThemeByName, initTheme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { renderMarkdownCell } from "@oh-my-pi/pi-coding-agent/tui/code-cell";
-import { renderOutputBlock } from "@oh-my-pi/pi-coding-agent/tui/output-block";
+import { getThemeByName, initTheme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { renderMarkdownCell } from "@wxyhgk/pi-coding-agent/tui/code-cell";
+import { renderOutputBlock } from "@wxyhgk/pi-coding-agent/tui/output-block";
 
 describe("renderOutputBlock", () => {
 	beforeAll(async () => {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
-import { claudeCodeVersion } from "@oh-my-pi/pi-ai/providers/claude-code-fingerprint";
-import type { UsageFetchContext, UsageLimit, UsageReport } from "@oh-my-pi/pi-ai/usage";
-import { claudeRankingStrategy, claudeUsageProvider } from "@oh-my-pi/pi-ai/usage/claude";
+import { claudeCodeVersion } from "@wxyhgk/pi-ai/providers/claude-code-fingerprint";
+import type { UsageFetchContext, UsageLimit, UsageReport } from "@wxyhgk/pi-ai/usage";
+import { claudeRankingStrategy, claudeUsageProvider } from "@wxyhgk/pi-ai/usage/claude";
 
 function getHeaderCaseInsensitive(
 	headers: Headers | Record<string, string | ReadonlyArray<string>> | string[][] | undefined,

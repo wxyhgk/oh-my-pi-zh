@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
-import { CountdownTimer } from "@oh-my-pi/pi-coding-agent/modes/components/countdown-timer";
+import { CountdownTimer } from "@wxyhgk/pi-coding-agent/modes/components/countdown-timer";
 
 describe("CountdownTimer", () => {
 	beforeEach(() => {

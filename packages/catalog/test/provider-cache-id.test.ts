@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { PROVIDER_DESCRIPTORS, resolveModelCacheProviderId } from "@oh-my-pi/pi-catalog/provider-models";
+import { PROVIDER_DESCRIPTORS, resolveModelCacheProviderId } from "@wxyhgk/pi-catalog/provider-models";
 
 test("lightweight cache resolver matches every descriptor default", () => {
 	for (const descriptor of PROVIDER_DESCRIPTORS) {

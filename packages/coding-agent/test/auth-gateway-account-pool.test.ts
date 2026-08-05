@@ -2,10 +2,10 @@ import { afterEach, beforeEach, describe, expect, test, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { AuthStorage, SqliteAuthCredentialStore } from "@oh-my-pi/pi-ai";
-import { type AuthBrokerServerHandle, startAuthBroker } from "@oh-my-pi/pi-ai/auth-broker";
-import { runAuthGatewayCommand } from "@oh-my-pi/pi-coding-agent/cli/auth-gateway-cli";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+import { AuthStorage, SqliteAuthCredentialStore } from "@wxyhgk/pi-ai";
+import { type AuthBrokerServerHandle, startAuthBroker } from "@wxyhgk/pi-ai/auth-broker";
+import { runAuthGatewayCommand } from "@wxyhgk/pi-coding-agent/cli/auth-gateway-cli";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 const BROKER_TOKEN = "gateway-account-pool-token";
 const ENV_KEYS = ["OMP_AUTH_BROKER_URL", "OMP_AUTH_BROKER_TOKEN", "OMP_AUTH_BROKER_ACCOUNT_POOL_FILE"] as const;

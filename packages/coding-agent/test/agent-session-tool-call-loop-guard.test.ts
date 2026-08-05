@@ -1,17 +1,17 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import * as path from "node:path";
-import { type } from "@oh-my-pi/omptype";
-import { Agent, type AgentTool } from "@oh-my-pi/pi-agent-core";
-import type { AssistantMessage, Context } from "@oh-my-pi/pi-ai";
-import { createMockModel } from "@oh-my-pi/pi-ai/providers/mock";
-import { AssistantMessageEventStream } from "@oh-my-pi/pi-ai/utils/event-stream";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { type CustomMessage, convertToLlm } from "@oh-my-pi/pi-coding-agent/session/messages";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { type } from "@wxyhgk/omptype";
+import { Agent, type AgentTool } from "@wxyhgk/pi-agent-core";
+import type { AssistantMessage, Context } from "@wxyhgk/pi-ai";
+import { createMockModel } from "@wxyhgk/pi-ai/providers/mock";
+import { AssistantMessageEventStream } from "@wxyhgk/pi-ai/utils/event-stream";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { type CustomMessage, convertToLlm } from "@wxyhgk/pi-coding-agent/session/messages";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { TempDir } from "@wxyhgk/pi-utils";
 
 const zeroUsage = {
 	input: 0,

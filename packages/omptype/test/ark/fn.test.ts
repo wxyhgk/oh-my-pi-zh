@@ -7,7 +7,7 @@ const optionalOrDefaultableAfterVariadicMessage = "An optional element may not f
 const postfixAfterOptionalOrDefaultableMessage =
 	"A postfix required element cannot follow an optional or defaultable element";
 
-import { type } from "@oh-my-pi/omptype/ark";
+import { type } from "@wxyhgk/omptype/ark";
 import type { Eq } from "./type-assert";
 
 it("0 params implicit return", () => {

@@ -2,13 +2,13 @@ import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import type { AgentToolResult } from "@oh-my-pi/pi-agent-core";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import type { ReadToolDetails } from "@oh-my-pi/pi-coding-agent/tools/read";
-import { ReadTool } from "@oh-my-pi/pi-coding-agent/tools/read";
-import { parseCpuProfile, renderCpuProfile } from "@oh-my-pi/pi-coding-agent/utils/cpuprofile";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+import type { AgentToolResult } from "@wxyhgk/pi-agent-core";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import type { ReadToolDetails } from "@wxyhgk/pi-coding-agent/tools/read";
+import { ReadTool } from "@wxyhgk/pi-coding-agent/tools/read";
+import { parseCpuProfile, renderCpuProfile } from "@wxyhgk/pi-coding-agent/utils/cpuprofile";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 function frame(functionName: string, url?: string, lineNumber?: number) {
 	return { functionName, url, lineNumber };

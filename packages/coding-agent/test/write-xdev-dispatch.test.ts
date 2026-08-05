@@ -2,15 +2,15 @@ import { describe, expect, it } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { type } from "@oh-my-pi/omptype";
-import type { AgentTool } from "@oh-my-pi/pi-agent-core";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import * as themeModule from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { ToolChoiceQueue } from "@oh-my-pi/pi-coding-agent/session/tool-choice-queue";
-import { createTools, type Tool, type ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import { githubToolRenderer } from "@oh-my-pi/pi-coding-agent/tools/gh-renderer";
-import { ToolError } from "@oh-my-pi/pi-coding-agent/tools/tool-errors";
-import { WriteTool, writeToolRenderer } from "@oh-my-pi/pi-coding-agent/tools/write";
+import { type } from "@wxyhgk/omptype";
+import type { AgentTool } from "@wxyhgk/pi-agent-core";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import * as themeModule from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { ToolChoiceQueue } from "@wxyhgk/pi-coding-agent/session/tool-choice-queue";
+import { createTools, type Tool, type ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import { githubToolRenderer } from "@wxyhgk/pi-coding-agent/tools/gh-renderer";
+import { ToolError } from "@wxyhgk/pi-coding-agent/tools/tool-errors";
+import { WriteTool, writeToolRenderer } from "@wxyhgk/pi-coding-agent/tools/write";
 import {
 	listXdevTools,
 	resolveMountedXdevTool,
@@ -21,8 +21,8 @@ import {
 	xdevDocs,
 	xdevDocsAll,
 	xdevEntries,
-} from "@oh-my-pi/pi-coding-agent/tools/xdev";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/tools/xdev";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 // xdev mounting is default-on: discoverable tools like ast_edit unmount into
 // xd://, and a plain `write xd://ast_edit` dispatches them. These guard the

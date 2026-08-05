@@ -2,12 +2,12 @@ import { describe, expect, it } from "bun:test";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
 import {
 	additionalWorkspaceDirectories,
 	normalizeSessionWorkspace,
-} from "@oh-my-pi/pi-coding-agent/session/session-workspace";
-import { TempDir } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/session/session-workspace";
+import { TempDir } from "@wxyhgk/pi-utils";
 import { makeAssistantMessage } from "./helpers";
 
 describe("normalizeSessionWorkspace", () => {

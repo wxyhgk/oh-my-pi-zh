@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { computeFileHash, InMemorySnapshotStore } from "@oh-my-pi/hashline";
+import { computeFileHash, InMemorySnapshotStore } from "@wxyhgk/hashline";
 
 const PATH = "/tmp/__hashline-snapshots__.ts";
 const OTHER = "/tmp/__hashline-other__.ts";

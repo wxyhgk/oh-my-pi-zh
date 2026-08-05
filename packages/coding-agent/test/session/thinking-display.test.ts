@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { canonicalizeMessage } from "@oh-my-pi/pi-coding-agent/utils/thinking-display";
+import { canonicalizeMessage } from "@wxyhgk/pi-coding-agent/utils/thinking-display";
 
 describe("canonicalizeMessage", () => {
 	it("returns empty string for undefined, empty, or whitespace-only", () => {

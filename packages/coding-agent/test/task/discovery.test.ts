@@ -2,14 +2,14 @@ import { afterEach, beforeEach, describe, expect, test } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { disableProvider, enableProvider } from "@oh-my-pi/pi-coding-agent/capability";
-import { clearCache as clearFsCache } from "@oh-my-pi/pi-coding-agent/capability/fs";
+import { disableProvider, enableProvider } from "@wxyhgk/pi-coding-agent/capability";
+import { clearCache as clearFsCache } from "@wxyhgk/pi-coding-agent/capability/fs";
 import {
 	clearOmpExtensionCliRoots,
 	injectOmpExtensionCliRoots,
-} from "@oh-my-pi/pi-coding-agent/discovery/omp-extension-roots";
-import { discoverAgents } from "@oh-my-pi/pi-coding-agent/task/discovery";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/discovery/omp-extension-roots";
+import { discoverAgents } from "@wxyhgk/pi-coding-agent/task/discovery";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 const OMP_AGENT_MD = [
 	"---",

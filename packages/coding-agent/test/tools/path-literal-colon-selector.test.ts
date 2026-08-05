@@ -2,19 +2,19 @@ import { afterEach, beforeEach, describe, expect, it, spyOn } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { EditTool } from "@oh-my-pi/pi-coding-agent/edit";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { EditTool } from "@wxyhgk/pi-coding-agent/edit";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/tools";
 import {
 	expandPath,
 	probeLiteralPathExists,
 	resolveToCwd,
 	splitPathAndSel,
 	splitPathAndSelPreferringLiteral,
-} from "@oh-my-pi/pi-coding-agent/tools/path-utils";
-import { ReadTool } from "@oh-my-pi/pi-coding-agent/tools/read";
-import { GrepOutputMode } from "@oh-my-pi/pi-natives";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/tools/path-utils";
+import { ReadTool } from "@wxyhgk/pi-coding-agent/tools/read";
+import { GrepOutputMode } from "@wxyhgk/pi-natives";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 import { runGrepCommand } from "../../src/cli/grep-cli";
 import { initTheme } from "../../src/modes/theme/theme";
 import { GrepTool } from "../../src/tools/grep";

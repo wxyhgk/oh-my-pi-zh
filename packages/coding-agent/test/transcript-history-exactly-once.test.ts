@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
-import { TranscriptContainer } from "@oh-my-pi/pi-coding-agent/modes/components/transcript-container";
-import { type Component, TUI } from "@oh-my-pi/pi-tui";
+import { TranscriptContainer } from "@wxyhgk/pi-coding-agent/modes/components/transcript-container";
+import { type Component, TUI } from "@wxyhgk/pi-tui";
 import { StressRenderScheduler } from "../../tui/test/render-stress-scheduler";
 import { VirtualTerminal } from "../../tui/test/virtual-terminal";
 

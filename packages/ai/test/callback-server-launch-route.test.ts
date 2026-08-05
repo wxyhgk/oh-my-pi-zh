@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "bun:test";
-import { OAuthCallbackFlow } from "@oh-my-pi/pi-ai/registry/oauth/callback-server";
-import type { OAuthAuthInfo, OAuthCredentials } from "@oh-my-pi/pi-ai/registry/oauth/types";
+import { OAuthCallbackFlow } from "@wxyhgk/pi-ai/registry/oauth/callback-server";
+import type { OAuthAuthInfo, OAuthCredentials } from "@wxyhgk/pi-ai/registry/oauth/types";
 
 /**
  * Regression harness for #4418 — the `/launch` route the callback server hosts

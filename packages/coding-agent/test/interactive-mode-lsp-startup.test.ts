@@ -1,17 +1,17 @@
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as path from "node:path";
-import { Agent } from "@oh-my-pi/pi-agent-core";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { LSP_STARTUP_EVENT_CHANNEL, type LspStartupEvent } from "@oh-my-pi/pi-coding-agent/lsp/startup-events";
-import { InteractiveMode } from "@oh-my-pi/pi-coding-agent/modes/interactive-mode";
-import { initTheme, theme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import type { LspStartupServerInfo } from "@oh-my-pi/pi-coding-agent/tools";
-import { EventBus } from "@oh-my-pi/pi-coding-agent/utils/event-bus";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { Agent } from "@wxyhgk/pi-agent-core";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { LSP_STARTUP_EVENT_CHANNEL, type LspStartupEvent } from "@wxyhgk/pi-coding-agent/lsp/startup-events";
+import { InteractiveMode } from "@wxyhgk/pi-coding-agent/modes/interactive-mode";
+import { initTheme, theme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import type { LspStartupServerInfo } from "@wxyhgk/pi-coding-agent/tools";
+import { EventBus } from "@wxyhgk/pi-coding-agent/utils/event-bus";
+import { TempDir } from "@wxyhgk/pi-utils";
 
 describe("InteractiveMode LSP startup welcome banner", () => {
 	let authStorage: AuthStorage;

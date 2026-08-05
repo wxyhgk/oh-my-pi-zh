@@ -1,19 +1,16 @@
 import { describe, expect, it } from "bun:test";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
 import {
 	IndexedSessionStorage,
 	type SessionStorageBackend,
-} from "@oh-my-pi/pi-coding-agent/session/indexed-session-storage";
-import {
-	SessionManager,
-	SessionPersistenceIndeterminateError,
-} from "@oh-my-pi/pi-coding-agent/session/session-manager";
+} from "@wxyhgk/pi-coding-agent/session/indexed-session-storage";
+import { SessionManager, SessionPersistenceIndeterminateError } from "@wxyhgk/pi-coding-agent/session/session-manager";
 import {
 	MemorySessionStorage,
 	type SessionStorageWriter,
 	type WriteTextAtomicOptions,
-} from "@oh-my-pi/pi-coding-agent/session/session-storage";
-import type { SessionTitleUpdate } from "@oh-my-pi/pi-coding-agent/session/session-title-slot";
+} from "@wxyhgk/pi-coding-agent/session/session-storage";
+import type { SessionTitleUpdate } from "@wxyhgk/pi-coding-agent/session/session-title-slot";
 
 interface DetachableWriter extends SessionStorageWriter {
 	detach(): void;

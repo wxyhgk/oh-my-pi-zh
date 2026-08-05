@@ -12,19 +12,19 @@
  */
 
 import { afterEach, beforeAll, beforeEach, describe, expect, it, type Mock, vi } from "bun:test";
-import type { AgentMessage } from "@oh-my-pi/pi-agent-core";
-import type { AssistantMessage, ImageContent, Usage } from "@oh-my-pi/pi-ai";
-import { kStreamingPartialJson } from "@oh-my-pi/pi-ai/utils/block-symbols";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { AssistantMessageComponent } from "@oh-my-pi/pi-coding-agent/modes/components/assistant-message";
-import { StrippedToolCallsPlaceholder } from "@oh-my-pi/pi-coding-agent/modes/components/stripped-tool-calls-placeholder";
-import { initTheme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import type { InteractiveModeContext } from "@oh-my-pi/pi-coding-agent/modes/types";
-import { UiHelpers } from "@oh-my-pi/pi-coding-agent/modes/utils/ui-helpers";
-import type { SessionContext, StrippedToolCallsMarker } from "@oh-my-pi/pi-coding-agent/session/session-context";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { type Component, Container, Image, ImageProtocol, setTerminalImageProtocol, TERMINAL } from "@oh-my-pi/pi-tui";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import type { AgentMessage } from "@wxyhgk/pi-agent-core";
+import type { AssistantMessage, ImageContent, Usage } from "@wxyhgk/pi-ai";
+import { kStreamingPartialJson } from "@wxyhgk/pi-ai/utils/block-symbols";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { AssistantMessageComponent } from "@wxyhgk/pi-coding-agent/modes/components/assistant-message";
+import { StrippedToolCallsPlaceholder } from "@wxyhgk/pi-coding-agent/modes/components/stripped-tool-calls-placeholder";
+import { initTheme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import type { InteractiveModeContext } from "@wxyhgk/pi-coding-agent/modes/types";
+import { UiHelpers } from "@wxyhgk/pi-coding-agent/modes/utils/ui-helpers";
+import type { SessionContext, StrippedToolCallsMarker } from "@wxyhgk/pi-coding-agent/session/session-context";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { type Component, Container, Image, ImageProtocol, setTerminalImageProtocol, TERMINAL } from "@wxyhgk/pi-tui";
+import { TempDir } from "@wxyhgk/pi-utils";
 
 beforeAll(() => {
 	initTheme();

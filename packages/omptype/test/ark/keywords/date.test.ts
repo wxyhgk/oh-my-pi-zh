@@ -1,5 +1,5 @@
 import { expect, it } from "bun:test";
-import { type } from "@oh-my-pi/omptype/ark";
+import { type } from "@wxyhgk/omptype/ark";
 
 it("string.date", () => {
 	const DateString = type("string.date");

@@ -1,20 +1,20 @@
 import { describe, expect, test } from "bun:test";
-import { getOAuthProviders } from "@oh-my-pi/pi-ai/registry/oauth";
-import { getEnvApiKey } from "@oh-my-pi/pi-ai/stream";
-import { getBundledModelReferenceIndex } from "@oh-my-pi/pi-catalog/identity/bundled";
-import { resolveModelReference } from "@oh-my-pi/pi-catalog/identity/reference";
-import type { ProviderCatalogEntry } from "@oh-my-pi/pi-catalog/provider-models/descriptor-types";
+import { getOAuthProviders } from "@wxyhgk/pi-ai/registry/oauth";
+import { getEnvApiKey } from "@wxyhgk/pi-ai/stream";
+import { getBundledModelReferenceIndex } from "@wxyhgk/pi-catalog/identity/bundled";
+import { resolveModelReference } from "@wxyhgk/pi-catalog/identity/reference";
+import type { ProviderCatalogEntry } from "@wxyhgk/pi-catalog/provider-models/descriptor-types";
 import {
 	CATALOG_PROVIDERS,
 	DEFAULT_MODEL_PER_PROVIDER,
 	PROVIDER_DESCRIPTORS,
-} from "@oh-my-pi/pi-catalog/provider-models/descriptors";
+} from "@wxyhgk/pi-catalog/provider-models/descriptors";
 import {
 	MODELS_DEV_PROVIDER_DESCRIPTORS,
 	siliconflowCnModelManagerOptions,
 	siliconflowModelManagerOptions,
-} from "@oh-my-pi/pi-catalog/provider-models/openai-compat";
-import type { FetchImpl } from "@oh-my-pi/pi-catalog/types";
+} from "@wxyhgk/pi-catalog/provider-models/openai-compat";
+import type { FetchImpl } from "@wxyhgk/pi-catalog/types";
 
 function withEnv(key: string, value: string, run: () => void): void {
 	const previous = Bun.env[key];

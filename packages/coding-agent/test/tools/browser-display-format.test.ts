@@ -1,7 +1,7 @@
 import { afterAll, beforeAll, describe, expect, it } from "bun:test";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { getThemeByName, setThemeInstance, type Theme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { toolRenderers } from "@oh-my-pi/pi-coding-agent/tools/renderers";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { getThemeByName, setThemeInstance, type Theme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { toolRenderers } from "@wxyhgk/pi-coding-agent/tools/renderers";
 
 describe("browser renderer: display-only streaming formatting", () => {
 	let theme: Theme;

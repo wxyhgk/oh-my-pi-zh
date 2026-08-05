@@ -2,19 +2,19 @@ import { describe, expect, it } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { clearCustomApis } from "@oh-my-pi/pi-ai/api-registry";
-import { startAuthGateway } from "@oh-my-pi/pi-ai/auth-gateway";
-import { AuthStorage } from "@oh-my-pi/pi-ai/auth-storage";
-import { createMockModel, registerMockApi } from "@oh-my-pi/pi-ai/providers/mock";
-import { encodeStream, formatError, parseRequest } from "@oh-my-pi/pi-ai/providers/pi-native-server";
+import { clearCustomApis } from "@wxyhgk/pi-ai/api-registry";
+import { startAuthGateway } from "@wxyhgk/pi-ai/auth-gateway";
+import { AuthStorage } from "@wxyhgk/pi-ai/auth-storage";
+import { createMockModel, registerMockApi } from "@wxyhgk/pi-ai/providers/mock";
+import { encodeStream, formatError, parseRequest } from "@wxyhgk/pi-ai/providers/pi-native-server";
 import type {
 	AssistantMessage,
 	AssistantMessageEvent,
 	AssistantMessageEventStream,
 	Context,
 	Usage,
-} from "@oh-my-pi/pi-ai/types";
-import { Effort } from "@oh-my-pi/pi-catalog/effort";
+} from "@wxyhgk/pi-ai/types";
+import { Effort } from "@wxyhgk/pi-catalog/effort";
 
 function makeEventStream(events: AssistantMessageEvent[], final: AssistantMessage): AssistantMessageEventStream {
 	async function* iter() {

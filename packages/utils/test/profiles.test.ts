@@ -17,8 +17,8 @@ import {
 	resolveProfileEnv,
 	setAgentDir,
 	setProfile,
-} from "@oh-my-pi/pi-utils/dirs";
-import { Snowflake } from "@oh-my-pi/pi-utils/snowflake";
+} from "@wxyhgk/pi-utils/dirs";
+import { Snowflake } from "@wxyhgk/pi-utils/snowflake";
 
 async function readStream(stream: ReadableStream<Uint8Array>): Promise<string> {
 	const reader = stream.getReader();

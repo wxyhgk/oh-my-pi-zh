@@ -1,30 +1,30 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
-import { Agent, AgentBusyError, ThinkingLevel } from "@oh-my-pi/pi-agent-core";
-import type { AssistantMessage, Usage } from "@oh-my-pi/pi-ai";
-import * as AIError from "@oh-my-pi/pi-ai/error";
-import { KeybindingsManager } from "@oh-my-pi/pi-coding-agent/config/keybindings";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { resolveLocalUrlToPath } from "@oh-my-pi/pi-coding-agent/internal-urls";
-import { AssistantMessageComponent } from "@oh-my-pi/pi-coding-agent/modes/components/assistant-message";
-import type { HookSelectorSlider } from "@oh-my-pi/pi-coding-agent/modes/components/hook-selector";
+import { Agent, AgentBusyError, ThinkingLevel } from "@wxyhgk/pi-agent-core";
+import type { AssistantMessage, Usage } from "@wxyhgk/pi-ai";
+import * as AIError from "@wxyhgk/pi-ai/error";
+import { KeybindingsManager } from "@wxyhgk/pi-coding-agent/config/keybindings";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { resolveLocalUrlToPath } from "@wxyhgk/pi-coding-agent/internal-urls";
+import { AssistantMessageComponent } from "@wxyhgk/pi-coding-agent/modes/components/assistant-message";
+import type { HookSelectorSlider } from "@wxyhgk/pi-coding-agent/modes/components/hook-selector";
 import {
 	type PlanReviewAnnotationState,
 	PlanReviewOverlay,
-} from "@oh-my-pi/pi-coding-agent/modes/components/plan-review-overlay";
-import { InteractiveMode } from "@oh-my-pi/pi-coding-agent/modes/interactive-mode";
-import { initTheme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import type { SubmittedUserInput } from "@oh-my-pi/pi-coding-agent/modes/types";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { SILENT_ABORT_MARKER, USER_INTERRUPT_LABEL } from "@oh-my-pi/pi-coding-agent/session/messages";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { AUTO_THINKING } from "@oh-my-pi/pi-coding-agent/thinking";
-import * as clipboard from "@oh-my-pi/pi-coding-agent/utils/clipboard";
-import { type OverlayHandle, type OverlayOptions, setKeybindings, Text } from "@oh-my-pi/pi-tui";
-import { formatNumber, TempDir } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/modes/components/plan-review-overlay";
+import { InteractiveMode } from "@wxyhgk/pi-coding-agent/modes/interactive-mode";
+import { initTheme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import type { SubmittedUserInput } from "@wxyhgk/pi-coding-agent/modes/types";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { SILENT_ABORT_MARKER, USER_INTERRUPT_LABEL } from "@wxyhgk/pi-coding-agent/session/messages";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { AUTO_THINKING } from "@wxyhgk/pi-coding-agent/thinking";
+import * as clipboard from "@wxyhgk/pi-coding-agent/utils/clipboard";
+import { type OverlayHandle, type OverlayOptions, setKeybindings, Text } from "@wxyhgk/pi-tui";
+import { formatNumber, TempDir } from "@wxyhgk/pi-utils";
 
 /**
  * Matches the plan-approved synthetic-prompt dispatch. `#approvePlan` calls

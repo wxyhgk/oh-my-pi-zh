@@ -1,16 +1,16 @@
 import { Database } from "bun:sqlite";
 import { afterEach, describe, expect, test, vi } from "bun:test";
-import { AuthStorage, SqliteAuthCredentialStore } from "@oh-my-pi/pi-ai/auth-storage";
-import { PASTE_CODE_LOGIN_PROVIDERS } from "@oh-my-pi/pi-ai/registry";
+import { AuthStorage, SqliteAuthCredentialStore } from "@wxyhgk/pi-ai/auth-storage";
+import { PASTE_CODE_LOGIN_PROVIDERS } from "@wxyhgk/pi-ai/registry";
 import {
 	getOAuthProviders,
 	refreshOAuthToken,
 	registerOAuthProvider,
 	unregisterOAuthProviders,
-} from "@oh-my-pi/pi-ai/registry/oauth";
-import * as anthropicOauth from "@oh-my-pi/pi-ai/registry/oauth/anthropic";
-import type { OAuthCredentials, OAuthProvider } from "@oh-my-pi/pi-ai/registry/oauth/types";
-import { getEnvApiKey } from "@oh-my-pi/pi-ai/stream";
+} from "@wxyhgk/pi-ai/registry/oauth";
+import * as anthropicOauth from "@wxyhgk/pi-ai/registry/oauth/anthropic";
+import type { OAuthCredentials, OAuthProvider } from "@wxyhgk/pi-ai/registry/oauth/types";
+import { getEnvApiKey } from "@wxyhgk/pi-ai/stream";
 
 const FIXTURE_SOURCE = "provider-registry-test";
 const ENV_KEYS = [

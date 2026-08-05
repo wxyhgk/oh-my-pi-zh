@@ -1,11 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { Effort } from "@oh-my-pi/pi-ai";
-import { clearCustomApis } from "@oh-my-pi/pi-ai/api-registry";
-import { createMockModel, registerMockApi } from "@oh-my-pi/pi-ai/providers/mock";
-import { __providerInFlightForTesting, streamSimple } from "@oh-my-pi/pi-ai/stream";
-import type { Context } from "@oh-my-pi/pi-ai/types";
+import { Effort } from "@wxyhgk/pi-ai";
+import { clearCustomApis } from "@wxyhgk/pi-ai/api-registry";
+import { createMockModel, registerMockApi } from "@wxyhgk/pi-ai/providers/mock";
+import { __providerInFlightForTesting, streamSimple } from "@wxyhgk/pi-ai/stream";
+import type { Context } from "@wxyhgk/pi-ai/types";
 import {
 	getDefault,
 	getEnumValues,
@@ -14,12 +14,12 @@ import {
 	resetSettingsForTest,
 	type SettingPath,
 	Settings,
-} from "@oh-my-pi/pi-coding-agent/config/settings";
-import { AgentStorage } from "@oh-my-pi/pi-coding-agent/session/agent-storage";
-import { AUTO_IMAGE_PROVIDER_ORDER } from "@oh-my-pi/pi-coding-agent/tools/image-providers";
-import { SEARCH_PROVIDER_ORDER } from "@oh-my-pi/pi-coding-agent/web/search/types";
-import { getProjectAgentDir, TempDir } from "@oh-my-pi/pi-utils";
-import * as fileLock from "@oh-my-pi/pi-utils/file-lock";
+} from "@wxyhgk/pi-coding-agent/config/settings";
+import { AgentStorage } from "@wxyhgk/pi-coding-agent/session/agent-storage";
+import { AUTO_IMAGE_PROVIDER_ORDER } from "@wxyhgk/pi-coding-agent/tools/image-providers";
+import { SEARCH_PROVIDER_ORDER } from "@wxyhgk/pi-coding-agent/web/search/types";
+import { getProjectAgentDir, TempDir } from "@wxyhgk/pi-utils";
+import * as fileLock from "@wxyhgk/pi-utils/file-lock";
 import { YAML } from "bun";
 import { beginSettingsTest, restoreSettingsTestState, type SettingsTestState } from "./helpers/settings-test-state";
 

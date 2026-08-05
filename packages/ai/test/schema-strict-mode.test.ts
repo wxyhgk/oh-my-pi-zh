@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import type { Tool, ToolCall } from "@oh-my-pi/pi-ai/types";
+import type { Tool, ToolCall } from "@wxyhgk/pi-ai/types";
 import {
 	adaptSchemaForStrict,
 	enforceStrictSchema,
@@ -10,8 +10,8 @@ import {
 	toolWireSchema,
 	tryEnforceStrictSchema,
 	zodToWireSchema,
-} from "@oh-my-pi/pi-ai/utils/schema";
-import { validateToolArguments } from "@oh-my-pi/pi-ai/utils/validation";
+} from "@wxyhgk/pi-ai/utils/schema";
+import { validateToolArguments } from "@wxyhgk/pi-ai/utils/validation";
 import { z } from "zod/v4";
 
 describe("sanitizeSchemaForStrictMode", () => {

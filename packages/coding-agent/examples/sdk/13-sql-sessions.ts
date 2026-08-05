@@ -18,7 +18,7 @@
  * if you need those off-host too.
  */
 
-import { createAgentSession, SessionManager, SqlSessionStorage } from "@oh-my-pi/pi-coding-agent";
+import { createAgentSession, SessionManager, SqlSessionStorage } from "@wxyhgk/pi-coding-agent";
 import { SQL } from "bun";
 
 // Pick one — Bun.SQL auto-detects the dialect from the URL scheme.

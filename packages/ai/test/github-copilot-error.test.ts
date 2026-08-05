@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { rewriteCopilotError } from "@oh-my-pi/pi-ai/utils/http-inspector";
+import { rewriteCopilotError } from "@wxyhgk/pi-ai/utils/http-inspector";
 
 function errorWithStatus(status: number): Error {
 	const err = new Error(`${status} Unauthorized`);

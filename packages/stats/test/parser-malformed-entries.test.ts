@@ -1,9 +1,9 @@
 import { describe, expect, it } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
-import { initDb, insertMessageStats, insertToolCalls } from "@oh-my-pi/omp-stats/db";
-import { parseSessionFile } from "@oh-my-pi/omp-stats/parser";
-import { getSessionsDir } from "@oh-my-pi/pi-utils";
+import { initDb, insertMessageStats, insertToolCalls } from "@wxyhgk/omp-stats/db";
+import { parseSessionFile } from "@wxyhgk/omp-stats/parser";
+import { getSessionsDir } from "@wxyhgk/pi-utils";
 import { installStatsTestIsolation } from "./helpers/temp-agent";
 
 installStatsTestIsolation("@pi-stats-malformed-");

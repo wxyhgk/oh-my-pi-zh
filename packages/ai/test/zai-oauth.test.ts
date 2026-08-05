@@ -1,6 +1,6 @@
 import { afterEach, describe, expect, it, vi } from "bun:test";
-import * as AIError from "@oh-my-pi/pi-ai/error";
-import { ZaiOAuthFlow } from "@oh-my-pi/pi-ai/registry/oauth/zai";
+import * as AIError from "@wxyhgk/pi-ai/error";
+import { ZaiOAuthFlow } from "@wxyhgk/pi-ai/registry/oauth/zai";
 
 const CLIENT_ID = "client_P8X5CMWmlaRO9gyO-KSqtg";
 const AUTHORIZE_URL = "https://chat.z.ai/api/oauth/authorize";

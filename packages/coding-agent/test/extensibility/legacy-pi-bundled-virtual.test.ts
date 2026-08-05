@@ -4,8 +4,8 @@ import {
 	__getLegacyPiBundledModulesGlobal,
 	__synthesizeLegacyPiBundledSourceWithModules,
 	resolveBundledVirtualSpecifier,
-} from "@oh-my-pi/pi-coding-agent/extensibility/plugins/legacy-pi-compat";
-import { TempDir } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/extensibility/plugins/legacy-pi-compat";
+import { TempDir } from "@wxyhgk/pi-utils";
 import type { BunPlugin } from "bun";
 
 // Regression for issue #3423: Bun 1.3.14 made `--compile` extras unreachable

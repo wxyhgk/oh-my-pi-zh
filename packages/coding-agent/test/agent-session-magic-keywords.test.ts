@@ -2,18 +2,18 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { type } from "@oh-my-pi/omptype";
-import { Agent, type AgentTool } from "@oh-my-pi/pi-agent-core";
-import { Effort } from "@oh-my-pi/pi-ai";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import * as autoThinkingClassifier from "@oh-my-pi/pi-coding-agent/auto-thinking/classifier";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { AUTO_THINKING } from "@oh-my-pi/pi-coding-agent/thinking";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+import { type } from "@wxyhgk/omptype";
+import { Agent, type AgentTool } from "@wxyhgk/pi-agent-core";
+import { Effort } from "@wxyhgk/pi-ai";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
+import * as autoThinkingClassifier from "@wxyhgk/pi-coding-agent/auto-thinking/classifier";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { AUTO_THINKING } from "@wxyhgk/pi-coding-agent/thinking";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 const mockTaskTool: AgentTool = {
 	name: "task",

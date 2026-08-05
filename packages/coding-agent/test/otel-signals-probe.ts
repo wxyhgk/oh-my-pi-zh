@@ -11,15 +11,15 @@
  * protobuf POST at both /v1/logs and /v1/metrics.
  */
 
-import type { AgentRunCoverage, AgentRunSummary, ChatUsageEvent } from "@oh-my-pi/pi-agent-core";
-import { emptyAgentRunCoverage, emptyAgentRunSummary } from "@oh-my-pi/pi-agent-core";
+import type { AgentRunCoverage, AgentRunSummary, ChatUsageEvent } from "@wxyhgk/pi-agent-core";
+import { emptyAgentRunCoverage, emptyAgentRunSummary } from "@wxyhgk/pi-agent-core";
 import {
 	createTelemetryExportConfig,
 	flushTelemetryExport,
 	initTelemetryExport,
 	isTelemetryExportEnabled,
-} from "@oh-my-pi/pi-coding-agent/telemetry-export";
-import { logger } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/telemetry-export";
+import { logger } from "@wxyhgk/pi-utils";
 
 const seen = new Set<string>();
 const metricPayloads: Uint8Array[] = [];

@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
-import { getDefaultPasteImageKeys, KeybindingsManager } from "@oh-my-pi/pi-coding-agent/config/keybindings";
-import { keyText } from "@oh-my-pi/pi-coding-agent/extensibility/legacy-pi-coding-agent-shim";
-import { getKeybindings, setKeybindings, type KeybindingsManager as TuiKeybindingsManager } from "@oh-my-pi/pi-tui";
+import { getDefaultPasteImageKeys, KeybindingsManager } from "@wxyhgk/pi-coding-agent/config/keybindings";
+import { keyText } from "@wxyhgk/pi-coding-agent/extensibility/legacy-pi-coding-agent-shim";
+import { getKeybindings, setKeybindings, type KeybindingsManager as TuiKeybindingsManager } from "@wxyhgk/pi-tui";
 
 describe("KeybindingsManager.getDisplayString", () => {
 	it("formats a single binding as a human-readable key hint", () => {

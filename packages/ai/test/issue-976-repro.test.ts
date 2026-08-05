@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
-import { buildRequest } from "@oh-my-pi/pi-ai/providers/google-gemini-cli";
-import type { Context, Model } from "@oh-my-pi/pi-ai/types";
-import { buildModel } from "@oh-my-pi/pi-catalog/build";
+import { buildRequest } from "@wxyhgk/pi-ai/providers/google-gemini-cli";
+import type { Context, Model } from "@wxyhgk/pi-ai/types";
+import { buildModel } from "@wxyhgk/pi-catalog/build";
 
 function createModel(): Model<"google-gemini-cli"> {
 	return buildModel({

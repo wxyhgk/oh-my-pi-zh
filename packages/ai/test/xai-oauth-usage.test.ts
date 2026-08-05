@@ -1,8 +1,8 @@
 import { describe, expect, it } from "bun:test";
-import { buildXAICliBillingUrl } from "@oh-my-pi/pi-ai/oauth/xai-oauth";
-import type { FetchImpl } from "@oh-my-pi/pi-ai/types";
-import type { UsageFetchParams } from "@oh-my-pi/pi-ai/usage";
-import { xaiOauthUsageProvider } from "@oh-my-pi/pi-ai/usage/xai-oauth";
+import { buildXAICliBillingUrl } from "@wxyhgk/pi-ai/oauth/xai-oauth";
+import type { FetchImpl } from "@wxyhgk/pi-ai/types";
+import type { UsageFetchParams } from "@wxyhgk/pi-ai/usage";
+import { xaiOauthUsageProvider } from "@wxyhgk/pi-ai/usage/xai-oauth";
 
 const USER_ID = "cf12ecb5-cca4-4ba0-9f02-298071a2d052";
 

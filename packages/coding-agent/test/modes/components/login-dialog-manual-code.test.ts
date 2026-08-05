@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it } from "bun:test";
-import type { TUI } from "@oh-my-pi/pi-tui";
+import type { TUI } from "@wxyhgk/pi-tui";
 import { LoginDialogComponent } from "../../../src/modes/components/login-dialog";
 import { initTheme } from "../../../src/modes/theme/theme";
 

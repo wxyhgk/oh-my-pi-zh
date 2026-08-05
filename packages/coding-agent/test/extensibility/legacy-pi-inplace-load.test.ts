@@ -7,8 +7,8 @@ import {
 	__collectLegacyPiExtensionSourcesForTests,
 	__rewriteLegacyExtensionSourceForTests,
 	loadLegacyPiModule,
-} from "@oh-my-pi/pi-coding-agent/extensibility/plugins/legacy-pi-compat";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/extensibility/plugins/legacy-pi-compat";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 // Issue #1674: legacy Pi extensions load browser-UI assets (HTML/CSS) at module
 // init via `readFileSync(join(__dirname, "ui.html"))`. The compat layer must run
@@ -105,7 +105,7 @@ describe("legacy-pi in-place module loading (issue #1674)", () => {
 			}),
 			"node_modules/direct/index.js": 'module.exports = require("@mariozechner/pi-ai").Type;\n',
 			"index.ts": [
-				'import { Type } from "@oh-my-pi/pi-ai";',
+				'import { Type } from "@wxyhgk/pi-ai";',
 				'import requiredType from "direct";',
 				"export const sharesHostType = requiredType === Type;",
 				"export default function (pi) { void pi; }",

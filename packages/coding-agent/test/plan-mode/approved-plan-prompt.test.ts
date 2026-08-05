@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { prompt } from "@oh-my-pi/pi-utils";
+import { prompt } from "@wxyhgk/pi-utils";
 import planModeApprovedPrompt from "../../src/prompts/system/plan-mode-approved.md" with { type: "text" };
 import planModeCompactInstructionsPrompt from "../../src/prompts/system/plan-mode-compact-instructions.md" with {
 	type: "text",

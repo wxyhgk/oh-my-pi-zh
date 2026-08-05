@@ -2,19 +2,19 @@ import { afterEach, describe, expect, test, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import * as cleanseAgent from "@oh-my-pi/pi-coding-agent/cleanse/agent";
-import { balanceDiagnostics } from "@oh-my-pi/pi-coding-agent/cleanse/balance";
-import * as cleanseCheckers from "@oh-my-pi/pi-coding-agent/cleanse/checkers";
-import { runCleanseCommand } from "@oh-my-pi/pi-coding-agent/cleanse/index";
-import { runCleanseLoop } from "@oh-my-pi/pi-coding-agent/cleanse/loop";
-import { parseCleanseDiagnostics } from "@oh-my-pi/pi-coding-agent/cleanse/parsers";
-import { createCleanseProgressReporter } from "@oh-my-pi/pi-coding-agent/cleanse/progress";
+import * as cleanseAgent from "@wxyhgk/pi-coding-agent/cleanse/agent";
+import { balanceDiagnostics } from "@wxyhgk/pi-coding-agent/cleanse/balance";
+import * as cleanseCheckers from "@wxyhgk/pi-coding-agent/cleanse/checkers";
+import { runCleanseCommand } from "@wxyhgk/pi-coding-agent/cleanse/index";
+import { runCleanseLoop } from "@wxyhgk/pi-coding-agent/cleanse/loop";
+import { parseCleanseDiagnostics } from "@wxyhgk/pi-coding-agent/cleanse/parsers";
+import { createCleanseProgressReporter } from "@wxyhgk/pi-coding-agent/cleanse/progress";
 import type {
 	CleanseAgentOutcome,
 	CleanseDiagnostic,
 	CleanseDiagnosticReport,
-} from "@oh-my-pi/pi-coding-agent/cleanse/types";
-import { resolveCliArgv } from "@oh-my-pi/pi-coding-agent/cli-commands";
+} from "@wxyhgk/pi-coding-agent/cleanse/types";
+import { resolveCliArgv } from "@wxyhgk/pi-coding-agent/cli-commands";
 
 afterEach(() => {
 	vi.restoreAllMocks();

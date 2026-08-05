@@ -1,11 +1,11 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
-import { AuthStorage } from "@oh-my-pi/pi-ai";
-import { parseArgs } from "@oh-my-pi/pi-coding-agent/cli/args";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { buildSessionOptions } from "@oh-my-pi/pi-coding-agent/main";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { AuthStorage } from "@wxyhgk/pi-ai";
+import { parseArgs } from "@wxyhgk/pi-coding-agent/cli/args";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { buildSessionOptions } from "@wxyhgk/pi-coding-agent/main";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { TempDir } from "@wxyhgk/pi-utils";
 
 let tempDir: TempDir;
 let authStorage: AuthStorage;

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { prompt } from "@oh-my-pi/pi-utils";
+import { prompt } from "@wxyhgk/pi-utils";
 import bashPrompt from "../src/prompts/tools/bash.md" with { type: "text" };
 import globPrompt from "../src/prompts/tools/glob.md" with { type: "text" };
 import grepPrompt from "../src/prompts/tools/grep.md" with { type: "text" };

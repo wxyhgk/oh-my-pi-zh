@@ -1,22 +1,22 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as path from "node:path";
-import { Agent, type AgentMessage } from "@oh-my-pi/pi-agent-core";
-import * as compactionModule from "@oh-my-pi/pi-agent-core/compaction";
-import type { AssistantMessage, Model } from "@oh-my-pi/pi-ai";
-import * as AIError from "@oh-my-pi/pi-ai/error";
-import { createMockModel } from "@oh-my-pi/pi-ai/providers/mock";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
-import { loadAdvisorTranscriptCosts } from "@oh-my-pi/pi-coding-agent/advisor/transcript-recorder";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import type { ExtensionRunner } from "@oh-my-pi/pi-coding-agent/extensibility/extensions";
-import { createAgentSession } from "@oh-my-pi/pi-coding-agent/sdk";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AgentStorage } from "@oh-my-pi/pi-coding-agent/session/agent-storage";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { getProjectAgentDir, TempDir } from "@oh-my-pi/pi-utils";
+import { Agent, type AgentMessage } from "@wxyhgk/pi-agent-core";
+import * as compactionModule from "@wxyhgk/pi-agent-core/compaction";
+import type { AssistantMessage, Model } from "@wxyhgk/pi-ai";
+import * as AIError from "@wxyhgk/pi-ai/error";
+import { createMockModel } from "@wxyhgk/pi-ai/providers/mock";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
+import { loadAdvisorTranscriptCosts } from "@wxyhgk/pi-coding-agent/advisor/transcript-recorder";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import type { ExtensionRunner } from "@wxyhgk/pi-coding-agent/extensibility/extensions";
+import { createAgentSession } from "@wxyhgk/pi-coding-agent/sdk";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AgentStorage } from "@wxyhgk/pi-coding-agent/session/agent-storage";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { getProjectAgentDir, TempDir } from "@wxyhgk/pi-utils";
 
 describe("AgentSession advisor toggle", () => {
 	let sharedDir: TempDir;

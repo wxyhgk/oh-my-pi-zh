@@ -2,15 +2,15 @@ import { afterAll, beforeAll, describe, expect, it } from "bun:test";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import type { StatusLineSegmentId } from "@oh-my-pi/pi-coding-agent/config/settings-schema";
-import { StatusLineComponent } from "@oh-my-pi/pi-coding-agent/modes/components/status-line";
-import type { SegmentContext } from "@oh-my-pi/pi-coding-agent/modes/components/status-line/segments";
-import { renderSegment } from "@oh-my-pi/pi-coding-agent/modes/components/status-line/segments";
-import { initTheme, theme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { getSessionAccentAnsi, getSessionAccentHex } from "@oh-my-pi/pi-coding-agent/utils/session-color";
-import { visibleWidth } from "@oh-my-pi/pi-tui";
-import { getProjectDir, setProjectDir } from "@oh-my-pi/pi-utils";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import type { StatusLineSegmentId } from "@wxyhgk/pi-coding-agent/config/settings-schema";
+import { StatusLineComponent } from "@wxyhgk/pi-coding-agent/modes/components/status-line";
+import type { SegmentContext } from "@wxyhgk/pi-coding-agent/modes/components/status-line/segments";
+import { renderSegment } from "@wxyhgk/pi-coding-agent/modes/components/status-line/segments";
+import { initTheme, theme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { getSessionAccentAnsi, getSessionAccentHex } from "@wxyhgk/pi-coding-agent/utils/session-color";
+import { visibleWidth } from "@wxyhgk/pi-tui";
+import { getProjectDir, setProjectDir } from "@wxyhgk/pi-utils";
 
 const originalProjectDir = getProjectDir();
 

@@ -1,20 +1,20 @@
 import { afterAll, afterEach, beforeAll, describe, expect, test, vi } from "bun:test";
-import type { AgentMessage } from "@oh-my-pi/pi-agent-core";
-import type { ImageContent, TextContent } from "@oh-my-pi/pi-ai";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
+import type { AgentMessage } from "@wxyhgk/pi-agent-core";
+import type { ImageContent, TextContent } from "@wxyhgk/pi-ai";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
 import type {
 	ExtensionActions,
 	ExtensionCommandContextActions,
 	ExtensionContextActions,
 	ExtensionUIContext,
-} from "@oh-my-pi/pi-coding-agent/extensibility/extensions";
-import { ExtensionUiController } from "@oh-my-pi/pi-coding-agent/modes/controllers/extension-ui-controller";
-import { initTheme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import type { InteractiveModeContext } from "@oh-my-pi/pi-coding-agent/modes/types";
-import { UiHelpers } from "@oh-my-pi/pi-coding-agent/modes/utils/ui-helpers";
-import { buildSessionContext, type SessionContext } from "@oh-my-pi/pi-coding-agent/session/session-context";
-import type { CustomMessageEntry, SessionEntry } from "@oh-my-pi/pi-coding-agent/session/session-entries";
-import { Container } from "@oh-my-pi/pi-tui";
+} from "@wxyhgk/pi-coding-agent/extensibility/extensions";
+import { ExtensionUiController } from "@wxyhgk/pi-coding-agent/modes/controllers/extension-ui-controller";
+import { initTheme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import type { InteractiveModeContext } from "@wxyhgk/pi-coding-agent/modes/types";
+import { UiHelpers } from "@wxyhgk/pi-coding-agent/modes/utils/ui-helpers";
+import { buildSessionContext, type SessionContext } from "@wxyhgk/pi-coding-agent/session/session-context";
+import type { CustomMessageEntry, SessionEntry } from "@wxyhgk/pi-coding-agent/session/session-entries";
+import { Container } from "@wxyhgk/pi-tui";
 
 /**
  * Issue #1955: `sendMessage` with `display: true` renders twice during

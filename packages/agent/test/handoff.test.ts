@@ -1,11 +1,11 @@
 import { afterEach, describe, expect, test, vi } from "bun:test";
-import type { AgentMessage, AgentTool } from "@oh-my-pi/pi-agent-core";
-import { generateHandoff, generateHandoffFromContext, renderHandoffPrompt } from "@oh-my-pi/pi-agent-core/compaction";
-import { ThinkingLevel } from "@oh-my-pi/pi-agent-core/thinking";
-import type { AssistantMessage, Model, ToolCall } from "@oh-my-pi/pi-ai";
-import * as ai from "@oh-my-pi/pi-ai";
-import { Effort, z } from "@oh-my-pi/pi-ai";
-import { getBundledModel } from "@oh-my-pi/pi-catalog/models";
+import type { AgentMessage, AgentTool } from "@wxyhgk/pi-agent-core";
+import { generateHandoff, generateHandoffFromContext, renderHandoffPrompt } from "@wxyhgk/pi-agent-core/compaction";
+import { ThinkingLevel } from "@wxyhgk/pi-agent-core/thinking";
+import type { AssistantMessage, Model, ToolCall } from "@wxyhgk/pi-ai";
+import * as ai from "@wxyhgk/pi-ai";
+import { Effort, z } from "@wxyhgk/pi-ai";
+import { getBundledModel } from "@wxyhgk/pi-catalog/models";
 
 function createAssistantMessage(content: AssistantMessage["content"]): AssistantMessage {
 	return {

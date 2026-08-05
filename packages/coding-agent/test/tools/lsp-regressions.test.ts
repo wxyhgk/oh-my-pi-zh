@@ -2,20 +2,20 @@ import { afterEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import type { AgentToolResult, RenderResultOptions } from "@oh-my-pi/pi-agent-core";
-import { arkToWireSchema } from "@oh-my-pi/pi-ai/utils/schema";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { preloadPluginRoots } from "@oh-my-pi/pi-coding-agent/discovery/helpers";
-import { LspTool } from "@oh-my-pi/pi-coding-agent/lsp";
-import * as lspClient from "@oh-my-pi/pi-coding-agent/lsp/client";
-import * as lspConfig from "@oh-my-pi/pi-coding-agent/lsp/config";
-import { getServersForFile, type LspConfig, loadConfig } from "@oh-my-pi/pi-coding-agent/lsp/config";
+import type { AgentToolResult, RenderResultOptions } from "@wxyhgk/pi-agent-core";
+import { arkToWireSchema } from "@wxyhgk/pi-ai/utils/schema";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { preloadPluginRoots } from "@wxyhgk/pi-coding-agent/discovery/helpers";
+import { LspTool } from "@wxyhgk/pi-coding-agent/lsp";
+import * as lspClient from "@wxyhgk/pi-coding-agent/lsp/client";
+import * as lspConfig from "@wxyhgk/pi-coding-agent/lsp/config";
+import { getServersForFile, type LspConfig, loadConfig } from "@wxyhgk/pi-coding-agent/lsp/config";
 import {
 	applyTextEditsToString,
 	applyWorkspaceEdit,
 	sortAndValidateTextEdits,
-} from "@oh-my-pi/pi-coding-agent/lsp/edits";
-import { renderCall, renderResult } from "@oh-my-pi/pi-coding-agent/lsp/render";
+} from "@wxyhgk/pi-coding-agent/lsp/edits";
+import { renderCall, renderResult } from "@wxyhgk/pi-coding-agent/lsp/render";
 import {
 	type CodeAction,
 	type CreateFile,
@@ -29,7 +29,7 @@ import {
 	type SymbolInformation,
 	type TextDocumentEdit,
 	type WorkspaceEdit,
-} from "@oh-my-pi/pi-coding-agent/lsp/types";
+} from "@wxyhgk/pi-coding-agent/lsp/types";
 import {
 	applyCodeAction,
 	collectGlobMatches,
@@ -41,13 +41,13 @@ import {
 	resolveDiagnosticTargets,
 	resolveSymbolColumn,
 	uriToFile,
-} from "@oh-my-pi/pi-coding-agent/lsp/utils";
-import { getThemeByName } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import { ToolAbortError } from "@oh-my-pi/pi-coding-agent/tools/tool-errors";
-import { clampTimeout } from "@oh-my-pi/pi-coding-agent/tools/tool-timeouts";
-import * as piUtils from "@oh-my-pi/pi-utils";
-import { sanitizeText, TempDir } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/lsp/utils";
+import { getThemeByName } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import { ToolAbortError } from "@wxyhgk/pi-coding-agent/tools/tool-errors";
+import { clampTimeout } from "@wxyhgk/pi-coding-agent/tools/tool-timeouts";
+import * as piUtils from "@wxyhgk/pi-utils";
+import { sanitizeText, TempDir } from "@wxyhgk/pi-utils";
 import type { Subprocess } from "bun";
 import DEFAULTS from "../../src/lsp/defaults.json" with { type: "json" };
 import { renderResult as renderLocalResult } from "../../src/lsp/render";

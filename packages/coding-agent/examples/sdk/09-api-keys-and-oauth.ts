@@ -10,7 +10,7 @@ import {
 	discoverModels,
 	ModelRegistry,
 	SessionManager,
-} from "@oh-my-pi/pi-coding-agent";
+} from "@wxyhgk/pi-coding-agent";
 
 // Default: discoverAuthStorage() uses ~/.omp/agent/agent.db
 // discoverModels() loads built-in + custom models from ~/.omp/agent/models.json

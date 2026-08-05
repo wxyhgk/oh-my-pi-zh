@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from "bun:test";
-import { INTENT_FIELD } from "@oh-my-pi/pi-wire";
+import { INTENT_FIELD } from "@wxyhgk/pi-wire";
 import type { CustomToolContext } from "../src/extensibility/custom-tools/types";
 import type { ExtensionRunner } from "../src/extensibility/extensions/runner";
 import type { RegisteredTool } from "../src/extensibility/extensions/types";

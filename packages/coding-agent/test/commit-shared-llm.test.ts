@@ -1,9 +1,9 @@
 import { describe, expect, it } from "bun:test";
-import type { AssistantMessage } from "@oh-my-pi/pi-ai";
+import type { AssistantMessage } from "@wxyhgk/pi-ai";
 import {
 	createConventionalAnalysisTool,
 	parseConventionalAnalysisResponse,
-} from "@oh-my-pi/pi-coding-agent/commit/shared-llm";
+} from "@wxyhgk/pi-coding-agent/commit/shared-llm";
 
 describe("commit shared LLM parsing", () => {
 	it("ignores harmless extra fields in conventional analysis tool output", () => {

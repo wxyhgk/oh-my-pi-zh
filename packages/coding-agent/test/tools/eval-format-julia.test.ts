@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { formatJuliaForDisplay } from "@oh-my-pi/pi-coding-agent/tools/eval-format/julia";
+import { formatJuliaForDisplay } from "@wxyhgk/pi-coding-agent/tools/eval-format/julia";
 
 describe("formatJuliaForDisplay", () => {
 	it("expands genuinely compact nested blocks", () => {

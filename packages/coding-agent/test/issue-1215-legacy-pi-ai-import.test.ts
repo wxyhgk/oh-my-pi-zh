@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { loadExtensions } from "@oh-my-pi/pi-coding-agent/extensibility/extensions/loader";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { loadExtensions } from "@wxyhgk/pi-coding-agent/extensibility/extensions/loader";
+import { TempDir } from "@wxyhgk/pi-utils";
 
 // Tool name registered by the synthetic extension below.
 const TOOL_NAME = "schedule_prompt_test";

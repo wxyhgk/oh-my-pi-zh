@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { formatJavaScriptForDisplay } from "@oh-my-pi/pi-coding-agent/tools/eval-format/javascript";
+import { formatJavaScriptForDisplay } from "@wxyhgk/pi-coding-agent/tools/eval-format/javascript";
 
 describe("formatJavaScriptForDisplay", () => {
 	it("expands compact control flow and keeps short objects and arrays inline", () => {

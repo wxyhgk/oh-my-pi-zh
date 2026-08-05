@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it } from "bun:test";
 import * as fs from "node:fs";
 import * as path from "node:path";
-import { type } from "@oh-my-pi/omptype";
-import type { AgentTool } from "@oh-my-pi/pi-agent-core";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { type } from "@wxyhgk/omptype";
+import type { AgentTool } from "@wxyhgk/pi-agent-core";
+import { TempDir } from "@wxyhgk/pi-utils";
 import { Settings } from "../../src/config/settings";
 import {
 	disposeAllVmContexts,

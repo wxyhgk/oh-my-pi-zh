@@ -1,15 +1,15 @@
 import { describe, expect, it } from "bun:test";
-import type { AgentTool, ToolApproval } from "@oh-my-pi/pi-agent-core";
-import { LSP_READONLY_ACTIONS } from "@oh-my-pi/pi-coding-agent/lsp";
+import type { AgentTool, ToolApproval } from "@wxyhgk/pi-agent-core";
+import { LSP_READONLY_ACTIONS } from "@wxyhgk/pi-coding-agent/lsp";
 import {
 	type ApprovalMode,
 	formatApprovalPrompt,
 	requiresApproval,
 	resolveApproval,
 	truncateForPrompt,
-} from "@oh-my-pi/pi-coding-agent/tools/approval";
-import { BashTool } from "@oh-my-pi/pi-coding-agent/tools/bash";
-import { DEBUG_READONLY_ACTIONS } from "@oh-my-pi/pi-coding-agent/tools/debug";
+} from "@wxyhgk/pi-coding-agent/tools/approval";
+import { BashTool } from "@wxyhgk/pi-coding-agent/tools/bash";
+import { DEBUG_READONLY_ACTIONS } from "@wxyhgk/pi-coding-agent/tools/debug";
 
 type ApprovalTool = Pick<AgentTool, "name" | "approval" | "formatApprovalDetails">;
 

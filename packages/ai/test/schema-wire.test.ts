@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
-import { type } from "@oh-my-pi/omptype";
-import { normalizeAnthropicToolSchema } from "@oh-my-pi/pi-ai/providers/anthropic";
-import type { Tool } from "@oh-my-pi/pi-ai/types";
+import { type } from "@wxyhgk/omptype";
+import { normalizeAnthropicToolSchema } from "@wxyhgk/pi-ai/providers/anthropic";
+import type { Tool } from "@wxyhgk/pi-ai/types";
 import {
 	adaptSchemaForStrict,
 	decontaminateZodInstance,
@@ -13,7 +13,7 @@ import {
 	stripToolDescriptions,
 	toolWireSchema,
 	zodToWireSchema,
-} from "@oh-my-pi/pi-ai/utils/schema";
+} from "@wxyhgk/pi-ai/utils/schema";
 import { z } from "zod/v4";
 
 describe("isZodSchema", () => {

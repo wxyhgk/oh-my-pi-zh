@@ -1,8 +1,8 @@
 import { describe, expect, it } from "bun:test";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/sdk";
-import { BrowserTool } from "@oh-my-pi/pi-coding-agent/tools/browser";
-import { getTabsMapForTest } from "@oh-my-pi/pi-coding-agent/tools/browser/tab-supervisor";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/sdk";
+import { BrowserTool } from "@wxyhgk/pi-coding-agent/tools/browser";
+import { getTabsMapForTest } from "@wxyhgk/pi-coding-agent/tools/browser/tab-supervisor";
 import { chromiumAvailable } from "./chromium-probe";
 
 const CHROMIUM_AVAILABLE = await chromiumAvailable();

@@ -1,6 +1,6 @@
 import { expect, it } from "bun:test";
 import { AssertionError } from "node:assert";
-import { type ArkErrors, type Module, type StandardSchemaV1, scope, type Type, type } from "@oh-my-pi/omptype/ark";
+import { type ArkErrors, type Module, type StandardSchemaV1, scope, type Type, type } from "@wxyhgk/omptype/ark";
 import type { Eq } from "./type-assert";
 
 type Out<t> = t;

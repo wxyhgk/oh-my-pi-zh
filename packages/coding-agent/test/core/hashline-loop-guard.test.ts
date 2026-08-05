@@ -2,17 +2,17 @@ import { beforeAll, describe, expect, it } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
 import {
 	type ExecuteHashlineSingleOptions,
 	executeHashlineSingle,
 	formatHashlineHeader,
 	getFileSnapshotStore as getFileReadCache,
-} from "@oh-my-pi/pi-coding-agent/edit";
-import { NOOP_HARD_LIMIT } from "@oh-my-pi/pi-coding-agent/edit/hashline/noop-loop-guard";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import { ToolError } from "@oh-my-pi/pi-coding-agent/tools/tool-errors";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/edit";
+import { NOOP_HARD_LIMIT } from "@wxyhgk/pi-coding-agent/edit/hashline/noop-loop-guard";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import { ToolError } from "@wxyhgk/pi-coding-agent/tools/tool-errors";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 beforeAll(async () => {
 	resetSettingsForTest();

@@ -16,26 +16,26 @@ import { afterEach, beforeEach, expect, test } from "bun:test";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import { getCapability } from "@oh-my-pi/pi-coding-agent/capability";
-import { clearCache } from "@oh-my-pi/pi-coding-agent/capability/fs";
-import { hookCapability } from "@oh-my-pi/pi-coding-agent/capability/hook";
-import { mcpCapability } from "@oh-my-pi/pi-coding-agent/capability/mcp";
-import { promptCapability } from "@oh-my-pi/pi-coding-agent/capability/prompt";
-import { ruleCapability } from "@oh-my-pi/pi-coding-agent/capability/rule";
-import { skillCapability } from "@oh-my-pi/pi-coding-agent/capability/skill";
-import { slashCommandCapability } from "@oh-my-pi/pi-coding-agent/capability/slash-command";
-import { toolCapability } from "@oh-my-pi/pi-coding-agent/capability/tool";
-import type { LoadContext, Provider } from "@oh-my-pi/pi-coding-agent/capability/types";
+import { getCapability } from "@wxyhgk/pi-coding-agent/capability";
+import { clearCache } from "@wxyhgk/pi-coding-agent/capability/fs";
+import { hookCapability } from "@wxyhgk/pi-coding-agent/capability/hook";
+import { mcpCapability } from "@wxyhgk/pi-coding-agent/capability/mcp";
+import { promptCapability } from "@wxyhgk/pi-coding-agent/capability/prompt";
+import { ruleCapability } from "@wxyhgk/pi-coding-agent/capability/rule";
+import { skillCapability } from "@wxyhgk/pi-coding-agent/capability/skill";
+import { slashCommandCapability } from "@wxyhgk/pi-coding-agent/capability/slash-command";
+import { toolCapability } from "@wxyhgk/pi-coding-agent/capability/tool";
+import type { LoadContext, Provider } from "@wxyhgk/pi-coding-agent/capability/types";
 // Register all discovery providers as a side effect.
-import "@oh-my-pi/pi-coding-agent/discovery";
+import "@wxyhgk/pi-coding-agent/discovery";
 import {
 	clearOmpExtensionCliRoots,
 	injectOmpExtensionCliRoots,
 	listOmpExtensionRoots,
 	withOmpExtensionRootScope,
-} from "@oh-my-pi/pi-coding-agent/discovery/omp-extension-roots";
-import { discoverExtensionPaths } from "@oh-my-pi/pi-coding-agent/extensibility/extensions/loader";
-import { getConfigRootDir, removeSyncWithRetries, setAgentDir } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/discovery/omp-extension-roots";
+import { discoverExtensionPaths } from "@wxyhgk/pi-coding-agent/extensibility/extensions/loader";
+import { getConfigRootDir, removeSyncWithRetries, setAgentDir } from "@wxyhgk/pi-utils";
 
 const PROVIDER_ID = "omp-plugins";
 

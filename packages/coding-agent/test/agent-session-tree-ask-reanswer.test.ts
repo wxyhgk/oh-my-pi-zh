@@ -14,10 +14,10 @@
  * silently reporting a successful no-op navigation (review on #5895).
  */
 import { describe, expect, it, vi } from "bun:test";
-import type { AgentToolResult } from "@oh-my-pi/pi-agent-core";
-import type { ExtensionRunner, ExtensionUIContext } from "@oh-my-pi/pi-coding-agent/extensibility/extensions";
-import { SecretObfuscator } from "@oh-my-pi/pi-coding-agent/secrets/obfuscator";
-import type { AskToolDetails } from "@oh-my-pi/pi-coding-agent/tools/ask";
+import type { AgentToolResult } from "@wxyhgk/pi-agent-core";
+import type { ExtensionRunner, ExtensionUIContext } from "@wxyhgk/pi-coding-agent/extensibility/extensions";
+import { SecretObfuscator } from "@wxyhgk/pi-coding-agent/secrets/obfuscator";
+import type { AskToolDetails } from "@wxyhgk/pi-coding-agent/tools/ask";
 import { assistantMsg, createTestSession, userMsg } from "./utilities";
 
 const ORIGINAL_QUESTIONS = [

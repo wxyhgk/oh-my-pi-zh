@@ -21,25 +21,22 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { AsyncJobManager } from "@oh-my-pi/pi-coding-agent/async/job-manager";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { AgentLifecycleManager } from "@oh-my-pi/pi-coding-agent/registry/agent-lifecycle";
-import { AgentRegistry } from "@oh-my-pi/pi-coding-agent/registry/agent-registry";
-import type { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import {
-	SessionManager,
-	SessionPersistenceIndeterminateError,
-} from "@oh-my-pi/pi-coding-agent/session/session-manager";
+import { AsyncJobManager } from "@wxyhgk/pi-coding-agent/async/job-manager";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { AgentLifecycleManager } from "@wxyhgk/pi-coding-agent/registry/agent-lifecycle";
+import { AgentRegistry } from "@wxyhgk/pi-coding-agent/registry/agent-registry";
+import type { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { SessionManager, SessionPersistenceIndeterminateError } from "@wxyhgk/pi-coding-agent/session/session-manager";
 import {
 	FileSessionStorage,
 	type SessionStorage,
 	type SessionStorageWriter,
 	type WriteTextAtomicOptions,
-} from "@oh-my-pi/pi-coding-agent/session/session-storage";
-import * as executorModule from "@oh-my-pi/pi-coding-agent/task/executor";
-import type { AgentProgress, SingleResult } from "@oh-my-pi/pi-coding-agent/task/types";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import { VibeSessionRegistry } from "@oh-my-pi/pi-coding-agent/vibe/runtime";
+} from "@wxyhgk/pi-coding-agent/session/session-storage";
+import * as executorModule from "@wxyhgk/pi-coding-agent/task/executor";
+import type { AgentProgress, SingleResult } from "@wxyhgk/pi-coding-agent/task/types";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import { VibeSessionRegistry } from "@wxyhgk/pi-coding-agent/vibe/runtime";
 
 const PERSISTED_WORKER_SYSTEM_PROMPT = "Persisted vibe worker";
 const PERSISTED_WORKER_TOOLS = ["read", "yield"];

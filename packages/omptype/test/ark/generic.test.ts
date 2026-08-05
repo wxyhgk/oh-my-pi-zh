@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { scope, type } from "@oh-my-pi/omptype/ark";
+import { scope, type } from "@wxyhgk/omptype/ark";
 import type { Eq } from "./type-assert";
 
 describe("standalone", () => {

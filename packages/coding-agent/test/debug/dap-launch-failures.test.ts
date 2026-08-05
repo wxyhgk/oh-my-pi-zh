@@ -2,19 +2,19 @@ import { afterEach, describe, expect, it, spyOn, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import * as dapModule from "@oh-my-pi/pi-coding-agent/dap";
-import { connectSocket, DapClient, waitForTcpServerListening } from "@oh-my-pi/pi-coding-agent/dap/client";
-import { DapSessionManager } from "@oh-my-pi/pi-coding-agent/dap/session";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import * as dapModule from "@wxyhgk/pi-coding-agent/dap";
+import { connectSocket, DapClient, waitForTcpServerListening } from "@wxyhgk/pi-coding-agent/dap/client";
+import { DapSessionManager } from "@wxyhgk/pi-coding-agent/dap/session";
 import type {
 	DapCapabilities,
 	DapClientState,
 	DapEventMessage,
 	DapResolvedAdapter,
-} from "@oh-my-pi/pi-coding-agent/dap/types";
-import type { ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import { DebugTool } from "@oh-my-pi/pi-coding-agent/tools/debug";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/dap/types";
+import type { ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import { DebugTool } from "@wxyhgk/pi-coding-agent/tools/debug";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 const TEST_ADAPTER: DapResolvedAdapter = {
 	name: "lldb-dap",

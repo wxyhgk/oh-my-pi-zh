@@ -1,5 +1,5 @@
 import { expect, it } from "bun:test";
-import { scope, type } from "@oh-my-pi/omptype/ark";
+import { scope, type } from "@wxyhgk/omptype/ark";
 
 it("2 literal branches", () => {
 	// should not use a switch with <=2 branches to avoid needless convolution

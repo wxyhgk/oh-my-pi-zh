@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { parseFindingDetails } from "@oh-my-pi/pi-coding-agent/tools/review";
+import { parseFindingDetails } from "@wxyhgk/pi-coding-agent/tools/review";
 
 describe("parseFindingDetails", () => {
 	it("returns undefined for malformed finding details", () => {

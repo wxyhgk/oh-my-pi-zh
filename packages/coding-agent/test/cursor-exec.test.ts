@@ -3,12 +3,12 @@ import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
 import { create, fromBinary } from "@bufbuild/protobuf";
-import { type } from "@oh-my-pi/omptype";
-import type { AgentEvent, AgentTool, AgentToolContext } from "@oh-my-pi/pi-agent-core";
-import { type BlockState, handleServerMessage, type ToolCallState } from "@oh-my-pi/pi-ai/providers/cursor";
-import { buildPiLsResult, piTruncation } from "@oh-my-pi/pi-ai/providers/cursor/exec-modern";
-import type { AssistantMessage } from "@oh-my-pi/pi-ai/types";
-import { AssistantMessageEventStream } from "@oh-my-pi/pi-ai/utils/event-stream";
+import { type } from "@wxyhgk/omptype";
+import type { AgentEvent, AgentTool, AgentToolContext } from "@wxyhgk/pi-agent-core";
+import { type BlockState, handleServerMessage, type ToolCallState } from "@wxyhgk/pi-ai/providers/cursor";
+import { buildPiLsResult, piTruncation } from "@wxyhgk/pi-ai/providers/cursor/exec-modern";
+import type { AssistantMessage } from "@wxyhgk/pi-ai/types";
+import { AssistantMessageEventStream } from "@wxyhgk/pi-ai/utils/event-stream";
 import {
 	AgentClientMessageSchema,
 	AgentServerMessageSchema,
@@ -17,21 +17,21 @@ import {
 	McpArgsSchema,
 	ReadArgsSchema,
 	ShellArgsSchema,
-} from "@oh-my-pi/pi-catalog/discovery/cursor-gen/agent_pb";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { CursorExecHandlers } from "@oh-my-pi/pi-coding-agent/cursor";
+} from "@wxyhgk/pi-catalog/discovery/cursor-gen/agent_pb";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { CursorExecHandlers } from "@wxyhgk/pi-coding-agent/cursor";
 import {
 	bridgeToolMap,
 	createBridgeEditTool,
 	createBridgeGrepFactory,
-} from "@oh-my-pi/pi-coding-agent/cursor-bridge-tools";
-import { EditTool } from "@oh-my-pi/pi-coding-agent/edit";
-import type { ExtensionRunner } from "@oh-my-pi/pi-coding-agent/extensibility/extensions";
-import { ExtensionToolWrapper } from "@oh-my-pi/pi-coding-agent/extensibility/extensions";
-import { BUILTIN_TOOLS, GrepTool, ReadTool, type Tool, type ToolSession } from "@oh-my-pi/pi-coding-agent/tools";
-import { BashTool } from "@oh-my-pi/pi-coding-agent/tools/bash";
-import type { TruncationMeta } from "@oh-my-pi/pi-coding-agent/tools/output-meta";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/cursor-bridge-tools";
+import { EditTool } from "@wxyhgk/pi-coding-agent/edit";
+import type { ExtensionRunner } from "@wxyhgk/pi-coding-agent/extensibility/extensions";
+import { ExtensionToolWrapper } from "@wxyhgk/pi-coding-agent/extensibility/extensions";
+import { BUILTIN_TOOLS, GrepTool, ReadTool, type Tool, type ToolSession } from "@wxyhgk/pi-coding-agent/tools";
+import { BashTool } from "@wxyhgk/pi-coding-agent/tools/bash";
+import type { TruncationMeta } from "@wxyhgk/pi-coding-agent/tools/output-meta";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 import { AdviseTool } from "../src/advisor/advise-tool";
 
 function createTestSession(cwd: string, overrides: Partial<ToolSession> = {}): ToolSession {

@@ -15,15 +15,15 @@
  * flush. Snapshot arrays must also stay immutable after later refreshes.
  */
 import { afterEach, describe, expect, it, vi } from "bun:test";
-import type { AssistantMessage, TextContent } from "@oh-my-pi/pi-ai";
-import type { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import type { CreateAgentSessionResult } from "@oh-my-pi/pi-coding-agent/sdk";
-import * as sdkModule from "@oh-my-pi/pi-coding-agent/sdk";
-import type { AgentSession, AgentSessionEvent } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { runSubprocess } from "@oh-my-pi/pi-coding-agent/task/executor";
-import type { AgentDefinition, AgentProgress } from "@oh-my-pi/pi-coding-agent/task/types";
-import { EventBus } from "@oh-my-pi/pi-coding-agent/utils/event-bus";
+import type { AssistantMessage, TextContent } from "@wxyhgk/pi-ai";
+import type { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import type { CreateAgentSessionResult } from "@wxyhgk/pi-coding-agent/sdk";
+import * as sdkModule from "@wxyhgk/pi-coding-agent/sdk";
+import type { AgentSession, AgentSessionEvent } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { runSubprocess } from "@wxyhgk/pi-coding-agent/task/executor";
+import type { AgentDefinition, AgentProgress } from "@wxyhgk/pi-coding-agent/task/types";
+import { EventBus } from "@wxyhgk/pi-coding-agent/utils/event-bus";
 
 const TAIL_BYTES = 8 * 1024;
 

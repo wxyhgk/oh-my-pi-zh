@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { type ArkErrors, scope, type Type, type } from "@oh-my-pi/omptype/ark";
+import { type ArkErrors, scope, type Type, type } from "@wxyhgk/omptype/ark";
 import type { Eq } from "./type-assert";
 
 type Out<T> = T;

@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, spyOn, vi } from "bun:test";
-import type { Api, Model } from "@oh-my-pi/pi-ai";
-import * as ai from "@oh-my-pi/pi-ai";
-import { type GeneratedProvider, getBundledModel } from "@oh-my-pi/pi-catalog/models";
+import type { Api, Model } from "@wxyhgk/pi-ai";
+import * as ai from "@wxyhgk/pi-ai";
+import { type GeneratedProvider, getBundledModel } from "@wxyhgk/pi-catalog/models";
 import {
 	disposeTerminalTitleState,
 	generateSessionTitle,
@@ -9,8 +9,8 @@ import {
 	setSessionTerminalTitle,
 	setTerminalTitle,
 	setTerminalTitleState,
-} from "@oh-my-pi/pi-coding-agent/utils/title-generator";
-import { logger, setTerminalHeadless } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/utils/title-generator";
+import { logger, setTerminalHeadless } from "@wxyhgk/pi-utils";
 import { mockWindowsConsoleTitle, type WindowsConsoleTitleMock } from "./terminal-title-test-utils";
 
 function getModelOrThrow(id: string): Model<Api> {

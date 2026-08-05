@@ -5,9 +5,9 @@ import {
 	type AuthCredentialStore,
 	AuthStorage,
 	type StoredAuthCredential,
-} from "@oh-my-pi/pi-ai/auth-storage";
-import type { CredentialRankingStrategy, UsageLimit, UsageProvider, UsageReport } from "@oh-my-pi/pi-ai/usage";
-import { logger } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-ai/auth-storage";
+import type { CredentialRankingStrategy, UsageLimit, UsageProvider, UsageReport } from "@wxyhgk/pi-ai/usage";
+import { logger } from "@wxyhgk/pi-utils";
 
 interface CacheEntry {
 	value: string;

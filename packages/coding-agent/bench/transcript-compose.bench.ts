@@ -17,7 +17,7 @@
  * Target after the fix: ratio(N5000/N500) <= 1.3, N5000 p95 < 10 ms.
  */
 
-import type { AssistantMessage } from "@oh-my-pi/pi-ai";
+import type { AssistantMessage } from "@wxyhgk/pi-ai";
 import { Settings } from "../src/config/settings";
 import { AssistantMessageComponent } from "../src/modes/components/assistant-message";
 import { TranscriptContainer } from "../src/modes/components/transcript-container";

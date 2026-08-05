@@ -1,8 +1,8 @@
 import { describe, expect, it } from "bun:test";
-import { setBedrockProviderModule, streamBedrock } from "@oh-my-pi/pi-ai/providers/register-builtins";
-import type { AssistantMessage, Context, Model } from "@oh-my-pi/pi-ai/types";
-import type { AssistantMessageEventStream } from "@oh-my-pi/pi-ai/utils/event-stream";
-import { buildModel } from "@oh-my-pi/pi-catalog/build";
+import { setBedrockProviderModule, streamBedrock } from "@wxyhgk/pi-ai/providers/register-builtins";
+import type { AssistantMessage, Context, Model } from "@wxyhgk/pi-ai/types";
+import type { AssistantMessageEventStream } from "@wxyhgk/pi-ai/utils/event-stream";
+import { buildModel } from "@wxyhgk/pi-catalog/build";
 
 function createModel(): Model<"bedrock-converse-stream"> {
 	return buildModel({

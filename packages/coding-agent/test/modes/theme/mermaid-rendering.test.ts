@@ -1,5 +1,5 @@
 import { afterEach, beforeAll, describe, expect, it } from "bun:test";
-import { Markdown } from "@oh-my-pi/pi-tui";
+import { Markdown } from "@wxyhgk/pi-tui";
 import { Settings } from "../../../src/config/settings";
 import {
 	getMarkdownTheme,

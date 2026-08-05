@@ -1,12 +1,12 @@
 import { afterEach, describe, expect, it, vi } from "bun:test";
-import * as arktype from "@oh-my-pi/omptype";
-import type * as TypeBox from "@oh-my-pi/omptype/typebox";
-import * as zod from "@oh-my-pi/omptype/zod";
-import * as piCodingAgent from "@oh-my-pi/pi-coding-agent";
-import { GreenCommand } from "@oh-my-pi/pi-coding-agent/extensibility/custom-commands/bundled/ci-green";
-import type { CustomCommandAPI } from "@oh-my-pi/pi-coding-agent/extensibility/custom-commands/types";
-import type { HookCommandContext } from "@oh-my-pi/pi-coding-agent/extensibility/hooks/types";
-import * as git from "@oh-my-pi/pi-coding-agent/utils/git";
+import * as arktype from "@wxyhgk/omptype";
+import type * as TypeBox from "@wxyhgk/omptype/typebox";
+import * as zod from "@wxyhgk/omptype/zod";
+import * as piCodingAgent from "@wxyhgk/pi-coding-agent";
+import { GreenCommand } from "@wxyhgk/pi-coding-agent/extensibility/custom-commands/bundled/ci-green";
+import type { CustomCommandAPI } from "@wxyhgk/pi-coding-agent/extensibility/custom-commands/types";
+import type { HookCommandContext } from "@wxyhgk/pi-coding-agent/extensibility/hooks/types";
+import * as git from "@wxyhgk/pi-coding-agent/utils/git";
 
 afterEach(() => {
 	vi.restoreAllMocks();

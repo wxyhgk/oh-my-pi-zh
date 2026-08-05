@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test";
-import { ProcessTerminal, TUI } from "@oh-my-pi/pi-tui";
+import { ProcessTerminal, TUI } from "@wxyhgk/pi-tui";
 import { CustomEditor } from "../../../src/modes/components/custom-editor";
 import { getEditorTheme, initTheme } from "../../../src/modes/theme/theme";
 

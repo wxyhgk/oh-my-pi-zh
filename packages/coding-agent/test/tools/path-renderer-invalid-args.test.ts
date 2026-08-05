@@ -1,9 +1,9 @@
 import { beforeAll, describe, expect, it } from "bun:test";
-import { editToolRenderer } from "@oh-my-pi/pi-coding-agent/edit/renderer";
-import { getThemeByName, initTheme, type Theme } from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { readToolRenderer } from "@oh-my-pi/pi-coding-agent/tools/read";
-import { writeToolRenderer } from "@oh-my-pi/pi-coding-agent/tools/write";
-import type { Component } from "@oh-my-pi/pi-tui";
+import { editToolRenderer } from "@wxyhgk/pi-coding-agent/edit/renderer";
+import { getThemeByName, initTheme, type Theme } from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { readToolRenderer } from "@wxyhgk/pi-coding-agent/tools/read";
+import { writeToolRenderer } from "@wxyhgk/pi-coding-agent/tools/write";
+import type { Component } from "@wxyhgk/pi-tui";
 
 interface InvalidPathCase {
 	readonly name: string;

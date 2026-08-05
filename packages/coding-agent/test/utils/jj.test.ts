@@ -2,8 +2,8 @@ import { afterEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import * as jj from "@oh-my-pi/pi-coding-agent/utils/jj";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+import * as jj from "@wxyhgk/pi-coding-agent/utils/jj";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 import type { Subprocess } from "bun";
 
 describe("jj workspace detection", () => {

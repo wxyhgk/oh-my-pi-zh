@@ -2,15 +2,11 @@ import { afterEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import {
-	applyResolvedSystemPromptInputs,
-	readPipedInput,
-	submitInteractiveInput,
-} from "@oh-my-pi/pi-coding-agent/main";
-import type { SubmittedUserInput } from "@oh-my-pi/pi-coding-agent/modes/types";
-import type { CreateAgentSessionOptions } from "@oh-my-pi/pi-coding-agent/sdk";
-import { discoverTitleSystemPromptFile } from "@oh-my-pi/pi-coding-agent/system-prompt";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
+import { applyResolvedSystemPromptInputs, readPipedInput, submitInteractiveInput } from "@wxyhgk/pi-coding-agent/main";
+import type { SubmittedUserInput } from "@wxyhgk/pi-coding-agent/modes/types";
+import type { CreateAgentSessionOptions } from "@wxyhgk/pi-coding-agent/sdk";
+import { discoverTitleSystemPromptFile } from "@wxyhgk/pi-coding-agent/system-prompt";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
 
 const cleanupDirs: string[] = [];
 

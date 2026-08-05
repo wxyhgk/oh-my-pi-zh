@@ -2,9 +2,9 @@ import { afterEach, describe, expect, it } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import { loadSkills, resetActiveSkillsForTests, setActiveSkills } from "@oh-my-pi/pi-coding-agent/extensibility/skills";
-import { parseInternalUrl } from "@oh-my-pi/pi-coding-agent/internal-urls/parse";
-import { SkillProtocolHandler } from "@oh-my-pi/pi-coding-agent/internal-urls/skill-protocol";
+import { loadSkills, resetActiveSkillsForTests, setActiveSkills } from "@wxyhgk/pi-coding-agent/extensibility/skills";
+import { parseInternalUrl } from "@wxyhgk/pi-coding-agent/internal-urls/parse";
+import { SkillProtocolHandler } from "@wxyhgk/pi-coding-agent/internal-urls/skill-protocol";
 
 function makeSkillMd(name: string, dir: string) {
 	return `---\nname: ${name}\ndescription: ${name} skill.\n---\n\n# ${name} from ${dir}\n`;

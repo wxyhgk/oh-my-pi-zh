@@ -1,9 +1,9 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as path from "node:path";
-import { Agent } from "@oh-my-pi/pi-agent-core";
-import { ModelRegistry } from "@oh-my-pi/pi-coding-agent/config/model-registry";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { InteractiveMode } from "@oh-my-pi/pi-coding-agent/modes/interactive-mode";
+import { Agent } from "@wxyhgk/pi-agent-core";
+import { ModelRegistry } from "@wxyhgk/pi-coding-agent/config/model-registry";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { InteractiveMode } from "@wxyhgk/pi-coding-agent/modes/interactive-mode";
 import {
 	enableAutoTheme,
 	getCurrentThemeName,
@@ -12,13 +12,13 @@ import {
 	previewTheme,
 	setTheme,
 	stopThemeWatcher,
-} from "@oh-my-pi/pi-coding-agent/modes/theme/theme";
-import { AgentSession } from "@oh-my-pi/pi-coding-agent/session/agent-session";
-import { AuthStorage } from "@oh-my-pi/pi-coding-agent/session/auth-storage";
-import { SessionManager } from "@oh-my-pi/pi-coding-agent/session/session-manager";
-import { TUI } from "@oh-my-pi/pi-tui";
-import type { TerminalAppearance, TerminalAppearanceRequestToken } from "@oh-my-pi/pi-tui/terminal";
-import { TempDir } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/modes/theme/theme";
+import { AgentSession } from "@wxyhgk/pi-coding-agent/session/agent-session";
+import { AuthStorage } from "@wxyhgk/pi-coding-agent/session/auth-storage";
+import { SessionManager } from "@wxyhgk/pi-coding-agent/session/session-manager";
+import { TUI } from "@wxyhgk/pi-tui";
+import type { TerminalAppearance, TerminalAppearanceRequestToken } from "@wxyhgk/pi-tui/terminal";
+import { TempDir } from "@wxyhgk/pi-utils";
 import { VirtualTerminal } from "../../tui/test/virtual-terminal";
 
 const MULTIPLEXER_ENV_KEYS = ["TMUX", "STY", "ZELLIJ", "CMUX_WORKSPACE_ID", "CMUX_SURFACE_ID", "TERM"] as const;

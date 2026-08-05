@@ -4,8 +4,8 @@ import * as nodeFs from "node:fs";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import * as pluginCli from "@oh-my-pi/pi-coding-agent/cli/plugin-cli";
-import * as updateCli from "@oh-my-pi/pi-coding-agent/cli/update-cli";
+import * as pluginCli from "@wxyhgk/pi-coding-agent/cli/plugin-cli";
+import * as updateCli from "@wxyhgk/pi-coding-agent/cli/update-cli";
 import {
 	buildBunInstallArgs,
 	buildHomebrewUpdateArgs,
@@ -22,10 +22,10 @@ import {
 	resolveUpdateMethodForTest,
 	sweepStaleBackups,
 	updateViaBinaryAt,
-} from "@oh-my-pi/pi-coding-agent/cli/update-cli";
-import Update from "@oh-my-pi/pi-coding-agent/commands/update";
-import { removeWithRetries } from "@oh-my-pi/pi-utils";
-import type { CliConfig } from "@oh-my-pi/pi-utils/cli";
+} from "@wxyhgk/pi-coding-agent/cli/update-cli";
+import Update from "@wxyhgk/pi-coding-agent/commands/update";
+import { removeWithRetries } from "@wxyhgk/pi-utils";
+import type { CliConfig } from "@wxyhgk/pi-utils/cli";
 
 const tempDirs: string[] = [];
 

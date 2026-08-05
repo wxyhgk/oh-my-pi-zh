@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
-import type { AgentMessage } from "@oh-my-pi/pi-agent-core";
-import type { ImageContent, TextContent } from "@oh-my-pi/pi-ai";
-import { stripImagesFromMessage } from "@oh-my-pi/pi-coding-agent/session/messages";
+import type { AgentMessage } from "@wxyhgk/pi-agent-core";
+import type { ImageContent, TextContent } from "@wxyhgk/pi-ai";
+import { stripImagesFromMessage } from "@wxyhgk/pi-coding-agent/session/messages";
 
 const png = (data: string = "iVBORw0KGgo"): ImageContent => ({ type: "image", data, mimeType: "image/png" });
 const text = (value: string): TextContent => ({ type: "text", text: value });

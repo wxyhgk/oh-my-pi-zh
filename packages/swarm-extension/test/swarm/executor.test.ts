@@ -2,8 +2,8 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import type { ModelRegistry, SingleResult } from "@oh-my-pi/pi-coding-agent";
-import * as taskExecutor from "@oh-my-pi/pi-coding-agent";
+import type { ModelRegistry, SingleResult } from "@wxyhgk/pi-coding-agent";
+import * as taskExecutor from "@wxyhgk/pi-coding-agent";
 import { executeSwarmAgent } from "../../src/swarm/executor";
 import { StateTracker } from "../../src/swarm/state";
 

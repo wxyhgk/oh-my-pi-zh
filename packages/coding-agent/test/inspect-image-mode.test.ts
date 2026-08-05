@@ -7,7 +7,7 @@ import { afterEach, describe, expect, test } from "bun:test";
 import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
-import type { Model } from "@oh-my-pi/pi-ai";
+import type { Model } from "@wxyhgk/pi-ai";
 import { Settings } from "../src/config/settings";
 import type { ToolSession } from "../src/tools/index";
 import { ReadTool } from "../src/tools/read";

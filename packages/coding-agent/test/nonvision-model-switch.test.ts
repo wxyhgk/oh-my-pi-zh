@@ -1,7 +1,7 @@
 import { describe, expect, it } from "bun:test";
 import * as path from "node:path";
-import { createMockModel, registerMockApi } from "@oh-my-pi/pi-ai/providers/mock";
-import { TempDir } from "@oh-my-pi/pi-utils";
+import { createMockModel, registerMockApi } from "@wxyhgk/pi-ai/providers/mock";
+import { TempDir } from "@wxyhgk/pi-utils";
 import { ModelRegistry } from "../src/config/model-registry";
 import { Settings } from "../src/config/settings";
 import { createAgentSession } from "../src/sdk";

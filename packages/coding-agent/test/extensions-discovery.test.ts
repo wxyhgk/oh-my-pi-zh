@@ -2,16 +2,16 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "bun:test";
 import * as fs from "node:fs";
 import * as fsPromises from "node:fs/promises";
 import * as path from "node:path";
-import { type ExtensionModule, extensionModuleCapability } from "@oh-my-pi/pi-coding-agent/capability/extension-module";
-import { resetSettingsForTest, Settings } from "@oh-my-pi/pi-coding-agent/config/settings";
-import { getCapability, initializeWithSettings } from "@oh-my-pi/pi-coding-agent/discovery";
+import { type ExtensionModule, extensionModuleCapability } from "@wxyhgk/pi-coding-agent/capability/extension-module";
+import { resetSettingsForTest, Settings } from "@wxyhgk/pi-coding-agent/config/settings";
+import { getCapability, initializeWithSettings } from "@wxyhgk/pi-coding-agent/discovery";
 import {
 	discoverAndLoadExtensions,
 	discoverExtensionPaths,
 	loadExtensions,
-} from "@oh-my-pi/pi-coding-agent/extensibility/extensions/loader";
-import { discoverSessionExtensionPaths } from "@oh-my-pi/pi-coding-agent/sdk";
-import { getProjectAgentDir, TempDir } from "@oh-my-pi/pi-utils";
+} from "@wxyhgk/pi-coding-agent/extensibility/extensions/loader";
+import { discoverSessionExtensionPaths } from "@wxyhgk/pi-coding-agent/sdk";
+import { getProjectAgentDir, TempDir } from "@wxyhgk/pi-utils";
 import { filterUserScoped } from "./utils/filter-user-extensions";
 
 describe("extensions discovery", () => {

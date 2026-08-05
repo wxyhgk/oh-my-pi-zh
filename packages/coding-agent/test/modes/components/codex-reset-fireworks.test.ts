@@ -1,6 +1,6 @@
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "bun:test";
 import { stripVTControlCharacters } from "node:util";
-import type { Component, OverlayHandle, OverlayOptions } from "@oh-my-pi/pi-tui";
+import type { Component, OverlayHandle, OverlayOptions } from "@wxyhgk/pi-tui";
 import { Settings } from "../../../src/config/settings";
 import {
 	CodexResetFireworksController,

@@ -1,5 +1,5 @@
 import { describe, expect, test } from "bun:test";
-import { diffLineRuns, diffLines, diffWords, type PatchHunk, structuredPatchHunks } from "@oh-my-pi/pi-natives";
+import { diffLineRuns, diffLines, diffWords, type PatchHunk, structuredPatchHunks } from "@wxyhgk/pi-natives";
 
 function applyHunks(oldText: string, hunks: PatchHunk[]): string {
 	if (hunks.length === 0) return oldText;

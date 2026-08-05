@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
 import * as path from "node:path";
-import { buildBrowserNavigationHeaders } from "@oh-my-pi/pi-coding-agent/web/search/providers/browser-headers";
+import { buildBrowserNavigationHeaders } from "@wxyhgk/pi-coding-agent/web/search/providers/browser-headers";
 
 // The child process owns the mock, so this test never mutates a shared dependency.
 
@@ -35,7 +35,7 @@ describe("browser navigation headers", () => {
 			'import { mock } from "bun:test";',
 			'mock.module("header-generator", () => ({ HeaderGenerator: class { constructor() { throw new Error("ENOENT: data_files/headers-order.json"); } } }));',
 			"// Deliberate dynamic import: install the mock before loading the source under test.",
-			'const { buildBrowserNavigationHeaders } = await import("@oh-my-pi/pi-coding-agent/web/search/providers/browser-headers");',
+			'const { buildBrowserNavigationHeaders } = await import("@wxyhgk/pi-coding-agent/web/search/providers/browser-headers");',
 			"process.stdout.write(JSON.stringify(buildBrowserNavigationHeaders()));",
 		].join("\n");
 		const proc = Bun.spawn([process.execPath, "--no-install", "--eval", script], {

@@ -1,5 +1,5 @@
 import { beforeAll, describe, expect, it } from "bun:test";
-import { visibleWidth } from "@oh-my-pi/pi-tui";
+import { visibleWidth } from "@wxyhgk/pi-tui";
 import { LiveVisualizer } from "../src/live/visualizer";
 import { initTheme } from "../src/modes/theme/theme";
 

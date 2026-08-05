@@ -8,10 +8,10 @@ import { afterEach, beforeEach, describe, expect, test, vi } from "bun:test";
 import * as fs from "node:fs/promises";
 import * as os from "node:os";
 import * as path from "node:path";
-import type { InteractiveModeContext } from "@oh-my-pi/pi-coding-agent/modes/types";
-import { executeBuiltinSlashCommand } from "@oh-my-pi/pi-coding-agent/slash-commands/builtin-registry";
-import type { TuiSlashCommandRuntime } from "@oh-my-pi/pi-coding-agent/slash-commands/types";
-import { getProjectDir, removeWithRetries, setProjectDir } from "@oh-my-pi/pi-utils";
+import type { InteractiveModeContext } from "@wxyhgk/pi-coding-agent/modes/types";
+import { executeBuiltinSlashCommand } from "@wxyhgk/pi-coding-agent/slash-commands/builtin-registry";
+import type { TuiSlashCommandRuntime } from "@wxyhgk/pi-coding-agent/slash-commands/types";
+import { getProjectDir, removeWithRetries, setProjectDir } from "@wxyhgk/pi-utils";
 
 const originalProjectDir = getProjectDir();
 

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "bun:test";
 import { stripVTControlCharacters } from "node:util";
-import { clearRenderCache, Markdown, type MarkdownTheme } from "@oh-my-pi/pi-tui/components/markdown";
+import { clearRenderCache, Markdown, type MarkdownTheme } from "@wxyhgk/pi-tui/components/markdown";
 import { defaultMarkdownTheme } from "./test-themes.js";
 
 const WIDTH = 72;
