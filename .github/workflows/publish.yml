@@ -16,8 +16,7 @@ on:
 permissions:
    contents: read
 
-jobs:
-   # 原生模块构建矩阵:darwin 两个平台在 mac 上构建,linux 全家桶 + win32 在
+jobs:   # 原生模块构建矩阵:darwin 两个平台在 mac 上构建,linux 全家桶 + win32 在
    # ubuntu 上构建(bazel 交叉编译,上游同款目标清单)。
    build-natives:
       name: 构建原生模块 (${{ matrix.name }})
@@ -72,6 +71,9 @@ jobs:
       needs: build-natives
       runs-on: ubuntu-22.04
       timeout-minutes: 30
+      permissions:
+         contents: read
+         id-token: write # npm OIDC trusted publishing(配置后无需 NPM_TOKEN)
       steps:
          - uses: actions/checkout@v4
 
@@ -104,8 +106,11 @@ jobs:
 
          - name: 配置 npm 认证
            run: |
-              npm config set //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}
+              npm config set //registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}
               npm whoami
+           env:
+              # OIDC trusted publishing 可用时 npm 自动走 OIDC;否则 fallback 到该 token
+              NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
          - name: 生成叶子包
            run: bun --cwd=packages/natives run gen:npm
